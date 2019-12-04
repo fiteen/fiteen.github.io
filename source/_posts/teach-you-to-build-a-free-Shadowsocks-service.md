@@ -9,13 +9,13 @@ categories: 技巧
 
 每位新注册的用户可以在谷歌云平台 [GCP](https://cloud.google.com/free/) (Google Cloud Platform)获得第一年$300 的免费赠送额度。一年后若不主动选择继续使用不会扣费的。
 
+<!--more-->
+
 注册账户的准备工作：
 
 1、可用的 VPN，用于正常访问 GCP；
 
 2、具有 VISA、MasterCard 等海外支付功能的信用卡一张；
-
-<!--more-->
 
 有账户的可以直接登录，没有的就创建一个。
 

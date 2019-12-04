@@ -7,11 +7,11 @@ categories: 跨端
 
 最近参与了一个 Flutter 项目的开发，总结了一些提升开发效率的工具和方法。
 
+<!--more-->
+
 ### UI 可视化工具
 
 纯客户端开发者一开始可能会对写 Flutter 的界面布局会不太适应，那么这个 [https://flutterstudio.app](https://flutterstudio.app) 网站可以帮助你更快熟悉 Flutter 的常用组件，在这个工具上，你可以通过简单的拖拽直接实现布局。
-
-<!--more-->
 
 {% asset_img flutterstudio.png flutterstudio 网站 %}
 

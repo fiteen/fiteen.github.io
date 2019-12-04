@@ -7,6 +7,8 @@ categories: Git
 
 我们常会遇到从 GitHub 上 clone 代码的时候龟速的情况，这时如果手上有不错的代理，可以借助代理来获取更快下载/上传资源的速度。
 
+<!--more-->
+
 通常我们 clone 代码时有以下两种方式：
 
 ```
@@ -15,7 +17,6 @@ https://github.com/accountname/projectname.git
 // SSH 方式
 git@github.com:accountname/projectname.git
 ```
-<!--more-->
 
 #### 设置 HTTP 方式的代理
 

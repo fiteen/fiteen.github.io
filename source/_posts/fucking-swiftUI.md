@@ -8,9 +8,9 @@ categories: iOS
 > 原文：[Fucking Swift UI - Cheat Sheet](https://fuckingswiftui.com/) 
 > 译者的话：翻译过程中，发现了原文中的几个错误，我向作者[@sarunw](https://twitter.com/sarunw)提出意见后，直接在译文中改掉了，如果您发现文中内容有误，欢迎与我联系。
 
-关于 SwiftUI，您在下文中看到的所有答案并不是完整详细的，它只能充当一份备忘单，或是检索表。
-
 <!--more-->
+
+关于 SwiftUI，您在下文中看到的所有答案并不是完整详细的，它只能充当一份备忘单，或是检索表。
 
 ## 常见问题
 
