@@ -9,6 +9,8 @@ categories: iOS
 
 class-dump 是一个命令行工具，通过利用 Objective-C 语言的 runtime 特性，提取存储在 Mach-O 文件中的类文件、协议、分类等信息，并统一表现在 .h 头文件中。
 
+<!--more-->
+
 ### 安装
 
 1. 下载 [class-dump-3.5.dmg](http://stevenygard.com/download/class-dump-3.5.dmg)（若链接无效，请戳[官方网址](!http://stevenygard.com/projects/class-dump/ )）
@@ -28,8 +30,6 @@ class-dump 是一个命令行工具，通过利用 Objective-C 语言的 runtime
    ````
 
 5. 至此安装成功，并可以通过 `class-dump --help` 查看用法和版本
-
-<!--more-->
 
 ### 使用
 

@@ -9,9 +9,9 @@ categories: iOS
 
 苹果 iOS6 开始新增的广告标识符（IDFA）， 全称 Identifier For Advertising，是每台 iOS 设备的唯一 ID，是投放定向广告的唯一方法。
 
-在苹果禁用 UDID 后，IDFA 成为了标识 iPhone 用户的标准。通常用于广告追踪，在同一设备的不同 App 间进行信息共享。
-
 <!--more-->
+
+在苹果禁用 UDID 后，IDFA 成为了标识 iPhone 用户的标准。通常用于广告追踪，在同一设备的不同 App 间进行信息共享。
 
 IDFA 是一段16进制的32位字符串，例如`D7DFA3F1-0E1C-49CD-AFBC-75601390FEA2`。可以通过以下代码获取：
 

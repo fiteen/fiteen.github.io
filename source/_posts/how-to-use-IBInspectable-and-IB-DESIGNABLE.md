@@ -11,9 +11,9 @@ categories: iOS
 - xib - 简单便捷、直观、一一对应，但易冲突
 - storyboard - 逻辑清晰、简单易用、直观高效，虽易冲突、复用性不佳，但仍是未来趋势
 
-xib 和 storyboard 均采用了 Interface Builder（IB）来生成 GUI，通过面板上简单的拖拽替代繁琐冗余的 code 来构建页面。但我们经常发现，既有的功能并不能完全满足布局的需要，那么，我们可以通过在特定的位置定义可视化属性 `IBInspectable`、定义宏 `IB_DESIGNABLE` 来精简代码。
-
 <!--more-->
+
+xib 和 storyboard 均采用了 Interface Builder（IB）来生成 GUI，通过面板上简单的拖拽替代繁琐冗余的 code 来构建页面。但我们经常发现，既有的功能并不能完全满足布局的需要，那么，我们可以通过在特定的位置定义可视化属性 `IBInspectable`、定义宏 `IB_DESIGNABLE` 来精简代码。
 
 下文具体介绍一下如何使用。
 

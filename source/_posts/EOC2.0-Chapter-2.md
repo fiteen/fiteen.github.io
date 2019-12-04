@@ -11,6 +11,8 @@ categories: iOS
 * 获取方法（getter）：读取变量值
 * 设置方法（setter）：写入变量值
 
+<!--more-->
+
 属性能够访问封装在对象里的数据，意味着编译器会自动写出一套存取方法。
 
 ```
@@ -18,8 +20,6 @@ categories: iOS
 - (NSString *)firstName;
 - (void)setFirstName:(NSString *)firstName;
 ```
-
-<!--more-->
 
 也可以用“点语法”访问属性。
 ```

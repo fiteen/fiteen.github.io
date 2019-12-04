@@ -9,9 +9,9 @@ categories: 技巧
 
 需要如下图所示，点击“设置” → 点击 “Safari 浏览器” → 点击“高级” → 打开“Web 检查器”。
 
-{% asset_img open-the-web-inspector.jpg 打开 Web 检查器 %}
-
 <!--more-->
+
+{% asset_img open-the-web-inspector.jpg 打开 Web 检查器 %}
 
 若模拟器中无“Web 检查器”选项，无需设置。
 

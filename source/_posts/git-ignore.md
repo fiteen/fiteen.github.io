@@ -9,11 +9,11 @@ categories: Git
 
 这种情况可以通过添加 `.gitignore` 文件解决。
 
+<!--more-->
+
 ## 如何在项目中添加 `.gitignore`
 
 具体步骤如下：
-
-<!--more-->
 
 1. 打开终端 进入项目中 `.git` 同目录下
 

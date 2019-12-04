@@ -7,6 +7,8 @@ categories: iOS
 
 `nonatomic`（非原子性） 和 `atomic`（原子性） 是 iOS 开发中用 @property 声明属性时，常用的两个关键字。
 
+<!--more-->
+
 看下面三种属性的声明方式：
 
 ```objective-c
@@ -16,8 +18,6 @@ categories: iOS
 ```
 
 2、3 的意思是一样的，不写的时候默认声明成 `atomic`。
-
-<!--more-->
 
 #### 内部实现
 

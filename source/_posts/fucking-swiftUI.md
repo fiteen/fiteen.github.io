@@ -10,6 +10,8 @@ categories: iOS
 
 关于 SwiftUI，您在下文中看到的所有答案并不是完整详细的，它只能充当一份备忘单，或是检索表。
 
+<!--more-->
+
 ## 常见问题
 
 关于 SwiftUI 的常见问题：
@@ -17,8 +19,6 @@ categories: iOS
 **是否需要学 SwiftUI？**
 
 是
-
-<!--more-->
 
 **是否有必要现在就学 SwiftUI？**
 

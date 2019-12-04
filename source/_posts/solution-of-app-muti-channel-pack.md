@@ -11,11 +11,11 @@ categories:
 
 另外，项目进展过程中，可能会出现一些临时新增渠道的需求，这时回到工程中重新打包是比较费时的，有没有办法加快打包速度呢？下文中分享了一些方案。
 
+<!--more-->
+
 ## iOS 多渠道打包方案
 
 iOS 打渠道包目前想到的就只有两种方式，一种是通过[多 target 方式](#muti-target-way)，另一种是[修改 plist 文件方式](#revise-plist-way)。
-
-<!--more-->
 
 ### <span id="muti-target-way">多 target 方式</span>
 

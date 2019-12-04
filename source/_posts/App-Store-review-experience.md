@@ -13,13 +13,13 @@ categories: iOS
 
 苹果官方会不定期更新 Guidelines 和 PLA，请及时关注。
 
+<!--more-->
+
 ### 关键概念
 
 - [iTunes Connect](https://developer.apple.com/support/itunes-connect/cn/)
 
   iTunes Connect 是一套以网页为基础的工具，用于管理在 App Store 上销售的面向 iPhone、iPad、Mac、Apple Watch、Apple TV 和 iMessage 的 app；同时也用于管理 iTunes Store 和 iBooks Store 上的内容。开发者通过 iTunes Connect 提交和管理 app，邀请用户使用 TestFlight 进行测试，添加税务和银行信息，以及访问销售报告等。
-
-<!--more-->
 
 - 元数据
 

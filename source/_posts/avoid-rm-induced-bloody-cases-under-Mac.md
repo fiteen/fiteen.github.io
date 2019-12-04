@@ -7,6 +7,8 @@ categories: 技巧
 
 习惯使用终端的用户，常会用 `rm -fr` 命令执行删除操作，但是这种删除的方式不会出现在废纸篓中，一旦误删，要想找回就比较麻烦。近期听说的此类血案也比较多，为了避免造成悲剧，推荐使用 trash 命令来执行删除。
 
+<!--more-->
+
 ### 安装 trash
 
 通过 Homebrew 安装 [Trash](https://github.com/ali-rantakari/trash)
@@ -16,8 +18,6 @@ $ brew install trash
 ```
 
 安装成功后，可以通过 `trash -fr filename `命令删除文件，且文件会移到废纸篓中。
-
-<!--more-->
 
 ### 用 trash 替换 rm 命令
 

@@ -5,9 +5,10 @@ tags: 直播
 categories: 算法
 ---
 
-阿里云官方给出的文档：[用户指南-直播鉴权](https://help.aliyun.com/document_detail/45210.html?spm=5176.2020520107.108.2.kYdTTA)
+> 阿里云官方给出的文档：[用户指南-直播鉴权](https://help.aliyun.com/document_detail/45210.html?spm=5176.2020520107.108.2.kYdTTA)
 
--------------------
+<!--more-->
+
 ## 参数描述
 要配置出正确的鉴权，需要明确以下几个参数：
 
@@ -20,8 +21,6 @@ categories: 算法
 **鉴权类型**
 
 阿里云CDN 兼容并支持 A、B、C 三种鉴权方式，具体见[ URL 鉴权方式](https://intl.aliyun.com/help/zh/doc-detail/27135.htm)。这里选择的是 A 类型
-
-<!--more-->
 
 **鉴权KEY**
 
@@ -55,7 +54,6 @@ hashvalue     | 通过 md5 加密算法计算出的32位验证串
 
 ```
 sstring = /{AppName}/{StreamName}-{timestamp}-{rand}-{uid}-{privatekey}
- 
 hashvalue = md5(sstring)
 ```
 
@@ -63,6 +61,5 @@ hashvalue = md5(sstring)
 
 ```
 rtmpURL：rtmp://video-center.alivecdn.com/{AppName}
-
-流密钥  ：{StreamName}?vhost={yourdomain}&auth_key={timestamp}-{rand}-{uid}-{hashvalue}
+流密钥：{StreamName}?vhost={yourdomain}&auth_key={timestamp}-{rand}-{uid}-{hashvalue}
 ```
