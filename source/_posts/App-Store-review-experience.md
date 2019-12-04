@@ -11,9 +11,9 @@ categories: iOS
 - [《App Store 审核指南》](https://developer.apple.com/cn/app-store/review/guidelines/) 
 - [《苹果开发者计划许可协议》](https://developer.apple.com/terms/)
 
-苹果官方会不定期更新 Guidelines 和 PLA，请及时关注。
-
 <!--more-->
+
+苹果官方会不定期更新 Guidelines 和 PLA，请及时关注。
 
 ### 关键概念
 
