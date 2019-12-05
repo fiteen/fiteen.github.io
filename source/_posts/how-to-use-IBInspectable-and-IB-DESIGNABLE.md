@@ -30,7 +30,7 @@ xib 和 storyboard 均采用了 Interface Builder（IB）来生成 GUI，通过�
 
 如果想让特定类型的控件设置某个属性，可以为对应的 UIKit 添加分类，为定义该属性时加上 `IBInspectable`，示例：
 
-```
+```objective-c
 #import <UIKit/UIKit.h>
 
 @interface UIButton (HTAdditions)
@@ -65,7 +65,7 @@ Identity Inspector 下的 User Defined Runtime Attributes 也会出现相应的 
 这时我们就可以直接在 User Defined Runtime Attributes 中加入想要的属性，例如圆角、边框宽度等。边框颜色由于 UIColor 类型的特殊性，需要重新定义。
 
 HTCustomButton.h：
-```
+```objective-c
 #import <UIKit/UIKit.h>
 
 IB_DESIGNABLE
@@ -78,7 +78,7 @@ IB_DESIGNABLE
 @end
 ```
 HTCustomButton.m：
-```
+```objective-c
 #import "HTCustomButton.h"
 
 @implementation HTCustomButton
@@ -104,7 +104,7 @@ HTCustomButton.m：
 对于很多被强制勒令用纯代码 coding 的开发者来说，下面介绍的干货绝对会大大提升开发效率。
 
 举个例子：创建基于 UIView 的 HTMasonryView，以及同名的 .xib 文件，并在 Custom Class 中关联好。接下来在 HTMasonryView.m 中创建并布局 masonryButton，注意添加 `IB_DESIGNABLE`，代码如下：
-```
+```objective-c
 #import "HTMasonryView.h"
 #import <Masonry.h>
 #import "UIButton+HTAdditions.h"

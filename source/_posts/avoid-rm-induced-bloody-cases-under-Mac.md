@@ -13,7 +13,7 @@ categories: 技巧
 
 通过 Homebrew 安装 [Trash](https://github.com/ali-rantakari/trash)
 
-```
+```bash
 $ brew install trash
 ```
 
@@ -23,7 +23,7 @@ $ brew install trash
 
 打开 ~/.bash_profile 文件
 
-```
+```bash
 $ vim ~/.bash_profile
 ```
 
@@ -35,7 +35,7 @@ alias rm="trash"
 
 使命令生效：
 
-```
+```bash
 $ source ~/.bash_profile
 ```
 

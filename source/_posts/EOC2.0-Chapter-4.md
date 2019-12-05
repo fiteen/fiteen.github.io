@@ -18,7 +18,7 @@ Objective-C 开发中广泛使用“委托模式”来实现对象间的通信�
 
 下面总结一下委托模式的实现，委托方：
 
-```
+```objective-c
 // .h 文件中
 // 定义协议
 @protocol ClassADelegate
@@ -51,7 +51,7 @@ Objective-C 开发中广泛使用“委托模式”来实现对象间的通信�
 
 而代理方则需要：
 
-```
+```objective-c
 // 遵守协议
 @interface ClassB() <ClassADelegate>
 @end
@@ -94,7 +94,7 @@ Objective-C 开发中广泛使用“委托模式”来实现对象间的通信�
 
 例如：
 
-```
+```objective-c
 @interface NSString (ABC_HTTP)
 // Encode a string with URL encoding
 - (NSString *)abc_urlEncodedString;
@@ -113,7 +113,7 @@ Objective-C 开发中广泛使用“委托模式”来实现对象间的通信�
 
 但是如果一定要添加，也是可以通过分类中为该属性实现存取方法来实现。如下：
 
-```
+```objective-c
 #import <objc/runtime.h>
 
 static const char *kFriendsPropertyKey = "kFriendsPropertyKey";
@@ -137,7 +137,7 @@ static const char *kFriendsPropertyKey = "kFriendsPropertyKey";
 
 分类的主要作用是为已经存在的类添加方法，因为分类的结构体指针中，没有属性列表，只有方法列表。本章介绍的是一种特殊的分类“class-continuation”，用于定义一些无需对外公布的方法及实例变量。形如：
 
-```
+```objective-c
 #import "ClassA.h"
 @interface ClassA ()
 // 定义你所需要的私有变量或方法
@@ -156,14 +156,14 @@ static const char *kFriendsPropertyKey = "kFriendsPropertyKey";
 
 协议定义了一系列方法，遵从此协议的对象应该实现它们。于是，我们可以用协议把自己所写的 API 之中的实现细节隐藏起来，将返回的对象设计为遵从此协议的纯 id 类型，这样，想隐藏的类型就不会出现在 API 之中了。例如 ClassA、ClassB 都会遵循某个协议 EOCDelegate，假如指定类型，就会这样约定：
 
-```
+```objective-c
 @property (nonatomic ,weak) ClassA <EOCDelegate> delegate;
 @property (nonatomic ,weak) ClassB <EOCDelegate> delegate;
 ```
 
 如果不想指明具体使用哪个类，就可以将 delegate 对象约定成 纯 id 类型，这个对象也可以称之为“匿名对象”。
 
-```
+```objective-c
 @property (nonatomic ,weak) id <EOCDelegate> delegate;
 ```
 

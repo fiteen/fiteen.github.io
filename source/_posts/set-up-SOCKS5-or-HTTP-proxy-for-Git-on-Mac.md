@@ -22,14 +22,14 @@ git@github.com:accountname/projectname.git
 
 由于 Shadowsocks 客户端就提供一个本地的 SOCKS5 代理，代理地址是 127.0.0.1:1080。在终端输入以下配置：
 
-```
+```bash
 git config --global http.proxy "socks5://127.0.0.1:1080"
 git config --global https.proxy "socks5://127.0.0.1:1080"
 ```
 
 取消代理则：
 
-```
+```bash
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```

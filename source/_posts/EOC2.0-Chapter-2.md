@@ -15,14 +15,14 @@ categories: iOS
 
 属性能够访问封装在对象里的数据，意味着编译器会自动写出一套存取方法。
 
-```
+```objective-c
 @property NSString *firstName; // Same as:
 - (NSString *)firstName;
 - (void)setFirstName:(NSString *)firstName;
 ```
 
 也可以用“点语法”访问属性。
-```
+```objective-c
 aPerson.firstName = @"Bob"; // Same as:
 [aPerson setFirstName:@"Bob"];
 
@@ -60,7 +60,7 @@ NSString *lastName = [aPerson lastName];
 
 **方法名**
 * getter=<name>指定“获取方法”的方法名。
-```
+```objective-c
 // UISwitch类中表示“开关”是否打开的属性如下定义：
 @property (nonatomic, getter=isOn) BOOL on;
 ```
@@ -75,7 +75,7 @@ NSString *lastName = [aPerson lastName];
 笔者建议在读取实例变量时采用直接访问的形式，设置实例变量的时候通过属性来做。
 
 举例：
-```
+```objective-c
 @interface EOCPerson : NSObject
 @property (nonatomic, copy) NSString *firstName;
 @property (nonatomic, copy) NSString *lastName;
@@ -86,7 +86,7 @@ NSString *lastName = [aPerson lastName];
 ```
 
 `fullName` 和 `setFullName` 可以这样实现：
-```
+```objective-c
 // 使用点语法
 - (NSString *)fullName {
     return [NSString stringWithFormat:@"%@ %@",self.firstName,self.lastName];
@@ -120,7 +120,7 @@ NSString *lastName = [aPerson lastName];
 
 NSObject 协议中有两个用于判断等同性的关键方法：
 
-```
+```objective-c
 - (BOOL)isEqual:(id)object;
 - (NSUInteger)hash;
 ```
@@ -129,7 +129,7 @@ NSObject 类对这两个方法的默认实现是：当且仅当其“指针值�
 如果 “isEqual:” 方法判定两个对象相等，那么其 hash 方法也必须返回同一个值。但是，如果两个对象的 hash 方法返回同一个值，那么 “isEqual:” 方法未必会认为两者相等。
 
 比如下面这个类：
-```
+```objective-c
 @interface EOCPerson : NSObject
 @property (nonatomic, copy) NSString *firstName;
 @property (nonatomic, copy) NSString *lastName;
@@ -169,7 +169,7 @@ collection 在检索哈希表时，会把对象的哈希码做索引。在写 ha
 
 以 EOCPerson 类为例：
 
-```
+```objective-c
 - (BOOL)isEqualToPerson:(EOCPerson *)otherPerson {
     if (self == otherPerson) return YES;
     
@@ -207,7 +207,7 @@ collection 在检索哈希表时，会把对象的哈希码做索引。在写 ha
 
 举例创建一个处理雇员的类族：
 
-```
+```objective-c
 typedef NS_ENUM (NSUInteger, EOCEmployeeType) {
     EOCEmployeeTypeDeveloper,
     EOCEmployeeTypeDesigner,
@@ -316,17 +316,17 @@ OBJC_ASSOCIATION_COPY|copy
 在对象上调用方法又叫“传递消息”，消息有“名称”（name）或“选择子”（selector），可以接受参数，而且可能还有返回值。传递消息会使用**动态绑定**机制来决定需要调用的方法。
 
 给对象发送消息可以这样来写：
-```
+```objective-c
 id returnValue = [someObject messageName:parameter];
 ```
 
 在本例中，someObject叫做“接受者”（receiver），messageName 叫做“选择子”（selector）。选择子和参数合起来称为“消息”（message）。编译器看到消息后，将其转换为一条标准的C语言函数调用，也是消息传递机制中的核心函数，叫做 objc_msgSend，其“原型”如下：
-```
+```objective-c
 void objc_msgSend(id self, SEL cmd, ...)
 ```
 
 这是个“参数个数可变的函数”，能接受两个及以上的参数。第一个参数代表接受者，第二个参数代表选择子（SEL 是选择子的类型），后续参数就是消息中的参数，其顺序不变。编译器会把刚才那个例子中的消息转换为如下函数：
-```
+```objective-c
 id returnValue = objc_msgSend(someObject,
                               @selector(messageName:),
                               parameter);
@@ -339,7 +339,7 @@ objc_msgSend 函数会依据接受者与选择子的类型来调用适当的方�
 - objc_msgSend_stret：待发送的消息要返回结构体
 
 - objc_msgSend_fpret：消息返回的是浮点数
-- objc_msgSendSuper：要给超类发信息，例如[super message:parameter]
+- objc_msgSendSuper：要给超类发信息，例如 `[super message:parameter];`
 
 ### 第12条：理解消息转发机制
 
@@ -355,7 +355,7 @@ objc_msgSend 函数会依据接受者与选择子的类型来调用适当的方�
 
 对象在收到无法解读的消息后，首先将调用其所属类的这个类方法：
 
-```
+```objective-c
 // 表示这个类是否能新增一个实例方法用以处理选择子
 + (BOOL)resolveInstanceMethod:(SEL)selector
 // 表示这个类是否能新增一个类方法用以处理选择子
@@ -368,7 +368,7 @@ objc_msgSend 函数会依据接受者与选择子的类型来调用适当的方�
 
 当前接受者还有第二次处理未知选择子的机会。这一步中，运行期系统会问：能否将这条消息转给其他接受者处理，对应方法：
 
-```
+```objective-c
 - (id)forwardingTargetForSelector:(SEL)selector
 ```
 
@@ -380,7 +380,7 @@ objc_msgSend 函数会依据接受者与选择子的类型来调用适当的方�
 
 首先创建 NSInvocation 对象，把与尚未处理的那条消息有关的全部细节（包括选择子、目标及参数）都封于其中。在触发 NSInvocation 对象时，“消息派发系统”将亲自出马，把消息指派给目标对象。此步骤会调用：
 
-```
+```objective-c
 - (void)forwardInvocation:(NSInvocation)
 ```
 
@@ -398,13 +398,13 @@ objc_msgSend 函数会依据接受者与选择子的类型来调用适当的方�
 
 类的方法列表会把选择子的名称映射到相关的方法实现之上，使得“动态消息派发系统”能够根据此找到应该调用的方法。这些方法均以函数指针的形式来表示，这种指针叫做IMP，其原型如下：
 
-```
+```objective-c
 id (*IMP)(id, SEL,...)
 ```
 
 以互换NSString大小写的两个方法为例：
 
-```
+```objective-c
 Method originalMethod = class_getInstanceMethod([NSString class], @selector(lowercaseString));
 Method swappedMethod = class_getInstanceMethod([NSString class], @selector(uppercaseString));
 method_exchangeImplementations(originalMethod, swappedMethod)
@@ -422,13 +422,13 @@ Objective-C 对象的本质是什么？
 
 每个 Objective-C 对象实例都是指向某块内存数据的指针。
 
-```
+```objective-c
 NSString *pointerVariable = @"Some string";
 ```
 
 对于通用的对象类型 id，由于其本身已经是指针了，所以可以这样写：
 
-```
+```objective-c
 id genericTypeString = @"Some string";
 ```
 
@@ -440,7 +440,7 @@ super_class 指针确立了继承关系，而 isa 指针描述实例所属的类
 
 如果对象类型无法在编译器确定，那么就应该使用类型信息查询方法来探知。“isMemberOfClass:”能够判断出对象是否为某个特定类的实例，而“isKindOfClass:” 则能够判断出对象是否为某类或其派生类的实例，例如：
 
-```
+```objective-c
 NSMutableDictionary *dict = [NSMutableDictionary new];
 [dict isMemberOfClass:[NSDictionary class]]; /// <NO
 [dict isMemberOfClass:[NSMutableDictionary class]]; /// <YES

@@ -17,7 +17,7 @@ categories: 算法
 完整的推流地址，形如：
 
 `rtmp://video-center.alivecdn.com/{AppName}/{StreamName}?vhost={yourdomain}`
-      
+
 **鉴权类型**
 
 阿里云CDN 兼容并支持 A、B、C 三种鉴权方式，具体见[ URL 鉴权方式](https://intl.aliyun.com/help/zh/doc-detail/27135.htm)。这里选择的是 A 类型
@@ -25,11 +25,11 @@ categories: 算法
 **鉴权KEY**
 
 `privatekey` 字段用户可以自行设置
-      
+
 **时间戳**
 
 时间戳是指格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总秒数。
-      
+
 **有效时间**
 
 以秒为单位的整数时间，用来控制直播推流时效
@@ -38,10 +38,8 @@ categories: 算法
 ## 鉴权方法
 
  用户访问加密 URL ：
- 
-```
-rtmp://video-center.alivecdn.com/{AppName}/{StreamName}?vhost={yourdomain}&auth_key={timestamp}-{rand}-{uid}-{hashvalue}
-```
+
+> rtmp://video-center.alivecdn.com/{AppName}/{StreamName}?vhost={yourdomain}&auth_key={timestamp}-{rand}-{uid}-{hashvalue}
 
 auth_key字段     | 描述
 -------- | ---
@@ -49,17 +47,14 @@ timestamp |  失效时间=时间戳+有效时间，CDN 服务器拿到请求后�
 rand | 随机数，一般设成0
 uid    | 暂未使用（设置成0)
 hashvalue     | 通过 md5 加密算法计算出的32位验证串
- 
+
 `hashvalue` 计算方式如下：
 
-```
-sstring = /{AppName}/{StreamName}-{timestamp}-{rand}-{uid}-{privatekey}
-hashvalue = md5(sstring)
-```
+> sstring = /{AppName}/{StreamName}-{timestamp}-{rand}-{uid}-{privatekey}
+> hashvalue = md5(sstring)
 
 输入OBS中的鉴权内容如下：
 
-```
-rtmpURL：rtmp://video-center.alivecdn.com/{AppName}
-流密钥：{StreamName}?vhost={yourdomain}&auth_key={timestamp}-{rand}-{uid}-{hashvalue}
-```
+> rtmpURL：rtmp://video-center.alivecdn.com/{AppName}
+> 流密钥：{StreamName}?vhost={yourdomain}&auth_key={timestamp}-{rand}-{uid}-{hashvalue}
+

@@ -49,7 +49,7 @@ Objective-C 语言中的指针是用来指示对象的，对象所占内存总�
 常规做法：`Number *someNumber = [NSNumber numberWithInt:1];` => 字面量语法：`Number * someNumber = @1;`
 
 ** 字面数值 **
-```
+```objective-c
 Number *intNumber = @1;
 Number *floatNumber = @2.5f;
 Number *doubleNumber = @3.14159;
@@ -57,7 +57,7 @@ Number *charNumber = @'a';
 ```
 ** 字面量数组 **
 
- ```
+ ```objective-c
 // 常规做法
 NSArray *animals = [NSArray arrayWithObjects:@"cat",@"dog",@"mouse",nil]; // 发现空值nil创建结束
 NSString *dog = [animals objectAtIndex:1];
@@ -65,10 +65,10 @@ NSString *dog = [animals objectAtIndex:1];
 // 字面量语法（更安全，出现nil对象，编译器时就会发现异常）
 NSArray *animals = @[@"cat",@"dog",@"mouse"]; // 发现空值nil会抛出异常
 NSString *dog = animals[1];
-```
+ ```
 ** 字面量字典 **
 
- ```
+ ```objective-c
 // 常规做法
 NSDictionary *personData = [NSDictionary dictionaryWithObjectsAndKeys:@"Matt",@"firstName",[NSNumber numberWithInt:28],@"age",nil];
 NSString *firstName = [personData objectForKey:@"firstName"];
@@ -76,10 +76,10 @@ NSString *firstName = [personData objectForKey:@"firstName"];
 // 字面量语法
 NSDictionary *personData = @{@"firstName" : @"Matt", @"age" : @28};
 NSString *firstName = personData[@"firstName"];
-```
+ ```
 ** 可变数组与字典 **
 
-```
+```objective-c
 // 常规做法
 [mutableArray replaceObjectAtIndex:1 withObject:@"dog"];
 [mutableDictionary setObject:@"Matt" forKey:@"firstName"];
@@ -96,7 +96,7 @@ mutableDictionary[@"firstName"] = @"Matt";
 定义常量时，尽量不要使用 #define 预处理指令，由于没有声明明确的类型信息，会将相同名字的常量值批量替换。取而代之的，采用`static const 类型 常量名 = 常量值`的形式。
 
 派发通知时，需要使用字符串来表示此项通知的名称，而这个名字就可以声明为一个外界可见的常值变量。此类常值变量需放在“全局符号表”中，以便在定义的编译单元之外使用，定义方式如下：
-```
+```objective-c
 // In the header file
 extern NSString *const EOCStringConstant; // 注意const修饰符在常量类型中的位置
 
@@ -104,7 +104,7 @@ extern NSString *const EOCStringConstant; // 注意const修饰符在常量类型
 NSString *const EOCStringConstant = @"VALUE"; // 解读：一个常量，而这个常量是指针，指向NSString对象
 ```
 extern这个关键字就是告诉编译器无须查看常量的定义，直接允许使用。其他类型的常量也是如此：
-```
+```objective-c
 // 在头文件 EOCAnimatedView.h 中使用extern来声明全局常量
 // 这种常量要出现在全局符号表中，所以其名称通常以与之相关的类名做前缀
 extern const NSTimeInterval EOCAnimationDuration;
@@ -116,7 +116,7 @@ const NSTimeInterval EOCAnimationDuration = 0.3;
 ### 第5条：用枚举表示状态、选项、状态码
 
 枚举是一种常量命名方式，某个对象所经历的各种状态可定义为一个简单的枚举集。定义方式如下：
-```
+```objective-c
 // 方式一：
 enum EOCConnectionState {
     // 编译器会为枚举分配一个独有的编号，从0开始，每个枚举递增1
@@ -139,7 +139,7 @@ EOCConnectionState state = EOCConnectionStateConnected;
 ```
 
 如果把传递给某个方法的选项表示为枚举类型，而多个选项又可同时使用，就将各选项值定义为2的幂，以便通过安位或操作将其组合。
-```
+```objective-c
 typedef enum EOCPermittedDirection : int EOCPermittedDirection;
 enum EOCPermittedDirection : int {
     EOCPermittedDirectionUp    = 1 << 0,

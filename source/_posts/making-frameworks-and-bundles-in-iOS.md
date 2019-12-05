@@ -53,7 +53,7 @@ Framework 是资源的集合，将静态库和其头文件包含到一个结构�
 
 2. 点击工程文件，选 TARGETS →  刚才创建的 Aggregate →  Build Phases →  + →  New Run Script Phases。在当前栏目里会多出一个 Run Script ，在里面输入以下脚本：
 
-```
+```shell
 #!/bin/sh
 #要build的target名
 TARGET_NAME=${PROJECT_NAME}
@@ -101,19 +101,21 @@ open "${UNIVERSAL_OUTPUT_FOLDER}"
 
 **步骤1：**打开终端，进入到你的 framework 
 
-```
-cd yourFrameworkName.framework文件所在的目录
+```bash
+cd ${yourFrameworkName}.framework文件所在的目录
 ```
 
 **步骤2：**查看架构支持
 
-```
-lipo -info yourFrameworkName.framework/yourFrameworkName
+```bash
+lipo -info ${yourFrameworkName}.framework/${yourFrameworkName}
 ```
 
 于是可以看到输出：
 
-    Architectures in the fat file: yourFrameworkName are: i386 x86_64 armv7 arm64 (支持的架构显示在这)
+```bash
+Architectures in the fat file: ${yourFrameworkName} are: i386 x86_64 armv7 arm64 (支持的架构显示在这)
+```
 
 **设备的CPU架构(指令集) **
 

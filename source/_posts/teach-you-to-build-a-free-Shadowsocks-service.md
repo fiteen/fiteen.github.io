@@ -93,19 +93,19 @@ categories: 技巧
 
 - 获得 root 权限
 
-```
+```bash
 sudo -i
 ```
 
 - 检查内核版本
 
-```
+```bash
 uname –sr
 ```
 
 正常情况下，当前的内核版本都是超过 4.9，无需升级，可以直接进入下一步；如果需要升级，按照以下步骤进行
 
-```
+```bash
 // 更新系统
 apt update
 apt upgrade
@@ -132,13 +132,13 @@ echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
 
 - 配置生效
 
-```
+```bash
 sysctl -p
 ```
 
 - 检验是否开启成功
 
-```
+```bash
 lsmod | grep bbr
 ```
 
@@ -148,19 +148,19 @@ lsmod | grep bbr
 
 - 更新 apt-get 软件包
 
-```
+```bash
 sudo apt-get update
 ```
 
 - 通过 apt-get 安装 python-pip
 
-```
+```bash
 sudo apt-get install python-pip
 ```
 
 - 使用 pip 安装 shadowsocks 服务
 
-```
+```bash
 sudo pip install shadowsocks
 ```
 
@@ -168,7 +168,7 @@ sudo pip install shadowsocks
 
 - 创建  Shadowsocks Server 配置文件
 
-```
+```bash
 sudo vim /etc/ss-conf.json
 ```
 
@@ -192,7 +192,7 @@ sudo vim /etc/ss-conf.json
 
 - 用配置文件启动 Shadowsocks Server
 
-```
+```bash
 sudo ssserver -c /etc/ss-conf.json -d start
 ```
 

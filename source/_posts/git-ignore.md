@@ -17,19 +17,19 @@ categories: Git
 
 1. 打开终端 进入项目中 `.git` 同目录下
 
-   ```
+   ```bash
    cd <path>
    ```
 
 2. 创建 `.gitignore` 文件
 
-   ```
+   ```bash
    touch .gitignore
    ```
 
 3. 打开 `.gitignore` 文件
 
-   ```
+   ```bash
    open .gitignore
    ```
 
@@ -37,7 +37,7 @@ categories: Git
 
 5. 更新项目
 
-   ```
+   ```bash
    git add .gitignore
    git commit -m "feat: add .gitignore file"
    git push
@@ -48,19 +48,19 @@ categories: Git
 
 1. 删除项目中的所有 `.DS_Store`
 
-   ```
+   ```bash
    find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
    ```
 
 2. 将 `.DS_Store` 加入到 `.gitignore` 文件中
 
-   ```
+   ```bash
    echo .DS_Store >> ~/.gitignore
    ```
 
 3. 更新项目
 
-   ```
+   ```bash
    git add --all
    git commit -m "feat: ignore .DS_Store"
    git push
@@ -68,18 +68,18 @@ categories: Git
 
 如果只需要删除磁盘上的 `.DS_Store`，用下面的命令来删除当前目录及其子目录下的所有 `.DS_Store` 文件：
 
-```
+```bash
 find . -name '*.DS_Store' -type f -delete
 ```
 
 你也可以通过输入这串命令直接禁止生成 `.DS_store`，重启Mac即可生效：
 
-```
+```bash
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
 ```
 
 恢复 `.DS_store` 生成的命令为：
 
-```
+```bash
 defaults delete com.apple.desktopservices DSDontWriteNetworkStores
 ```

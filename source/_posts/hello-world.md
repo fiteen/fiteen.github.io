@@ -8,7 +8,7 @@ categories: 总结
 
 <!--more-->
 
-```
+```basic
 main() {
 extrn a,b,c;
 putchar(a); putchar(b); putchar(c); putchar('!*n');

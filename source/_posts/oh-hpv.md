@@ -89,7 +89,7 @@ HPV 英文名称 Human papillomavirus，西医学名“人乳头瘤病毒”，�
 
 基本上预约信息上需要填写的不外乎**姓名、联系方式、身份证、年龄**等，这样你就可以引用下面这串 js。
 
-```
+```js
 javascript: void((function() {
     if ($("div1") == null) {
         setTimeout(function() {
