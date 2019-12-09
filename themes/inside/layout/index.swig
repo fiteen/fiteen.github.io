@@ -5,6 +5,17 @@
 <title>{{ title }}</title>
 <base href="{{ config.root }}">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<!-- inside/layout/index.ejs -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+})
+</script>
 <link rel="canonical" href="{{ url_trim(url) }}">
 <link rel="icon" type="image/x-icon" href="{{ url_for(theme.favicon) }}">
 {% if theme.pwa.manifest %}
