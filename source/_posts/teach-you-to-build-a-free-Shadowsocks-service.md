@@ -198,7 +198,9 @@ sudo ssserver -c /etc/ss-conf.json -d start
 
 如果要设置开机启动，可以参考这篇[文章](https://my.oschina.net/oncereply/blog/467349)。
 
-服务搭建已经完成了，以 [Mac 客户端](<https://github.com/shadowsocks/shadowsocks-iOS/releases>)为例，输入上面配置的内容，确定后开启服务便可以科学上网了。
+服务搭建已经完成了，在 [SSR（Mac 端）](https://github.com/shadowsocks/ShadowsocksX-NG/releases)上输入上面配置的内容，确定后开启服务便可以科学上网了。
 
  {% asset_img server-settings.png 服务器设定 %}
+
+如果你的 iPhone 客户端也需要下载小火箭，可以用美区账号 App Store 购买/ TB 购买礼品卡，如果不想花钱，可以尝试一下[这个方案](https://github.com/v2ss/shadowrocket)。（2019-12-31 更新）
 

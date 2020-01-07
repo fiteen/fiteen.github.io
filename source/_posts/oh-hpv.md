@@ -1,5 +1,5 @@
 ---
-title: 终于抢到 HPV 啦！！！
+title: 终于抢到 HPV 啦！！！(附脚本)
 date: 2019-11-20 23:42:11
 tags: js
 categories: 技巧
@@ -127,6 +127,6 @@ function validate() {
 
 {% asset_img you-should-login-wechat.png %}
 
-第一个解决起来也很简单，只需要用微信开发者工具打开网址即可。但是第二种我暂时没有找到解决方案，因为按照[微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Web_Developer_Tools.html)中所说，微信开发者工具只能调试自己绑定过的公众号，不过好在这次下城区东新街道社区卫生服务中心没有强制要求微信登录，建议你们也可以多关注这家社区医院。
+第一个解决起来也很简单，只需要用微信开发者工具打开网址即可。但是第二种我暂时没有找到解决方案，因为按照[微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Web_Developer_Tools.html)中所说，微信开发者工具只能调试自己绑定过的公众号，不过好在这次下城区东新街道社区卫生服务中心没有强制要求微信登录。
 
 最后，再感叹一下技术改变生活，nice～

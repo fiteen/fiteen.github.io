@@ -1,7 +1,7 @@
 ---
-title: App 多渠道打包方案
+title: App 多渠道打包及重签名方案
 date: 2019-03-03 02:41:39
-tags: App 打包
+tags: 重签名
 categories: 
    - [iOS]
    - [Android]

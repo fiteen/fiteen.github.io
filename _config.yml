@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://fiteen.top
+url: https://blog.fiteen.top
 root: /
 permalink: :title/
 permalink_defaults:
@@ -104,6 +104,10 @@ ignore:
 #   path: baidu_urls.txt
 # baidu_push: true
 
+mathjax:
+  inlineQuote: ['\(', '\)']
+  blockQuote: ['\[', '\]']
+  
 ## Themes: https://hexo.io/themes/
 theme: inside
 
