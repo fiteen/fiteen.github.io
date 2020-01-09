@@ -95,7 +95,7 @@ profile:
 
 # Sidebar navigation links
 menu:
-  Home: /
+  Article: /
   # About: /about
   # Links: /links
   Resources: /resources
@@ -106,10 +106,10 @@ menu:
 # Try to sort by changing the order of the keys
 sns:
   # `email` will fallback to `profile.email` if not specified
-  email: mailto:isfiteen@icloud.com || envelope
+  email: isfiteen@icloud.com
   # If you use hexo-generator-feed, `sns.feed` can be left blank
   # and the theme will try to get `hexo.config.feed.path`.
-  feed:
+  feed: 
   github: https://github.com/fiteen
   twitter: https://twitter.com/isFiteen
   facebook:
@@ -129,13 +129,13 @@ sns:
 # Sidebar footer copyright info
 footer:
   # Set to false to hide.
-  copyright: '&copy; 2016-2019 • <a href="">FiTeen</a>'
+  copyright: '&copy; 2016-2019 · <a href="https://github.com/fiteen">FiTeen</a>'
 
   # Set to false to hide Hexo link.
-  powered: false
+  powered: true
 
   # Set to false to hide theme link.
-  theme: false
+  theme: true
 
   # Custom text.
   # custom: Hosted by <a target="_blank" rel="external nofollow"
@@ -149,7 +149,7 @@ footer:
 # Page
 page:
   # Display Table of content, default to `true`
-  # toc: false
+  toc: true
 
   # Display reward, default to `false`
   reward: true
@@ -163,7 +163,7 @@ post:
   # per_page: 10
 
   # The following settings are the same as the page
-  # toc: false
+  toc: true
   reward: true
   copyright: true
 

@@ -2,9 +2,7 @@
 title: Cornerstone 破解
 ---
 
-> ⚠️⚠️⚠️ **请支持正版，仅供技术交流。**
-
-[官方网站](https://cornerstone.assembla.com)
+> ⚠️⚠️⚠️ **请支持[正版](https://cornerstone.assembla.com)，仅供技术交流。**
 
 ## 网上直接搜索破解版
 

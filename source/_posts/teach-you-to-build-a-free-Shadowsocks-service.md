@@ -1,7 +1,7 @@
 ---
 title: 手把手教你免费搭建 Shadowsocks 服务
 date: 2018-12-27 21:43:02
-tags: 代理
+tags: 科学上网
 categories: 技巧
 ---
 

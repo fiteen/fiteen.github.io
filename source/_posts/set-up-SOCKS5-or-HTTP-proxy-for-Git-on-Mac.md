@@ -1,7 +1,7 @@
 ---
 title: Git 手册之 Mac 上给 Git 设置 SOCKS5/HTTP 代理
 date: 2018-09-02 18:59:02
-tags: 代理
+tags: 科学上网
 categories: Git
 ---
 
