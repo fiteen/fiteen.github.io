@@ -1,5 +1,5 @@
 ---
-title: IntelliJ IDEA 2019.3 最新激活教程
+title: Jetbrains Mac 版全系列 IDE 永久破解教程
 ---
 
 > ⚠️⚠️⚠️ **请支持[正版]((https://www.jetbrains.com/idea/))，仅供技术交流。**
@@ -10,13 +10,13 @@ title: IntelliJ IDEA 2019.3 最新激活教程
 
 现在 http://idea.lanyus.com/ 里的激活码已经不能用的，如果你曾经在 `/private/etc/hosts` 文件里 Jetbrains 相关的项⽬，请先删除。
 
-以下教程**适用于 Jetbrains 全系列产品2019.3.1及以下版本。**
+以下教程**适用于 Jetbrains 全系列产品2019.3.1及以下版本。**，下文以 IntelliJ IDEA 的破解为例。
 
 ### 激活步骤
 
 1. 下载安装包。前往[官网](https://www.jetbrains.com/idea/)下载正版的 IDEA。
 
-2. 点击[下载（提取码：mmk6）](https://pan.baidu.com/s/1FGZ9d5J5amnvf0vMFqSOsQ)补丁文件，可以将补丁文件 `jetbrains-agent.jar` 放在 IDEA 安装目录的 bin 文件夹（即 `/Applications/IntelliJ IDEA.app/Contents/bin`）下。
+2. 点击[下载（提取码：412x）](https://pan.baidu.com/s/1sosqRASs1WmKJMV8j8qHPQ)补丁文件，可以将补丁文件 `jetbrains-agent.jar` 放在 IDEA 安装目录的 bin 文件夹（即 `/Applications/IntelliJ IDEA.app/Contents/bin`）下。
 
 3. 启动 IDE，点击激活窗口的 `Evalutate for free`，开启试用。
 
@@ -43,5 +43,5 @@ title: IntelliJ IDEA 2019.3 最新激活教程
    ![](licensed-activation-code.png)
    
 ---
-参考链接：[Jetbrains系列产品2019.3.1最新激活方法[持续更新]](https://zhile.io/2018/08/25/jetbrains-license-server-crack.html)
+参考链接：[Jetbrains 系列产品2019.3.1最新激活方法[持续更新]](https://zhile.io/2018/08/25/jetbrains-license-server-crack.html)
 

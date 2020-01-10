@@ -18,7 +18,7 @@ date: 2016-08-13 00:00:00
 - [Xcode](https://developer.apple.com/xcode/) - 开发 iOS 和 MacOS 工程的官方 IDE。（**iOS 开发必备**）🆓
 - [Android Studio](https://developer.android.com/studio/index.html) - 谷歌推出的 Android 集成开发工具，基于 Intellij IDEA。（**Android 开发必备**）[📖](http://tools.android.com)🆓[🔗](https://github.com/balsikandar/Android-Studio-Plugins)
 - [Visual Studio Code](https://code.visualstudio.com) - 微软推出，免费开源的轻量级代码编辑器。（**前端开发必备**）[📖](https://github.com/Microsoft/vscode)🆓[🔗](https://github.com/viatsko/awesome-vscode)
-- [IntelliJ IDEA](resources/intellij-idea) - Java 编程语言开发的集成环境。在业界被公认为最好的 Java 开发工具之一。（**后端开发必备**）[🔨](resources/intellij-idea)[🔗](https://plugins.jetbrains.com/idea)
+- [IntelliJ IDEA](resources/jetbrains-series) - Java 编程语言开发的集成环境。在业界被公认为最好的 Java 开发工具之一。（**后端开发必备**）[🔨](resources/jetbrains-series)[🔗](https://plugins.jetbrains.com/idea)
 - [Eclipse](https://www.eclipse.org) - 开源、基于 Java 的可扩展开发平台。[📖](http://git.eclipse.org/c/)🆓[🔗](https://marketplace.eclipse.org/)
 
 ### 终端
@@ -50,13 +50,14 @@ date: 2016-08-13 00:00:00
 
 ## 设计&产品
 
-<!-- 
 ### 设计
 
-- [Sketch](https://www.sketchapp.com) 混合矢量/位图布局应用，特别适用于用户界面，Web 和移动设计。
- - Sketch Toolbox - 一个超级简单的 Sketch 插件管理器。
+- [Sketch](https://www.sketchapp.com) 混合矢量/位图布局应用，特别适用于用户界面，Web 和移动设计。[🔗](https://www.sketch.com/extensions/plugins/)
+
+ <!-- - Sketch Toolbox - 一个超级简单的 Sketch 插件管理器。
  - Measure - 设计稿标注、测量工具。
  - User Flows - 直接从画板生成流程图。 -->
+
 
 ### 原型流程
 
@@ -75,7 +76,6 @@ date: 2016-08-13 00:00:00
 
 Xournal 是一款简单但可靠的应用，可以让你通过手写板手写或者在笔记上涂鸦。
 MrWriter -->
-
 
 ## 写作
 
@@ -105,7 +105,7 @@ MrWriter -->
 
 ## 系统相关
 
-- [CleanMyMac X](https://cleanmymac.com) - 经典好用的 Mac 清理工具。[🔨](resources/clean-my-mac-x)
+- [CleanMyMac X](https://cleanmymac.com) - 经典好用的 Mac 清理工具，需要付费使用。
 - [柠檬清理](https://lemon.qq.com) - 腾讯出品的免费的 Mac 系统清理软件。🆓
 
 ## 办公
@@ -119,10 +119,9 @@ MrWriter -->
 
 > ⚠️⚠️⚠️ **请支持正版，仅供技术交流。**
 
-- [IntelliJ IDEA 2019.3 最新激活教程](resources/intellij-idea)
+- [Jetbrains Mac 版全系列 IDE 永久破解教程](resources/jetbrains-series)
 - [Cornerstone 破解](resources/cornerstone)
 - [Charles Mac 版破解](resources/charles)
 - [Dash 破解](resources/dash)
 - [StarUML Mac 版破解](resources/star-uml)
 - [Reeder 4 Mac 版破解](resources/reeder)
-- [CleanMyMac X 破解](resources/clean-my-mac-x)
