@@ -92,11 +92,11 @@ ignore:
 #   - hexo-generator-baidu-sitemap
 #   - hexo-generator-sitemap
 
-# # hexo sitemap
-# baidusitemap:
-#   path: baidusitemap.xml
-# sitemap:
-#   path: sitemap.xml
+# hexo sitemap
+baidusitemap:
+  path: baidusitemap.xml
+sitemap:
+  path: sitemap.xml
 # baidu_url_submit:
 #   count: 1000
 #   host: fiteen.top

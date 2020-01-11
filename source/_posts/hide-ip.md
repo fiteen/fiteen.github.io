@@ -1,5 +1,5 @@
 ---
-title: 如何用 V2Ray + CDN 隐藏 IP
+title: V2Ray + CDN 隐藏 IP
 date: 2019-09-07 02:43:01
 tags: 科学上网
 categories: 技巧
