@@ -12,5 +12,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://blog.fiteen.top/sitemap.xml
-Sitemap: http://blog.fiteen.top/baidusitemap.xml
+Sitemap: https://blog.fiteen.top/sitemap.xml
+Sitemap: https://blog.fiteen.top/baidusitemap.xml

@@ -17,7 +17,7 @@ date: 2016-08-13 00:00:00
 - [Sublime Text](http://www.sublimetext.com/3) - 一个比较简洁大方带插件管理系统的流行编辑器。（**程序员必备**）🆓[🔗](https://github.com/dreikanter/sublime-bookmarks)
 - [Xcode](https://developer.apple.com/xcode/) - 开发 iOS 和 MacOS 工程的官方 IDE。（**iOS 开发必备**）🆓
 - [Android Studio](https://developer.android.com/studio/index.html) - 谷歌推出的 Android 集成开发工具，基于 Intellij IDEA。（**Android 开发必备**）[📖](http://tools.android.com)🆓[🔗](https://github.com/balsikandar/Android-Studio-Plugins)
-- [Visual Studio Code](https://code.visualstudio.com) - 微软推出，免费开源的轻量级代码编辑器。（**前端开发必备**）[📖](https://github.com/Microsoft/vscode)🆓[🔗](https://github.com/viatsko/awesome-vscode)
+- <span id="vscode">[Visual Studio Code](https://code.visualstudio.com)</span> - 微软推出，免费开源的轻量级代码编辑器。（**前端开发必备**）[📖](https://github.com/Microsoft/vscode)🆓[🔗](https://marketplace.visualstudio.com/vscode)
 - [IntelliJ IDEA](resources/jetbrains-series) - Java 编程语言开发的集成环境。在业界被公认为最好的 Java 开发工具之一。（**后端开发必备**）[🔨](resources/jetbrains-series)[🔗](https://plugins.jetbrains.com/idea)
 - [Eclipse](https://www.eclipse.org) - 开源、基于 Java 的可扩展开发平台。[📖](http://git.eclipse.org/c/)🆓[🔗](https://marketplace.eclipse.org/)
 
@@ -81,8 +81,14 @@ MrWriter -->
 ### MarkDown
 
 - [Cmd Markdown](https://www.zybuluo.com/mdeditor) - 在线 MarkDown 编辑阅读器，支持实时同步预览。🆓
-- [Typora](http://www.typora.io) - “读写一体” 简约 Markdown 编辑器。🆓
+- <span id = "typora">[Typora](http://www.typora.io)</span> - “读写一体” 简约 Markdown 编辑器。🆓
 - [MacDown](https://macdown.uranusjr.com) - 开源的 Markdown 编辑器，参照 [Mou](http://25.io/mou/)。[📖](https://github.com/MacDownApp/macdown)🆓
+
+### 图床
+
+- [uPic](https://blog.svend.cc/upic) - 支持免费上传到多种图床（SM.MS、 又拍云 USS、七牛云 KODO、 阿里云 OSS、 腾讯云 COS、微博、Github、 Gitee、 Amazon S3、自定义上传接口），开源的图床客户端。[📖](https://github.com/gee1k/uPic)🆓
+- [iPic](http://toolinbox.net/iPic/) - 上传到指定的新浪图床免费，其它的需要付费升级高级版，用户体验相对较优，可以配合 [Typora](#typora) 直接食用。🆓
+- [PicGo](https://molunerfinn.com/PicGo/) - 全平台开源的图床工具，支持免费上传到多种图床（SM.MS、 又拍云 USS、七牛云 KODO、 阿里云 OSS、 腾讯云 COS、微博、Github、Imgur）。用户可以通过 [PicGo-Core](https://github.com/PicGo/PicGo-Core) 搭建个人图床工具，例如 [Visual Studio Code](#vscode) 的 [vs-picgo](https://marketplace.visualstudio.com/items?itemName=Spades.vs-picgo) 插件。[📖](https://github.com/Molunerfinn/PicGo)🆓[🔗](https://github.com/PicGo/PicGo-Core)
 
 ### Office
 
