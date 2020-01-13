@@ -2,6 +2,7 @@
 title: Hello World
 date: 2016-08-13 00:00:00
 categories: 总结
+thumbnail: hello-world.png
 ---
 
 标题是 Hexo 默认生成的，却没来由得契合。『Hello，World』——计算机发展史上的里程碑式的一笔，每一门编程语言的入门示例，Brian Kernighan 在[《C 程序设计语言》](https://book.douban.com/subject/1139336/)中第一次引用的 Hello World 程序，源自他1973年编写的一部讲授B语言的编程教程：
