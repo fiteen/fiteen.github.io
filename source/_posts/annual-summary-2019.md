@@ -2,6 +2,7 @@
 title: 『2019』未来可期
 date: 2019-12-31 22:12:43
 categories: 总结
+thumbnail: 2019.png
 ---
 
 年纪越大，越感受到时光易逝。

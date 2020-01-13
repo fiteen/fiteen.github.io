@@ -3,6 +3,7 @@ title: iOS 购物车设计模式浅析及代码实现
 date: 2017-08-17 09:03:04
 tags: 购物车
 categories: iOS
+thumbnail: cart.png
 ---
 
 ## 前言

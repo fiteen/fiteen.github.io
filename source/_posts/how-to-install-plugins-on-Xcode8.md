@@ -7,11 +7,11 @@ categories: 技巧
 
 正式推出 Xcode8 已有两个多月，也有不少朋友分享了安装插件的方法，笔者在这里整理了一个亲测有效的方法。
 
+<!--more-->
+
 1. 更新 Xcode，目前最新版本是8.1；
 
 2. 由于安装插件会影响原来的 Xcode 打包上传，我们在应用程序里复制一个 Xcode，并重命名为 XcodeSigner；
-
- <!--more-->
 
  {% asset_img XcodeSigner.png XcodeSigner %}
 

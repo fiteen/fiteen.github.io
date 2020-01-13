@@ -7,6 +7,8 @@ categories: 算法
 
 学习数据结构和算法时，难免提到时间复杂度（asymptotic time complexity）和空间复杂度（space complexity）的概念。
 
+<!--more-->
+
 ## 时间复杂度
 
 概念：描述一个算法**执行时间**与数据规模的增长关系，记作：T(n) = O(f(n))。
