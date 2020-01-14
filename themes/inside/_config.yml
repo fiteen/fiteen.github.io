@@ -99,6 +99,7 @@ menu:
   # About: /about
   # Links: /links
   Resources: /resources
+  LeetCode: /leetcode
   Search: /search
   Github: https://github.com/fiteen
 
