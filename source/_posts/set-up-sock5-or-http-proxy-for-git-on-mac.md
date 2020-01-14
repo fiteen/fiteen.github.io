@@ -3,6 +3,7 @@ title: Git 手册之 Mac 上给 Git 设置 SOCKS5/HTTP 代理
 date: 2018-09-02 18:59:02
 tags: 科学上网
 categories: Git
+thumbnail: github.png
 ---
 
 我们常会遇到从 GitHub 上 clone 代码的时候龟速的情况，这时如果手上有不错的代理，可以借助代理来获取更快下载/上传资源的速度。

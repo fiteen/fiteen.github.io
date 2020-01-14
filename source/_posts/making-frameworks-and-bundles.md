@@ -133,7 +133,7 @@ Architectures in the fat file: ${yourFrameworkName} are: i386 x86_64 armv7 arm64
 
 引入的 framework 里存在分类的话，编译运行项目会报形如 `xxx unrecognized selector sent to class xxx` 的错误。
 
-**解决办法： **
+**解决办法：**
 
 选中左边栏的项目文件，然后依次点击 Targets →  Build Settings →  Linking →  Other Linker Flags，在里面添加 `-ObjC` 再次编译就能正常运行。
 

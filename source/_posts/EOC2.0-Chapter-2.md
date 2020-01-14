@@ -388,7 +388,7 @@ objc_msgSend 函数会依据接受者与选择子的类型来调用适当的方�
 
 **消息转发全流程**
 
-{% asset_img message-forwarding.png 消息转发 %}
+![消息转发](message-forwarding.png)
 
 ### 第13条：用“方法调配技术”调试“黑盒方法”
 
@@ -434,7 +434,7 @@ id genericTypeString = @"Some string";
 
 假设有个名为 SomeClass 的子类从 NSObject 中继承而来，则其继承体系如下图所示：
 
-{% asset_img class-hierarchy-for-instances-of-someclass.png SomeClass 继承体系 %}
+![SomeClass 继承体系](class-hierarchy-for-instances-of-someclass.png)
 
 super_class 指针确立了继承关系，而 isa 指针描述实例所属的类。
 

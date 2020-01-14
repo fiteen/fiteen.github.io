@@ -19,7 +19,7 @@ categories: 技巧
 
 打开 Mac 电脑中的 Safari 浏览器，打开偏好设置，点击菜单中的“高级”选项卡，勾选“在菜单栏中显示“开发”菜单”
 
-{% asset_img Safari-Perferences-Advanced.jpg Safari-偏好设置-高级 %}
+{% asset_img safari-perferences-advanced.jpg Safari-偏好设置-高级 %}
 
 #### 进入检查器
 

@@ -3,7 +3,7 @@ title: 【译】Fucking SwiftUI
 date: 2019-07-18 02:31:57
 tags: SwiftUI
 categories: iOS
-thumbnail: swiftUI.png
+thumbnail: swift-ui.png
 ---
 
 > 原文：[Fucking Swift UI - Cheat Sheet](https://fuckingswiftui.com/) 

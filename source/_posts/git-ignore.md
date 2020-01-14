@@ -42,6 +42,9 @@ categories: Git
    git commit -m "feat: add .gitignore file"
    git push
    ```
+
+
+
 ## 删除 .DS_Store
 
 `.DS_Store` 是Mac OS 保存文件夹的自定义属性的隐藏文件。如果项目中还没有自动生成 `.DS_Store`，把它加入到 `.gitignore` 中即可；但如果项目中已经有了，先从项目中将其删除，再把它加入到 `.gitignore` 里。步骤如下：

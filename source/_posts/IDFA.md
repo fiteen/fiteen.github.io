@@ -7,7 +7,7 @@ categories: iOS
 
 #### 何为 IDFA
 
-苹果 iOS6 开始新增的广告标识符（IDFA）， 全称 Identifier For Advertising，是每台 iOS 设备的唯一 ID，是投放定向广告的唯一方法。
+[IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)，苹果 iOS6 开始新增的广告标识符， 全称 Identifier For Advertising，是每台 iOS 设备的唯一 ID，是投放定向广告的唯一方法。
 
 <!--more-->
 

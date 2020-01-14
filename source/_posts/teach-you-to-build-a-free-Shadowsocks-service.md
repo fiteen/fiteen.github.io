@@ -82,7 +82,7 @@ thumbnail: google-cloud.png
 
 展开“管理、安全、磁盘、网络、单独租用”，外部 IP 选择第2步的静态 IP。到这里，虚拟机部署完成。
 
- {% asset_img VM-instance.jpg VM实例 %}
+ {% asset_img vm-instance.jpg VM实例 %}
 
 
 
@@ -90,7 +90,7 @@ thumbnail: google-cloud.png
 
 在 VM 实例列表中找到刚才创建好的实例，点击上图红框内的 SSH，会弹出终端，如下图所示。如果用的是谷歌浏览器可以使用 [SSH 插件](https://chrome.google.com/webstore/detail/ssh-for-google-cloud-plat/ojilllmhjhibplnppnamldakhpmdnibd)
 
- {% asset_img SSH.jpg SSH %}
+ {% asset_img ssh.jpg SSH %}
 
 - 获得 root 权限
 
