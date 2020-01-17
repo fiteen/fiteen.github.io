@@ -1,7 +1,10 @@
 ---
 title: iOS 中 framework 和 bundle 的制作
 date: 2018-01-05 13:57:10
-tags: SDK
+tags:
+    - SDK
+    - framework
+    - bundle
 categories: iOS
 ---
 

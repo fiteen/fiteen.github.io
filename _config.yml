@@ -102,7 +102,6 @@ sitemap:
 #   host: fiteen.top
 #   token: derMFqOYSuTO6vfD
 #   path: baidu_urls.txt
-# baidu_push: true
 
 mathjax:
   inlineQuote: ['\(', '\)']

@@ -1,9 +1,9 @@
 ---
-title: LeetCode Solution（Swift）
+title: LeetCode Solutions（Swift）
 date: 2019-06-30 00:00:00
 ---
 
-[简体中文](leetcode/index) ｜ English
+[简体中文](leetcode) ｜ English ｜ [![](https://img.shields.io/badge/GitHub-Fork-brightgreen)](https://github.com/fiteen/LeetCode_Swift)
 
 ## Easy
 

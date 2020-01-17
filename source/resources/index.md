@@ -86,6 +86,11 @@ MrWriter -->
 - <span id = "typora">[Typora](http://www.typora.io)</span> - “读写一体” 简约 Markdown 编辑器。🆓
 - [MacDown](https://macdown.uranusjr.com) - 开源的 Markdown 编辑器，参照 [Mou](http://25.io/mou/)。[📖](https://github.com/MacDownApp/macdown)🆓
 
+### 截图&录屏
+
+- [iShot](https://apps.apple.com/cn/app/ishot-截图-长截图-标注工具/id1485844094?mt=12) - 免费、功能全面的录屏、区域截图、窗口截图、长截图、延时截图、快速标注、贴图工具。🆓
+- [Gifox](https://gifox.io) - 专业的 GIF 动图制作工具，支持截选区域录屏导出 GIF 动图并进行压缩处理，支持预览和编辑帧文件。
+
 ### 图床
 
 - [uPic](https://blog.svend.cc/upic) - 支持免费上传到多种图床（SM.MS、 又拍云 USS、七牛云 KODO、 阿里云 OSS、 腾讯云 COS、微博、Github、 Gitee、 Amazon S3、自定义上传接口），开源的图床客户端。[📖](https://github.com/gee1k/uPic)🆓

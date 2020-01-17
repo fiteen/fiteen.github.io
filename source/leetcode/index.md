@@ -3,7 +3,7 @@ title: LeetCode 刷题记录（Swift）
 date: 2019-06-30 00:00:00
 ---
 
-简体中文 ｜ [English](leetcode/index-en)
+简体中文 ｜ [English](leetcode/index-en) ｜ [![](https://img.shields.io/badge/GitHub-Fork-brightgreen)](https://github.com/fiteen/LeetCode_Swift)
 
 ## 简单
 

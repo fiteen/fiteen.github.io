@@ -1,7 +1,9 @@
 ---
 title: 《Effective Objective-C 2.0》整理（二）：对象、消息、运行时
 date: 2016-09-19 13:20:00
-tags: 《Effective Objective-C 2.0》
+tags: 
+    - 《Effective Objective-C 2.0》
+    - 原子性
 categories: iOS
 ---
 

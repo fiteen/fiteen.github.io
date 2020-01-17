@@ -1,7 +1,10 @@
 ---
 title: V2Ray + CDN 隐藏 IP
 date: 2019-09-07 02:43:01
-tags: 科学上网
+tags:
+    - 科学上网
+    - V2Ray
+    - Cloudflare
 categories: 技巧
 ---
 
@@ -34,7 +37,7 @@ IP 又双叒叕被墙了？
 于是，只要有了 VPS、域名和 CDN，就能实现这套方案：
 
 - VPS：推荐 [BandwagonHost](https://bandwagonhost.com/)、[Vultr](https://www.vultr.com)、[Hostwinds](https://www.hostwinds.com)、[HostDare](https://manage.hostdare.com/index.php)、[谷歌免费薅一年](teach-you-to-build-a-free-Shadowsocks-service)。
-- 域名：通过阿里云/腾讯云/华为云等购买域名，`.xyz`、`.top` 都是性价比比较高的选择。
+- 域名：通过阿里云/腾讯云/华为云等购买域名，`.xyz`、`.top` 都是性价比比较高的选择。如果不想花钱也可以在 [freenom](http://www.freenom.com/nl/index.html) 上注册一个免费域名，运气好的话域名免费有效期可以达到12个月。
 - CDN：推荐使用美国的 Cloudflare，优点是免费、无需备案。
 
 ## V2Ray
