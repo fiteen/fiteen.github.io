@@ -1,8 +1,10 @@
 ---
 title: 如何在 Xcode8上安装插件
 date: 2016-11-30 12:02:20
-tags: Xcode
-categories: 技巧
+tags:
+    - Xcode
+    - plugin
+categories: iOS
 ---
 
 正式推出 Xcode8 已有两个多月，也有不少朋友分享了安装插件的方法，笔者在这里整理了一个亲测有效的方法。

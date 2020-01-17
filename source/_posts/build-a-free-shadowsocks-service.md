@@ -1,12 +1,14 @@
 ---
 title: 手把手教你免费搭建 Shadowsocks 服务
 date: 2018-12-27 21:43:02
-tags: 科学上网
-categories: 技巧
+tags:
+    - GCP
+    - Shadowsocks
+categories: 科学上网
 thumbnail: google-cloud.png
 ---
 
-### 一、申请免费试用GCP
+### 一、申请免费试用 GCP
 
 每位新注册的用户可以在谷歌云平台 [GCP](https://cloud.google.com/free/) (Google Cloud Platform)获得第一年$300 的免费赠送额度。一年后若不主动选择继续使用不会扣费的。（如果谷歌云免费到期，你也可以通过[亚马逊AWS](https://aws.amazon.com/cn/)再薅一年羊毛。）
 

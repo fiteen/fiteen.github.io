@@ -2,10 +2,11 @@
 title: V2Ray + CDN 隐藏 IP
 date: 2019-09-07 02:43:01
 tags:
-    - 科学上网
     - V2Ray
     - Cloudflare
-categories: 技巧
+    - CDN
+    - DNS
+categories: 科学上网
 ---
 
 > ⚠️⚠️⚠️ **声明：本文内容仅限技术交流，若有用作商业或其他违规行为，与本人无关。**

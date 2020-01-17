@@ -2,7 +2,7 @@
 title: 还没抢到 HPV？试试这串 JS
 date: 2019-11-20 23:42:11
 tags: JS
-categories: 技巧
+categories: 前端
 thumbnail: hpv.png
 ---
 

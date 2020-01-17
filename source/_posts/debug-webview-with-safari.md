@@ -1,8 +1,8 @@
 ---
 title: 借助 Safari 调试苹果手机上的 webView
 date: 2018-07-25 15:21:07
-tags: Xcode
-categories: 技巧
+tags: webView
+categories: iOS
 ---
 
 #### iPhone 真机/模拟器设置

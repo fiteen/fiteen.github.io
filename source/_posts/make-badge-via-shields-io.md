@@ -4,7 +4,7 @@ date: 2019-10-01 22:17:23
 tags: 
     - GitHub
     - shield.io
-categories: 技巧
+categories: 程序员必备
 ---
 
 经常逛 GitHub 的同学会发现，很多优秀的开源框架里都会出现这样的小徽标。

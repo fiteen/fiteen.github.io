@@ -2,7 +2,9 @@
 title: 【译】Fucking SwiftUI
 date: 2019-07-18 02:31:57
 tags: SwiftUI
-categories: iOS
+categories:
+    - iOS
+    - 翻译
 thumbnail: swift-ui.png
 ---
 

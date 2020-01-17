@@ -1,7 +1,7 @@
 ---
 title: iOS 自动布局进阶之巧用 IBInspectable 和 IB_DESIGNABLE
 date: 2017-08-24 10:33:20
-tags: iOS自动布局
+tags: 自动布局
 categories: iOS
 ---
 
