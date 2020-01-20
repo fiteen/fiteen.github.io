@@ -95,12 +95,12 @@ profile:
 
 # Sidebar navigation links
 menu:
-  Article: /
+  📝 Article: /
   # About: /about
   # Links: /links
-  Resources: /resources
-  LeetCode: /leetcode
-  Search: /search
+  ⏳ Resources: /resources
+  ⌨️ LeetCode: /leetcode
+  🔍 Search: /search
   Github: https://github.com/fiteen
 
 # Social media URL
@@ -130,7 +130,7 @@ sns:
 # Sidebar footer copyright info
 footer:
   # Set to false to hide.
-  copyright: '&copy; 2016-2019 · <a href="https://github.com/fiteen">FiTeen</a>'
+  copyright: '&copy; 2016-2019 🌱 <a href="https://github.com/fiteen">FiTeen</a>'
 
   # Set to false to hide Hexo link.
   powered: true
@@ -139,8 +139,7 @@ footer:
   theme: true
 
   # Custom text.
-  # custom: Hosted by <a target="_blank" rel="external nofollow"
-  #   href="https://pages.github.com/"><b>Github Pages</b></a>
+  custom: <span id="busuanzi_container_site_pv" style='display:none'>Total <span id="busuanzi_value_site_pv"></span> views. </span><span id="busuanzi_container_site_uv" style='display:none'><span id="busuanzi_value_site_uv"></span> Hits</span>
 
 
 # ---------------------------------------------------------------

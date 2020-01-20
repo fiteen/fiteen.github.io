@@ -25,19 +25,13 @@
 {% if theme.ga %}
 {{ ga(theme.ga) | safe }}
 {% endif %}
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 </head>
 <body lang="{{ config.language }}">
 <{{ theme.runtime.selector }}></{{ theme.runtime.selector }}>
 {{ theme.scripts | safe }}
 <footer>
-{% if theme.mermaid.enable %}
-  <script src='https://unpkg.com/mermaid@{{ theme.mermaid.version }}/dist/mermaid.min.js'></script>
-  <script>
-    if (window.mermaid) {
-      mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
-    }
-  </script>
-{% endif %}
 </footer>
 </body>
 </html>
