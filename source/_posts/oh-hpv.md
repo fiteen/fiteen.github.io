@@ -84,7 +84,7 @@ HPV 英文名称 Human papillomavirus，西医学名“人乳头瘤病毒”，�
 
 问卷星是我成功抢到疫苗的渠道，之前几个预约点在微信公众号里提供的问卷星链接是可以在电脑网页里打开的，当时我查看了一下它的前端代码，大概是这样：
 
-{% asset_img hpv-html.png 问卷html代码 %}
+![问卷 html 代码](hpv-html.png)
 
 这令我们发现问卷星的几个输入框其实是有明显规律的，输入的值会成为 id 分别为 q1、q2、q3、q4 的元素的value，哪怕问卷中的问题顺序发生了调整，我们也只需要通过模糊匹配，找到对应的 div id 和 input id 即可。
 
@@ -122,11 +122,11 @@ function validate() {
 
 打开浏览器的开发者模式，在控制台中粘贴这串 JS，回车，网页上就会自动注入信息。
 
-{% asset_img inject-js.png %}
+![](inject-js.png)
 
 10月30日这一天，因为写好了这个“外挂”，我对抢疫苗非常信心满满，不料这次他们设置了“只允许从微信中填写” 和“获取微信用户昵称、性别等（需登录）”，可见问卷设计者也在和我们在斗智斗勇啊🤦‍♀️。
 
-{% asset_img you-should-login-wechat.png %}
+![](you-should-login-wechat.png)
 
 第一个解决起来也很简单，只需要用微信开发者工具打开网址即可。但是第二种我暂时没有找到解决方案，因为按照[微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Web_Developer_Tools.html)中所说，微信开发者工具只能调试自己绑定过的公众号，不过好在这次下城区东新街道社区卫生服务中心没有强制要求微信登录。
 

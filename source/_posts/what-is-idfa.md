@@ -40,7 +40,7 @@ iOS10 之后，还新增了“**限制广告追踪**” 的设置，所以在获
 
 以含 IDFA 的友盟 SDK 为例，会出现 matches 的记录。
 
-{% asset_img grep-command.png 检查命令 %}
+![检查命令](grep-command.png)
 
 
 ## 审核时关于 IDFA 选项的选择

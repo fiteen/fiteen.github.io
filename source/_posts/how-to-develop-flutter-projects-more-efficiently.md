@@ -14,7 +14,7 @@ thumbnail: flutter.png
 
 纯客户端开发者一开始可能会对写 Flutter 的界面布局会不太适应，那么这个 [https://flutterstudio.app](https://flutterstudio.app) 网站可以帮助你更快熟悉 Flutter 的常用组件，在这个工具上，你可以通过简单的拖拽直接实现布局。
 
-{% asset_img flutterstudio.png flutterstudio 网站 %}
+![flutterstudio 网站](flutterstudio.png)
 
 ## 代码模版
 
@@ -24,7 +24,7 @@ thumbnail: flutter.png
 
 > View → Command Palette... → 输入 >Preferences: Configure User Snippets
 
-{% asset_img configure-user-snippets.png VSCode 上配置代码模版 %}
+![VSCode 上配置代码模版](configure-user-snippets.png)
 
 然后输入 `dart`，这时会打开一个 `dart.json` 文件，把上面的内容替换进来即可。
 
@@ -34,7 +34,7 @@ thumbnail: flutter.png
 
 在 `Files` 下找到 `Dart File`,将 json 文件里的内容粘贴进去即可。
 
-{% asset_img file-and-code-templates.png Android Studio 上配置代码模版 %}
+![Android Studio 上配置代码模版](file-and-code-templates.png)
 
 这样我们只需要输入简单的前缀就能直接联想出整个代码块了。 
 
@@ -44,7 +44,7 @@ thumbnail: flutter.png
 
 > View → Command Palette... → 输入 >Flutter: Toggle Debug Painting
 
-{% asset_img toggle-debug-painting.png 布局调试 %}
+![布局调试](toggle-debug-painting.png)
 
 上面的辅助线可以帮助开发者检查布局。
 
@@ -60,7 +60,7 @@ thumbnail: flutter.png
   - 视图预览
   - 调整 widget
 
-{% asset_img flutter-outline-inspector.png Flutter Outline 和 Flutter Inspector %}
+![Flutter Outline 和 Flutter Inspector](flutter-outline-inspector.png)
 
 ## 巧用快捷键
 
@@ -68,7 +68,7 @@ thumbnail: flutter.png
 
 - option+enter：对 widget 进行特定的操作
 
-{% asset_img option+enter.png 快速修改布局 %}
+![快速修改布局](option+enter.png)
 
 - command+option+L：格式化代码，同时，也建议你在方法尾部尽量加逗号，这有助于自动格式化程序为 Flutter 样式代码插入适当的换行符
 

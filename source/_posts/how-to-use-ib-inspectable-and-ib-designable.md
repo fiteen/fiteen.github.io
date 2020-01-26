@@ -29,7 +29,7 @@ xib 和 storyboard 均采用了 Interface Builder（IB）来生成 GUI，通过�
 
 如果想让特定类型的控件设置某个属性，可以为对应的 UIKit 添加分类，为定义该属性时加上 `IBInspectable`，示例：
 
-```objective-c
+{% codeblock UIButton+HTAdditions.h lang:objc %}
 #import <UIKit/UIKit.h>
 
 @interface UIButton (HTAdditions)
@@ -39,15 +39,15 @@ xib 和 storyboard 均采用了 Interface Builder（IB）来生成 GUI，通过�
 @property (nonatomic,copy) IBInspectable UIColor *gBorderColor;
 
 @end
-```
+{% endcodeblock %}
 
 这时 Xcode 的 Attributes Inspector 栏中就会出现三个新的可编辑属性。
 
-{% asset_img visual-properties-1.png Attributes Inspector 显示的可视化属性 %}
+![Attributes Inspector 显示的可视化属性](visual-properties-1.png)
 
 Identity Inspector 下的 User Defined Runtime Attributes 也会出现相应的 key path 和 value 值。
 
-{% asset_img visual-properties-2.png User Defined Runtime Attributes 显示的可视化属性 %}
+![User Defined Runtime Attributes 显示的可视化属性](visual-properties-2.png)
 
 设置好后 run 一下工程就能看到场景中要求的效果，但通常开发者不需要所有的按钮都设置圆角、边框，更多的是采用自定义视图的形式统一处理相似风格的 control。为了更高效地开发，接下来介绍宏定义 `IB_DESIGNABLE`。
 
@@ -62,9 +62,7 @@ Identity Inspector 下的 User Defined Runtime Attributes 也会出现相应的 
 
 这时我们就可以直接在 User Defined Runtime Attributes 中加入想要的属性，例如圆角、边框宽度等。边框颜色由于 UIColor 类型的特殊性，需要重新定义。
 
-HTCustomButton.h：
-
-```objective-c
+{% codeblock HTCustomButton.h lang:objc %}
 #import <UIKit/UIKit.h>
 
 IB_DESIGNABLE
@@ -75,9 +73,9 @@ IB_DESIGNABLE
 @property (nonatomic, strong)IBInspectable UIColor *customBorderColor;
 
 @end
-```
-HTCustomButton.m：
-```objective-c
+{% endcodeblock %}
+
+{% codeblock HTCustomButton.m lang:objc %}
 #import "HTCustomButton.h"
 
 @implementation HTCustomButton
@@ -92,10 +90,11 @@ HTCustomButton.m：
 }
 
 @end
-```
+{% endcodeblock %}
+
 设置好后就可以直接添加或修改相应的属性动态刷新控件，如下图：
 
-{% asset_img custom-view-dynamically-refreshes-the-rendering-with-ib-designable.gif 自定义视图通过 IB_DESIGNABLE 动态刷新效果图 %}
+![自定义视图通过 IB_DESIGNABLE 动态刷新效果图](custom-view-dynamically-refreshes-the-rendering-with-ib-designable.gif)
 
 ## **纯代码开发流派如何借助 `IB_DESIGNABLE`动态查看布局效果**
 
@@ -103,7 +102,7 @@ HTCustomButton.m：
 
 举个例子：创建基于 UIView 的 HTMasonryView，以及同名的 .xib 文件，并在 Custom Class 中关联好。接下来在 HTMasonryView.m 中创建并布局 masonryButton，注意添加 `IB_DESIGNABLE`，代码如下：
 
-```objective-c
+{% codeblock HTMasonryView.m lang:objc %}
 #import "HTMasonryView.h"
 #import <Masonry.h>
 #import "UIButton+HTAdditions.h"
@@ -156,10 +155,11 @@ IB_DESIGNABLE
 }
 
 @end
-```
+{% endcodeblock %}
+
 点开 HTMasonryView.xib 查看会发现已经渲染出了 Masonry 的布局效果。
 
-{% asset_img dynamically-refresh-the-rendering-with-the-masonry-layout.gif 通过 Masonry 布局动态刷新效果图 %}
+![通过 Masonry 布局动态刷新效果图](dynamically-refresh-the-rendering-with-the-masonry-layout.gif)
 
 ps：如果渲染失败，查看 Editor -> Automatically Refresh Views 是否勾选，尝试重启 Xcode。
 

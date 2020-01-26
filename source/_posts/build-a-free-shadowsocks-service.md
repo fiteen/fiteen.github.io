@@ -22,23 +22,23 @@ thumbnail: google-cloud.png
 
 有账户的可以直接登录，没有的就创建一个。
 
- {% asset_img create-account.jpg 创建账号 %}
+ ![创建账号](create-account.jpg)
 
 如果阅读英文不习惯，可以将左下方的语言改成简体中文。登录成功后进入 [GCP 试用申请](https://console.cloud.google.com/freetrial)：
 
 **第1步 - 同意条款**：注意选择国家/地区时避免选择“中国”，因为根据 Google Cloud 的政策，不支持中国使用，直接使用默认的“美国”即可。
 
- {% asset_img apply-for-a-free-trial.jpg 申请免费试用 %}
+ ![申请免费试用](apply-for-a-free-trial.jpg)
 
 **第2步 - 填写客户信息和付款方式**
 
 客户信息的账户类型选择“个人”，通过[虚拟美国人信息生成工具](http://www.haoweichi.com/Index/random)，补充完成“姓名和地址”信息。
 
- {% asset_img account-information.jpg 客户信息 %}
+ ![客户信息](account-information.jpg)
 
 填写付款方式时，务必填入**正确真实**的信用卡信息，不能再使用生成工具里的虚拟信息。可以取消“信用卡或借记卡账单邮寄地址与上述地址相同”的勾选，输入真实的地址。
 
- {% asset_img payment-method.jpg 付款方式 %}
+ ![付款方式](payment-method.jpg)
 
 申请成功会扣除$1，验证后将返回。至此，试用 GCP 免费申请完成。
 
@@ -50,7 +50,7 @@ thumbnail: google-cloud.png
 
 在菜单中依次点击 【网络】 –>【VPC 网络】 –>[【防火墙规则】](https://console.cloud.google.com/networking/firewalls/list)–>【创建防火墙规则】，如下图创建一条入站规则：
 
- {% asset_img firewall-rules.jpg 防火墙规则 %}
+ ![防火墙规则](firewall-rules.jpg)
 
 注意点：
 
@@ -64,7 +64,7 @@ thumbnail: google-cloud.png
 
 在菜单中依次点击 【网络】 –>【VPC 网络】 –>[【外部 IP 地址】](https://console.cloud.google.com/networking/addresses/list)–>【保留静态 IP】
 
- {% asset_img static-ip.jpg 保留静态地址 %}
+ ![保留静态地址](static-ip.jpg)
 
 静态 IP 只能申请一个。区域可以选择亚洲东部、欧洲、美国等地，推荐使用 asia-east1，对应台湾地区，访问速度较快。
 
@@ -72,7 +72,7 @@ thumbnail: google-cloud.png
 
 在菜单中依次点击 【计算】 –>【Compute Engine】 –>[【VM 实例】](https://console.cloud.google.com/networking/addresses/list)–>【创建实例】
 
- {% asset_img create-instance.jpg 创建实例 %}
+ ![创建实例](create-instance.jpg)
 
 注意点：
 
@@ -84,7 +84,7 @@ thumbnail: google-cloud.png
 
 展开“管理、安全、磁盘、网络、单独租用”，外部 IP 选择第2步的静态 IP。到这里，虚拟机部署完成。
 
- {% asset_img vm-instance.jpg VM 实例 %}
+ ![VM 实例](vm-instance.jpg)
 
 
 
@@ -92,7 +92,7 @@ thumbnail: google-cloud.png
 
 在 VM 实例列表中找到刚才创建好的实例，点击上图红框内的 SSH，会弹出终端，如下图所示。如果用的是谷歌浏览器可以使用 [SSH 插件](https://chrome.google.com/webstore/detail/ssh-for-google-cloud-plat/ojilllmhjhibplnppnamldakhpmdnibd)
 
- {% asset_img ssh.jpg SSH %}
+ ![SSH](ssh.jpg)
 
 - 获得 root 权限
 
@@ -203,7 +203,7 @@ sudo ssserver -c /etc/ss-conf.json -d start
 
 服务搭建已经完成了，在 [SSR（Mac 端）](https://github.com/shadowsocks/ShadowsocksX-NG/releases)上输入上面配置的内容，确定后开启服务便可以科学上网了。
 
- {% asset_img server-settings.png 服务器设定 %}
+ ![服务器设定](server-settings.png)
 
 如果你的 iPhone 客户端也需要下载小火箭，可以用美区账号 App Store 购买/ TB 购买礼品卡，如果不想花钱，可以尝试一下[这个方案](https://github.com/v2ss/shadowrocket)。（2019-12-31 更新）
 

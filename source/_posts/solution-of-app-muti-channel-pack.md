@@ -21,7 +21,7 @@ iOS 打渠道包目前想到的就只有两种方式，一种是通过[多 targe
 
 点击项目中的 target，右键选择 `Duplicate`。可以修改下图标红框的三处：target 名称、plist 名称和 scheme 名称。
 
-{% asset_img target-copy.png %}
+![](target-copy.png)
 
 判断当前是哪个 target，可以通过添加宏定义实现，方式就是在 `Build Settings` 找到 `Preprocessor Macros`，填入宏定义名。
 
@@ -48,7 +48,7 @@ NSString *channel = channelDic[@"Channel"];
 ```
 **第二步：**把这个项目用可用的证书正常打一个母包，解压这个 ipa 包可以获得一个名为 `Payload` 的文件夹，里面是一个 .app 文件，右键显示其包内容，内容如下：。
 
-{% asset_img package-content.png %}
+![](package-content.png)
 
 可以看到，里面的 `Channel.plist` 也就是在前面工程中新建的存储渠道信息的 plist，我们会修改里面的 Channel 再生成新的渠道包。
 
@@ -56,11 +56,11 @@ NSString *channel = channelDic[@"Channel"];
 
 **第四步：**新建一个纯文本，里面输入你要新增的渠道号，如：
 
-{% asset_img channel-list-txt.png %}
+![](channel-list-txt.png)
 
 **第五步：**写一个脚本文件，内容如下：
 
-```shell
+{% codeblock ChannelPackage.sh %}
 #!/bin/bash
 
 # 输入的包名
@@ -144,10 +144,11 @@ zip -rq "${outUpdateAppDir}/$line.ipa" Payload
 echo "........渠道${line}打包已完成"
 
 done
-```
+{% endcodeblock %}
+
 脚本里的信息请根据你实际情况修改，。到这里准备工作都完成了，需要的文件如下图所示：
 
-{% asset_img prepare-file.png %}
+![](prepare-file.png)
 
 **第六步：**在当前目录下执行脚本文件：
 
@@ -157,7 +158,7 @@ sh ChannelPackage.sh
 
 打包完成后生成的 `ChannelPackages` 文件夹下，就是我们需要的渠道包：
 
-{% asset_img package-result.png %}
+![](package-result.png)
 
 这种自动化打包的方式，可以规避掉 Xcode 本身打包编译的部分时间，快速出包。
 
