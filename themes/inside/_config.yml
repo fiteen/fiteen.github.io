@@ -22,7 +22,7 @@ appearance:
   # 'url(//www.toptal.com/designers/subtlepatterns/patterns/confectionary.png) #f5f7fa'
 
   # Maximum width of content
-  content_width: 640
+  # content_width: 640
 
   # Fonts
   font:
@@ -86,7 +86,7 @@ appearance:
 profile:
   # `email` is used for gravatar(https://en.gravatar.com),
   # fallback to `hexo.config.email` if not specified
-  email:
+  email: isfiteen@icloud.com
 
   # You can set Avatar URL directly
   avatar: avatar.gif
@@ -110,7 +110,7 @@ sns:
   email: isfiteen@icloud.com
   # If you use hexo-generator-feed, `sns.feed` can be left blank
   # and the theme will try to get `hexo.config.feed.path`.
-  feed: 
+  feed:
   github: https://github.com/fiteen
   twitter: https://twitter.com/isFiteen
   facebook:
@@ -125,7 +125,7 @@ sns:
   soundcloud:
   myspace:
   weibo: https://weibo.com/u/2927602787
-  qq: 
+  qq:
 
 # Sidebar footer copyright info
 footer:
@@ -149,7 +149,7 @@ footer:
 # Page
 page:
   # Display Table of content, default to `true`
-  toc: true
+  toc: false
 
   # Display reward, default to `false`
   reward: true
@@ -160,7 +160,7 @@ page:
 
 # Post
 post:
-  # per_page: 10
+  per_page: 10
 
   # The following settings are the same as the page
   toc: true
@@ -241,7 +241,7 @@ assets:
 # Table of content, enabled by default, set to `false` to disable.
 toc:
   # The depth of toc, default to `3`, maximum to `4`.
-  # depth: 3
+  depth: 3
 
   # Showing index before title, eg. 1.1 title, default to `true`
   index: false
@@ -319,7 +319,7 @@ data_prefix:
 data_dir:
 
 # Favicon, default to `favicon.ico`
-favicon: 
+favicon:
 
 # Google analytics
 # ga: UA-00000000-0
@@ -386,7 +386,7 @@ pwa:
 # ```bash
 # npm install babel-core babel-preset-env html-minifier uglify-js --save
 # ```
-plugins:
+# plugins:
 #   # Dynamic inject html snippet
 #   - position: # `sidebar` | `post` | `page` | `comments` | `avatar`, can be an array
 

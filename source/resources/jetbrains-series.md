@@ -23,24 +23,20 @@ title: Jetbrains Mac 版全系列 IDE 永久破解教程
 4. 修改配置。
 
    进入欢迎页，在下图中的 `Configure` 中选择 `Edit Custom VM Options …`。
-
-   ![](configure.png)
+   ![](/resources/images/jetbrains-configure.png)
 
    如下图所示，在弹出的 `idea.vmoptions` 文件的最后一行加入 `-javaagent:/Applications/IntelliJ IDEA.app/Contents/bin/jetbrains-agent.jar`。
-
-   ![](vmoptions.png)
+   ![](/resources/images/jetbrains-vmoptions.png)
 
 5. 重启 IDE。（这一步切记**不要遗漏**。）
 
 6. 在欢迎页  `Configure` 中选择 `Manage License...`，选择 License server ⽅式，点击 `Discover Server` 按钮应该会⾃动填充上地址：`http://jetbrains-license-server`。然后点击 `Activate` 按钮，看到如下 `Licensed to XXX` 则激活完毕。
-
-   ![](licensed-license-server.png)
+   ![](/resources/images/jetbrains-licensed-license-server.png)
    
    如果不成功，尝试一下 Activation code 方式离线激活。将 `ACTIVATION_CODE.txt` 中的激活码粘贴到内容框中。你也可以选择[自定义激活码](https://zhile.io/custom-license.html)。
    
    看到如下页面则激活完毕。
-   
-   ![](licensed-activation-code.png)
+   ![](/resources/images/jetbrains-licensed-activation-code.png)
    
 ---
 参考链接：[Jetbrains 系列产品2019.3.1最新激活方法[持续更新]](https://zhile.io/2018/08/25/jetbrains-license-server-crack.html)

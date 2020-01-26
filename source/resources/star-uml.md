@@ -35,8 +35,7 @@ title: StarUML Mac 版破解
    ```
 
    找到 `checkLicenseValidity` 方法，改成下图所示：
-
-   ![](license-manager.png)
+   ![](/resources/images/star-uml-license-manager.png)
 
 7. 重新打包，替换 app.asar
 

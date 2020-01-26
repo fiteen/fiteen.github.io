@@ -84,7 +84,7 @@ thumbnail: google-cloud.png
 
 展开“管理、安全、磁盘、网络、单独租用”，外部 IP 选择第2步的静态 IP。到这里，虚拟机部署完成。
 
- {% asset_img vm-instance.jpg VM实例 %}
+ {% asset_img vm-instance.jpg VM 实例 %}
 
 
 

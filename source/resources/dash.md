@@ -37,5 +37,7 @@ title: Dash 破解
    </plist>
    ```
 3. 双击打开这个 dash-license 文件，会自动导入授权文件，看到如下提示，则破解成功。
-   ![](licensed.png)
+
+   ![](/resources/images/dash-licensed.png)
+   
    

@@ -31,7 +31,5 @@
 <body lang="{{ config.language }}">
 <{{ theme.runtime.selector }}></{{ theme.runtime.selector }}>
 {{ theme.scripts | safe }}
-<footer>
-</footer>
 </body>
 </html>
