@@ -17,7 +17,7 @@ categories: 算法
 
 我们可以将常见的**内部排序算法**可以分成两类：
 
-{% asset_img sort-category.png %}
+![](sort-category.png)
 
 **比较类排序**：通过比较来决定元素间的相对次序，时间复杂度为 O(nlogn)～O(n²)。属于比较类的有：
 

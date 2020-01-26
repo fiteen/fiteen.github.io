@@ -149,7 +149,7 @@ footer:
 # Page
 page:
   # Display Table of content, default to `true`
-  toc: false
+  toc: true
 
   # Display reward, default to `false`
   reward: true
