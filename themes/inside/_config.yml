@@ -262,11 +262,11 @@ reward:
       color: '#09bb07'
     - name: alipay
       qrcode: images/alipay-reward.png
-      text: This a Alipay qrcode.
+      text: This is a Alipay qrcode.
       color: '#01A1E9'
     - name: paypal
       qrcode: images/paypal-reward.png
-      text: This a Paypal qrcode.
+      text: This is a Paypal qrcode.
       url: https://www.paypal.me/fiteen
       color: '#397EBC'
 
