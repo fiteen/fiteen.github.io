@@ -19,7 +19,7 @@ categories: iOS
 
 2、3 的意思是一样的，不写的时候默认声明成 `atomic`。
 
-#### 内部实现
+## 内部实现
 
 如[苹果官方文档](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjectiveC/Chapters/ocProperties.html)中描述的那样，它们系统生成的存取方法是不一样的：
 
@@ -59,7 +59,7 @@ categories: iOS
 }
 ```
 
-#### 线程安全
+## 线程安全
 
 `atomic` 可以保证 setter 和 getter 操作不受其它线程影响，因为锁的缘故，能够优先执行完当前操作：
 
@@ -83,13 +83,13 @@ categories: iOS
 
 而 `nonatomic` 明显就是线程不安全的，如果有两个线程访问同一个属性，会出现无法预料的结果。因此 `nonatomic` 耗费的资源少，速度要比 `atomic` 快，性能也更好。
 
-#### 使用
+## 使用
 
 在 iOS 应用中，大多数情况都是用在主线程上，不存在并发的问题，出于性能考虑，更倾向于用 `nonatomic`。
 
 而在 OSX 中，需要考虑多线程通讯，更适合用相对安全的 `atomic` 处理。
 
-#### 总结
+## 总结
 
 综上，两者的区别可以总结如下：
 

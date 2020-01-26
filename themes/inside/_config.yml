@@ -244,7 +244,7 @@ toc:
   # depth: 3
 
   # Showing index before title, eg. 1.1 title, default to `true`
-  # index: true
+  index: false
 
 # Reward
 reward:

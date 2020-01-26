@@ -5,7 +5,7 @@ tags: webView
 categories: iOS
 ---
 
-#### iPhone 真机/模拟器设置
+## iPhone 真机/模拟器设置
 
 需要如下图所示，点击“设置” → 点击 “Safari 浏览器” → 点击“高级” → 打开“Web 检查器”。
 
@@ -15,13 +15,13 @@ categories: iOS
 
 若模拟器中无“Web 检查器”选项，无需设置。
 
-#### Safari 设置
+## Safari 设置
 
 打开 Mac 电脑中的 Safari 浏览器，打开偏好设置，点击菜单中的“高级”选项卡，勾选“在菜单栏中显示“开发”菜单”
 
 {% asset_img safari-perferences-advanced.jpg Safari-偏好设置-高级 %}
 
-#### 进入检查器
+## 进入检查器
 
 在手机/模拟器中打开浏览器/App中的某个网页，在 Mac 中打开 Safari，在“开发”中找到目标设备。
 

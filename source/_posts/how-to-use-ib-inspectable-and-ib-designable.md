@@ -19,7 +19,7 @@ xib 和 storyboard 均采用了 Interface Builder（IB）来生成 GUI，通过�
 
 >【场景】设置按钮：圆角`cornerRadius`：8pt、边框颜色`borderWidth`：1pt、边框宽度`borderColor`：系统蓝色
 
-### **巧用 `IBInspectable`**
+## **巧用 `IBInspectable`**
 
 `【IBInspectable】` 这一属性提供了访问功能的新方式：用户自定义的运行时属性，让支持 KVC 的属性能够在身份检查器（Identity Inspector）的 User Defined Runtime Attributes 中配置。
 
@@ -51,7 +51,7 @@ Identity Inspector 下的 User Defined Runtime Attributes 也会出现相应的 
 
 设置好后 run 一下工程就能看到场景中要求的效果，但通常开发者不需要所有的按钮都设置圆角、边框，更多的是采用自定义视图的形式统一处理相似风格的 control。为了更高效地开发，接下来介绍宏定义 `IB_DESIGNABLE`。
 
-### **巧用 `IB_DESIGNABLE`**
+## **巧用 `IB_DESIGNABLE`**
 
 `【IB_DESIGNABLE】` 在类名前加上此宏定义，初始化、布置和绘制方法将被用来在画布上渲染该类的自定义视图。
 
@@ -97,7 +97,7 @@ HTCustomButton.m：
 
 {% asset_img custom-view-dynamically-refreshes-the-rendering-with-ib-designable.gif 自定义视图通过 IB_DESIGNABLE 动态刷新效果图 %}
 
-### **纯代码开发流派如何借助 `IB_DESIGNABLE`动态查看布局效果**
+## **纯代码开发流派如何借助 `IB_DESIGNABLE`动态查看布局效果**
 
 对于很多被强制勒令用纯代码 coding 的开发者来说，下面介绍的干货绝对会大大提升开发效率。
 

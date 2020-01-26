@@ -5,7 +5,7 @@ tags: IDFA
 categories: iOS
 ---
 
-#### 何为 IDFA
+## 何为 IDFA
 
 [IDFA](https://developer.apple.com/documentation/adsupport/asidentifiermanager)，苹果 iOS6 开始新增的广告标识符， 全称 Identifier For Advertising，是每台 iOS 设备的唯一 ID，是投放定向广告的唯一方法。
 
@@ -31,7 +31,7 @@ iOS10 之后，还新增了“**限制广告追踪**” 的设置，所以在获
 因此，IDFA 并不能成为精确标识用户唯一性的符号。如果要确保唯一且固定，建议采用 UUID+Keychain 的方式，或者借助 iOS 系统可以获取的参数自定义一套算法去生成标志符。
 
 
-#### 检查是否使用 IDFA
+## 检查是否使用 IDFA
 
 当 App 提交应用市场审核的时候，苹果会询问“*此 App 是否使用广告标识符号（IDFA）*”。这里除了本地代码以外，还需要鉴别导入的任何第三方库中，是否使用了 IDFA。检查的方法很简单：
 
@@ -43,7 +43,7 @@ iOS10 之后，还新增了“**限制广告追踪**” 的设置，所以在获
 {% asset_img grep-command.png 检查命令 %}
 
 
-#### 审核时关于 IDFA 选项的选择
+## 审核时关于 IDFA 选项的选择
 
 那么如果选择了 “是”，就会提示你选择勾选4个选项框：
 

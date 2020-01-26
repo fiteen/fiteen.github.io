@@ -8,7 +8,7 @@ categories: 科学上网
 thumbnail: google-cloud.png
 ---
 
-### 一、申请免费试用 GCP
+## 一、申请免费试用 GCP
 
 每位新注册的用户可以在谷歌云平台 [GCP](https://cloud.google.com/free/) (Google Cloud Platform)获得第一年$300 的免费赠送额度。一年后若不主动选择继续使用不会扣费的。（如果谷歌云免费到期，你也可以通过[亚马逊AWS](https://aws.amazon.com/cn/)再薅一年羊毛。）
 
@@ -44,9 +44,9 @@ thumbnail: google-cloud.png
 
 
 
-### 二、部署虚拟机
+## 二、部署虚拟机
 
-#### 1、修改防火墙
+### 1、修改防火墙
 
 在菜单中依次点击 【网络】 –>【VPC 网络】 –>[【防火墙规则】](https://console.cloud.google.com/networking/firewalls/list)–>【创建防火墙规则】，如下图创建一条入站规则：
 
@@ -60,7 +60,7 @@ thumbnail: google-cloud.png
 
 - 协议和端口：全部允许
 
-#### 2、保留静态地址
+### 2、保留静态地址
 
 在菜单中依次点击 【网络】 –>【VPC 网络】 –>[【外部 IP 地址】](https://console.cloud.google.com/networking/addresses/list)–>【保留静态 IP】
 
@@ -68,7 +68,7 @@ thumbnail: google-cloud.png
 
 静态 IP 只能申请一个。区域可以选择亚洲东部、欧洲、美国等地，推荐使用 asia-east1，对应台湾地区，访问速度较快。
 
-#### 3、创建计算引擎
+### 3、创建计算引擎
 
 在菜单中依次点击 【计算】 –>【Compute Engine】 –>[【VM 实例】](https://console.cloud.google.com/networking/addresses/list)–>【创建实例】
 
@@ -88,7 +88,7 @@ thumbnail: google-cloud.png
 
 
 
-### 三、搭建 SSR + BBR
+## 三、搭建 SSR + BBR
 
 在 VM 实例列表中找到刚才创建好的实例，点击上图红框内的 SSH，会弹出终端，如下图所示。如果用的是谷歌浏览器可以使用 [SSH 插件](https://chrome.google.com/webstore/detail/ssh-for-google-cloud-plat/ojilllmhjhibplnppnamldakhpmdnibd)
 
@@ -147,7 +147,7 @@ lsmod | grep bbr
 
 如果看到回显`tcp_bbr 20480 `说明已经成功开启 BBR。
 
-### 四、搭建 Shadowsocks Server
+## 四、搭建 Shadowsocks Server
 
 - 更新 apt-get 软件包
 

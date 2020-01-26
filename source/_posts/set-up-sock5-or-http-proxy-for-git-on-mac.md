@@ -21,7 +21,7 @@ https://github.com/accountname/projectname.git
 git@github.com:accountname/projectname.git
 ```
 
-#### 设置 HTTP 方式的代理
+## 设置 HTTP 方式的代理
 
 由于 Shadowsocks 客户端就提供一个本地的 SOCKS5 代理，代理地址是 127.0.0.1:1080。在终端输入以下配置：
 
@@ -48,7 +48,7 @@ git config --global --unset https.proxy
 
 如果你用的不是 SOCKS5，而是 HTTP 代理，就把上面命令中的 `socks5` 换成 `http` ，同时改成正确的端口号。
 
-#### 设置 SSH 方式的代理
+## 设置 SSH 方式的代理
 
 修改用户目录下文件  `~/.ssh/config ` 里的内容，对 GitHub 域名作单独处理：
 
@@ -66,7 +66,7 @@ Host github.com
     # ProxyCommand     socat - PROXY:127.0.0.1:%h:%p,proxyport=6666
 ```
 
-#### 直接在终端设置临时代理
+## 直接在终端设置临时代理
 
 或者我们可以在 `~/.bashrc`文件中，直接写入以下内容并保存：
 

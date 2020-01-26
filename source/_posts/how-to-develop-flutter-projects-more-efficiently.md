@@ -10,13 +10,13 @@ thumbnail: flutter.png
 
 <!--more-->
 
-### UI 可视化工具
+## UI 可视化工具
 
 纯客户端开发者一开始可能会对写 Flutter 的界面布局会不太适应，那么这个 [https://flutterstudio.app](https://flutterstudio.app) 网站可以帮助你更快熟悉 Flutter 的常用组件，在这个工具上，你可以通过简单的拖拽直接实现布局。
 
 {% asset_img flutterstudio.png flutterstudio 网站 %}
 
-### 代码模版
+## 代码模版
 
 我们发现在开发时，IDE 自带的代码快捷提示都不太丰富，比如要创建一个包含所有生命周期相关方法的完整的 StatefulWidget，如果能一键导入就能快速很多，这时候就可以借助代码模版。我事先在网上找到一份比较全面的模版，有需要的可以参考 [code plugins](https://github.com/AweiLoveAndroid/Flutter-learning/blob/master/code_plugins/no_new_keywords/dart.json)，有时间我会按照自己习惯的风格再整理一份。
 
@@ -38,7 +38,7 @@ thumbnail: flutter.png
 
 这样我们只需要输入简单的前缀就能直接联想出整个代码块了。 
 
-### 布局调试
+## 布局调试
 
 在实现 UI 模块的时候，经常会出现布局错乱的情况，VSCode 也为此提供了界面调试工具，在 Flutter App **调试**过程中，打开路径：
 
@@ -62,7 +62,7 @@ thumbnail: flutter.png
 
 {% asset_img flutter-outline-inspector.png Flutter Outline 和 Flutter Inspector %}
 
-### 巧用快捷键
+## 巧用快捷键
 
 借助 IDE 中的快捷键也是我们提高开发效率的关键之一。以 Android Studio 为例：
 
@@ -76,7 +76,7 @@ thumbnail: flutter.png
 
 - ......
 
-### 常用插件
+## 常用插件
 
 常用的插件基本上都可以在[Dart 开源包的网站](https://pub.dartlang.org)里找到，选用合适的 package 可以帮你节省不少重复实现的时间。网上的 Coder 朋友们也总结了很多不错的插件，本文里就不一一记录了。
 

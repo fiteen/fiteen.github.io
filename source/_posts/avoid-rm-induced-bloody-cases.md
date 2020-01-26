@@ -9,7 +9,7 @@ categories: 程序员必备
 
 <!--more-->
 
-### 安装 trash
+## 安装 trash
 
 通过 Homebrew 安装 [Trash](https://github.com/ali-rantakari/trash)
 
@@ -19,7 +19,7 @@ $ brew install trash
 
 安装成功后，可以通过 `trash -fr filename `命令删除文件，且文件会移到废纸篓中。
 
-### 用 trash 替换 rm 命令
+## 用 trash 替换 rm 命令
 
 打开 ~/.bash_profile 文件
 

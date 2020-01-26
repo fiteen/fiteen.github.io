@@ -1,5 +1,5 @@
 ---
-title: V2Ray + CDN 隐藏 IP
+title: V2Ray + CDN 中转隐藏 IP
 date: 2019-09-07 02:43:01
 tags:
     - V2Ray
