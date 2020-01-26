@@ -249,18 +249,26 @@ toc:
 # Reward
 reward:
   # Text which shows at the top.
-  text: Thanks for your reading ☕.
+  text: Buy me a cup of coffee ☕.
 
   # Payment Methods
   # qrcode, url and text must be set at least one
   # wechat, alipay, paypal and bitcoin has a built-in icon,
   # use `name` to apply
-  # methods:
-  #   - name: paypal
-  #     qrcode: paypal.jpg
-  #     url: https://paypal.me/imelmore
-  #     text: This is a paypal payment link
-  #     color: '#09bb07'
+  methods:
+    - name: wechat
+      qrcode: images/wechat-reward.png
+      text: This is a Wechat Pay qrcode.
+      color: '#09bb07'
+    - name: alipay
+      qrcode: images/alipay-reward.png
+      text: This a Alipay qrcode.
+      color: '#01A1E9'
+    - name: paypal
+      qrcode: images/paypal-reward.png
+      text: This a Paypal qrcode.
+      url: https://www.paypal.me/fiteen
+      color: '#397EBC'
 
 # Copyright notice
 # It is possible to use front matter `copyright` to override this setting.
