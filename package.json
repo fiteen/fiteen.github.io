@@ -32,6 +32,6 @@
     "hexo-server": "^1.0.0",
     "html-minifier": "^4.0.0",
     "save": "^2.4.0",
-    "uglify-js": "^3.7.3"
+    "uglify-js": "^3.7.6"
   }
 }
