@@ -25,8 +25,6 @@
 {% if theme.ga %}
 {{ ga(theme.ga) | safe }}
 {% endif %}
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
 </head>
 <body lang="{{ config.language }}">
 <{{ theme.runtime.selector }}></{{ theme.runtime.selector }}>

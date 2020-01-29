@@ -446,10 +446,13 @@ plugins:
 #         }
 #     # Or a path relative to theme folder
 #     code: snippets/mycss.css
+  - position: sidebar
+    template: |
+      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
   - //cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js
   - //cdn1.lncld.net/static/js/3.0.4/av-min.js
-  # - //cdn.jsdelivr.net/npm/valine
-  - Valine.min.js
+  - valine.js
   - position: comments
     template: |
       <div id="vcomment"></div>
