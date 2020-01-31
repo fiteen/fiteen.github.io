@@ -30,5 +30,7 @@
     "marked": "0.8.0",
     "terser": "4.6.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  }
 }

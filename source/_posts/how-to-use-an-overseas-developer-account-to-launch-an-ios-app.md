@@ -3,6 +3,7 @@ title: 海外开发者账号上架总结
 date: 2019-02-17 17:59:18
 tags: 上架审核
 categories: iOS
+thumbnail: appstore.png
 ---
 
 > ⚠️⚠️⚠️ **声明：本文仅供技术交流，勿企图上架违法 App，否则后果自负，谢谢！**

@@ -25,6 +25,7 @@
 {% if theme.ga %}
 {{ ga(theme.ga) | safe }}
 {% endif %}
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body lang="{{ config.language }}">
 <{{ theme.runtime.selector }}></{{ theme.runtime.selector }}>

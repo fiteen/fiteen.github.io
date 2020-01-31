@@ -7,6 +7,7 @@ tags:
     - CDN
     - DNS
 categories: 科学上网
+thumbnail: hide-ip.png
 ---
 
 > ⚠️⚠️⚠️ **声明：本文内容仅限技术交流，若有用作商业或其他违规行为，与本人无关。**

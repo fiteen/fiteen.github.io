@@ -13,25 +13,25 @@ title: StarUML Mac 版破解
 3. 安装 asar：
 
    ```
-   sudo npm install -g asar
+   $ sudo npm install -g asar
    ```
 
 4. 进入 app.asar 目录：
 
    ```
-   cd /Applications/StarUML.app/Contents/Resources/
+   $ cd /Applications/StarUML.app/Contents/Resources/
    ```
 
 5. 解压 app.asar
 
    ```
-   asar extract app.asar app
+   $ asar extract app.asar app
    ```
 
 6. 修改源码绕过注册弹窗
 
    ```
-   open app/src/engine/license-manager.js
+   $ open app/src/engine/license-manager.js
    ```
 
    找到 `checkLicenseValidity` 方法，改成下图所示：
@@ -40,7 +40,7 @@ title: StarUML Mac 版破解
 7. 重新打包，替换 app.asar
 
    ```
-   asar pack app app.asar
+   $ asar pack app app.asar
    ```
    
 
