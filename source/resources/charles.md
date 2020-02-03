@@ -9,3 +9,16 @@ title: Charles Mac 版破解
 2. 在[Charles 在线破解工具](https://www.zzzmode.com/mytools/charles/)网站上生成破解后的 charles.jar 文件
 
 3. 替换本地`/Applications/Charles.app/Contents/Java` 目录下的 charles.jar 文件
+
+如果安装时出现这样的报错信息：
+
+![](/resources/images/damaged.png)
+
+只需要在命令行中输入：
+
+```
+$ sudo spctl --master-disable
+```
+
+设置隐私中， 允许任何来源软件即可。
+

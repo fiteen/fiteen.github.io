@@ -9,7 +9,7 @@ categories: 前端
 thumbnail: hexo.png
 ---
 
-[我的博客](https://blog.fiteen.top)采用的是 [Hexo 官方网站](https://hexo.io/themes/)上相中的 [hexo+theme+inside](https://github.com/ikeq/hexo-theme-inside) 主题。虽然作者已经提供了主题的[使用文档](https://blog.oniuo.com/theme-inside)，但是作为一款小众的主题，一些常用功能的定制并不是那么完善，不过贴心的开发者提供了 [plugins 配置方案](https://blog.oniuo.com/theme-inside/docs/misc#plugins)。
+[我的博客](https://blog.fiteen.top)采用的是 [Hexo 官方网站](https://hexo.io/themes/)上相中的 [hexo+theme+inside](https://github.com/ikeq/hexo-theme-inside) 主题。虽然开发者已经提供了主题的[使用文档](https://blog.oniuo.com/theme-inside)，但是作为一款小众的主题，一些常用功能的定制并不是那么完善，不过贴心的开发者提供了 [plugins 配置方案](https://blog.oniuo.com/theme-inside/docs/misc#plugins)。
 
 <!--more-->
 
@@ -18,9 +18,9 @@ thumbnail: hexo.png
 
 ## plugin 前置准备
 
-`${root}/themes/inside/_config.yml` 中的 plugins 支持于特定位置动态插入可执行的代码片段，或全局加载脚本/样式。
+`themes/inside/_config.yml` 中的 plugins 支持于特定位置动态插入可执行的代码片段，或全局加载脚本/样式。
 
-支持通过安装 html-minifier、babel 和 uglify-js 来实现代码压缩。 在项目根目录执行（Hexo 根目录，非 themes/inside）：
+支持通过安装 html-minifier、babel 和 uglify-js 来实现代码压缩。 在项目根目录执行（Hexo 根目录，非 `themes/inside`）：
 
 ```
 $ npm install babel-core babel-preset-env html-minifier uglify-js --save
@@ -31,7 +31,7 @@ $ npm install babel-core babel-preset-env html-minifier uglify-js --save
 
 按照 plugin 配置描述的，要支持 Font Awesome 的 CSS，只需要这样设置：
 
-{% codeblock _config.yml %}
+{% codeblock _config.yml lang:yaml %}
 plugins:
   - //netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
 {% endcodeblock %}
@@ -57,7 +57,7 @@ plugins:
 
 先**安装脚本**，在使用不蒜子的页面，也就是 `sidebar` 模块插入 `busuanzi.js`。
 
-{% codeblock _config.yml %}
+{% codeblock _config.yml lang:yaml %}
 plugins:
   - position: sidebar
     template: |
@@ -78,17 +78,17 @@ plugins:
 
 在 `_config.yml` 文件里找到 `footer` 下的 `custom`，写入相关的 html 代码。比如：
 
-```
+{% codeblock _config.yml lang:yaml %}
 # Custom text.
 custom: <span id="busuanzi_container_site_pv" style='display:none'>Total <span id="busuanzi_value_site_pv"></span> views. </span><span id="busuanzi_container_site_uv" style='display:none'><span id="busuanzi_value_site_uv"></span> Hits</span>
-```
+{% endcodeblock %}
 
 或者用引入 font-awesome 字体：
 
-```
+{% codeblock _config.yml lang:yaml %}
 # Custom text.
 custom: <span id="busuanzi_container_site_pv" style='display:none'><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span> ｜ <span id="busuanzi_container_site_uv" style='display:none'><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
-```
+{% endcodeblock %}
 
 
 ## 代码复制
@@ -150,7 +150,7 @@ custom: <span id="busuanzi_container_site_pv" style='display:none'><i class="fa 
 
 复制按钮可以按照自己的喜好设置，如果想简单一点，直接用我的样式，可以这样配置：
 
-{% codeblock _config.yml %}
+{% codeblock _config.yml lang:yaml %}
 plugins:
   # inside 主题没有引入 jQuery 框架，需要手动引入
   - //cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js
@@ -166,9 +166,9 @@ plugins:
 
 主题的内置评论，支持 [Disqus](https://disqus.com) 和 [LiveRe](https://livere.com)。但个人认为这两款评论系统的 UI 风格主题不是很搭配，最后还是决定采用 [Valine](https://valine.js.org)——一款基于LeanCloud的快速、简洁且高效的无后端评论系统。
 
-虽然作者也有提供 Valine 的配置方法，但是我实践后发现样式貌似出现了一些问题。所以我另找了一个 js 文件，你可以直接引用 CDN 上的资源 `https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/valine.js`，或者直接把 `valine.js` 文件[下载](https://github.com/fiteen/fiteen.github.io/releases)到本地，放在 `inside/source`路径下。然后写入以下代码：
+虽然文档中也有提供 Valine 的配置方法，是我实践后发现样式貌似出现了一些问题，这条 [issue](https://github.com/ikeq/hexo-theme-inside/issues/153) 也证实了这一点。所以我另找了一个 js 文件，并做了一点小改动。你可以引用我放在 CDN 上的资源 `https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/valine.js`，或者直接把 `valine.js` 文件[下载](https://github.com/fiteen/fiteen.github.io/releases)到本地，放在 `inside/source`路径下。然后写入以下代码：
 
-{% codeblock _config.yml %}
+{% codeblock _config.yml lang:yaml %}
 plugins:
   # inside 主题没有引入 jQuery 框架，需要手动引入
   - //cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js
@@ -209,7 +209,18 @@ plugins:
 
 目前已经有 Valine 评论系统的拓展和增强版 [Valine+Admin](https://github.com/DesertsP/Valine-Admin.git)，主要实现评论邮件通知、评论管理、垃圾评论过滤等功能，还支持自定义修改邮件通知模板、漏发邮件自动补发等。具体步骤这篇[配置手册](https://deserts.io/valine-admin-document/)已经比较清晰了，照着上面的步骤操作即可，本文就不复制粘贴了。
 
+**注意**：想要在评论区显示自定义头像，先前往 [Gravatar官网](http://cn.gravatar.com/) 注册账号，注册的邮箱需要和你评论时填写的邮箱一致。如果注册成功后，头像仍没有显示，不要着急， `gravatar.cat.net` 有七天的缓存期，请耐心等待。
+
+
 下面再分享几个**小功能点的配置**：
+
+
+## 博客背景
+
+修改博客背景很简单，只需修改 `themes/inside/_config.yml` 中 `appearance.background` 配置即可。
+
+这里分享一个网站——[Subtle Patterns](https://www.toptal.com/designers/subtlepatterns/)，支持超过 500 种 PNG 高品质免费背景纹理素材，无须注册登录，可以直接下载。
+
 
 ## 分享 QQ 链接
 
@@ -232,5 +243,3 @@ plugins:
 ```
 $ npm install hexo-generator-feed --save
 ```
-
-目前主题只是单纯的生成一个跳转到 `atom.xml` 的链接，无法主动唤起阅读器，需要读者手动添加。

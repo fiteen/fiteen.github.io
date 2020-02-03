@@ -11,8 +11,8 @@ appearance:
   # Border color, default '#e0e0e0'
   border_color:
   # body background, default '#f5f7fa'
-  background:
-  # Sidebar background (when opened), default to accent_color
+  background: images/dust_scratches.png
+  # Sidebar background (when opened), default to accent_color    
   sidebar_background:
   # Card background, default '#fff'
   card_background:
@@ -89,7 +89,7 @@ profile:
   email: isfiteen@icloud.com
 
   # You can set Avatar URL directly
-  avatar: avatar.gif
+  avatar: avatar.jpg
 
   bio: Deer appears only at the deepest of woods. Whale emerges only at the bluest of sea.
 

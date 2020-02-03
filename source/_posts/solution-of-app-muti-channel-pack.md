@@ -5,6 +5,7 @@ tags: 重签名
 categories: 
    - [iOS]
    - [Android]
+thumbnail: ipa-and-apk.png
 ---
 
 众所周知，渠道包是国内 Android 应用市场中常用的分发方式。渠道包中会包含不同的渠道信息，方便我们后续统计 App 在各分发渠道的下载量、用户量、留存率等，有针对地调整应用内容或是推广方案等。随着国内 iOS 应用上架越来越难，衍生出了很多企业包，为了方便采集数据，也会用多渠道的方案。
@@ -46,10 +47,17 @@ iOS 打渠道包目前想到的就只有两种方式，一种是通过[多 targe
 NSDictionary *channelDic = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Channel" ofType:@"plist"]];
 NSString *channel = channelDic[@"Channel"];
 ```
-**第二步：**把这个项目用可用的证书正常打一个母包，解压这个 ipa 包可以获得一个名为 `Payload` 的文件夹，里面是一个 .app 文件，右键显示其包内容，内容如下：。
+**第二步：**把这个项目用可用的证书正常打一个母包，解压这个 ipa 包可以获得一个名为 `Payload` 的文件夹，里面是一个 .app 文件，右键显示其包内容，内容如下：
 
-![](package-content.png)
-
+```
+├── Base.lproj
+├── Channel.plist
+├── Info.plist
+├── MultiChannelDemo
+├── PkgInfo
+├── _CodeSignature
+└── embedded.mobileprovision
+```
 可以看到，里面的 `Channel.plist` 也就是在前面工程中新建的存储渠道信息的 plist，我们会修改里面的 Channel 再生成新的渠道包。
 
 **第三步：**提取描述文件用于重签名，上一步中 Payload 的文件夹里有一个 `embedded.mobileprovision` 文件，这就是我们需要的文件。
@@ -146,19 +154,36 @@ echo "........渠道${line}打包已完成"
 done
 {% endcodeblock %}
 
-脚本里的信息请根据你实际情况修改，。到这里准备工作都完成了，需要的文件如下图所示：
+脚本里的信息请根据你实际情况修改。到这里准备工作都完成了，需要的文件如下：
 
-![](prepare-file.png)
+```
+├── ChannelList.txt
+├── ChannelPackage.sh
+├── MultiChannelDemo.ipa
+└── embedded.mobileprovision
+```
 
 **第六步：**在当前目录下执行脚本文件：
 
-```bash
-sh ChannelPackage.sh
+```
+$ sh ChannelPackage.sh
 ```
 
 打包完成后生成的 `ChannelPackages` 文件夹下，就是我们需要的渠道包：
 
-![](package-result.png)
+```
+├── ChannelList.txt
+├── ChannelPackage.sh
+├── ChannelPackages
+│   ├── channel02.ipa
+│   ├── channel03.ipa
+│   └── channel04.ipa
+├── MultiChannelDemo.ipa
+├── Payload
+│   └── MultiChannelDemo.app
+├── embedded.mobileprovision
+└── entitlements.plist
+```
 
 这种自动化打包的方式，可以规避掉 Xcode 本身打包编译的部分时间，快速出包。
 

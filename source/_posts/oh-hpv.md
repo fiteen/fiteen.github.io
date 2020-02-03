@@ -128,6 +128,10 @@ function validate() {
 
 ![](you-should-login-wechat.png)
 
-第一个解决起来也很简单，只需要用微信开发者工具打开网址即可。但是第二种我暂时没有找到解决方案，因为按照[微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Web_Developer_Tools.html)中所说，微信开发者工具只能调试自己绑定过的公众号，不过好在这次下城区东新街道社区卫生服务中心没有强制要求微信登录。
+第一个解决起来也很简单，只需要用微信开发者工具打开网址即可。但是第二种我暂时没有找到解决方案，因为按照[微信官方文档](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Web_Developer_Tools.html)中所说，**微信开发者工具只能调试自己账号绑定过的公众平台**，不过好在这次下城区东新街道社区卫生服务中心没有强制要求微信登录。
 
 最后，再感叹一下技术改变生活，nice～
+
+---
+
+> （2020年2月2日更新）前几天有网友给我提了一个 issue，我又重新去研究了一下微信 OAuth2 授权和自动化脚本的问题，相关结论也在 [issue](https://github.com/fiteen/fiteen.github.io/issues/1) 中回复，有兴趣可以在下面交流。
