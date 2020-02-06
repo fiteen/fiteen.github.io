@@ -32,6 +32,10 @@ date: 2016-08-13 00:00:00
 
 - [Postman](https://www.getpostman.com) - API 调试工具。🆓
 
+### 测试自动化
+
+- [Appium](http://appium.io) - 适用于原生、hybrid、H5 以及桌面应用程序的开源、跨平台的测试自动化工具。[📖](https://github.com/appium/appium)🆓
+
 ### SSH
 
 - [FinalShell](resources/final-shell) - 良心国货，好用的中文 SSH 工具。🆓
