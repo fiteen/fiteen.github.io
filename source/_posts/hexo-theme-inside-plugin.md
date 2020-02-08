@@ -46,6 +46,11 @@ plugins:
 
 ![修改 .fa 样式](alter-style-css.png)
 
+如果你想要把资源文件放在本地，可以在官网[下载](http://fontawesome.io)最新版放在主题的 `source/lib` 目录下，然后在需要的位置引用：
+
+```
+<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+```
 
 ## 访问量统计
 
