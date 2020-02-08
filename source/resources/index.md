@@ -111,11 +111,13 @@ MrWriter -->
 
 ### RSS
 
-- [Reeder 4](resources/reeder) - 强大的 RSS 阅读器[🔨](resources/reeder)
+- [Reeder 4](resources/reeder) - 老牌的 RSS 阅读器，因其流畅的操作和精致的设计而闻名。[🔨](resources/reeder)
+- [irreader](http://irreader.fatecore.com) - 高品质、免费、无广告、多平台的 RSS 和播客阅读器，提供了订阅源市场，可以订阅任何网站。🆓[📖](https://github.com/skdjfla/irreader)
 
 ## 科学上网
 
 - [Lantern](https://github.com/getlantern/download) - 简单易用的老牌科学上网软件，每月500M高速免费流量。🆓
+- [Just My Socks](https://justmysocks2.net/members/cart.php) - 搬瓦工推出的 SS 服务,性价比高且稳定,用的是与搬瓦工同款的 CN2 GIA 和 CN2 GT 线路，最低价 $2.88/月。
 - [ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG/releases) - Shadowsocks 客户端软件 🆓
 - [V2rayU](https://github.com/yanue/V2rayU) - v2ray 的客户端软件，支持 vmess｜shadowsocks｜socks5等服务协议，支持二维码、剪贴板导入、手动配置、二维码分享、订阅等。（**搭建v2ray服务，可伪装成正常网站，防封锁。**）🆓
 
