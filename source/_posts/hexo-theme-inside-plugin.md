@@ -182,7 +182,6 @@ plugins:
   # - valine.js
   # 引用 CDN 上的 valine.js 文件
   - //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/valine.js
-  - valine.js
   - position: comments
     template: |
       <div id="vcomment"></div>
