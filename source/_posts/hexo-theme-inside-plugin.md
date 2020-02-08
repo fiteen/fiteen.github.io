@@ -171,15 +171,15 @@ plugins:
 
 主题的内置评论，支持 [Disqus](https://disqus.com) 和 [LiveRe](https://livere.com)。但个人认为这两款评论系统的 UI 风格主题不是很搭配，最后还是决定采用 [Valine](https://valine.js.org)——一款基于LeanCloud的快速、简洁且高效的无后端评论系统。
 
-虽然文档中也有提供 Valine 的配置方法，是我实践后发现样式貌似出现了一些问题，这条 [issue](https://github.com/ikeq/hexo-theme-inside/issues/153) 也证实了这一点。所以我另找了一个 js 文件，并做了一点小改动。你可以引用我放在 CDN 上的资源 `https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/valine.js`，或者直接把 `valine.js` 文件[下载](https://github.com/fiteen/fiteen.github.io/releases)到本地，放在 `inside/source`路径下。然后写入以下代码：
+虽然文档中也有提供 Valine 的配置方法，是我实践后发现样式貌似出现了一些问题，这条 [issue](https://github.com/ikeq/hexo-theme-inside/issues/153) 也证实了这一点。所以我另找了一个 js 文件，并做了一点小改动。你可以引用我放在 CDN 上的资源 `https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/valine.js`，或者直接把 `valine.js` 文件[下载](https://github.com/fiteen/fiteen.github.io/releases)到本地，放在 `inside/source/lib`路径下。然后写入以下代码：
 
 {% codeblock _config.yml lang:yaml %}
 plugins:
   # inside 主题没有引入 jQuery 框架，需要手动引入
   - //cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js
   - //cdn1.lncld.net/static/js/3.0.4/av-min.js
-  # 引用本地 source 路径下的 valine.js 文件
-  # - valine.js
+  # 引用本地 source/lib 路径下的 valine.js 文件
+  # - lib/valine.js
   # 引用 CDN 上的 valine.js 文件
   - //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/valine.js
   - position: comments
