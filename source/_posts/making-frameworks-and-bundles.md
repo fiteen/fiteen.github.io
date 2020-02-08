@@ -102,10 +102,10 @@ open "${UNIVERSAL_OUTPUT_FOLDER}"
 
 ### 查看是否成功
 
-**步骤1：**打开终端，进入到你的 framework 
+**步骤1：**打开终端，进入到你的 framework 文件所在的目录
 
 ```bash
-cd ${yourFrameworkName}.framework文件所在的目录
+cd ${yourFrameworkName}.framework
 ```
 
 **步骤2：**查看架构支持
