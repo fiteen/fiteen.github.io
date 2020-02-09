@@ -52,6 +52,7 @@ plugins:
 <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 ```
 
+
 ## 访问量统计
 
 很多人都有站点访问量统计的需求，像这样：
@@ -88,7 +89,7 @@ plugins:
 custom: <span id="busuanzi_container_site_pv" style='display:none'>Total <span id="busuanzi_value_site_pv"></span> views. </span><span id="busuanzi_container_site_uv" style='display:none'><span id="busuanzi_value_site_uv"></span> Hits</span>
 {% endcodeblock %}
 
-或者用引入 font-awesome 字体：
+或者使用 font-awesome 字体：
 
 {% codeblock _config.yml lang:yaml %}
 # Custom text.
@@ -213,7 +214,7 @@ plugins:
 
 目前已经有 Valine 评论系统的拓展和增强版 [Valine+Admin](https://github.com/DesertsP/Valine-Admin.git)，主要实现评论邮件通知、评论管理、垃圾评论过滤等功能，还支持自定义修改邮件通知模板、漏发邮件自动补发等。具体步骤这篇[配置手册](https://deserts.io/valine-admin-document/)已经比较清晰了，照着上面的步骤操作即可，本文就不复制粘贴了。
 
-**注意**：想要在评论区显示自定义头像，先前往 [Gravatar官网](http://cn.gravatar.com/) 注册账号，注册的邮箱需要和你评论时填写的邮箱一致。如果注册成功后，头像仍没有显示，不要着急， `gravatar.cat.net` 有七天的缓存期，请耐心等待。
+**注意**：想要在评论区显示自定义头像，先前往[Gravatar官网](http://cn.gravatar.com/)注册账号，注册的邮箱需要和你评论时填写的邮箱一致。如果注册成功后，头像仍没有显示，不要着急， `gravatar.cat.net` 有七天的缓存期，请耐心等待。
 
 
 下面再分享几个**小功能点的配置**：
