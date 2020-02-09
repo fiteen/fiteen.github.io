@@ -229,7 +229,7 @@ plugins:
 
 ## 分享 QQ 链接
 
-我们可以在 `sns.qq` 里配置自己想要链接的 QQ ID 信息，直接写 QQ 号当然是不可行的。这里借助一下 [QQ 推广](https://shang.qq.com/v3/widget.html)。
+我们可以在 `sns.qq` 里配置自己想要链接的 QQ ID 信息，直接写 QQ 号当然是不可行的。需要先开通 [QQ 推广](https://shang.qq.com/v3/widget.html)。
 
 ![](qq-link.png)
 
