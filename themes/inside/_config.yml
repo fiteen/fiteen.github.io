@@ -101,7 +101,6 @@ menu:
   ⏳ Resources: /resources
   ⌨️ LeetCode: /leetcode
   🔍 Search: /search
-  Github: https://github.com/fiteen
 
 # Social media URL
 # Try to sort by changing the order of the keys
@@ -449,6 +448,10 @@ plugins:
 #     code: snippets/mycss.css
   # jQery
   - //cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js
+
+  # Font Awesome
+  # - //netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+  # - lib/font-awesome/css/font-awesome.min.css
 
   # 代码复制
   - position: [post, page]

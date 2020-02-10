@@ -36,17 +36,28 @@ plugins:
   - //netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
 {% endcodeblock %}
 
-也就是在全局加载样式，不过不知道为什么没有正常生效🤔，所以考虑换个方案实现：在 `themes/inside/layout/index.swig` 的 `<head>` 标签内加入以下代码：
+也就是在全局加载样式，~~不过不知道为什么没有正常生效🤔~~（**[inside-v2.6.1](https://github.com/ikeq/hexo-theme-inside/releases/tag/2.6.1) 已经修复了这个问题**，建议你升级到最新版本）。
 
-{% codeblock index.swig lang:html %}
+> 如果你是 v2.6.0 及以下版本，可以用这个方案解决：
+>
+> 在 `themes/inside/layout/index.swig` 的 `<head>` 标签内加入以下代码：
+>
+>{% codeblock index.swig lang:html %}
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 {% endcodeblock %}
+>
+> 这时，虽然图标显示出来了，但是样式还是有点问题，可能和主题本身的 CSS 有关系，找到 `source` 目录下的 `styles.e4da61f53c7bc99becf4.css`（也可能叫别的） 里的 `.fa`，删除里面的 `margin:10rem 0 3rem;` 。
+>
+> ![修改 .fa 样式](alter-style-css.png)
 
-这时，虽然图标显示出来了，但是样式还是有点问题，可能和主题本身的 CSS 有关系，找到 `styles.e4da61f53c7bc99becf4.css` 里的 `.fa`，删除里面的 `margin:10rem 0 3rem;` 可以解决这一问题。
+不过个人觉得放在 CDN 上访问速度还是有点慢，所以从官网[下载](http://fontawesome.io)最新版放在主题的 `source/lib` 目录下，全局引用：
 
-![修改 .fa 样式](alter-style-css.png)
+{% codeblock _config.yml lang:yaml %}
+plugins:
+  - lib/font-awesome/css/font-awesome.min.css
+{% endcodeblock %}
 
-如果你想要把资源文件放在本地，可以在官网[下载](http://fontawesome.io)最新版放在主题的 `source/lib` 目录下，然后在需要的位置引用：
+或者在需要的位置引用 CSS 资源：
 
 ```
 <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -166,13 +177,16 @@ plugins:
       <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
       <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard-use.js"></script>
       <link href="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard.css" rel="stylesheet">
+      <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 {% endcodeblock %}
+
+如果已经全局引用过 font-awesome，可以把最后一条引用删除。
 
 ## 评论系统 - Valine
 
 主题的内置评论，支持 [Disqus](https://disqus.com) 和 [LiveRe](https://livere.com)。但个人认为这两款评论系统的 UI 风格主题不是很搭配，最后还是决定采用 [Valine](https://valine.js.org)——一款基于LeanCloud的快速、简洁且高效的无后端评论系统。
 
-虽然文档中也有提供 Valine 的配置方法，是我实践后发现样式貌似出现了一些问题，这条 [issue](https://github.com/ikeq/hexo-theme-inside/issues/153) 也证实了这一点。所以我另找了一个 js 文件，并做了一点小改动。你可以引用我放在 CDN 上的资源 `https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/valine.js`，或者直接把 `valine.js` 文件[下载](https://github.com/fiteen/fiteen.github.io/releases)到本地，放在 `inside/source/lib`路径下。然后写入以下代码：
+虽然文档中也有提供 Valine 的配置方法，但是我实践后发现样式貌似出现了一些问题，这条 [issue](https://github.com/ikeq/hexo-theme-inside/issues/153) 也证实了这一点（**inside-2.6.1 已修复**）。所以我另找了一个 js 文件，并做了一点小改动。你可以引用我放在 CDN 上的资源 `https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/valine.js`，或者直接把 `valine.js` 文件[下载](https://github.com/fiteen/fiteen.github.io/releases)到本地，放在 `inside/source/lib`路径下。然后写入以下代码：
 
 {% codeblock _config.yml lang:yaml %}
 plugins:
