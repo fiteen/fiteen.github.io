@@ -15,18 +15,19 @@ categories: Git
 
 具体**步骤**如下：
 
-步骤一：打开终端 进入项目中 `.git` 同目录下
+步骤一：打开终端 进入项目中 `.git` 同目录下：
+
 ```bash
 cd /path/to/file
 ```
 
-步骤二：创建 `.gitignore` 文件
+步骤二：创建 `.gitignore` 文件：
 
 ```bash
 touch .gitignore
 ```
 
-步骤三：打开 `.gitignore` 文件
+步骤三：打开 `.gitignore` 文件：
 
 ```bash
 open .gitignore
@@ -34,7 +35,7 @@ open .gitignore
 
 步骤四：参照 [.gitignore 模版](https://github.com/github/gitignore)，找到对应的开发语言，将模版文本粘贴到自己的 `.gitignore` 中
 
-步骤五：更新项目
+步骤五：更新项目：
 
 ```bash
 git add .gitignore
