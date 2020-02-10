@@ -86,7 +86,7 @@ plugins:
 
 {% codeblock _config.yml lang:yaml %}
 # Custom text.
-custom: <span id="busuanzi_container_site_pv" style='display:none'>Total <span id="busuanzi_value_site_pv"></span> views. </span><span id="busuanzi_container_site_uv" style='display:none'><span id="busuanzi_value_site_uv"></span> Hits</span>
+custom: <span id="busuanzi_container_site_uv" style='display:none'>Total <span id="busuanzi_value_site_uv"></span> visitors. </span><span id="busuanzi_container_site_pv" style='display:none'><span id="busuanzi_value_site_pv"></span> Views</span>
 {% endcodeblock %}
 
 或者使用 font-awesome 字体：

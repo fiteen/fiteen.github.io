@@ -29,7 +29,7 @@ categories: iOS
 6. 在 GitHub 上下载好想安装的插件，以 ESJsonFormat 为例，打开方式选择 XcodeSigner；
 ![选择 XcodeSigner 作为打开方式](select-xcodesigner-as-the-open-method.png)
 
-7. 检查 info.plist 中是否已经添加了第5步获得的 UUID ，未添加可能会造成 XcodeSigner 闪退。若文件中已经存在，直接运行项目即可；
+7. 检查 info.plist 中是否已经添加了第5步获得的 UUID，未添加可能会造成 XcodeSigner 闪退。若文件中已经存在，直接运行项目即可；
 ![添加 UUID](add-an-uuid-to-Info-plist.png)
 
 8. 运行成功后，关闭 XcodeSigner ，重新启动，这时会弹出如下两类提示框，分别选择“ Load Bundle ”和“允许”（或“始终允许”），这时点击 Window 就能看到列表中多了 ESJsonFormat 了。
