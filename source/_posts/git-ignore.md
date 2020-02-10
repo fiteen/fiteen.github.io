@@ -49,7 +49,7 @@ git push
 2、已经 `push` 过的文件，如果想要在本地保留，但想要从远程仓库中删除，并在以后的提交中忽略，执行命令：
 
 ```bash
-git rm --cached /path/to/file
+git rm -r --cached /path/to/file
 ```
 
 3、已经 `push` 过的文件，想在以后的提交时忽略跟踪，也就是说即使本地已经修改过，但不修改也不删除远程仓库中相应文件，执行命令：
