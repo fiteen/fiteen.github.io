@@ -115,7 +115,7 @@ cd ${yourFrameworkName}.framework
 lipo -info ${yourFrameworkName}.framework/${yourFrameworkName}
 ```
 
-于是可以看到输出：
+可以看到输出：
 
 ```bash
 Architectures in the fat file: ${yourFrameworkName} are: i386 x86_64 armv7 arm64 (支持的架构显示在这)
@@ -173,8 +173,8 @@ Bundle 创建有两种方式：
 
 #### 通过 Xcode 创建 bundle
 
-步骤一：新建一个项目，依次 TARGETS →  + →  mac OS → Framework & Library →  Bundle，输入 Product Name 即建立出 bundle 工程；
+**步骤1**：新建一个项目，依次 TARGETS →  + →  mac OS → Framework & Library →  Bundle，输入 Product Name 即建立出 bundle 工程；
 
-步骤二：在 bundle 目录下添加需要的资源文件，编译之后在整个项目工程的 Products 文件夹下得到资源文件 bundle 。
+**步骤2**：在 bundle 目录下添加需要的资源文件，编译之后在整个项目工程的 Products 文件夹下得到资源文件 bundle 。
 
 这样做默认情况下 bundle 里面的 png 图片会被转为 tiff 的格式。因此在编译前需要做一步设置：找到 bundle 的工程，修改：Build Settings →  COMBINE_HIDPI_IMAGES，设置为 NO 之后再编译运行。
