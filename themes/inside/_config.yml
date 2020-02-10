@@ -28,7 +28,8 @@ appearance:
   font:
     # Url of font css file
     # Below is a font set containing Baloo Bhaijaan, Josefin Sans, Montserrat and Inconsolata from Google Fonts.
-    url: //fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat
+    # url: //fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat
+    url: //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/font.css
 
     # Base font which applied to body
     base: "'Josefin Sans', 'PingFang SC'"

@@ -182,6 +182,7 @@ plugins:
 
 如果已经全局引用过 font-awesome，可以把最后一条引用删除。
 
+
 ## 评论系统 - Valine
 
 主题的内置评论，支持 [Disqus](https://disqus.com) 和 [LiveRe](https://livere.com)。但个人认为这两款评论系统的 UI 风格主题不是很搭配，最后还是决定采用 [Valine](https://valine.js.org)——一款基于LeanCloud的快速、简洁且高效的无后端评论系统。
@@ -240,6 +241,24 @@ plugins:
 
 这里分享一个网站——[Subtle Patterns](https://www.toptal.com/designers/subtlepatterns/)，支持超过 500 种 PNG 高品质免费背景纹理素材，无须注册登录，可以直接下载。
 
+
+## 博客字体
+
+你可能会发现部署好的博客首次加载时的字体效果生效比较慢，这是因为主题中默认配置的字体样式用的是谷歌的服务：
+
+{% codeblock _config.yml lang:yaml %}
+appearance:
+  font:
+    url: //fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat
+{% endcodeblock %}
+
+如果被墙了就无法正常显示，因此我们可以换一个访问更快的地址，如：
+
+{% codeblock _config.yml lang:yaml %}
+appearance:
+  font:
+    url: //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/font.css
+{% endcodeblock %}
 
 ## 分享 QQ 链接
 
