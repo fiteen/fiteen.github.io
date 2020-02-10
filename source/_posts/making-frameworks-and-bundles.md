@@ -52,9 +52,9 @@ Framework 是资源的集合，将静态库和其头文件包含到一个结构�
 
 为了让用户能统一调用一个 framework ，还需要将二者合成为一个 framework 。这里介绍一种简单的方法：
 
-1. 新建一个 target，依次点击TARGETS 左下角的加号按钮 → Cross-platform →  Other 下的 Aggregate。
+1、新建一个 target，依次点击TARGETS 左下角的加号按钮 → Cross-platform →  Other 下的 Aggregate。
 
-2. 点击工程文件，选 TARGETS →  刚才创建的 Aggregate →  Build Phases →  + →  New Run Script Phases。在当前栏目里会多出一个 Run Script ，在里面输入以下脚本：
+2、点击工程文件，选 TARGETS →  刚才创建的 Aggregate →  Build Phases →  + →  New Run Script Phases。在当前栏目里会多出一个 Run Script ，在里面输入以下脚本：
 
 ```shell
 #!/bin/sh
@@ -98,7 +98,8 @@ rm -rf "${BUILD_DIR}/${CONFIGURATION}-iphonesimulator" "${BUILD_DIR}/${CONFIGURA
 #打开合并后的文件夹
 open "${UNIVERSAL_OUTPUT_FOLDER}"
 ```
-然后使用脚本进行编译 (command + B)，成功后将会自动跳转到打出的 .framework 文件相应的目录下。
+
+3、使用脚本进行编译 (command + B)，成功后将会自动跳转到打出的 .framework 文件相应的目录下。
 
 ### 查看是否成功
 
@@ -120,7 +121,7 @@ lipo -info ${yourFrameworkName}.framework/${yourFrameworkName}
 Architectures in the fat file: ${yourFrameworkName} are: i386 x86_64 armv7 arm64 (支持的架构显示在这)
 ```
 
-**设备的CPU架构(指令集) **
+**设备的CPU架构(指令集)**
 
 - 模拟器
   - **i386**: 针对 intel 通用微处理器32架构，如 iPhone 4s-5:
@@ -142,7 +143,9 @@ Architectures in the fat file: ${yourFrameworkName} are: i386 x86_64 armv7 arm64
 
 **补充知识：**
 
-从 C 代码到可执行文件经历编译步骤是：源代码 > 预处理器 > 编译器 > 汇编器 > 机器码 > 链接器 > 可执行文件。
+从 C 代码到可执行文件经历编译步骤是：
+
+源代码 > 预处理器 > 编译器 > 汇编器 > 机器码 > 链接器 > 可执行文件。
 
 在最后一步需要把 .o 文件和 C 语言运行库链接起来，这时需要用到 ld 命令。源文件经过一系列处理后，会生成对应的 .obj 文件，一个项目必然会有多个 .obj 文件，并且这些文件之间存在各种联系，如函数调用等。链接器做的事就是把目标文件和所用的一些库链接在一起形成一个完整的可执行文件。Other Linker Flags 设置的值实际上就是 ld 命令执行时后面所加的参数。下面介绍3个常用参数：
 
@@ -164,14 +167,14 @@ Bundle 可以理解为一个目录，并包含了程序中会用到的资源，�
 
 Bundle 创建有两种方式：
 
-- 简单的创建 bundle
+#### 简单的创建 bundle
 
-  创建一个文件夹，强制重命名该文件夹为 yourBundleName.bundle。
+创建一个文件夹，强制重命名该文件夹为 yourBundleName.bundle。
 
-- 通过 Xcode 创建 bundle
+#### 通过 Xcode 创建 bundle
 
-  - 新建一个项目，依次 TARGETS →  + →  mac OS → Framework & Library →  Bundle，输入 Product Name 即建立出 bundle 工程；
+步骤一：新建一个项目，依次 TARGETS →  + →  mac OS → Framework & Library →  Bundle，输入 Product Name 即建立出 bundle 工程；
 
-  - 在 bundle 目录下添加需要的资源文件，编译之后在整个项目工程的 Products 文件夹下得到资源文件 bundle 。
+步骤二：在 bundle 目录下添加需要的资源文件，编译之后在整个项目工程的 Products 文件夹下得到资源文件 bundle 。
 
-    这样做默认情况下 bundle 里面的 png 图片会被转为 tiff 的格式。因此在编译前需要做一步设置：找到 bundle 的工程，修改：Build Settings →  COMBINE_HIDPI_IMAGES，设置为 NO 之后再编译运行。
+这样做默认情况下 bundle 里面的 png 图片会被转为 tiff 的格式。因此在编译前需要做一步设置：找到 bundle 的工程，修改：Build Settings →  COMBINE_HIDPI_IMAGES，设置为 NO 之后再编译运行。

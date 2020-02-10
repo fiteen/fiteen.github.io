@@ -165,8 +165,8 @@ done
 
 **第六步：**在当前目录下执行脚本文件：
 
-```
-$ sh ChannelPackage.sh
+```bash
+sh ChannelPackage.sh
 ```
 
 打包完成后生成的 `ChannelPackages` 文件夹下，就是我们需要的渠道包：

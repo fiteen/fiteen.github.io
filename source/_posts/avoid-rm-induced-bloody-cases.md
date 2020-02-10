@@ -14,7 +14,7 @@ categories: 程序员必备
 通过 Homebrew 安装 [Trash](https://github.com/ali-rantakari/trash)
 
 ```bash
-$ brew install trash
+brew install trash
 ```
 
 安装成功后，可以通过 `trash -fr filename `命令删除文件，且文件会移到废纸篓中。
@@ -24,7 +24,7 @@ $ brew install trash
 打开 ~/.bash_profile 文件
 
 ```bash
-$ vim ~/.bash_profile
+vim ~/.bash_profile
 ```
 
 在文件中加入以下代码后保存文件：
@@ -36,7 +36,7 @@ alias rm="trash"
 使命令生效：
 
 ```bash
-$ source ~/.bash_profile
+source ~/.bash_profile
 ```
 
 这时执行 rm 命令，被删除的文件就会存放在废纸篓中了，废纸篓里的文件虽无法执行“放回原处”的方法，但可以通过鼠标拖拽恢复。

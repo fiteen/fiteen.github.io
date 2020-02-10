@@ -16,29 +16,31 @@ class-dump 是一个命令行工具，通过利用 Objective-C 语言的 runtime
 
 ### 安装
 
-1. 下载 [class-dump-3.5.dmg](http://stevenygard.com/download/class-dump-3.5.dmg)（若链接无效，请戳[官方网址](!http://stevenygard.com/projects/class-dump/ )）
+1、下载 [class-dump-3.5.dmg](http://stevenygard.com/download/class-dump-3.5.dmg)（若链接无效，请戳[官方网址](!http://stevenygard.com/projects/class-dump/ )）
 
-2. 打开终端，输入
+2、打开终端，输入
 
-   ```
-   open /usr/local/bin
-   ```
+```bash
+open /usr/local/bin
+```
 
-3. 将下载拿到的 class-dump 拷贝到 /usr/local/bin 目录下
+3、将下载拿到的 class-dump 拷贝到 `/usr/local/bin` 目录下
 
-4. 赋予其可执行权限，终端输入:
+4、赋予其可执行权限，终端输入：
 
-   ```
-   sudo chmod 777 /usr/local/bin/class-dump
-   ```
+```bash
+sudo chmod 777 /usr/local/bin/class-dump
+```
 
-5. 至此安装成功，并可以通过 `class-dump --help` 查看用法和版本
+5、至此安装成功，并可以通过 `class-dump --help` 查看用法和版本
 
 ### 使用
 
-1. 下载一个 ipa 文件，先将文件改为 zip 格式，解压后得到 .app 的目标文件
-2. 终端输入命令，格式为 `class-dump -H ${.app文件路径} -o ${输出文件夹路径}`
-3. 假如此时输出的文件中未得到目标的 .h，结果中什么都没有或者只有一个 `CDStructures.h`，说明需要砸壳
+1、下载一个 ipa 文件，先将文件改为 zip 格式，解压后得到 .app 的目标文件
+
+2、终端输入命令，格式为 `class-dump -H ${.app文件路径} -o ${输出文件夹路径}`
+
+3、假如此时输出的文件中未得到目标的 .h，结果中什么都没有或者只有一个 `CDStructures.h`，说明需要砸壳
 
 ## dumpdecrypted
 

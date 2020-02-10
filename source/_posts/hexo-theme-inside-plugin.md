@@ -22,8 +22,8 @@ thumbnail: hexo.png
 
 支持通过安装 html-minifier、babel 和 uglify-js 来实现代码压缩。 在项目根目录执行（Hexo 根目录，非 `themes/inside`）：
 
-```
-$ npm install babel-core babel-preset-env html-minifier uglify-js --save
+```bash
+npm install babel-core babel-preset-env html-minifier uglify-js --save
 ```
 
 
@@ -245,6 +245,6 @@ plugins:
 
 因此直接在站点根目录（不是主题根目录）下执行命令即可：
 
-```
-$ npm install hexo-generator-feed --save
+```bash
+npm install hexo-generator-feed --save
 ```

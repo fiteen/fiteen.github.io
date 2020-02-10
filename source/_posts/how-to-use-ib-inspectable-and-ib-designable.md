@@ -56,9 +56,12 @@ Identity Inspector 下的 User Defined Runtime Attributes 也会出现相应的 
 `【IB_DESIGNABLE】` 在类名前加上此宏定义，初始化、布置和绘制方法将被用来在画布上渲染该类的自定义视图。
 
 操作步骤：
-1. storyboard 中拖拽一个 UIButton；
-2. 创建父类是 UIButton 的 HTCustomButton 类文件，并在 .h 的 `interface` 前定义 `IB_DESIGNABLE`；
-3. 给步骤1按钮的 Custom Class 关联上 HTCustomButton。
+
+1、storyboard 中拖拽一个 UIButton；
+
+2、创建父类是 UIButton 的 HTCustomButton 类文件，并在 .h 的 `interface` 前定义 `IB_DESIGNABLE`；
+
+3、给步骤1按钮的 Custom Class 关联上 HTCustomButton。
 
 这时我们就可以直接在 User Defined Runtime Attributes 中加入想要的属性，例如圆角、边框宽度等。边框颜色由于 UIColor 类型的特殊性，需要重新定义。
 
