@@ -451,7 +451,7 @@ plugins:
   - //cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js
 
   # 代码复制
-  - position: post
+  - position: [post, page]
     template: |
       <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
       <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard-use.js"></script>

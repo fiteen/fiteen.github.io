@@ -160,13 +160,13 @@ custom: <span id="busuanzi_container_site_pv" style='display:none'><i class="fa 
 plugins:
   # inside 主题没有引入 jQuery 框架，需要手动引入
   - //cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js
-  - position: post
+  # 插件生效范围：post 和 page
+  - position: [post, page]
     template: |
       <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
       <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard-use.js"></script>
       <link href="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard.css" rel="stylesheet">
 {% endcodeblock %}
-
 
 ## 评论系统 - Valine
 
