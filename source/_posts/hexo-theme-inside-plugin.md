@@ -148,14 +148,19 @@ custom: <span id="busuanzi_container_site_pv" style='display:none'><i class="fa 
 }
 .btn-copy {
     border-radius: 3px;
-    border: 1px solid #fff;
+    border-width: 0px;
     font-size: 13px;
     line-height: 20px;
     padding: 2px 6px;
     position: absolute;
     right: 5px;
     top: 5px;
+    background: none;
+    color: black;
     opacity: 0;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
 }
 .btn-copy span {
     margin-left: 5px;
@@ -176,7 +181,7 @@ plugins:
     template: |
       <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
       <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard-use.js"></script>
-      <link href="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard.css" rel="stylesheet">
+      <link href="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.1/clipboard.css" rel="stylesheet">
       <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 {% endcodeblock %}
 
