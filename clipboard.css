@@ -5,15 +5,19 @@
 }
 .btn-copy {
     border-radius: 3px;
-    border: 1px solid #fff;
+    border-width: 0px;
     font-size: 13px;
     line-height: 20px;
     padding: 2px 6px;
     position: absolute;
     right: 5px;
     top: 5px;
+    background: none;
+    color: black;
     opacity: 0;
     outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
 }
 .btn-copy span {
     margin-left: 5px;
