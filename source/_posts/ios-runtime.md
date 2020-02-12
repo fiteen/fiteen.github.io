@@ -1,6 +1,6 @@
 ---
 title: iOS runtime 机制解读（结合 objc4 源码）
-date: 2018-10-03 15:11:08
+date: 2020-02-10 15:11:08
 tags: runtime
 categories: iOS
 thumbnail: runtime.png
@@ -358,11 +358,11 @@ void fooMethod(id obj, SEL _cmd) {
 
 可以看到虽然没有实现 `foo` 这个函数，但是我们通过 `class_addMethod` 动态添加 `fooMethod` 函数，并执行 `fooMethod` 这个函数的IMP。
 
-如果 `resolveInstanceMethod` 方法返回 NO ，运行时就会移到下一步：`forwardingTargetForSelector`。
+如果 `resolveInstanceMethod:` 方法返回 NO ，运行时就会移到下一步：`forwardingTargetForSelector:`。
 
 ### 备用接收者
 
-如果目标对象实现了 `forwardingTargetForSelector` 方法，runtime 就会调用这个方法，给你把这个消息转发给其他接受者的机会。
+如果目标对象实现了 `forwardingTargetForSelector:` 方法，runtime 就会调用这个方法，给你把这个消息转发给其他接受者的机会。
 
 实现一个备用接收者的例子如下：
 
@@ -413,7 +413,7 @@ void fooMethod(id obj, SEL _cmd) {
 
 ### 完整的消息转发
 
-如果在上一步还无法处理未知消息，唯一能做的就是启用**完整的消息转发**机制了。
+如果在上一步还无法处理未知消息，唯一能做的就是启用**完整的消息转发**机制。
 
 主要涉及到两个方法：
 
@@ -532,7 +532,7 @@ typedef OBJC_ENUM(uintptr_t, objc_AssociationPolicy) {
 };
 {% endcodeblock %}
 
-我们看看内存策略对于的属性修饰。
+我们看看内存策略对应的属性修饰。
 
 | 内存策略                          | 属性修饰                                            | 描述                                           |
 | --------------------------------- | --------------------------------------------------- | ---------------------------------------------- |
@@ -542,7 +542,7 @@ typedef OBJC_ENUM(uintptr_t, objc_AssociationPolicy) {
 | OBJC_ASSOCIATION_RETAIN           | @property (atomic, strong)                          | 指定一个关联对象的强引用，能被原子化使用。       |
 | OBJC_ASSOCIATION_COPY             | @property (atomic, copy)                            | 指定一个关联对象的 copy 引用，能被原子化使用。   |
 
-下面利用关联对象实现一个“在分类中增加一个用 copy 修饰的非原子性属性 `prop`的功能。
+下面利用关联对象实现一个“在分类中增加一个用 `copy` 修饰的非原子性属性 `prop`的功能。
 
 上文中，我们已经知道分类中不能直接添加属性，需要手动添加存取方法：
 
@@ -808,4 +808,4 @@ JSPatch 是一款 iOS 动态更新框架，只需要在项目中引入引擎，�
 
 它通过**完整的消息转发**实现了获取参数的问题。
 
-原理：当调用一个 NSObject 对象不存在的方法时，并不会马上抛出异常，而是会经过多层转发，层层调用对象的 `-resolveInstanceMethod:`, `-forwardingTargetForSelector:`, `-methodSignatureForSelector:`, `-forwardInvocation:` 等方法，其中最后 `-forwardInvocation:` 是会有一个 `NSInvocation` 对象，这个 `NSInvocation` 对象保存了这个方法调用的所有信息，包括方法名、参数和返回值类型，最重要的是有所有参数值，可以从这个 `NSInvocation` 对象里拿到调用的所有参数值。所以只需要让被 JS 替换的方法最后都调用到 `-forwardInvocation:`，就可以解决无法拿到参数值的问题了。
+原理：当调用一个 NSObject 对象不存在的方法时，并不会马上抛出异常，而是会经过多层转发，层层调用对象的 `-resolveInstanceMethod:`、`-forwardingTargetForSelector:`、`-methodSignatureForSelector:`、`-forwardInvocation:` 等方法，其中 `-forwardInvocation:` 里的 `NSInvocation` 对象会保存了这个方法调用的所有信息，包括方法名、参数和返回值类型等。所以只需要让被 JS 替换的方法最后都调用到 `-forwardInvocation:`，就可以解决无法拿到参数值的问题了。
