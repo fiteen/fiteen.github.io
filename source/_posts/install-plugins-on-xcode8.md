@@ -3,7 +3,6 @@ title: 如何在 Xcode8上安装插件
 date: 2016-11-30 12:02:20
 tags:
     - Xcode
-    - plugin
 categories: iOS
 ---
 

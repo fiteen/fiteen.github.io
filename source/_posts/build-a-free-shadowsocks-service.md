@@ -2,7 +2,6 @@
 title: 手把手教你免费搭建 Shadowsocks 服务
 date: 2018-12-27 21:43:02
 tags:
-    - GCP
     - Shadowsocks
 categories: 科学上网
 thumbnail: google-cloud.png

@@ -3,7 +3,6 @@ title: Hexo + inside 博客个性化定制
 date: 2020-01-17 01:20:03
 tags: 
 	- Hexo
-	- RSS
 	- Valine
 categories: 前端
 thumbnail: hexo.png
