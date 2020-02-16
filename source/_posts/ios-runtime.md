@@ -605,7 +605,7 @@ class_addMethod([self class], sel, (IMP)fooMethod, "v@:");
 
 #### 方法替换
 
-方法替换就是改变原的类的选择子映射表。
+方法替换就是改变类的选择子映射表。
 
 ![](method-swizzling.png)
 
