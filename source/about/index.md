@@ -81,11 +81,3 @@ copyright: false
   🐌 会迟到但不会失约的小伙伴
   ```
 </details>
-
-<details>
-  <summary>忍者</summary>
-  ```
-  🍗 零食可以放到过期
-  💓 对暗恋的人可以永远不说
-  ```
-</details>
