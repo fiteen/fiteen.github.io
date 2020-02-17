@@ -18,19 +18,19 @@ copyright: false
 
 <details>
   <summary>运动小将</summary>
-  <p style="font-size:13px; line-height:13px"> 🌟 大学期间蝉联全学院女生体质健康测试分数第一</p>
-  <p style="font-size:13px; line-height:13px"> 🏃 女子800m 跑中考成绩 2'40</p>
-  <p style="font-size:13px; line-height:13px"> 🏆 小学跳远全镇冠军 </p>
+  <p style="font-size:12px; line-height:13px"> 🌟 大学期间蝉联全学院女生体质健康测试分数第一</p>
+  <p style="font-size:12px; line-height:13px"> 🏃 女子800m 跑中考成绩 2'40</p>
+  <p style="font-size:12px; line-height:13px"> 🏆 小学跳远全镇冠军 </p>
 </details>
 <br>
 <details>
   <summary>脑洞怪兽</summary>
-  <p style="font-size:13px; line-height:13px"> 💡 脑袋中常爆发特别的灵感</p>
-  <p style="font-size:13px; line-height:13px"> 🎨 不是好看的皮囊，却是有趣的灵魂</p>
+  <p style="font-size:12px; line-height:13px"> 💡 脑袋中常爆发特别的灵感</p>
+  <p style="font-size:12px; line-height:13px"> 🎨 不是好看的皮囊，却是有趣的灵魂</p>
 </details>
 <br>
 <details>
-  <summary>熬夜选手</summary>
+  <summary>熬夜冠军</summary>
   <p style="font-size:12px; line-height:13px"> 🌝 参加美赛建模曾四天四夜不睡觉</p>
   <p style="font-size:12px; line-height:13px"> 👸 入夜，头脑清醒、文思泉涌、茅塞顿开...</p>
 </details>
