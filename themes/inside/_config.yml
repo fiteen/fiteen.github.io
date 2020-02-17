@@ -97,10 +97,10 @@ profile:
 # Sidebar navigation links
 menu:
   📝 Article: /
-  # About: /about
-  # Links: /links
   ⏳ Resources: /resources
   ⌨️ LeetCode: /leetcode
+  🐈 About: /about
+  # 🔗 Links: /links
   🔍 Search: /search
 
 # Social media URL
