@@ -77,7 +77,7 @@ copyright: false
 <details>
   <summary>树洞</summary>
   ```
-  👭 朋友们负能量的消灭者
+  👭 朋友们负能量的消除者
   🐌 会迟到但不会失约的小伙伴
   ```
 </details>
