@@ -173,7 +173,7 @@ Bundle 创建有两种方式：
 
 #### 通过 Xcode 创建 bundle
 
-**步骤1**：新建一个项目，依次点击 `TARGETS → + → mac OS → Framework & Library → Bundle`，输入 Product Name 即建立出 bundle 工程；
+**步骤1**：新建一个项目，依次点击 `TARGETS → + → mac OS → Framework & Library → Bundle`，输入 `Product Name`即建立出 bundle 工程；
 
 **步骤2**：在 bundle 目录下添加需要的资源文件，编译之后在整个项目工程的 Products 文件夹下得到资源文件 bundle 。
 
