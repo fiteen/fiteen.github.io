@@ -41,13 +41,13 @@ iOS 打渠道包目前想到的就只有两种方式，一种是通过[多 targe
 
 下面用一个简单的 Demo 演示一下：
 
-**第一步：**创建工程名为 MultiChannelDemo 的项目，并在项目中新建一个 `Channel.plist` 文件，plist 中设置 Channel 字段，值为 channel01。然后在页面上设置一个 label 标签用于显示当前的渠道名称，渠道名可以通过下面的代码获取到：
+**第一步**：创建工程名为 MultiChannelDemo 的项目，并在项目中新建一个 `Channel.plist` 文件，plist 中设置 Channel 字段，值为 channel01。然后在页面上设置一个 label 标签用于显示当前的渠道名称，渠道名可以通过下面的代码获取到：
 
 ```objective-c
 NSDictionary *channelDic = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Channel" ofType:@"plist"]];
 NSString *channel = channelDic[@"Channel"];
 ```
-**第二步：**把这个项目用可用的证书正常打一个母包，解压这个 ipa 包可以获得一个名为 `Payload` 的文件夹，里面是一个 .app 文件，右键显示其包内容，内容如下：
+**第二步**：把这个项目用可用的证书正常打一个母包，解压这个 ipa 包可以获得一个名为 `Payload` 的文件夹，里面是一个 .app 文件，右键显示其包内容，内容如下：
 
 ```
 ├── Base.lproj
@@ -60,13 +60,13 @@ NSString *channel = channelDic[@"Channel"];
 ```
 可以看到，里面的 `Channel.plist` 也就是在前面工程中新建的存储渠道信息的 plist，我们会修改里面的 Channel 再生成新的渠道包。
 
-**第三步：**提取描述文件用于重签名，上一步中 Payload 的文件夹里有一个 `embedded.mobileprovision` 文件，这就是我们需要的文件。
+**第三步**：提取描述文件用于重签名，上一步中 Payload 的文件夹里有一个 `embedded.mobileprovision` 文件，这就是我们需要的文件。
 
-**第四步：**新建一个纯文本，里面输入你要新增的渠道号，如：
+**第四步**：新建一个纯文本，里面输入你要新增的渠道号，如：
 
 ![](channel-list-txt.png)
 
-**第五步：**写一个脚本文件，内容如下：
+**第五步**：写一个脚本文件，内容如下：
 
 {% codeblock ChannelPackage.sh %}
 #!/bin/bash
@@ -163,7 +163,7 @@ done
 └── embedded.mobileprovision
 ```
 
-**第六步：**在当前目录下执行脚本文件：
+**第六步**：在当前目录下执行脚本文件：
 
 ```bash
 sh ChannelPackage.sh
