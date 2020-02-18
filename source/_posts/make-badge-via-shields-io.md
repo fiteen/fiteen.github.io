@@ -117,7 +117,7 @@ https://img.shields.io/badge/${label}-${message}-${color}.svg
 
 比如 [Kingfisher](https://github.com/onevcat/Kingfisher) 许可协议支持 Cocoapods 和 GitHub 两种写法： [![license](https://img.shields.io/cocoapods/l/Kingfisher?style=flat)](https://raw.githubusercontent.com/onevcat/Kingfisher/master/LICENSE) 和 [![license](https://img.shields.io/github/license/onevcat/Kingfisher)](https://raw.githubusercontent.com/onevcat/Kingfisher/master/LICENSE)
 
-[debug](https://github.com/visionmedia/debug )的许可协议为 [![license](https://img.shields.io/npm/l/debug)](https://github.com/visionmedia/debug/blob/master/LICENSE)
+[debug](https://github.com/visionmedia/debug) 的许可协议为 [![license](https://img.shields.io/npm/l/debug)](https://github.com/visionmedia/debug/blob/master/LICENSE)
 
 ```
 // Kingfisher Cocoapods License：
