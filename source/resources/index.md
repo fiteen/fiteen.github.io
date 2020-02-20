@@ -53,6 +53,7 @@ date: 2016-08-13 00:00:00
 ### Helper
 
 - [Dash](https://kapeli.com/dash) - API文档浏览器以及代码片段管理工具。[🔨](resources/dash)
+- [SwitchHosts](https://oldj.github.io/SwitchHosts/) - 管理、切换多个 hosts 方案的工具。[📖](https://github.com/oldj/SwitchHosts)🆓
 
 ## 设计&产品
 
@@ -69,7 +70,8 @@ date: 2016-08-13 00:00:00
 - [ProcessOn](https://www.processon.com) - 国产在线作图平台，支持流程图、思维导图、原型图、UML、网络拓扑图、组织结构图等，可以免费保存 5 个文件。🆓
 - [draw.io](https://www.draw.io) - 流程图在线绘制工具，也支持[客户端](https://github.com/jgraph/drawio-desktop/releases)离线使用，没有保存文件的数量限制。[📖](https://github.com/jgraph/drawio)🆓
 - [StarUML](resources/star-uml) - 超好用的UML画图工具。[📖](https://github.com/staruml)🆓[🔨](resources/star-uml)
-- [XMind](http://www.xmind.net) - 思维导图软件。🆓
+- [XMind](http://www.xmind.net) - 专业思维导图软件。🆓
+- [MindNode](https://mindnode.com) - 简洁可爱风格的思维脑图绘制软件。
 
 ### 图片处理
 
@@ -89,6 +91,7 @@ MrWriter -->
 - [Cmd Markdown](https://www.zybuluo.com/mdeditor) - 在线 MarkDown 编辑阅读器，支持实时同步预览。🆓
 - <span id = "typora">[Typora](http://www.typora.io)</span> - “读写一体” 简约 Markdown 编辑器。🆓
 - [MacDown](https://macdown.uranusjr.com) - 开源的 Markdown 编辑器，参照 [Mou](http://25.io/mou/)。[📖](https://github.com/MacDownApp/macdown)🆓
+- [MWeb](https://zh.mweb.im) - 专业的 Markdown 写作、记笔记、静态博客生成软件。[🔨](resources/mweb)
 
 ### 截图&录屏
 
@@ -142,4 +145,5 @@ MrWriter -->
 - [Charles Mac 版破解](resources/charles)
 - [Dash 破解](resources/dash)
 - [StarUML Mac 版破解](resources/star-uml)
+- [MWeb 破解安装](resources/mweb)
 - [Reeder 4 Mac 版破解](resources/reeder)

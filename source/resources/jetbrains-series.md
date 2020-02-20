@@ -2,7 +2,7 @@
 title: Jetbrains Mac 版全系列 IDE 永久破解教程
 ---
 
-> ⚠️⚠️⚠️ **请支持[正版]((https://www.jetbrains.com/idea/))，仅供技术交流。**
+> ⚠️⚠️⚠️ **请支持[正版](https://www.jetbrains.com/idea/)，仅供技术交流。**
 **学生**凭学生证可**免费**申请正版授权。
 **创业公司**可**五折**购买正版授权。
 
