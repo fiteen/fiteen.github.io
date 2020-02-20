@@ -53,6 +53,7 @@ date: 2016-08-13 00:00:00
 ### Helper
 
 - [Dash](https://kapeli.com/dash) - API文档浏览器以及代码片段管理工具。[🔨](resources/dash)
+- [PPRows](https://github.com/jkpang/PPRows) - 在Mac上计算你写了多少行代码。[📖](https://github.com/jkpang/PPRows)🆓
 - [SwitchHosts](https://oldj.github.io/SwitchHosts/) - 管理、切换多个 hosts 方案的工具。[📖](https://github.com/oldj/SwitchHosts)🆓
 
 ## 设计&产品
