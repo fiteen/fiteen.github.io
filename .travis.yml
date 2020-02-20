@@ -3,13 +3,9 @@ node_js: stable     # 设置相应的版本
 cache:
     directories:
         - node_modules   # 减少 travis 构建时间
-before_install:
-  - npm install -g hexo
-  - npm install -g hexo-cli
 install:
   - npm install   # 安装 hexo 及插件
 before_script:
-  - npm install -g mocha
   - git clone --branch master https://github.com/fiteen/fiteen.github.io public
 script:
   - hexo cl
