@@ -1,3 +1,10 @@
+language: node_js   # 设置语言
+node_js: stable     # 设置相应的版本
+cache:
+    directories:
+        - node_modules   # 减少 travis 构建时间
+before_script:
+  - git clone --branch master https://github.com/fiteen/fiteen.github.io public
 script:
   - hexo cl
   - hexo g
