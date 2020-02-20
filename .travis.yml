@@ -5,7 +5,7 @@ os: osx
 cache:
   npm: true
 install:
-  - yarn
+  - npm install
 before_script:
   - git clone --branch master https://github.com/fiteen/fiteen.github.io public
 script:
@@ -21,7 +21,7 @@ after_script:
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
 branches:
   only:
-  - resource  # 监测源码分支
+  - resource
 env:
     global:
         - GH_REF: github.com:fiteen/fiteen.github.io.git
