@@ -1,0 +1,30 @@
+language: node_js   # 设置语言
+node_js: stable     # 设置相应的版本
+cache:
+    directories:
+        - node_modules   # 减少 travis 构建时间
+before_install:
+  - npm install -g hexo
+  - npm install -g hexo-cli
+install:
+  - npm install   # 安装 hexo 及插件
+before_script:
+  - npm install -g mocha
+  - git clone --branch master https://github.com/fiteen/fiteen.github.io public
+script:
+  - hexo cl
+  - hexo g -d 
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "FiTeen"
+  - git config user.email "isfiteen@icloud.com"
+  - git add .
+  - git commit -m "update by Travis-CI"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+branches:
+  only:
+  - resource  # 监测源码分支
+env:
+    global:
+        - GH_REF: github.com:fiteen/fiteen.github.io.git
