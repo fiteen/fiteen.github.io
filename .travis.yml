@@ -6,8 +6,6 @@ cache:
     - node_modules
 install:
   - npm i
-before_script:
-  - git clone --branch master https://github.com/fiteen/fiteen.github.io public
 script:
   - hexo cl
   - hexo g
@@ -30,5 +28,5 @@ branches:
   - resource
 env:
     global:
-        - GH_REF: github.com:fiteen/fiteen.github.io.git
-        - CO_REF: e.coding.net:fiteen/fiteen.coding.me.git
+        - GH_REF: github.com/fiteen/fiteen.github.io.git
+        - CO_REF: e.coding.net/fiteen/fiteen.coding.me.git
