@@ -1,27 +1,34 @@
 language: node_js
-node_js:
-  - "10"
+node_js: stable
 os: osx
 cache:
-  npm: true
+  directories:
+    - node_modules
 install:
-  - npm install
+  - npm i
 before_script:
   - git clone --branch master https://github.com/fiteen/fiteen.github.io public
 script:
   - hexo cl
   - hexo g
 after_script:
+  - git clone https://${GH_REF} .deploy_git
+  - cd .deploy_git
+  - git checkout master
+  - cd ../
+  - mv .deploy_git/.git/ ./public/
   - cd ./public
   - git init
   - git config user.name "FiTeen"
   - git config user.email "isfiteen@icloud.com"
   - git add .
-  - git commit -m "update by Travis-CI"
+  - git commit -m "Travis-CI Auto Builder"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+  - git push --force --quiet "https://fiteen:${CO_TOKEN}@${CO_REF}" master:master
 branches:
   only:
   - resource
 env:
     global:
         - GH_REF: github.com:fiteen/fiteen.github.io.git
+        - CO_REF: e.coding.net:fiteen/fiteen.coding.me.git
