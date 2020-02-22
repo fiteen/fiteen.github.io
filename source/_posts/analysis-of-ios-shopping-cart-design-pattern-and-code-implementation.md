@@ -131,7 +131,7 @@ A.selected = allChoose;
 
 cell在*normal* 状态时可以左滑删除，而在*edit* 状态下点击删除，要在下面方法中做出`return YES/NO;`的判断和区分。
 
-```objective-c
+```objc
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {}
 ```
 假如要自定义删除键，可以在`UITableViewRowAction`初始化时在`title`的定义部分，使用多个空格作为占位符，然后在`layoutSubviews`中找到cell图层上的`UITableViewCellDeleteConfirmationView`层添加上新定义的删除键。

@@ -15,7 +15,7 @@ categories: iOS
 
 IDFA 是一段16进制的32位字符串，例如`D7DFA3F1-0E1C-49CD-AFBC-75601390FEA2`。可以通过以下代码获取：
 
-```objective-c
+```objc
 #import <AdSupport/ASIdentifierManager.h>
 
 NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];

@@ -27,7 +27,7 @@ iOS 打渠道包目前想到的就只有两种方式，一种是通过[多 targe
 判断当前是哪个 target，可以通过添加宏定义实现，方式就是在 `Build Settings` 找到 `Preprocessor Macros`，填入宏定义名。
 
 代码中这样判断：
-```objective-c
+```objc
 #ifdef  TARGET1MACROS
     // target1
 #elif defined TARGET2MACROS
@@ -43,7 +43,7 @@ iOS 打渠道包目前想到的就只有两种方式，一种是通过[多 targe
 
 **第一步**：创建工程名为 MultiChannelDemo 的项目，并在项目中新建一个 `Channel.plist` 文件，plist 中设置 Channel 字段，值为 channel01。然后在页面上设置一个 label 标签用于显示当前的渠道名称，渠道名可以通过下面的代码获取到：
 
-```objective-c
+```objc
 NSDictionary *channelDic = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Channel" ofType:@"plist"]];
 NSString *channel = channelDic[@"Channel"];
 ```

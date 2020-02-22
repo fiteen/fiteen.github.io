@@ -11,7 +11,7 @@ categories: iOS
 
 看下面三种属性的声明方式：
 
-```objective-c
+```objc
 @property(nonatomic, retain) UITextField *name;
 @property(atomic, retain) UITextField *name;
 @property(retain) UITextField *name;
@@ -25,7 +25,7 @@ categories: iOS
 
 `nonatomic` 对象的存取方法实现如下：
 
-```objective-c
+```objc
 - (UITextField *) name {
     return _name;
 }
@@ -40,7 +40,7 @@ categories: iOS
 
 而系统为 `atomic` 对象生成的存取方法会进行**加锁**：
 
-```objective-c
+```objc
 - (UITextField *) name {
     UITextField *res = nil;
     @synchronized(self) {
