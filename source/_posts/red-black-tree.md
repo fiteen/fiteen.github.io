@@ -21,7 +21,7 @@ thumbnail: rbtree.png
 
 ### 平衡二叉搜索树
 
-**平衡二叉搜索树**（Balanced Binary Search Tree），英文简称 BBST。经典常见的平衡二叉搜索树是 [AVL 树](#avl-tree)</span>和红黑树。
+**平衡二叉搜索树**（Balanced Binary Search Tree），英文简称 BBST。经典常见的平衡二叉搜索树是 [AVL 树](#avl-tree)和红黑树。
 
 #### 二叉搜索树
 

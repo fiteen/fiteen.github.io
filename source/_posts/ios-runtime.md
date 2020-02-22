@@ -808,4 +808,6 @@ JSPatch 是一款 iOS 动态更新框架，只需要在项目中引入引擎，�
 
 它通过**完整的消息转发**实现了获取参数的问题。
 
-原理：当调用一个 NSObject 对象不存在的方法时，并不会马上抛出异常，而是会经过多层转发，层层调用对象的 `-resolveInstanceMethod:`、`-forwardingTargetForSelector:`、`-methodSignatureForSelector:`、`-forwardInvocation:` 等方法，其中 `-forwardInvocation:` 里的 `NSInvocation` 对象会保存了这个方法调用的所有信息，包括方法名、参数和返回值类型等。所以只需要让被 JS 替换的方法最后都调用到 `-forwardInvocation:`，就可以解决无法拿到参数值的问题了。
+**原理**：
+
+当调用一个 NSObject 对象不存在的方法时，并不会马上抛出异常，而是会经过多层转发，层层调用对象的 `-resolveInstanceMethod:`、`-forwardingTargetForSelector:`、`-methodSignatureForSelector:`、`-forwardInvocation:` 等方法，其中 `-forwardInvocation:` 里的 `NSInvocation` 对象会保存了这个方法调用的所有信息，包括方法名、参数和返回值类型等。所以只需要让被 JS 替换的方法最后都调用到 `-forwardInvocation:`，就可以解决无法拿到参数值的问题了。
