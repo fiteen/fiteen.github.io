@@ -130,7 +130,7 @@ sns:
 # Sidebar footer copyright info
 footer:
   # Set to false to hide.
-  copyright: '&copy; 2016-2019 🌱 <a href="https://github.com/fiteen">FiTeen</a>'
+  copyright: '&copy; 2016-2020 🌱 <a href="https://github.com/fiteen">FiTeen</a>'
 
   # Set to false to hide Hexo link.
   powered: true
