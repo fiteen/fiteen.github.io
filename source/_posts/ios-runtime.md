@@ -317,16 +317,16 @@ struct category_t {
 {% codeblock objc-class.mm lang:c %}
 void _class_resolveMethod(Class cls, SEL sel, id inst)
 {
-	// 判断是不是元类
+    // 判断是不是元类
     if (! cls->isMetaClass()) {
         // try [cls resolveInstanceMethod:sel]
-		// 调用类的 resolveInstanceMethod 方法，动态添加实例方法
+        // 调用类的 resolveInstanceMethod 方法，动态添加实例方法
         _class_resolveInstanceMethod(cls, sel, inst);
     } 
     else {
         // try [nonMetaClass resolveClassMethod:sel]
         // and [cls resolveInstanceMethod:sel]
-		// 调用元类的 resolveClassMethod 方法，动态添加类方法
+        // 调用元类的 resolveClassMethod 方法，动态添加类方法
         _class_resolveClassMethod(cls, sel, inst);
         if (!lookUpImpOrNil(cls, sel, inst, 
                             NO/*initialize*/, YES/*cache*/, NO/*resolver*/)) 
