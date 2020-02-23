@@ -29,6 +29,12 @@ copyright: false
   <p style="font-size:12px; line-height:13px"> 🏆 小学跳远全镇冠军 </p>
 </details>
 <details style="padding-left:12px;padding-bottom:10px">
+  <summary>虚假的王者</summary>
+  <p style="font-size:12px; line-height:13px"> 🎮 熟悉 KPL 各大战队选手英雄池和 BP 风格</p>
+  <p style="font-size:12px; line-height:13px"> 👀 意识流召唤师，嘴强王者</p>
+  <p style="line-height:10px"> </p>
+</details>
+<details style="padding-left:12px;padding-bottom:10px">
   <summary>脑洞怪兽</summary>
   <p style="font-size:12px; line-height:13px"> 💡 脑袋中常爆发特别的灵感</p>
   <p style="font-size:12px; line-height:13px"> 🎨 不是好看的皮囊，却是有趣的灵魂</p>
@@ -48,12 +54,6 @@ copyright: false
   <summary>热搜雷达</summary>
   <p style="font-size:12px; line-height:13px"> 🏂 掌握实时热点和八卦信息</p>
   <p style="font-size:12px; line-height:13px"> 👻 能接梗</p>
-  <p style="line-height:10px"> </p>
-</details>
-<details style="padding-left:12px;padding-bottom:10px">
-  <summary>虚假的王者</summary>
-  <p style="font-size:12px; line-height:13px"> 🎮 熟悉 KPL 各大战队选手英雄池和 BP 风格</p>
-  <p style="font-size:12px; line-height:13px"> 👀 意识流召唤师，嘴强王者</p>
   <p style="line-height:10px"> </p>
 </details>
 <details style="padding-left:12px;padding-bottom:10px">
