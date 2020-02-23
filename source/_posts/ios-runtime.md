@@ -282,6 +282,8 @@ struct category_t {
 
 ### 流程
 
+消息传递的完整过程为：
+
 ![消息传递流程](message-send.png)
 
 也就是查找 IMP 的过程：
