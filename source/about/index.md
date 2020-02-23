@@ -10,16 +10,20 @@ copyright: false
 
 主攻 iOS 开发，~~面向谷歌/百度~~能编写 Android、Web、小程序、Flutter 项目~~，发际线尚可~~。
 
-喜爱悬疑、推理、烧脑题材，偶尔羞耻的傻白甜剧也可食用，习惯 2 倍速。
+钟情于悬疑、推理、烧脑题材，偶尔羞耻的傻白甜剧也可食用，习惯 2 倍速。
 
 不追星、不追剧、不追番、不追文、偶尔游戏，自带防沉迷。
+
+完美主义，排版强迫症患者。
+
+不是什么黑洞，干啥啥都行的小机灵～👀
 
 #### 我是...
 
 （👇记得点开下方小三角形哦...）
 
 <details style="padding-left:12px;padding-bottom:10px">
-  <summary>运动小将</summary>
+  <summary>运动小天才</summary>
   <p style="font-size:12px; line-height:13px"> 🌟 大学期间蝉联全学院女生体质健康测试分数第一</p>
   <p style="font-size:12px; line-height:13px"> 🏃 女子800m 跑中考成绩 2'40</p>
   <p style="font-size:12px; line-height:13px"> 🏆 小学跳远全镇冠军 </p>

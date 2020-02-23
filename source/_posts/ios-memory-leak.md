@@ -32,9 +32,9 @@ self.block = ^{
 self.block();
 ```
 
-`block` 是 `self` 的属性，因此 `self` 强引用了 `block`，而 `block` 内部又调用了 `self`，因此 `block` 也强引用了 `self`。要解决这个循环引用的问题，有三种思路。
+`block` 是 `self` 的属性，因此 `self` 强引用了 `block`，而 `block` 内部又调用了 `self`，因此 `block` 也强引用了 `self`。要解决这个循环引用的问题，有两种思路。
 
-#### 方法一：使用 Weak-Strong Dance
+#### 使用 Weak-Strong Dance
 
 先用 `__weak` 将 `self` 置为弱引用，打破“循环”关系，但是 `weakSelf` 在 `block` 中可能被提前释放，因此还需要在 `block` 内部，用 `__strong` 对 `weakSelf` 进行强引用，这样可以确保 `strongSelf` 在 `block` 结束后才会被释放。
 
@@ -49,7 +49,7 @@ self.block = ^{
 self.block();
 ```
 
-#### 方法二：断开持有关系
+#### 断开持有关系
 
 使用 `__block` 关键字设置一个指针 `vc` 指向 `self`，重新形成一个 `self → block → vc → self` 的循环持有链。在调用结束后，将 `vc` 置为 `nil`，就能断开循环持有链，从而令 `self` 正常释放。
 
