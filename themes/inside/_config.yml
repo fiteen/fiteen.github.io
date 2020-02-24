@@ -447,21 +447,42 @@ plugins:
 #         }
 #     # Or a path relative to theme folder
 #     code: snippets/mycss.css
+
   # jQery
   - //cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js
 
   # Font Awesome
   # - //netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
-  # - lib/font-awesome/css/font-awesome.min.css
+  - lib/font-awesome/css/font-awesome.min.css
 
   # 代码复制
-  - position: [post, page]
-    template: |
-      <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
-      <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard-use.js"></script>
-      <link href="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.1/clipboard.css" rel="stylesheet">
-      <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  
+  - lib/clipboard/clipboard.css
+  - //cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js
+  - lib/font-awesome/css/font-awesome.min.css
+
+  # - //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.1/clipboard.css
+  # - //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard-use.js
+
+  # 插入事件委托代码
+  - tag: script
+    type: text/javascript
+    code: |
+      $(function() {
+        $('main').on('click', '.highlight .code pre', function() {
+          new ClipboardJS('.highlight .code pre', {
+            target(trigger) {
+              return trigger;
+            }
+          });
+        })
+      })
+   
+  # - position: [post, page]
+  #   template: |
+  #     <script type="text/javascript" src="clipboard.css"></script>
+  #     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
+      
+
   # Valine 评论
   - //cdn1.lncld.net/static/js/3.0.4/av-min.js
   - //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/valine.js

@@ -1,0 +1,11 @@
+.highlight .code pre:after {
+    padding: 2px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font: normal normal normal 14px/1 FontAwesome;
+    cursor: pointer;
+}
+.highlight:hover .code pre:after {
+    content: "\f0ea";
+}
