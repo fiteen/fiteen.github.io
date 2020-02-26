@@ -13,7 +13,7 @@ thumbnail: nsurlprotocol.png
 
 ## NSURLProtocol 是什么
 
-NSURLProtocol 是 Foundation 框架中 [URL Loading System](https://developer.apple.com/documentation/foundation/url_loading_system?language=objc) 的一部分。它的**核心思想**就是：开发者可以通过它，在不改动应用在网络调用其它部分的情况下，去改变 URL 加载的全部细节。换句话说，NSURLProtocol 是一个被 Apple 默许的攻击者。
+NSURLProtocol 是 Foundation 框架中 [URL Loading System](https://developer.apple.com/documentation/foundation/url_loading_system?language=objc) 的一部分。它可以让开发者可以在不修改应用内原始请求代码的情况下，去改变 URL 加载的全部细节。换句话说，NSURLProtocol 是一个被 Apple 默许的攻击者。
 
 虽然 NSURLProtocol 叫“Protocol”，却不是协议，而是一个抽象类。
 
@@ -37,9 +37,9 @@ NSURLProtocol 是 Foundation 框架中 [URL Loading System](https://developer.ap
 
 相应的，基于它们实现的第三方网络框架 AFNetworking 和 Alamofire 的网络请求，也可以被 NSURLProtocol 拦截到。
 
-但早些年基于 CFNetwork 实现的，比如 ASIHTTPRequest、MKNetwokit，其网络请求就无法被拦截。
+但早些年基于 CFNetwork 实现的，比如 ASIHTTPRequest，其网络请求就无法被拦截。
 
-另外，**UIWebVIew 也是可以被 NSURLProtocol 拦截的，但 WKWebView 不可以。**（因为 WKWebView 是基于 WebKit，并不走 C socket。）
+另外，**UIWebView 也是可以被 NSURLProtocol 拦截的，但 WKWebView 不可以。**（因为 WKWebView 是基于 WebKit，并不走 C socket。）
 
 因此，在实际应用中，它的功能十分强大，比如：
 
@@ -110,14 +110,14 @@ NSURLProtocol 允许开发者去获取、添加、删除 request 对象的任意
 + (BOOL)requestIsCacheEquivalent:(NSURLRequest *)a toRequest:(NSURLRequest *)b;
 ```
 
-### 启动和停止下载
+### 启动和停止加载
 
 这是子类中最重要的两个方法，不同的自定义子类在调用这两个方法时会传入不同的内容，但共同点都是围绕 protocol 客户端进行操作。
 
 ```objc
-// 开始下载
+// 开始加载
 - (void)startLoading;
-// 停止下载
+// 停止加载
 - (void)stopLoading;
 ```
 
@@ -134,7 +134,7 @@ NSURLProtocol 允许开发者去获取、添加、删除 request 对象的任意
 - (NSURLSessionTask *)task;
 ```
 
-NSURLProtocol 在实际应用中，主要是完成两步：拦截 URL 和篡改 URL 转发。先来看如何拦截网络请求。
+NSURLProtocol 在实际应用中，主要是完成两步：拦截 URL 和 URL 转发。先来看如何拦截网络请求。
 
 ## 如何利用 NSProtocol 拦截网络请求
 
@@ -148,7 +148,7 @@ NSURLProtocol 在实际应用中，主要是完成两步：拦截 URL 和篡改 
 ```
 ### 注册 NSURLProtocol 的子类
 
-在合适的位置注册这个子类。对于基于 NSURLConnection 或者使用 `[NSURLSession sharedSession]` 初始化对象创建的网络请求，调用 `registerClass` 方法即可。
+在合适的位置注册这个子类。对基于 NSURLConnection 或者使用 `[NSURLSession sharedSession]` 初始化对象创建的网络请求，调用 `registerClass` 方法即可。
 
 ```objc
 [NSURLProtocol registerClass:[NSClassFromString(@"HTCustomURLProtocol") class]];
@@ -156,14 +156,13 @@ NSURLProtocol 在实际应用中，主要是完成两步：拦截 URL 和篡改 
 // [NSURLProtocol registerClass:[HTCustomURLProtocol class]]; 
 ```
 
-如果需要全局监听，可以设置在 `AppDelegate.m` 的 `didFinishLaunchingWithOptions` 方法中。如果只需要在单个 UIViewController 中使用，可以在 `viewDidLoad` 中注册，在 `viewWillDisappear` 中注销监听：
+如果需要全局监听，可以设置在 `AppDelegate.m` 的 `didFinishLaunchingWithOptions` 方法中。如果只需要在单个 UIViewController 中使用，记得在合适的时机注销监听：
 
 ```objc
 [NSURLProtocol unregisterClass:[NSClassFromString(@"HTCustomURLProtocol") class]];
 ```
 
-`registerClass` 方式注册，只能通过 `[NSURLSession sharedSession]` 的方式创建网络请求
-如果是基于 NSURLSession 的网络请求，比如需要拦截 AFNetworking 的请求，就得通过配置 NSURLSessionConfiguration 对象的`protocolClasses` 属性。
+如果是基于 NSURLSession 的网络请求，且不是通过 `[NSURLSession sharedSession]` 方式创建的，就得配置 NSURLSessionConfiguration 对象的 `protocolClasses` 属性。
 
 ```objc
 NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -194,7 +193,7 @@ static NSString * const HTCustomURLProtocolHandledKey = @"HTCustomURLProtocolHan
     if ( ([scheme caseInsensitiveCompare:@"http"] == NSOrderedSame ||
           [scheme caseInsensitiveCompare:@"https"] == NSOrderedSame)) {
         // 看看是否已经处理过了，防止无限循环
-        if ([NSURLProtocol propertyForKey:RichURLProtocolHandledKey inRequest:request]) {
+        if ([NSURLProtocol propertyForKey:HTCustomURLProtocolHandledKey inRequest:request]) {
             return NO;
         }
         // 如果还需要截取 DNS 解析请求中的链接，可以继续加判断，是否为拦截域名请求的链接，如果是返回 NO
@@ -269,6 +268,28 @@ static NSString * const HTCustomURLProtocolHandledKey = @"HTCustomURLProtocolHan
 }
 
 ```
+上面用到的一些 NSURLProtocolClient 方法：
+
+```objc
+@protocol NSURLProtocolClient <NSObject>
+// 请求重定向
+- (void)URLProtocol:(NSURLProtocol *)protocol wasRedirectedToRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse;
+// 响应缓存是否合法
+- (void)URLProtocol:(NSURLProtocol *)protocol cachedResponseIsValid:(NSCachedURLResponse *)cachedResponse;
+// 刚接收到 response 信息
+- (void)URLProtocol:(NSURLProtocol *)protocol didReceiveResponse:(NSURLResponse *)response cacheStoragePolicy:(NSURLCacheStoragePolicy)policy;
+// 数据加载成功
+- (void)URLProtocol:(NSURLProtocol *)protocol didLoadData:(NSData *)data;
+// 数据完成加载
+- (void)URLProtocolDidFinishLoading:(NSURLProtocol *)protocol;
+// 数据加载失败
+- (void)URLProtocol:(NSURLProtocol *)protocol didFailWithError:(NSError *)error;
+// 为指定的请求启动验证
+- (void)URLProtocol:(NSURLProtocol *)protocol didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+// 为指定的请求取消验证
+- (void)URLProtocol:(NSURLProtocol *)protocol didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+@end
+```
 
 ## 注意事项
 
@@ -284,7 +305,7 @@ static NSString * const HTCustomURLProtocolHandledKey = @"HTCustomURLProtocolHan
 + (void)setEnabled:(BOOL)enable forSessionConfiguration:(NSURLSessionConfiguration*)sessionConfig
 {
     // Runtime check to make sure the API is available on this version
-    if (   [sessionConfig respondsToSelector:@selector(protocolClasses)]
+    if ([sessionConfig respondsToSelector:@selector(protocolClasses)]
         && [sessionConfig respondsToSelector:@selector(setProtocolClasses:)])
     {
         NSMutableArray * urlProtocolClasses = [NSMutableArray arrayWithArray:sessionConfig.protocolClasses];
@@ -325,7 +346,7 @@ if ([cls respondsToSelector:sel]) {
 }
 ```
 
-但由于这涉及到了私有方法，直接引用无法过苹果的机审，所以使用时候需要对字符串做下处理，比如对方法名进行算法加密处理等，实测也是可以通过审核的。
+但由于这涉及到了私有方法，直接引用无法过苹果的机审，所以使用的时候需要对字符串做下处理，比如对方法名进行算法加密处理等，实测也是可以通过审核的。
 
 ## 使用 NSURLSession 的坑
 
