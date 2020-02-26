@@ -37,7 +37,7 @@ copyright: false
 <details style="padding-left:12px;padding-bottom:10px">
   <summary>脑洞怪兽</summary>
   <p style="font-size:12px; line-height:13px"> 💡 脑袋中常爆发特别的灵感</p>
-  <p style="font-size:12px; line-height:13px"> 🎨 不是好看的皮囊，却是有趣的灵魂</p>
+  <p style="font-size:12px; line-height:13px"> 🎨 想要用有趣的灵魂过有趣的人生</p>
 </details>
 <details style="padding-left:12px;padding-bottom:10px">
   <summary>熬夜冠军</summary>

@@ -3,7 +3,6 @@ title: 为你的 GitHub 开源项目制作高大上的徽标
 date: 2019-12-15 18:17:23
 tags: 
     - GitHub
-    - shield.io
 categories: 程序员必备
 thumbnail: github-badge.png
 ---
