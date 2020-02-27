@@ -204,7 +204,7 @@ static NSString * const HTCustomURLProtocolHandledKey = @"HTCustomURLProtocolHan
 
 // 方法 2：【关键方法】可以在此对 request 进行处理，比如修改地址、提取请求信息、设置请求头等。
 + (NSURLRequest *) canonicalRequestForRequest:(NSURLRequest *)request {
-    // 可以打印出所有的请求链接包括 CSS 和 ajax 请求等
+    // 可以打印出所有的请求链接包括 CSS 和 Ajax 请求等
     NSLog(@"request.URL.absoluteString = %@",request.URL.absoluteString);
     NSMutableURLRequest *mutableRequest = [request mutableCopy];
     return mutableRequest;

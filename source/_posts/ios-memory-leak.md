@@ -468,7 +468,7 @@ int main(int argc, const char * argv[]) {
 
 Instruments 是 Xcode 自带的工具集合，为开发者提供强大的程序性能分析和测试能力。
 
-它打开方式为：`Xcode → Open Developer Tool → Instruments`。其中的 Allocations 和 Leaks 功能可以协助我们进行内存泄漏检查。
+它打开方式为：`Xcode → Open Developer Tool → Instruments`。其中的 Allocations、Leaks 和 Zombies 功能可以协助我们进行内存泄漏检查。
 
 - Leaks：**动态**检查泄漏的内存，如果检查过程时出现了红色叉叉，就说明存在内存泄漏，可以定位到泄漏的位置，去解决问题。此外，Xcode 中还提供**静态**监测方法 Analyze，可以直接通过 `Product → Analyze` 打开，如果出现泄漏，会出现“蓝色分支图标”提示。
 

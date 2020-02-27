@@ -3,6 +3,7 @@ title: 释放你的内存——Xcode 缓存清理
 date: 2017-03-27 23:15:12
 tags: Xcode
 categories: iOS
+thumbnail: xcode-clean.png
 ---
 
 Xcode 使用久了经常会遇到系统内存不足的情况，我们来看看哪些缓存是可以清理的。

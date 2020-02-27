@@ -7,9 +7,9 @@ categories: iOS
 
 依照苹果一贯的风格，今天，发布 iOS 10 的同时，开发者们期待已久的 Xcode 8 正式版也上线了。它更新了哪些大家感兴趣的部分呢，翻译一下 App Store 里的更新内容：
 
-![](new-in-xcode8.png)
-
 <!--more-->
+
+![](new-in-xcode8.png)
 
 Xcode 8 支持 Swift 3、iOS 10、watchOS 3、tvOS 10 以及 macOS Sierra。
 
