@@ -246,8 +246,9 @@ static NSString * const HTCustomURLProtocolHandledKey = @"HTCustomURLProtocolHan
 // 当接收到服务器的响应（连通了服务器）时会调用
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     self.responseData = [[NSMutableData alloc] init];
-    NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
     // 可以处理不同的 statusCode 场景
+    // NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
+    // 可以设置 Cookie
     [self.client URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageNotAllowed];
 }
 

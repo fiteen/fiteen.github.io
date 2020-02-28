@@ -2,7 +2,10 @@
 title: iOS 内存泄漏场景与解决方案
 date: 2020-02-16 14:07:00
 tag:
-     - [内存泄漏]
+     - 内存泄漏
+     - NSTimer
+     - GCD
+     - 委托模式
 categories: iOS
 thumbnail: apple.png
 ---
@@ -418,7 +421,7 @@ for (int i = 0; i < 1000000; i++) {
 
 在循环中创建自己的 `autoreleasepool`，及时释放占用内存大的临时变量，减少内存占用峰值。
 
-```
+```objc
 for (int i = 0; i < 100000; i++) {
     @autoreleasepool {
         NSString *str = @"Abc";

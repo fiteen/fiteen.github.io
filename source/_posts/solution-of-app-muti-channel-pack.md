@@ -3,8 +3,8 @@ title: App 多渠道打包及重签名方案
 date: 2019-08-10 09:41:39
 tags: 重签名
 categories: 
-   - [iOS]
-   - [Android]
+   - iOS
+   - Android
 thumbnail: ipa-and-apk.png
 ---
 

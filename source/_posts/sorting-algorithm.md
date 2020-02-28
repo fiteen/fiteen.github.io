@@ -2,8 +2,8 @@
 title: 动画详解十大经典排序算法（C语言版）
 date: 2019-12-27 22:58:49
 tag: 
-     - [数据结构]
-     - [C]
+     - 数据结构
+     - C
 categories: 算法
 thumbnail: sort.png
 ---

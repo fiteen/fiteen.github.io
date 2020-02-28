@@ -1,7 +1,9 @@
 ---
 title: 《Effective Objective-C 2.0》整理（四）：协议与分类
 date: 2016-09-28 20:21:06
-tags: 《Effective Objective-C 2.0》
+tags: 
+    - 《Effective Objective-C 2.0》
+    - 委托模式
 categories: iOS
 ---
 
