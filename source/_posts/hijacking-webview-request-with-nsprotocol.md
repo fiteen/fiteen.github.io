@@ -13,7 +13,7 @@ thumbnail: nsurlprotocol.png
 
 ## NSURLProtocol 是什么
 
-NSURLProtocol 是 Foundation 框架中 [URL Loading System](https://developer.apple.com/documentation/foundation/url_loading_system?language=objc) 的一部分。它可以让开发者可以在不修改应用内原始请求代码的情况下，去改变 URL 加载的全部细节。换句话说，NSURLProtocol 是一个被 Apple 默许的攻击者。
+NSURLProtocol 是 Foundation 框架中 [URL Loading System](https://developer.apple.com/documentation/foundation/url_loading_system?language=objc) 的一部分。它可以让开发者可以在不修改应用内原始请求代码的情况下，去改变 URL 加载的全部细节。换句话说，NSURLProtocol 是一个被 Apple 默许的中间人攻击。
 
 虽然 NSURLProtocol 叫“Protocol”，却不是协议，而是一个抽象类。
 

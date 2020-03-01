@@ -272,7 +272,7 @@ struct category_t {
 
 警告提示上表明有两种解决方法：
 
-第一种：用 `@dynamic修饰`。但实际上，`@dynamic` 修饰只是告诉编译器，属性的 setter 和 getter 方法会由用户自行实现。但这样做只能消除警告，无法解决问题，运行时依然会崩溃。
+第一种：用 `@dynamic` 修饰。但实际上，`@dynamic` 修饰只是告诉编译器，属性的 setter 和 getter 方法会由用户自行实现。但这样做只能消除警告，无法解决问题，运行时依然会崩溃。
 
 第二种：给分类手动添加 setter 和 getter 方法，这是一种有效的方案。
 
@@ -716,11 +716,11 @@ KVO 的键值观察通知依赖于 NSObject 的两个方法：
 
 ```objc
 - (void)setName:(NSString *)name {
-	// KVO 在调用存取方法之前总调用 
+    // KVO 在调用存取方法之前总调用 
     [self willChangeValueForKey:@"name"];
-	// 调用父类的存取方法 
+    // 调用父类的存取方法 
     [super setValue:newName forKey:@"name"];
-	// KVO 在调用存取方法之后总调用
+    // KVO 在调用存取方法之后总调用
     [self didChangeValueForKey:@"name"];
 }
 ```
