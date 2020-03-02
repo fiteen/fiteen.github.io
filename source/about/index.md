@@ -8,15 +8,15 @@ copyright: false
 
 90后典型水瓶座♒️猫科~~（宅女）~~少女👧，浙江~~（准杭州）~~乌伤人。
 
-主攻 iOS 开发，~~面向谷歌/百度~~能编写 Android、Web、小程序、Flutter 项目~~，发际线尚可~~。
+主攻 iOS 开发，~~面向谷歌/百度~~能编写 Android、Web、小程序、Flutter 项目，我的技术博文曾经发布在[掘金](https://juejin.im/user/5ab4b9746fb9a028c812cad9)、[CSDN](https://blog.csdn.net/Code_Martell)、[知乎](https://www.zhihu.com/people/miao-miao-82-17-64)、[简书](https://www.jianshu.com/u/015e1c9d5d06)、[思否](https://segmentfault.com/u/fiteen)。
+
+不追星、不追剧、不追番、不追文、偶尔打打王者，日常沉迷工作和学习，追求精神世界的快乐。
 
 钟情于悬疑、推理、烧脑题材，偶尔羞耻的傻白甜剧也可食用，习惯 2 倍速。
 
-不追星、不追剧、不追番、不追文、偶尔游戏，自带防沉迷。
-
 完美主义，排版强迫症患者。
 
-不是什么黑洞，干啥啥都行的小机灵～👀
+不是什么黑洞，生活技能点满，是干啥啥都行的小机灵～👀
 
 #### 我是...
 

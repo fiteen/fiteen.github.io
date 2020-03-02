@@ -7,6 +7,8 @@ categories: 程序员必备
 thumbnail: github-badge.png
 ---
 
+> **提醒：本文图片较多，加载速度可能比较慢，请耐心等待。**
+
 经常逛 GitHub 的同学会发现，很多优秀的开源框架里都会出现这样的小徽标。
 
 <!--more-->
