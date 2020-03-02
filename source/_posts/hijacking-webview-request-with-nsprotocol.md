@@ -294,7 +294,7 @@ static NSString * const HTCustomURLProtocolHandledKey = @"HTCustomURLProtocolHan
 
 ## 补充内容
 
-## 使用 NSURLSession 时的注意事项
+### 使用 NSURLSession 时的注意事项
 
 如果在 NSURLProtocol 中使用 NSURLSession，需要注意：
 
