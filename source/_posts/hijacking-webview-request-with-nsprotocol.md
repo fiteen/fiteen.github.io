@@ -35,9 +35,9 @@ NSURLProtocol 是 Foundation 框架中 [URL Loading System](https://developer.ap
 - NSURLRequest
  - NSMutableURLRequest
 
-相应的，基于它们实现的第三方网络框架 AFNetworking 和 Alamofire 的网络请求，也可以被 NSURLProtocol 拦截到。
+相应的，基于它们实现的第三方网络框架 [AFNetworking](https://github.com/AFNetworking/AFNetworking) 和 [Alamofire](https://github.com/Alamofire/Alamofire) 的网络请求，也可以被 NSURLProtocol 拦截到。
 
-但早些年基于 CFNetwork 实现的，比如 ASIHTTPRequest，其网络请求就无法被拦截。
+但早些年基于 CFNetwork 实现的，比如 [ASIHTTPRequest](https://github.com/pokeb/asi-http-request)，其网络请求就无法被拦截。
 
 另外，**UIWebView 也是可以被 NSURLProtocol 拦截的，但 WKWebView 不可以。**（因为 WKWebView 是基于 WebKit，并不走 C socket。）
 
@@ -292,7 +292,14 @@ static NSString * const HTCustomURLProtocolHandledKey = @"HTCustomURLProtocolHan
 @end
 ```
 
-## 注意事项
+## 补充内容
+
+## 使用 NSURLSession 时的注意事项
+
+如果在 NSURLProtocol 中使用 NSURLSession，需要注意：
+
+- 拦截到的 request 请求的 HTTPBody 为 nil，但可以借助 HTTPBodyStream 来获取 body；
+- 如果要用 `registerClass` 注册，只能通过 `[NSURLSession sharedSession]` 的方式创建网络请求。
 
 ### 注册多个 NSURLProtocol 子类
 
@@ -348,12 +355,5 @@ if ([cls respondsToSelector:sel]) {
 ```
 
 但由于这涉及到了私有方法，直接引用无法过苹果的机审，所以使用的时候需要对字符串做下处理，比如对方法名进行算法加密处理等，实测也是可以通过审核的。
-
-## 使用 NSURLSession 的坑
-
-如果在 NSURLProtocol 中使用 NSURLSession，需要注意：
-
-- 拦截到的 request 请求的 HTTPBody 为 nil，但可以借助 HTTPBodyStream 来获取 body；
-- 如果要用 `registerClass` 注册，只能通过 `[NSURLSession sharedSession]` 的方式创建网络请求。
 
 总之，NSURLProtocol 非常强大，无论是优化 App 的性能，还是拓展功能，都具有很强的可塑空间，但在使用的同时，又要多关注它带来的问题。尽管它在很多框架或者知名项目中都已经得以应用，其奥义依然值得开发者们去深入研究。
