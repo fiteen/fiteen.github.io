@@ -10,7 +10,7 @@ title: Jetbrains Mac 版全系列 IDE 永久破解教程
 
 现在 http://idea.lanyus.com/ 里的激活码已经不能用的，如果你曾经在 `/private/etc/hosts` 文件里 Jetbrains 相关的项⽬，请先删除。
 
-以下教程**适用于 Jetbrains 全系列产品2019.3.1及以下版本。**，下文以 IntelliJ IDEA 的破解为例。
+以下教程**适用于 Jetbrains 全系列产品2019.3.3及以下版本**，下文以 IntelliJ IDEA 的破解为例。
 
 ### 激活步骤
 
@@ -38,10 +38,10 @@ title: Jetbrains Mac 版全系列 IDE 永久破解教程
    
 如果不成功，尝试一下 Activation code 方式离线激活。将 `ACTIVATION_CODE.txt` 中的激活码粘贴到内容框中。你也可以选择[自定义激活码](https://zhile.io/custom-license.html)。
    
-看到如下页面则激活完毕。
+看到如下页面则激活完毕。如果激活无效，可能是因为你下载安装的版本号过高，要下载最近的破解 jar 文件，请参考下面的链接。
 
 ![](/resources/images/jetbrains-licensed-activation-code.png)
    
 ---
-参考链接：[Jetbrains 系列产品2019.3.1最新激活方法[持续更新]](https://zhile.io/2018/08/25/jetbrains-license-server-crack.html)
+参考链接：[Jetbrains系列产品2019.3.3最新激活方法[持续更新]](https://zhile.io/2018/08/25/jetbrains-license-server-crack.html)
 

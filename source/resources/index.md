@@ -17,10 +17,11 @@ date: 2016-08-13 00:00:00
 ### IDE
 
 - [Sublime Text](http://www.sublimetext.com/3) - 一个比较简洁大方带插件管理系统的流行编辑器。（**程序员必备**）🆓[🔗](https://github.com/dreikanter/sublime-bookmarks)
-- [Xcode](https://developer.apple.com/xcode/) - 开发 iOS 和 MacOS 工程的官方 IDE。（**iOS 开发必备**）🆓
+- [Xcode](https://developer.apple.com/xcode/) - 开发 iOS 和 MacOS 工程的官方 IDE。（**iOS 和 Mac 开发必备**）🆓
+- [AppCode](https://www.jetbrains.com/objc) - iOS 开发工具，支持 macOS 和 iOS 平台上最流行的编程语言（Swift、Objective-C、C和C ++）[🔨](resources/jetbrains-series)[🔗](https://plugins.jetbrains.com/objc)
 - [Android Studio](https://developer.android.com/studio/index.html) - 谷歌推出的 Android 集成开发工具，基于 Intellij IDEA。（**Android 开发必备**）[📖](http://tools.android.com)🆓[🔗](https://github.com/balsikandar/Android-Studio-Plugins)
 - <span id="vscode">[Visual Studio Code](https://code.visualstudio.com)</span> - 微软推出，免费开源的轻量级代码编辑器。（**前端开发必备**）[📖](https://github.com/Microsoft/vscode)🆓[🔗](https://marketplace.visualstudio.com/vscode)
-- [IntelliJ IDEA](resources/jetbrains-series) - Java 编程语言开发的集成环境。在业界被公认为最好的 Java 开发工具之一。（**后端开发必备**）[🔨](resources/jetbrains-series)[🔗](https://plugins.jetbrains.com/idea)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea) - Java 编程语言开发的集成环境。在业界被公认为最好的 Java 开发工具之一。（**后端开发必备**）[🔨](resources/jetbrains-series)[🔗](https://plugins.jetbrains.com/idea)
 - [Eclipse](https://www.eclipse.org) - 开源、基于 Java 的可扩展开发平台。[📖](http://git.eclipse.org/c/)🆓[🔗](https://marketplace.eclipse.org/)
 
 ### 终端
