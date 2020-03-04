@@ -6,6 +6,7 @@ tag:
      - NSTimer
      - GCD
      - 委托模式
+     - Instruments
 categories: iOS
 thumbnail: apple.png
 ---
