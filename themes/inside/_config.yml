@@ -242,7 +242,7 @@ assets:
 # Table of content, enabled by default, set to `false` to disable.
 toc:
   # The depth of toc, default to `3`, maximum to `4`.
-  depth: 3
+  depth: 4
 
   # Showing index before title, eg. 1.1 title, default to `true`
   index: false
