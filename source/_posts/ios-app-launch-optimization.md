@@ -16,7 +16,7 @@ thumbnail: app-launch.png
 ## 热启动与冷启动
 
 当用户按下 home 键，iOS App 不会立刻被 kill，而是存活一段时间，这段时间里用户再打开 App，App 基本上不需要做什么，就能还原到退到后台前的状态。我们把 App 进程还在系统中，无需开启新进程的启动过程称为**热启动**。
-而**冷启动**则是指 App 不在系统进程中，比如设备重启后，或是 App 长时间未打开过，用户再点击启动 App 的过程，这时需要创建一个新进程分配给 App。我们可以将冷启动看作一次完整的 App 启动过程，本文讨论的就是冷启动的优化。
+而**冷启动**则是指 App 不在系统进程中，比如设备重启后，或是手动杀死 App 进程，又或是 App 长时间未打开过，用户再点击启动 App 的过程，这时需要创建一个新进程分配给 App。我们可以将冷启动看作一次完整的 App 启动过程，本文讨论的就是冷启动的优化。
 
 ## 冷启动概要
 
@@ -95,7 +95,15 @@ total images using weak symbols:  105
 
 #### Mach-O
 
-[Mach-O](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/CodeFootprint/Articles/MachOOverview.html)（Mach Object File Format)是一种用于记录可执行文件、对象代码、共享库、动态加载代码和内存转储的文件格式。App 编译生成的二进制**可执行文件**就是 Mach-O 格式的，iOS 工程所有的类编译后会生成对应的目标文件 `.o` 文件，而这个可执行文件就是这些 `.o` 文件的集合。在 Xcode 的控制台输入命令 `image list -o -f`，可以打印出其中包含的所有 Mach-O 文件。Mach-O 文件主要由三部分组成：
+[Mach-O](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/CodeFootprint/Articles/MachOOverview.html)（Mach Object File Format)是一种用于记录可执行文件、对象代码、共享库、动态加载代码和内存转储的文件格式。App 编译生成的二进制**可执行文件**就是 Mach-O 格式的，iOS 工程所有的类编译后会生成对应的目标文件 `.o` 文件，而这个可执行文件就是这些 `.o` 文件的集合。
+
+在 Xcode 的控制台输入以下命令，可以打印出运行时所有加载进应用程序的 Mach-O 文件。
+
+```
+image list -o -f
+```
+
+Mach-O 文件主要由三部分组成：
   - Mach header：描述 Mach-O 的 CPU 架构、文件类型以及加载命令等；
   - Load commands：描述了文件中数据的具体组织结构，不同的数据类型使用不同的加载命令；
   - Data：Data 中的每个段（segment）的数据都保存在这里，每个段都有一个或多个 Section，它们存放了具体的数据与代码，主要包含这三种类型：
@@ -105,10 +113,18 @@ total images using weak symbols:  105
 
 #### dylib
 
-dylib 也是一种 Mach-O 格式的文件，后缀名为 `.dylib` 的文件就是动态库（也叫动态链接库）。动态库是运行时加载的。通过指令 `otool -L ${编译后的可执行文件的路径}` 可以打印出 App 依赖的所有动态库，这些库包括：
+dylib 也是一种 Mach-O 格式的文件，后缀名为 `.dylib` 的文件就是动态库（也叫动态链接库）。动态库是运行时加载的，可以被多个 App 的进程共用。
+
+如果想知道 TestDemo 中依赖的所有动态库，可以通过下面的指令实现：
+```
+otool -L /TestDemo.app/TestDemo
+```
+
+动态链接库分为**系统 dylib** 和**内嵌 dylib**（embed dylib，即开发者手动引入的动态库）。系统 dylib 有：
   - iOS 中用到的所有系统 framework，比如 UIKit、Foundation；
+  - 系统级别的 libSystem（如 libdispatch(GCD) 和 libsystem_blocks(Block)）；
   - 加载 OC runtime 方法的 libobjc；
-  - 系统级别的 libSystem（如 libdispatch(GCD) 和 libsystem_blocks(Block)）。
+  - ……
 
 #### dyld
 
@@ -153,7 +169,7 @@ framework 可以是动态库，也是静态库，是一个包含 dylib、bundle 
 4. 在系统内核中注册代码签名；
 5. 对 dylib 的每一个 segment 调用 `mmap()`。
 
-一般情况下，iOS App 需要加载 100-400 个 dylibs。这些动态库包括系统的，也包括开发者手动引入的。其中大部分 dylib 都是系统库，系统已经做了优化，因此开发者更应关心自己手动集成的 dylib（非系统 dylib，也叫**内嵌 dylib**），加载它们时性能开销较大。
+一般情况下，iOS App 需要加载 100-400 个 dylibs。这些动态库包括系统的，也包括开发者手动引入的。其中大部分 dylib 都是系统库，系统已经做了优化，因此开发者更应关心自己手动集成的内嵌 dylib，加载它们时性能开销较大。
 
 App 中依赖的 dylib 越少越好，Apple 官方建议尽量将内嵌 dylib 的个数维持在6个以内。
 
@@ -161,9 +177,9 @@ App 中依赖的 dylib 越少越好，Apple 官方建议尽量将内嵌 dylib �
 
 - 尽量不使用内嵌 dylib；
 - 合并已有内嵌 dylib；
-- 检查 framework 的 `optional` 和 `required` 设置，如果 framework 在当前的 App 支持的 iOS 系统版本都存在，就设为 `required`，因为设为 `optional` 会有额外的检查；
+- 检查 framework 的 `optional` 和 `required` 设置，如果 framework 在当前的 App 支持的 iOS 系统版本中都存在，就设为 `required`，因为设为 `optional` 会有额外的检查；
 - 使用静态库作为代替；（不过静态库会在编译期被打进可执行文件，造成可执行文件体积增大，两者各有利弊，开发者自行权衡。）
-- 懒加载 dylib。（但使用 `dlopen()` 对性能会产生影响，因为 App 启动时是原本是单线程运行，系统会取消加锁，但 `dlopen()` 开启了多线程，系统不得不加锁，不仅会使性能降低，可能还会造成死锁及未知的后果，不是很推荐这种做法。）
+- 懒加载 dylib。（但使用 `dlopen()` 对性能会产生影响，因为 App 启动时是原本是单线程运行，系统会取消加锁，但 `dlopen()` 开启了多线程，系统不得不加锁，这样不仅会使性能降低，可能还会造成死锁及未知的后果，不是很推荐这种做法。）
 
 #### Rebase/Binding
 
@@ -181,7 +197,7 @@ App 中依赖的 dylib 越少越好，Apple 官方建议尽量将内嵌 dylib �
 xcrun dyldinfo -rebase -bind -lazy_bind TestDemo.app/TestDemo
 ```
 
-通过 LC_DYLD_INFO_ONLY 可以查看各种信息的偏移量和大小。如果想要更方便直观地查看，推荐使用 [MachOView](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.2/MachOView.pkg) 工具。
+通过 LC_DYLD_INFO_ONLY 可以查看各种信息的偏移量和大小。如果想要更方便直观地查看，推荐使用 [MachOView](https://github.com/fiteen/fiteen.github.io/releases/tag/v0.1.2) 工具。
 
 指针数量越少，指针修复的耗时也就越少。所以，优化该阶段的关键就是减少 `__DATA` 段中的指针数量。
 
@@ -215,7 +231,6 @@ Rebase 和 Binding 属于静态调整（fix-up），修改的是 `__DATA` 段中
 
 - 尽量避免在类的 `+load` 方法中初始化，可以推迟到 `+initiailize` 中进行；（因为在一个 `+load` 方法中进行运行时方法替换操作会带来 4ms 的消耗）
 - 避免使用 `__atribute__((constructor))` 将方法显式标记为初始化器，而是让初始化方法调用时再执行。比如用 `dispatch_once()`、`pthread_once()` 或 `std::once()`，相当于在第一次使用时才初始化，推迟了一部分工作耗时。：
-- 减少构造器函数个数，在构造器函数里少做些事情；
 - 减少非基本类型的 C++ 静态全局变量的个数。（因为这类全局变量通常是类或者结构体，如果在构造函数中有繁重的工作，就会拖慢启动速度）
 
 总结一下 `pre-main` 阶段可行的优化方案：
@@ -227,7 +242,7 @@ Rebase 和 Binding 属于静态调整（fix-up），修改的是 `__DATA` 段中
 
 ## main() 阶段
 
-对于 `main()` 阶段，主要测量的就是从 main() 函数开始执行到 `didFinishLaunchingWithOptions` 方法执行结束的耗时。
+对于 `main()` 阶段，主要测量的就是从 `main()` 函数开始执行到 `didFinishLaunchingWithOptions` 方法执行结束的耗时。
 
 ### 查看阶段耗时
 
@@ -261,7 +276,7 @@ NSLog(@"main() 阶段耗时：%.2fms", mainLaunchTime * 1000);
 
 操作步骤：
 
-1. 配置 Scheme。点击 `Edit Scheme` 找到 `Profile` 下的 `Build Configuration`，设置为 `debug`。
+1. 配置 Scheme。点击 `Edit Scheme` 找到 `Profile` 下的 `Build Configuration`，设置为 `Debug`。
 
 2. 配置 PROJECT。点击 PROJECT，在 `Build Settings` 中找到 `Build Options` 选项里的 `Debug Information Format`，把 `Debug` 对应的值改为 `DWARF with dSYM File`。
 
@@ -273,12 +288,12 @@ NSLog(@"main() 阶段耗时：%.2fms", mainLaunchTime * 1000);
 
 ### 启动优化
 
-`mian()` 被调用之后，`didFinishLaunchingWithOptions` 阶段，App 会进行必要的初始化操作，而 `viewDidAppear` 执行结束之前则是做了首页内容的加载和显示。
+`main()` 被调用之后，`didFinishLaunchingWithOptions` 阶段，App 会进行必要的初始化操作，而 `viewDidAppear` 执行结束之前则是做了首页内容的加载和显示。
 
-关于 ** App 的初始化**，除了统计、日志这种须要在 App 一启动就配置的事件，有一些配置也可以考虑延迟加载。如果你在 `didFinishLaunchingWithOptions` 中同时也涉及到了首屏的加载，那么可以考虑从这些角度优化：
+关于 **App 的初始化**，除了统计、日志这种须要在 App 一启动就配置的事件，有一些配置也可以考虑延迟加载。如果你在 `didFinishLaunchingWithOptions` 中同时也涉及到了**首屏的加载**，那么可以考虑从这些角度优化：
 
 - 用纯代码的方式，而不是 xib/Storyboard，来加载首页视图
-- 延迟暂时不需要的加载二方/三方库；
+- 延迟暂时不需要的二方/三方库加载；
 - 延迟执行部分业务逻辑和 UI 配置；
 - 延迟加载/懒加载部分视图；
 - 避免首屏加载时大量的本地/网络数据读取；
@@ -286,7 +301,20 @@ NSLog(@"main() 阶段耗时：%.2fms", mainLaunchTime * 1000);
 - 在视觉可接受的范围内，压缩页面中的图片大小；
 - ……
 
-如果首屏为 H5 页面，针对它的优化，可以参考 bang 神的[这篇文章](http://blog.cnbang.net/tech/3477/)。
+如果首屏为 H5 页面，针对它的优化，参考 [VasSonic](https://github.com/fiteen/fiteen.github.io/releases/tag/v0.1.3) 的原理，可以从这几个角度入手：
+
+- 终端耗时
+  - webView 预加载：在 App 启动时期预先加载了一次 webView，通过创建空的 webView，预先启动 Web 线程，完成一些全局性的初始化工作，对二次创建 webView 能有数百毫秒的提升。
+
+- 页面耗时（静态页面）
+  - 静态直出：服务端拉取数据后通过 Node.js 进行渲染，生成包含首屏数据的 HTML 文件，发布到 CDN 上，webView 直接从 CDN 上获取；
+  - 离线预推：使用离线包。
+
+- 页面耗时（经常需要动态更新的页面）
+  - 并行加载：WebView 的打开和资源的请求并行
+  - 动态缓存：动态页面缓存在客户端，用户下次打开的时候先打开缓存页面，然后再刷新；
+  - 动静分离：将页面分为静态模板和动态数据，根据不同的启动场景进行不同的刷新方案；
+  - 预加载：提前拉取需要的增量更新数据。
 
 ## 小结
 
@@ -300,3 +328,4 @@ NSLog(@"main() 阶段耗时：%.2fms", mainLaunchTime * 1000);
 [WWDC2017: App Startup Time: Past, Present, and Future](https://developer.apple.com/videos/play/wwdc2017/413/)
 [优化 App 的启动时间](http://yulingtianxia.com/blog/2016/10/30/Optimizing-App-Startup-Time/)
 [今日头条 iOS 客户端启动速度优化](https://juejin.im/entry/5b6061bef265da0f574dfd21)
+[移动 H5 首屏秒开优化方案探讨](http://blog.cnbang.net/tech/3477/)
