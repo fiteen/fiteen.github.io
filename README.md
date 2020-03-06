@@ -30,13 +30,13 @@
 
 **博客搭建所需的文件**：
   - 评论框架：[valine.js](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/valine.js)
-  - 表情包文件夹：[alu](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@0.1.0/alu)
+  - 评论区表情包文件夹：[alu](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@0.1.0/alu)
   - 代码复制相关的文件：[clipboard.js](https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js)、[clipboard-use.js](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard-use.js)、[clipboard.css](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.1/clipboard.css)
 
 
 **博文中涉及到的安装包或资源**
   - 查看 Mach-O 文件的工具：[MachOView](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.2/MachOView.pkg)
-  - VasSonic 的介绍 PPT：[VasSonic.key](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.3/VasSonic.key)
+  - VasSonic 的介绍 PPT：[VasSonic.key](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.5/VasSonic.key)
 
 ### 主题拓展
 
