@@ -301,7 +301,7 @@ NSLog(@"main() 阶段耗时：%.2fms", mainLaunchTime * 1000);
 - 在视觉可接受的范围内，压缩页面中的图片大小；
 - ……
 
-如果首屏为 H5 页面，针对它的优化，参考 [VasSonic](https://github.com/fiteen/fiteen.github.io/releases/tag/v0.1.3) 的原理，可以从这几个角度入手：
+如果首屏为 H5 页面，针对它的优化，参考 [VasSonic](https://github.com/fiteen/fiteen.github.io/releases/tag/v0.1.5) 的原理，可以从这几个角度入手：
 
 - 终端耗时
   - webView 预加载：在 App 启动时期预先加载了一次 webView，通过创建空的 webView，预先启动 Web 线程，完成一些全局性的初始化工作，对二次创建 webView 能有数百毫秒的提升。
