@@ -2,7 +2,7 @@
 
 ![Build Status](https://travis-ci.com/fiteen/fiteen.github.io.svg?branch=resource) ![GitHub All Releases](https://img.shields.io/github/downloads/fiteen/fiteen.github.io/total)
 
-🎉🎉🎉 欢迎您访问我的博客：[https://blog.fiteen.top](https://blog.fiteen.top)。
+🎉🎉🎉 欢迎您访问我的博客：[https://blog.fiteen.top](https://blog.fiteen.top)（[备用地址](https://fiteen.github.io)）。
 
 ### 本站信息
 
@@ -28,7 +28,7 @@
 
 [src 分支](https://github.com/fiteen/fiteen.github.io/tree/src)下收集了：
 
-**博客搭建所需的文件**：
+**博客搭建所需的文件**
   - 评论框架：[valine.js](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/valine.js)
   - 评论区表情包文件夹：[alu](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@0.1.0/alu)
   - 代码复制相关的文件：[clipboard.js](https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js)、[clipboard-use.js](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard-use.js)、[clipboard.css](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.1/clipboard.css)
