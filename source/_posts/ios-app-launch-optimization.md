@@ -311,7 +311,7 @@ NSLog(@"main() 阶段耗时：%.2fms", mainLaunchTime * 1000);
   - 离线预推：使用离线包。
 
 - 页面耗时（经常需要动态更新的页面）
-  - 并行加载：WebView 的打开和资源的请求并行
+  - 并行加载：WebView 的打开和资源的请求并行；
   - 动态缓存：动态页面缓存在客户端，用户下次打开的时候先打开缓存页面，然后再刷新；
   - 动静分离：将页面分为静态模板和动态数据，根据不同的启动场景进行不同的刷新方案；
   - 预加载：提前拉取需要的增量更新数据。
@@ -328,4 +328,4 @@ NSLog(@"main() 阶段耗时：%.2fms", mainLaunchTime * 1000);
 [WWDC2017: App Startup Time: Past, Present, and Future](https://developer.apple.com/videos/play/wwdc2017/413/)
 [优化 App 的启动时间](http://yulingtianxia.com/blog/2016/10/30/Optimizing-App-Startup-Time/)
 [今日头条 iOS 客户端启动速度优化](https://juejin.im/entry/5b6061bef265da0f574dfd21)
-[移动 H5 首屏秒开优化方案探讨](http://blog.cnbang.net/tech/3477/)
+[VasSonic 源码](https://github.com/Tencent/VasSonic)
