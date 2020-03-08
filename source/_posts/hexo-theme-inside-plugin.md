@@ -58,7 +58,7 @@ plugins:
 
 或者在需要的位置引用 CSS 资源：
 
-```
+```html
 <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 ```
 
@@ -82,7 +82,7 @@ plugins:
 
 再**安装标签**，官方给出了站点 PV/UV 的统计代码：
 
-```
+```html
 <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
 <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span>
 ```
