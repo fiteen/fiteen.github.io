@@ -16,6 +16,7 @@ thumbnail: app-launch.png
 ## 热启动与冷启动
 
 当用户按下 home 键，iOS App 不会立刻被 kill，而是存活一段时间，这段时间里用户再打开 App，App 基本上不需要做什么，就能还原到退到后台前的状态。我们把 App 进程还在系统中，无需开启新进程的启动过程称为**热启动**。
+
 而**冷启动**则是指 App 不在系统进程中，比如设备重启后，或是手动杀死 App 进程，又或是 App 长时间未打开过，用户再点击启动 App 的过程，这时需要创建一个新进程分配给 App。我们可以将冷启动看作一次完整的 App 启动过程，本文讨论的就是冷启动的优化。
 
 ## 冷启动概要
@@ -248,7 +249,7 @@ Rebase 和 Binding 属于静态调整（fix-up），修改的是 `__DATA` 段中
 
 这里介绍两种查看 `main()` 阶段耗时的方法。
 
-**方法一**：手动插入代码，进行耗时计算。
+**方法一：手动插入代码，进行耗时计算。**
 
 ```objc
 // 第一步：在 main() 函数里用变量 MainStartTime 记录当前时间
@@ -268,7 +269,7 @@ double mainLaunchTime = (CFAbsoluteTimeGetCurrent() - MainStartTime);
 NSLog(@"main() 阶段耗时：%.2fms", mainLaunchTime * 1000);
 ```
 
-**方法二**：借助 Instruments 的 Time Profiler 工具查看耗时。
+**方法二：借助 Instruments 的 Time Profiler 工具查看耗时。**
 
 打开方式为：`Xcode → Open Developer Tool → Instruments → Time Profiler`。
 
