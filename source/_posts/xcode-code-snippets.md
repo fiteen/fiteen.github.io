@@ -1,5 +1,5 @@
 ---
-title: Xcode 代码块的生成和移植的小技巧
+title: Xcode 代码块生成和移植的小技巧
 date: 2016-10-09 17:01:12
 tags: Xcode
 categories: iOS
