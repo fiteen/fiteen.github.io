@@ -109,7 +109,7 @@ iOS 代码签名的复杂度需要相应增加，于是双层代码签名（双�
 
 第 4 步：在 Apple 后台配置 App ID、Entitlements、Devices 等，然后下载 PP 文件。
 
-第 5 步：编译 App 时，XCode 会通过第 3 步下载回来的证书（存着 Mac 公钥），在本地找到对应的 Mac 私钥，然后用 Mac 私钥去签名 App，同时打包，安装包中包含 PP 文件，在 ipa 中的文件名是 `embedded.mobileprovision`。这里 App 的签名数据被分为两部分，Mach-O 可执行文件会把签名直接写入描述文件里，而资源文件则会保存在 `_CodeSignature` 目录下，这时准备安装 App。
+第 5 步：编译 App 时，Xcode 会通过第 3 步下载回来的证书（存着 Mac 公钥），在本地找到对应的 Mac 私钥，然后用 Mac 私钥去签名 App，同时打包，安装包中包含 PP 文件，在 ipa 中的文件名是 `embedded.mobileprovision`。这里 App 的签名数据被分为两部分，Mach-O 可执行文件会把签名直接写入描述文件里，而资源文件则会保存在 `_CodeSignature` 目录下，这时准备安装 App。
 
 第 6 步：使用 Apple 公钥验证描述文件签名，对应第 4 步，签名通过，说明证书可用，进入下一步。
 
