@@ -132,6 +132,11 @@ MrWriter -->
 - [CleanMyMac X](https://cleanmymac.com) - 经典好用的 Mac 清理工具，需要付费使用。
 - [柠檬清理](https://lemon.qq.com) - 腾讯出品的免费的 Mac 系统清理软件。🆓
 
+## 浏览器
+
+- [Google Chrome](https://www.google.com/chrome) - 谷歌浏览器，它的拓展插件功能非常出色，是提升工作效率利器。🆓[🔗](https://chrome.google.com/webstore/category/extensions?h1=zh)
+- [Chromium](https://www.chromium.org/Home) - 开源免费，Chromium 相当于 Google Chrome 的实验版，在 Chromium 上线稳定后的功能，会在 Google Chrome 中正式推出。[📖](https://chromium.googlesource.com/chromium/src/)🆓[🔗](https://chrome.google.com/webstore/category/extensions?h1=zh)
+
 ## 办公
 
 - [The Unarchiver](https://theunarchiver.com) － 解压不同类型的存档文件。[📖](https://bitbucket.org/kosovan/theunarchiver/src/default/)🆓
