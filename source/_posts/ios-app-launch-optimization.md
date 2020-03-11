@@ -139,7 +139,7 @@ dyld shared cache 就是动态库共享缓存。当需要加载的动态库非�
 
 #### images
 
-images 在这里不是指图片，而是**镜像**。每个 App 都是以 image 为单位进行加载的。images 类型包括：
+images 在这里不是指图片，而是**镜像**。每个 App 都是以 images 为单位进行加载的。images 类型包括：
   - executable：应用的二进制可执行文件；
   - dylib：动态链接库；
   - bundle：资源文件，属于不能被链接的 dylib，只能在运行时通过 `dlopen()` 加载。
