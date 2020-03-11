@@ -135,7 +135,7 @@ MrWriter -->
 ## 浏览器
 
 - [Google Chrome](https://www.google.com/chrome) - 谷歌浏览器，它的拓展插件功能非常出色，是提升工作效率利器。🆓[🔗](https://chrome.google.com/webstore/category/extensions?h1=zh)
-- [Chromium](https://www.chromium.org/Home) - 开源免费，Chromium 相当于 Google Chrome 的实验版，在 Chromium 上线稳定后的功能，会在 Google Chrome 中正式推出。[📖](https://chromium.googlesource.com/chromium/src/)🆓[🔗](https://chrome.google.com/webstore/category/extensions?h1=zh)
+- [Chromium](https://www.chromium.org/Home) - 开源免费，Chromium 相当于 Google Chrome 的实验版，在 Chromium 上线稳定后的功能，会在 Google Chrome 中正式推出。[📖](https://chromium.googlesource.com/chromium/src/)🆓
 
 ## 办公
 
