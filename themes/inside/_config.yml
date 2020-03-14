@@ -456,32 +456,43 @@ plugins:
   - lib/font-awesome/css/font-awesome.min.css
 
   # 代码复制
-  - lib/clipboard/clipboard.css
+  - //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.1/clipboard.css
   - //cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js
   - lib/font-awesome/css/font-awesome.min.css
-
-  # - //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.1/clipboard.css
-  # - //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard-use.js
 
   # 插入事件委托代码
   - tag: script
     type: text/javascript
     code: |
       $(function() {
-        $('main').on('click', '.highlight .code pre', function() {
-          new ClipboardJS('.highlight .code pre', {
-            target(trigger) {
-              return trigger;
+        $('main').on('click', '.btn-copy', function() {
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
             }
           });
         })
       })
-   
-  # - position: [post, page]
-  #   template: |
-  #     <script type="text/javascript" src="clipboard.css"></script>
-  #     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
-      
+  # - tag: script
+  #   type: text/javascript
+  #   code: |
+  #     $(function() {
+  #       $('main').on('click', '.highlight .code pre', function() {
+  #         new ClipboardJS('.highlight .code pre', {
+  #           target(trigger) {
+  #             return trigger;
+  #           }
+  #         });
+  #       })
+  #     })
+
+  # 在每一篇文章渲染完毕后，插入复制代码的小 icon     
+  - position: [post, page]
+    template: |
+      <script type="text/javascript">
+        console.log("--add icon--");
+        $(".highlight .code pre").before('<i class="btn-copy fa fa-clipboard"></i>');
+      </script>
 
   # Valine 评论
   - //cdn1.lncld.net/static/js/3.0.4/av-min.js
