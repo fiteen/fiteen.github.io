@@ -31,7 +31,8 @@
 **博客搭建所需的文件**
   - 评论框架：[valine.js](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/valine.js)
   - 评论区表情包文件夹：[alu](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@0.1.0/alu)
-  - 代码复制相关的文件：[clipboard.js](https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js)、[clipboard-use.js](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard-use.js)、[clipboard.css](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.1/clipboard.css)
+  - 代码复制相关的文件：[clipboard-use.js](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard-use.js)、[clipboard.css](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.1/clipboard.css)
+  - 博客字体样式：[font.css](https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/font.css)
 
 
 **博文中涉及到的安装包或资源**
