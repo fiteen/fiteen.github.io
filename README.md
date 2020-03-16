@@ -40,4 +40,8 @@
 
 ### 主题拓展
 
-💡不定期更新博文：[Hexo + inside 博客个性化定制](https://blog.fiteen.top/2020/hexo-theme-inside-plugin)，如果我的总结对你有帮助，请给我个 Star 鼓励一下吧。
+💡不定期更新博文：[Hexo + inside 博客个性化定制](https://blog.fiteen.top/2020/hexo-theme-inside-plugin)。
+
+如果你需要我帮忙拓展实现某些自定义的功能，也可以在博客评论区或者 issue 中提出。
+
+这篇总结要是对你有帮助，请给个 Star✨ 鼓励一下我吧～
