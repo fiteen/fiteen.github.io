@@ -42,7 +42,7 @@ thumbnail: sort.png
 
 **名词解释**：
 
-**[时间/空间复杂度](asymptotic-time-complexity-and-space-complexity)**：描述一个算法执行时间/占用空间与数据规模的增长关系
+**[时间/空间复杂度](https://blog.fiteen.top/2017/asymptotic-time-complexity-and-space-complexity)**：描述一个算法执行时间/占用空间与数据规模的增长关系
 
 **n**：待排序列的个数
 
