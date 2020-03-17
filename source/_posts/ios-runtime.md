@@ -708,9 +708,9 @@ After KVO: [a class] = A, a -> isa = NSKVONotifying_A
 
 KVO 的键值观察通知依赖于 NSObject 的两个方法：
 
-- `-willChangeValueForKey:`：被观察属性发生改变之**前**，改方法被调用，通知系统该 keyPath 的属性值**即将变更**；
+- `-willChangeValueForKey:`：被观察属性发生改变之**前**，该方法被调用，通知系统该 keyPath 的属性值**即将变更**；
 
-- `-didChangeValueForKey:`：被观察属性发生改变之**后**，改方法被调用，通知系统该 keyPath 的属性值**已经变更**。方法 `observeValueForKey:ofObject:change:context:`也会被调用。且重写观察属性的 setter 方法这种继承方式的注入是在运行时而不是编译时实现的。
+- `-didChangeValueForKey:`：被观察属性发生改变之**后**，该方法被调用，通知系统该 keyPath 的属性值**已经变更**。方法 `observeValueForKey:ofObject:change:context:`也会被调用。且重写观察属性的 setter 方法这种继承方式的注入是在运行时而不是编译时实现的。
 
 因此，KVO 为子类的观察者属性重写调用存取方法的工作原理在代码中相当于：
 
