@@ -1,58 +1,61 @@
 ---
-title: Git 手册之 Mac 上给 Git 设置 SOCKS5/HTTP 代理
+title: 在 Mac 上为 Git 和终端设置代理
 date: 2018-09-02 18:59:02
 tags:
-    - SOCKS5
-    - HTTP
+    - sock5
+    - http
 categories: Git
 thumbnail: github.png
 ---
 
-我们常会遇到从 GitHub 上 clone 代码的时候龟速的情况，这时如果手上有不错的代理，可以借助代理来获取更快下载/上传资源的速度。
+我们常会遇到从 GitHub 中 clone 代码或终端执行命令速度感人的情况，这时如果手上有不错的代理，可以借助代理来更快地下载资源。
 
 <!--more-->
+## 查看代理的监听地址和端口
+
+先在本地 Shadowsocks/v2ray 客户端中查看设置的本机 sock5/http 监听端口和 Host。例如：
+
+![](view-port.png)
+
+## Git
 
 通常我们 clone 代码时有以下两种方式：
 
-```
-// HTTPS 方式
+```bash
+# HTTPS 协议
 https://github.com/accountname/projectname.git
-// SSH 方式
+# SSH 协议
 git@github.com:accountname/projectname.git
 ```
 
-## 设置 HTTP 方式的代理
+### 设置 HTTPS 协议的代理
 
-由于 Shadowsocks 客户端就提供一个本地的 SOCKS5 代理，代理地址是 127.0.0.1:1080。在终端输入以下配置：
+以上面的配置为例，有如下两种方案：
+
+设置全局 git 代理，注意这里不需要设置 `https.proxy`，[Git Documentation](https://git-scm.com/docs/git-config#Documentation/git-config.txt-httpproxy) 中没有这个参数。
 
 ```bash
-git config --global http.proxy "socks5://127.0.0.1:1080"
-git config --global https.proxy "socks5://127.0.0.1:1080"
+# 设置 socks5 代理
+git config --global http.proxy socks5://127.0.0.1:1080
+# 用 socks5h 速度更快
+git config --global http.proxy socks5h://127.0.0.1:1080
+# 设置 http 代理
+git config --global http.proxy http://127.0.0.1:1087
 ```
 
-取消代理则：
+> 注意：`ip` 和 `port` 根据自己本地实际配置修改。
+
+取消代理：
 
 ```bash
 git config --global --unset http.proxy
-git config --global --unset https.proxy
 ```
 
-也可以直接修改用户主目录下的  `.gitconfig` 文件，插入如下内容：
+### 单独设置 SSH 协议的代理
 
-```
-[http]
-        proxy = socks5://127.0.0.1:1080
-[https]
-        proxy = socks5://127.0.0.1:1080
-```
+修改用户目录下文件  `~/.ssh/config` 里的内容，对 GitHub 域名作单独处理：
 
-如果你用的不是 SOCKS5，而是 HTTP 代理，就把上面命令中的 `socks5` 换成 `http` ，同时改成正确的端口号。
-
-## 设置 SSH 方式的代理
-
-修改用户目录下文件  `~/.ssh/config ` 里的内容，对 GitHub 域名作单独处理：
-
-```
+```bash
 Host github.com
     # 若使用的是默认端口，设置如下
     HostName           github.com
@@ -61,19 +64,19 @@ Host github.com
     # Port             443
     User               git
     # 如果是 SOCKS5 代理，取消下面这行注释，并把 1080 改成自己 SOCKS5 代理的端口
-    # ProxyCommand     nc -x localhost:1080 %h %p
-    # 如果是 HTTP 代理，取消下面这行注释，并把 6666 改成自己 HTTP 代理的端口
-    # ProxyCommand     socat - PROXY:127.0.0.1:%h:%p,proxyport=6666
+    ProxyCommand     nc -x localhost:1080 %h %p
+    # 如果是 HTTP 代理，取消下面这行注释，并把 1087 改成自己 HTTP 代理的端口
+    # ProxyCommand     socat - PROXY:127.0.0.1:%h:%p,proxyport=1087
 ```
 
-## 直接在终端设置临时代理
+## Shell 终端
 
-或者我们可以在 `~/.bashrc`文件中，直接写入以下内容并保存：
+想让终端走代理那么只需在 `~/.bashrc` 或 `~/.zshrc` 文件中，直接写入以下内容并保存：
 
-```
+```bash
 alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
 alias unsetproxy="unset ALL_PROXY"
 alias ip="curl -i http://ip.cn"
 ```
 
-clone 之前先在终端执行  `setproxy` 命令，结束后执行  `unsetproxy` 命令如果终端提示 `command not found: setproxy`，说明配置没有生效，执行一下  `source ~/.bashrc` 即可。
+利用终端下载资源时，先执行  `setproxy` 命令，结束后执行  `unsetproxy` 命令如果终端提示 `command not found: setproxy`，说明配置没有生效，执行一下  `source ~/.bashrc` 或 `source ~/.zshrc` 即可。
