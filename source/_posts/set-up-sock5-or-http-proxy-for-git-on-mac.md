@@ -2,8 +2,7 @@
 title: 在 Mac 上为 Git 和终端设置代理
 date: 2018-09-02 18:59:02
 tags:
-    - sock5
-    - http
+    - Shadowsocks
 categories: Git
 thumbnail: github.png
 ---
