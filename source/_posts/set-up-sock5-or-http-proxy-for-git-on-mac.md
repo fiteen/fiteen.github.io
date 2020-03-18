@@ -3,6 +3,7 @@ title: 在 Mac 上为 Git 和终端设置代理
 date: 2018-09-02 18:59:02
 tags:
     - Shadowsocks
+    - V2Ray
 categories: Git
 thumbnail: github.png
 ---
@@ -12,7 +13,7 @@ thumbnail: github.png
 <!--more-->
 ## 查看代理的监听地址和端口
 
-先在本地 Shadowsocks/v2ray 客户端中查看设置的本机 sock5/http 监听端口和 Host。例如：
+先在本地 Shadowsocks/V2Ray 客户端中查看设置的本机 sock5/http 监听端口和 Host。例如：
 
 ![](view-port.png)
 
