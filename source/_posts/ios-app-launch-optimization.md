@@ -178,7 +178,7 @@ App 中依赖的 dylib 越少越好，Apple 官方建议尽量将内嵌 dylib �
 
 - 尽量不使用内嵌 dylib；
 - 合并已有内嵌 dylib；
-- 检查 framework 的 `optional` 和 `required` 设置，如果 framework 在当前的 App 支持的 iOS 系统版本中都存在，就设为 `required`，因为设为 `optional` 会有额外的检查；
+- 检查 framework 的 `optional` 和 `required` 设置，如果 framework 在当前的 App 支持的 iOS 系统版本中都存在，就设为 `required`，因为设为 `optional` 会有额外的检查导致加载变慢；
 - 使用静态库作为代替；（不过静态库会在编译期被打进可执行文件，造成可执行文件体积增大，两者各有利弊，开发者自行权衡。）
 - 懒加载 dylib。（但使用 `dlopen()` 对性能会产生影响，因为 App 启动时是原本是单线程运行，系统会取消加锁，但 `dlopen()` 开启了多线程，系统不得不加锁，这样不仅会使性能降低，可能还会造成死锁及未知的后果，不是很推荐这种做法。）
 
@@ -236,10 +236,11 @@ Rebase 和 Binding 属于静态调整（fix-up），修改的是 `__DATA` 段中
 
 总结一下 `pre-main` 阶段可行的优化方案：
 
-- 重新梳理架构，减少不必要的内置动态库数量
-- 进行代码瘦身，合并或删除无效的ObjC类、Category、方法、C++ 静态全局变量等
-- 将不必须在 `+load` 方法中执行的任务延迟到 `+initialize` 中
-- 减少 C++ 虚函数
+- 重新梳理架构，减少不必要的内置动态库数量；
+- 进行代码瘦身，合并或删除无效的ObjC类、Category、方法、C++ 静态全局变量等；
+- 将不必须在 `+load` 方法中执行的任务延迟到 `+initialize` 中；
+- 减少 C++ 虚函数；
+- 使用压缩后的图片资源。
 
 ## main() 阶段
 
