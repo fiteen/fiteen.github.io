@@ -2,7 +2,7 @@
 title: iOS 内存泄漏场景与解决方案
 date: 2020-02-16 14:07:00
 tag:
-     - 内存泄漏
+     - 内存管理
      - NSTimer
      - GCD
      - block

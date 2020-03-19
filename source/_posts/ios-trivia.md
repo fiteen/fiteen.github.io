@@ -2,7 +2,7 @@
 title: 【持续更新】这些 iOS 冷知识，你知道吗？
 date: 2020-03-14 13:02:08
 tags: 
-     - 内存泄漏
+     - 内存管理
      - 应用安全
      - block
 categories: iOS
