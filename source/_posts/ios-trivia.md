@@ -136,7 +136,7 @@ block 有**自动捕获变量**的特性。当 block 内部没有引入外部变
 - MRC 环境下，只能用 `copy` 修饰。使用 `copy` 修饰，会将栈区的 block 拷贝到堆区，但 `strong` 不行；
 - ARC 环境下，用 `copy` 和 `strong` 都可以。
 
-看似没上面问题，于是我在 MRC 环境执行了如下代码：
+看似没什么问题，于是我在 MRC 环境执行了如下代码：
 
 ```objc
 // 分别用 copy 和 strong 修饰 block 属性
@@ -171,7 +171,7 @@ copyBlock: <__NSMallocBlock__: 0x6000021ac360>
 strongBlock: <__NSMallocBlock__: 0x600002198240>
 ```
 
-从 normalBlock 的位置，我们可以看出，默认是存在栈区的，这没有问题，但是很奇怪的是，为什么 `strongBlock` 位于堆区？难道 MRC 时期用 `strong` 修饰就是可以的？
+从 normalBlock 的位置，我们可以看出，默认是存在栈区的，但是很奇怪的是，为什么 `strongBlock` 位于堆区？难道 MRC 时期用 `strong` 修饰就是可以的？
 
 其实不然，要知道 MRC 时期，只有 `assign`、`retain` 和 `copy` 修饰符，`strong` 和 `weak` 是 ARC 时期才引入的。
 
