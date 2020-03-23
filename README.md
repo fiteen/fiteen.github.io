@@ -14,7 +14,7 @@
 
 ### 核心文件
 
-[resource 分支](https://github.com/fiteen/fiteen.github.io/tree/resource)下的就是本站源码，本站生成的核心为 [站点配置文件](_config.yml)和[主题配置文件](/themes/inside/_config.yml)。
+[resource 分支](https://github.com/fiteen/fiteen.github.io/tree/resource)下的就是本站源码，本站生成的核心为[站点配置文件](_config.yml)和[主题配置文件](/themes/inside/_config.yml)。
 
 ```
 .

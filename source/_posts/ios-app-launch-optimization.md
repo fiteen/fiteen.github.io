@@ -123,7 +123,7 @@ otool -L /TestDemo.app/TestDemo
 
 动态链接库分为**系统 dylib** 和**内嵌 dylib**（embed dylib，即开发者手动引入的动态库）。系统 dylib 有：
   - iOS 中用到的所有系统 framework，比如 UIKit、Foundation；
-  - 系统级别的 libSystem（如 libdispatch(GCD) 和 libsystem_blocks(Block)）；
+  - 系统级别的 libSystem（如 libdispatch(GCD)、libsystem_c(C语言库)、libsystem_blocks(Block)、libCommonCrypto(加密库，比如常用的 md5)）；
   - 加载 OC runtime 方法的 libobjc；
   - ……
 

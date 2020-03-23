@@ -286,3 +286,7 @@ appearance:
 ```bash
 npm install hexo-generator-feed --save
 ```
+
+---
+
+如对上述内容还有疑问，可以在评论区提出。如果需要我帮忙拓展某些功能，可以提 [issue](https://github.com/fiteen/fiteen.github.io/issues) 给我。
