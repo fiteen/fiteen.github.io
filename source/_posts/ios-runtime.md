@@ -753,7 +753,7 @@ KVO 的键值观察通知依赖于 NSObject 的两个方法：
             // 通过 property_getName 函数获得属性的名字
             NSString * propertyName = [NSString stringWithCString:property_getName(property) encoding:NSUTF8StringEncoding];
             [keys addObject:propertyName];
-            //通过 property_getAttributes 函数获得属性类型
+            // 通过 property_getAttributes 函数获得属性类型
             NSString * propertyAttribute = [NSString stringWithCString:property_getAttributes(property) encoding:NSUTF8StringEncoding];
             [attributes addObject:propertyAttribute];
         }
