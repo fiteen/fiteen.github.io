@@ -386,18 +386,15 @@ Mach-O 文件格式是 OS X 与 iOS 系统上的可执行文件格式，像我�
 
 ### 总结优化方案
 
-1. 重新梳理架构，减少不必要的内置动态库数量；
-2. 进行代码瘦身，合并或删除无效的ObjC类、Category、方法、C++ 静态全局变量等；
-3. 将不必须在 +load 方法中执行的任务延迟到 +initialize 中；
-4. webView 首屏加载优化(设置闪屏页)；
-5. 用纯代码的方式，而不是 xib/Storyboard，来加载首页视图；
-6. 去除一些不必要的初始化操作，比如 Crash 统计、埋点统计、分享之类，可以等到第一次调用再出初始化；
-7. 延迟暂时不需要的二方/三方库加载；
-8. 延迟执行部分业务逻辑和 UI 配置；
-9. 延迟加载/懒加载部分视图；
-10. 避免首屏加载时大量的本地/网络数据读取；
-11. 在 release 包中移除 NSLog 打印；
-12. 在视觉可接受的范围内，压缩页面中的图片大小。
+1. 进行代码瘦身，合并或删除无效的 ObjC 类、Category、方法、C++ 静态全局变量等；
+2. 在闪屏页背后就进行启动时的网络数据读取，并对配置数据进行缓存，再次启动的时候直接读取本地数据；
+3. 在 launch 时期去除一些不必要的初始化操作，比如友盟分享，可以等到第一次调用再出初始化；
+4. 用纯代码而不是 Storyboard 的方式加载启动页；
+5. 在 release 包中移除 NSLog 打印；
+6. 将不必须在 +load 方法中执行的任务延迟到 +initialize 中；
+7. 重新梳理架构，减少不必要的内置动态库数量；
+8. webView 加载优化；
+9. 在 release 包中移除 NSLog 打印；
 
 ## 项目中的性能优化
 
@@ -602,6 +599,7 @@ block 是 `self` 的属性、block 内部又调用了 `self`，形成循环引�
 
 > 为什么要用 `__block` 修饰?
 > 首先，block 本身不允许修改外部变量的值。但被 `__block` 修饰的变量会被存在了一个**栈的结构体**当中，成为结构体指针。当这个对象被 block 持有，就将“外部变量”在栈中的**内存地址**放到**堆**中，进而可以在 block 内部修改外部变量的值。
+> 外部变量未被 `__block` 修饰时，block 数据结构中捕获的是外部变量的值，通过 `__block` 修饰时，则捕获的是对外部变量的指针引用。
 
 ### NSTimer
 
@@ -1073,7 +1071,7 @@ RunLoop 负责管理自动释放池.
 
 - 编写的程序不是基于 UI 框架的，比如说命令行工具；
 - 编写的循环中创建了大量的临时对象；
-- 创建了一个辅助线程（**自定义的 NSOperation 和 NSThread 需要手动创建自动释放池**）：比如：自定义的 NSOperation 类中的 main 方法就必须添加自动释放池，否则出了作用域，自动释放对象会因为没有自动释放池去处理它，而造成内存泄漏。但对于 blockOperation 和 invocationOperation 这种默认的 Operation，系统已经帮我们封装好了，不需要手动创建自动释放池。
+- 创建了一个辅助线程（**自定义的 NSOperation 和 NSThread 需要手动创建自动释放池**）：比如：自定义的 NSOperation 类中的 main 方法就必须添加自动释放池，否则出了作用域，自动释放对象会因为没有自动释放池去处理它，而造成内存泄漏。但对于 NSBlockOperation 和 NSInvocationOperation 这种默认的 Operation，系统已经帮我们封装好了，不需要手动创建自动释放池。
 
 ### 重载 +load 时
 
@@ -1123,6 +1121,7 @@ id objc_msgSend ( id self, SEL op, ... );
 > **category 是怎么将方法添加到类上去的?**
 > 
 > 程序运行的时候，分类中的方法列表会加入到类的方法列表当中。
+
 ### 消息转发
 
 如果消息传递后仍无法找到 IMP，就进入了消息转发流程。
@@ -1132,6 +1131,8 @@ id objc_msgSend ( id self, SEL op, ... );
 3. 经过上述两步之后，如果还是没有办法处理选择子，那就启动完整的消息转发机制。
 
 ![消息转发流程](https://blog.fiteen.top/2020/ios-runtime/message-forwarding.png)
+
+如果消息转发流程结束，仍无法找到 IMP，则会执行 `doesNotRecognizeSelector` 方法。
 
 ### 实践
 
@@ -1345,7 +1346,7 @@ RunLoop 会收集所有等待重绘制的视图，苹果会注册一个 CFRunLoo
 
 ### 应用实践
 
-1. NSTimer
+#### NSTimer
 
 NSTimer 定时器的触发正是基于 RunLoop 运行的，所以使用 NSTimer 之前必须注册到 RunLoop。
 
@@ -1357,19 +1358,23 @@ NSTimer 的创建通常有两种方式，尽管都是类方法，一种是 timer
 
 后者除了创建一个定时器外会自动以 NSDefaultRunLoopModeMode 添加到当前线程 RunLoop 中，但前者需要手动添加。
 
-2. 在滚动视图中延迟加载图片。（当图片在 tracking mode 下加载时，会出现卡顿，所以把它指定在 defalut mode 下，等待滚动结束再加载）
+#### 在滚动视图中延迟加载图片
+
+当图片在 tracking mode 下加载时，会出现卡顿，所以把它指定在 defalut mode 下，等待滚动结束再加载。
 
 ```objc
 [cell performSelector:@selector(setImage) withObject:nil afterDelay:0 inModes:@[NSDefaultRunLoopMode]];
 ```
 
-3. 滚动视图中的倒计时控件。（倒计时默认加在 default mode 下，如果想让它在滚动时继续执行 timer 事件，需要把他加在 common mode 下。）
+#### 滚动视图中的倒计时控件
+
+倒计时默认加在 default mode 下，如果想让它在滚动时继续执行 timer 事件，需要把他加在 common mode 下。
 
 ```objc
 [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 ```
 
-4. 让 crash 的 App 回光返照
+#### 让 crash 的 App 回光返照
 
 App崩溃的发生分两种情况：
 
@@ -1392,7 +1397,7 @@ while (1) {
 }
 ```
 
-5. AFNetworking 中 RunLoop 的创建
+#### AFNetworking 中 RunLoop 的创建
 
 在 AFN 中当使用 NSURLConnection 去执行网络操作的时候，会遇到还没有收到服务器的回调，线程就已经退出了。为了解决这一问题，作者使用到了 RunLoop。下面是 AFN 中的一段代码：
 
@@ -1415,6 +1420,17 @@ while (1) {
     return _networkRequestThread;
 }
 ```
+
+## crash 场景
+
+- unrecognized selector crash
+- KVO crash
+- NSNotification crash
+- NSTimer crash
+- Container crash（数组越界，插nil等）
+- NSString crash （字符串操作的crash）
+- Bad Access crash （野指针）
+- UI not on Main Thread Crash (非主线程刷UI(机制待改善))
 
 ## block
 
@@ -1463,9 +1479,9 @@ block 的类型 NSBlock 最终也是继承自 `NSObject`。
 
 在 ARC 环境下，编译器会根据情况自动将栈上的 block 复制到堆上，类似以下情况：
 
-- block 作为函数返回值时
-- 将 block 赋值给 `__strong` 修饰的指针时
-- block 作为 GCD 的方法参数时
+- block 作为函数返回值时，编译器自动完成 copy 操作；
+- 将 block 赋值给通过 strong 或 copy 修饰的 id 或 block 类型的成员变量时；
+- block 作为 GCD 的方法参数时。
 
 ## KVC & KVO
 
@@ -1486,12 +1502,54 @@ block 的类型 NSBlock 最终也是继承自 `NSObject`。
 
 键值观察者模式，提供观察某一属性变化的方法。
 
-### 简述 KVO 的实现
+#### 简述 KVO 的实现
 
 当观察某对象 A 时，KVO 机制动态创建一个新的名为：`NSKVONotifying_A` 的新类，该类继承自对象 A 的本类，且 KVO 为 `NSKVONotifying_A` 重写观察属性的 setter 方法，setter 方法会负责在调用原 setter 方法之前（`-willChangeValueForKey:`）和之后（`-didChangeValueForKey:`），通知所有观察对象属性值的更改情况。
 最后把这个对象的 isa 指针 (isa 指针告诉 runtime 系统这个对象的类是什么) 指向新创建的子类。
 
 此外，Apple 还重写了 `-class` 方法，企图让我们以为我们这个类没有变，就是原本那个类。
+
+#### 如何手动通知 KVO
+
+重写被观察对象的 `automaticallyNotifiesObserversForKey` 方法，返回 `NO`。
+
+要实现手动通知，需要手动在赋值前后添加 `willChangeValueForKey` 和 `didChangeValueForKey`，才可以收到观察通知。
+
+#### 通过 KVC 修改属性会触发 KVO
+
+会。
+
+#### KVO 什么时候会崩溃，如何防护
+
+1. `removeObserver` 一个未注册的 keyPath，导致错误：`Cannot remove an observer A for the key path "str"，because it is not registered as an observer.`
+
+**解决办法**：根据实际情况，增加一个添加 keyPath 的标记，在 `dealloc` 中根据这个标记，删除观察者。
+
+2. 添加的观察者已经销毁，但是并未移除这个观察者，当下次这个观察的 `keyPath` 发生变化时，KVO 中的观察者的引用变成了野指针，导致 crash。
+
+**解决办法**：在观察者即将销毁的时候，先移除这个观察者。
+
+其实还可以将观察者 observer 委托给另一个类去完成，这个类弱引用被观察者，当这个类销毁的时候，移除观察者对象，参考[KVOController](https://www.bbsmax.com/A/lk5avNZPd1/)。
+
+#### KVO 优缺点
+
+**优点**：
+
+1. 能够提供一种简单的方法实现两个对象间的同步。例如：model 和 view 之间同步；
+2. 能够对非我们创建的对象，即内部对象的状态改变作出响应，而且不需要改变内部对象（SKD对象）的实现；
+3. 能够提供观察的属性的最新值以及先前值；
+4. 用 keyPath 来观察属性，因此也可以观察嵌套对象；
+5. 完成了对观察对象的抽象，因为不需要额外的代码来允许观察值能够被观察。
+
+**缺点**：
+
+1. 我们观察的属性必须使用 strings 来定义。因此在编译器不会出现警告以及检查；
+2. 对属性重构将导致我们的观察代码不再可用；
+3. 复杂的“IF”语句要求对象正在观察多个值。这是因为所有的观察代码通过一个方法来指向；
+4. 当释放观察者时不需要移除观察者。
+5. 只能通过重写 -observeValueForKeyPath:ofObject:change:context:方法来获得通知；
+6. 不能通过指定 selector 的方式获取通知；
+7. 不能通过 block 的方式获取通知。
 
 ## Notification & delegate
 
@@ -1611,6 +1669,16 @@ dispatch_sync(dispatch_get_main_queue(), ^{
 ```
 
 造成死锁。线程 A 等待线程 B，线程 B 等待线程 A，互相等待，就会陷入死锁。
+
+### NSOperation
+
+NSOperation 是个抽象类，本身并不具备封装操作的能力，必须使用它的子类。
+
+使用 NSOperation 子类的方式有3种：
+
+- NSInvocationOperation
+- NSBlockOperation
+- 自定义子类继承 NSOperation，重写父类的- (void)main;方法，把耗时操作写到里面
 
 ### GCD 和 NSOperationQueue 和 GCD 的区别
 
@@ -2166,6 +2234,35 @@ WebSocket 是 HTML5 一种新的协议。它实现了浏览器与服务器全双
 由于项目需要创建一个聊天室，需要通过长链接，和后台保持通讯，进行聊天,并且实时进行热点消息的推送。
 
 目前 Facebook 的 SocketRocket 应该是目前最好的 关于WebSocket使用的框架了.而且简单易用.
+
+## iOS 内省方法
+
+判断对象类型：
+
+```objc
+// 判断是否是这个类或者这个类的子类的实例
+-(BOOL) isKindOfClass:
+// 判断是否是这个类的实例
+-(BOOL) isMemberOfClass:
+```
+
+判断对象 or 类是否有这个方法：
+```objc
+// 判断实例是否有这样方法
+-(BOOL) respondsToSelector:
+// 判断类是否有这个方法
++(BOOL) instancesRespondToSelector:
+```
+## class、objc_getClass、object_getclass
+
+`objc_getClass`：参数是类名的字符串，返回的就是这个类的类对象；
+
+`object_getClass`：参数是 id 类型，它返回的是这个 id 的 isa 指针所指向的 Class，如果传参是 Class，则返回该 Class 的 metaClass；
+
+`[obj class]`：则分两种情况：
+
+1. 当 obj 为实例对象时，[obj class] 中 class 是实例方法：`- (Class)class`，返回的 obj 对象中的 isa 指针；
+2. 当 obj 为类对象（包括元类和根类以及根元类）时，调用的是类方法：`+ (Class)class`，返回的结果为其本身。
 
 ## intrinsicContentSize
 
