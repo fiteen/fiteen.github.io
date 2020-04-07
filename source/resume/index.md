@@ -297,7 +297,7 @@ Mach-O 文件格式是 OS X 与 iOS 系统上的可执行文件格式，像我�
 
 - Header: 保存了一些基本信息，包括了该文件运行的平台（CPU 架构）、文件类型、LoadCommands 的个数等。
 - LoadCommands： 可以理解为加载命令，在加载 Mach-O 文件时会使用这里的数据来确定内存的分布以及相关的加载命令。比如我们的 **main 函数的加载地址，程序所需的 dyld 的文件路径，以及相关依赖库的文件路径**。
-- Data：Data 中的每个段（segment）的数据都保存在这里，每个段都有一个或多个 Section，这里包含了具体的代码、数据等。它存放了具体代码和数据，包含：
+- Data：Data 中的每个段（segment）的数据都保存在这里，每个段都有一个或多个 Section，它存放了具体代码和数据，包含：
   - __TEXT 包含 Mach header，被执行的代码和只读常量（如C 字符串）。只读可执行（r-x）。
   - __DATA 包含全局变量，静态变量等。可读写（rw-）。
   - __LINKEDIT 包含了加载程序的元数据，比如函数的名称和地址。只读（r–-）。
@@ -791,6 +791,12 @@ for (int i = 0; i < 100000; i++) {
 #### MLeaksFinder + FBRetainCycleDetector
 
 MLeaksFinder 的只能定位到内存泄漏的对象，FBRetainCycleDetector 可以检查对象是否存在循环引用。
+
+**MLeaksFinder 原理**：
+
+打个比方：当一个 `UIViewController` 被 `pop` 或 `dismiss` 后，该 `UIViewController` 包括它的 `view`，`view` 的 `subviews` 等将很快被释放（除非你把它设计成单例，或者持有它的强引用，但一般很少这样做）。于是，我们只需在一个 `ViewController` 被 `pop` 或 `dismiss` 一小段时间后，看看该 `UIViewController`，它的 `view`，`view` 的 `subviews` 等等是否还存在。
+
+所以具体的方法是，为基类 `NSObject` 添加一个方法 `-willDealloc` 方法，该方法的作用是，先用一个弱指针指向 `self`，并在一小段时间(2s)后，通过这个弱指针调用 `-assertNotDealloc`，而 `-assertNotDealloc` 主要作用是弹出 alert 框。
 
 ## 离屏渲染
 

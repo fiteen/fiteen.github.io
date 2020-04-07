@@ -25,7 +25,7 @@ copyright: false
 <details style="padding-left:12px;padding-bottom:10px">
   <summary>运动小天才</summary>
   <p style="font-size:12px; line-height:13px"> 🌟 大学期间蝉联全学院女生体质健康测试分数第一</p>
-  <p style="font-size:12px; line-height:13px"> 🏃 女子800m 跑中考成绩 2'40</p>
+  <p style="font-size:12px; line-height:13px"> 🏃 女子 800m 跑中考成绩 2'40</p>
   <p style="font-size:12px; line-height:13px"> 🏆 小学全镇跳远冠军 </p>
 </details>
 <details style="padding-left:12px;padding-bottom:10px">
