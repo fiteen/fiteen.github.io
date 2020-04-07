@@ -39,6 +39,7 @@ date: 2019-06-30 00:00:00
 - [0024. Swap Nodes in Pairs](leetcode/0024-en)
 - [0029. Divide Two Integers](leetcode/0029-en)
 - [0031. Next Permutation](leetcode/0031-en)
+- [0050. Pow(x, n)](leetcode/0050-en)
 - [0134. Gas Station](leetcode/0134-en)
 
 
