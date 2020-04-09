@@ -6,6 +6,7 @@ tags:
 	- Valine
 categories: 前端
 thumbnail: hexo.png
+top: 1
 ---
 
 [我的博客](https://blog.fiteen.top)采用的是 [Hexo 官方网站](https://hexo.io/themes/)上相中的 [hexo+theme+inside](https://github.com/ikeq/hexo-theme-inside) 主题。虽然开发者已经提供了主题的[使用文档](https://blog.oniuo.com/theme-inside)，但是作为一款小众的主题，一些常用功能的定制并不是那么完善，不过贴心的开发者提供了 [plugins 配置方案](https://blog.oniuo.com/theme-inside/docs/misc#plugins)。
@@ -26,7 +27,6 @@ thumbnail: hexo.png
 ```bash
 npm install babel-core babel-preset-env html-minifier uglify-js --save
 ```
-
 
 ## Font Awesome
 
@@ -63,7 +63,6 @@ plugins:
 ```html
 <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 ```
-
 
 ## 访问量统计
 
@@ -287,6 +286,17 @@ appearance:
 npm install hexo-generator-feed --save
 ```
 
----
+## Q & A
 
-如对上述内容还有疑问，可以在评论区提出。如果需要我帮忙拓展某些功能，可以提 [issue](https://github.com/fiteen/fiteen.github.io/issues) 给我。
+**问题 1：为什么我按照文档设置了，加了插件设置后，不但没有生效，其它功能还出了问题或者工程都跑不起来了？**
+
+1. 检查一下配置代码的空格，yml 文件对代码格式的要求比较严格。
+2. 检查是否重复添加了 `plugins:`，添加多个插件也只需要声明一次。
+
+**问题 2：能否出一个小白教程？**
+
+可以在评论区描述你的问题，我会抽空整理到一起，补充在博客中。
+
+**问题 3：我希望博客可以支持某某功能，但是不知道该怎么做，能否帮忙实现一下？**
+
+可以提 [issue](https://github.com/fiteen/fiteen.github.io/issues) 给我。
