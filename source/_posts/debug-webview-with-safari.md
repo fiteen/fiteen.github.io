@@ -23,7 +23,7 @@ categories: iOS
 
 ## 进入检查器
 
-在手机/模拟器中打开浏览器/App中的某个网页，在 Mac 中打开 Safari，在“开发”中找到目标设备。
+在手机/模拟器中打开浏览器/App 中的某个网页，在 Mac 中打开 Safari，在“开发”中找到目标设备。
 
 ![选择目标设备](select-target-device.jpg)
 

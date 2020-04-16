@@ -9,7 +9,7 @@ thumbnail: google-cloud.png
 
 ## 一、申请免费试用 GCP
 
-每位新注册的用户可以在谷歌云平台 [GCP](https://cloud.google.com/free/) (Google Cloud Platform)获得第一年$300 的免费赠送额度。一年后若不主动选择继续使用不会扣费的。（如果谷歌云免费到期，你也可以通过[亚马逊AWS](https://aws.amazon.com/cn/)再薅一年羊毛。）
+每位新注册的用户可以在谷歌云平台 [GCP](https://cloud.google.com/free/) (Google Cloud Platform)获得第一年$300 的免费赠送额度。一年后若不主动选择继续使用不会扣费的。（如果谷歌云免费到期，你也可以通过[亚马逊 AWS](https://aws.amazon.com/cn/)再薅一年羊毛。）
 
 <!--more-->
 
@@ -25,11 +25,11 @@ thumbnail: google-cloud.png
 
 如果阅读英文不习惯，可以将左下方的语言改成简体中文。登录成功后进入 [GCP 试用申请](https://console.cloud.google.com/freetrial)：
 
-**第1步 - 同意条款**：注意选择国家/地区时避免选择“中国”，因为根据 Google Cloud 的政策，不支持中国使用，直接使用默认的“美国”即可。
+**第 1 步 - 同意条款**：注意选择国家/地区时避免选择“中国”，因为根据 Google Cloud 的政策，不支持中国使用，直接使用默认的“美国”即可。
 
  ![申请免费试用](apply-for-a-free-trial.jpg)
 
-**第2步 - 填写客户信息和付款方式**
+**第 2 步 - 填写客户信息和付款方式**
 
 客户信息的账户类型选择“个人”，通过[虚拟美国人信息生成工具](http://www.haoweichi.com/Index/random)，补充完成“姓名和地址”信息。
 
@@ -55,7 +55,7 @@ thumbnail: google-cloud.png
 
 - 目标：网络中的所有实例；如果选择指定标签，需要在后续的配置中输入标签
 
-- IP地址范围： 0.0.0.0/0
+- IP 地址范围： 0.0.0.0/0
 
 - 协议和端口：全部允许
 
@@ -81,7 +81,7 @@ thumbnail: google-cloud.png
 
 - 启动磁盘：Ubuntu 16.04 LTS Minimal
 
-展开“管理、安全、磁盘、网络、单独租用”，外部 IP 选择第2步的静态 IP。到这里，虚拟机部署完成。
+展开“管理、安全、磁盘、网络、单独租用”，外部 IP 选择第 2 步的静态 IP。到这里，虚拟机部署完成。
 
  ![VM 实例](vm-instance.jpg)
 
@@ -127,7 +127,7 @@ uname –r
 
 - 写入配置
 
-```
+```bash
 echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
 ```
@@ -176,7 +176,7 @@ sudo vim /etc/ss-conf.json
 
 回车之后会进入这个创建的文件，windows 下点击键盘上的 insert 键进入编辑，mac 系统则随便输入一个字母可以进入编辑。输入以下内容：
 
-```
+```json
 {
 "server":"0.0.0.0",
 "server_port":8838,

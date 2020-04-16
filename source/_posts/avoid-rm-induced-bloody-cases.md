@@ -29,7 +29,7 @@ vim ~/.bash_profile
 
 在文件中加入以下代码后保存文件：
 
-```
+```bash
 alias rm="trash"
 ```
 

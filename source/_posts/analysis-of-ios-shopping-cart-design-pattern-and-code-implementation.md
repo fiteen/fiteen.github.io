@@ -8,7 +8,7 @@ thumbnail: cart.png
 
 ## 前言
 
-早期以淘宝为代表的C2C网站以“**入驻店铺**”模式强势打破了纯线下的商品交易格局，而近年来，通过不断的尝试与改进，各大电商平台也趋于成熟并自成体系。以京东、聚美优品、网易考拉海购、唯品会、小红书为代表B2C平台也以“**自营+入驻店铺**”的垂直销售模式进入消费者的视野。但也有不少企业和商家为了避免缴纳高额的入驻保证金和平台年费等，选择开发自己的商城App产品，也就是“**自营**”模式。
+早期以淘宝为代表的 C2C 网站以“**入驻店铺**”模式强势打破了纯线下的商品交易格局，而近年来，通过不断的尝试与改进，各大电商平台也趋于成熟并自成体系。以京东、聚美优品、网易考拉海购、唯品会、小红书为代表 B2C 平台也以“**自营+入驻店铺**”的垂直销售模式进入消费者的视野。但也有不少企业和商家为了避免缴纳高额的入驻保证金和平台年费等，选择开发自己的商城 App 产品，也就是“**自营**”模式。
 
 <!--more-->
 
@@ -18,7 +18,7 @@ thumbnail: cart.png
 
 ### 1、购物车入口
 
-- 点击App底部菜单的购物车TabbarItem进入
+- 点击 App 底部菜单的购物车 TabbarItem 进入
 
 - 从商品详情页的购物车按钮进入
 
@@ -26,11 +26,11 @@ thumbnail: cart.png
 
 ### 2、店铺分区
 
-当商城支持跨店购物，那么购物车内的所有商品需要按照不同的店铺分区显示，这个分类逻辑的步骤通常由后端完成，我们iOS端只需获取输出的数据在tableView中展示即可。店铺信息在section的headerView中展示，另外还会显示一个店铺选择按钮。
+当商城支持跨店购物，那么购物车内的所有商品需要按照不同的店铺分区显示，这个分类逻辑的步骤通常由后端完成，我们 iOS 端只需获取输出的数据在 tableView 中展示即可。店铺信息在 section 的 headerView 中展示，另外还会显示一个店铺选择按钮。
 
-### 3、商品cell中展示的信息
+### 3、商品 cell 中展示的信息
 
-我们通常将商品cell分为*normal*、*edit*两类状态，当然商品信息比较简单的情况下，也可以选择只有Edit状态。购物车中显示的商品信息包括：
+我们通常将商品 cell 分为 *normal*、*edit*两类状态，当然商品信息比较简单的情况下，也可以选择只有 Edit 状态。购物车中显示的商品信息包括：
 
 - 商品基本信息（展示图片、名称、规格、选择数量、价格（或现价、原价））
 - 限购信息/降价信息
@@ -38,7 +38,7 @@ thumbnail: cart.png
 - 选择按钮
 - 其他
 
-以上信息在显示的时候遵从一定上下顺序，cell的布局会根据以上信息的有无适当调整。
+以上信息在显示的时候遵从一定上下顺序，cell 的布局会根据以上信息的有无适当调整。
 
 ### 4、底部核算界面
 
@@ -68,7 +68,7 @@ i）将全选按钮标记为`A`；
 
 ii）购物车中`m`个店铺的选中按钮一次标记为`A(0),A(1),...,A(m-1)`；
 
-iii）第`x`家店铺（`x∈(0,m-1)`）下的n个商品的选中按钮依次标记为`A(x,0),A(x,1),...,A(x,n-1)`。
+iii）第`x`家店铺（`x∈(0,m-1)`）下的 n 个商品的选中按钮依次标记为`A(x,0),A(x,1),...,A(x,n-1)`。
 
 那么：
 
@@ -78,7 +78,7 @@ iii）第`x`家店铺（`x∈(0,m-1)`）下的n个商品的选中按钮依次标
 
 点击某商品选择按钮`A(m,n)`的**伪代码**如下：
 
-```
+```objc
 A(m,n).selected = !A(m,n).selected;
 
 BOOL shopAllChoose = YES;
@@ -111,15 +111,15 @@ A.selected = allChoose;
 
 - 导航栏上的全选编辑
 
-- 每个section右上角的批量编辑
+- 每个 section 右上角的批量编辑
 
-点击①类按钮，①文本变为“完成”，同时②类按钮隐藏，所有的cell进入*edit* 状态；
+点击①类按钮，①文本变为“完成”，同时②类按钮隐藏，所有的 cell 进入 *edit* 状态；
 
-点击②类按钮，当前按钮文本变为“完成”，该section下所有cell进入*edit* 状态。
+点击②类按钮，当前按钮文本变为“完成”，该 section 下所有 cell 进入 *edit* 状态。
 
 修改商品数量可以通过加减按钮，也可以通过手动输入修改。当然，修改前需要对当前的数量做出判断，是否还能进行加减，或是输入的数据是否合理，如出现限购信息等。
 
-由于整个购物车的逻辑关系比较多，我们可以考虑将这部分功能单独放在一个UIView中处理，数量变化的具体实现可借鉴[PPNumberButton](https://github.com/jkpang/PPNumberButton)。
+由于整个购物车的逻辑关系比较多，我们可以考虑将这部分功能单独放在一个 UIView 中处理，数量变化的具体实现可借鉴[PPNumberButton](https://github.com/jkpang/PPNumberButton)。
 
 ### 3、删除模式
 
@@ -129,12 +129,12 @@ A.selected = allChoose;
 
 ![normal 状态时的删除](normal-delete.png)
 
-cell在*normal* 状态时可以左滑删除，而在*edit* 状态下点击删除，要在下面方法中做出`return YES/NO;`的判断和区分。
+cell 在 *normal* 状态时可以左滑删除，而在 *edit* 状态下点击删除，要在下面方法中做出`return YES/NO;`的判断和区分。
 
 ```objc
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {}
 ```
-假如要自定义删除键，可以在`UITableViewRowAction`初始化时在`title`的定义部分，使用多个空格作为占位符，然后在`layoutSubviews`中找到cell图层上的`UITableViewCellDeleteConfirmationView`层添加上新定义的删除键。
+假如要自定义删除键，可以在`UITableViewRowAction`初始化时在`title`的定义部分，使用多个空格作为占位符，然后在`layoutSubviews`中找到 cell 图层上的`UITableViewCellDeleteConfirmationView`层添加上新定义的删除键。
 
 点击`navigationItem`上的“编辑”后，结算按钮变成删除按钮，可以对选中的商品进行删除，由于是店铺模式的存储形式，需要对模型的更新时机进行区分。
 
@@ -150,6 +150,6 @@ cell在*normal* 状态时可以左滑删除，而在*edit* 状态下点击删除
 
 ----------
 
-欢迎评论，最后-> [Demo传送门](https://github.com/fiteen/HTCart)
+欢迎评论，最后-> [Demo 传送门](https://github.com/fiteen/HTCart)
 
 
