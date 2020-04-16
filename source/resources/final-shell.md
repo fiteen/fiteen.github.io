@@ -6,7 +6,7 @@ title: FinalShell Mac 版安装
 
 ### 一键安装脚本
 
-```
+```bash
 curl -o finalshell_install.sh www.hostbuf.com/downloads/finalshell_install.sh;chmod +x finalshell_install.sh;sudo ./finalshell_install.sh
 ```
 

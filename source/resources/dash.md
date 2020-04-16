@@ -10,7 +10,7 @@ title: Dash 破解
 
 **步骤二**：本地建一个文件，命名为 `license.dash-license`，文件内写入内容：
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">

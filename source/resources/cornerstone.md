@@ -22,7 +22,7 @@ title: Cornerstone 破解
 
 在终端中输入以下命令：
 
-```
+```bash
 defaults write ~/Library/Preferences/com.apple.finder AppleShowAllFiles -bool true
 ```
   
@@ -32,11 +32,11 @@ defaults write ~/Library/Preferences/com.apple.finder AppleShowAllFiles -bool tr
 
 有两种方式：
 
-方式一、按住 `Command+Option+esc` 打开对话框，选中Finder，点击“重新开启”。
+方式一、按住 `Command+Option+esc` 打开对话框，选中 Finder，点击“重新开启”。
 
 方式二、执行命令：
 
-```
+```bash
 killall Finder
 ```
 
