@@ -10,7 +10,7 @@ categories: iOS
 
 <!--more-->
 
-1、更新 Xcode，目前最新版本是8.1；
+1、更新 Xcode，目前最新版本是 8.1；
 
 2、由于安装插件会影响原来的 Xcode 打包上传，我们在应用程序里复制一个 Xcode，并重命名为 XcodeSigner；
 
@@ -37,7 +37,7 @@ defaults read /Applications/XcodeSigner.app/Contents/Info DVTPlugInCompatibility
 
 ![选择 XcodeSigner 作为打开方式](select-xcodesigner-as-the-open-method.png)
 
-7、检查 info.plist 中是否已经添加了第5步获得的 UUID，未添加可能会造成 XcodeSigner 闪退。若文件中已经存在，直接运行项目即可；
+7、检查 info.plist 中是否已经添加了第 5 步获得的 UUID，未添加可能会造成 XcodeSigner 闪退。若文件中已经存在，直接运行项目即可；
 
 ![添加 UUID](add-an-uuid-to-Info-plist.png)
 

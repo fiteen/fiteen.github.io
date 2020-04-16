@@ -23,8 +23,8 @@ thumbnail: app-launch.png
 
 WWDC 2016 中首次出现了 App 启动优化的话题，其中提到：
 
-- App 启动最佳速度是400ms以内，因为从点击 App 图标启动，然后 Launch Screen 出现再消失的时间就是400ms；
-- App 启动最慢不得大于20s，否则进程会被系统杀死；（启动时间最好以 App 所支持的最低配置设备为准。）
+- App 启动最佳速度是 400ms 以内，因为从点击 App 图标启动，然后 Launch Screen 出现再消失的时间就是 400ms；
+- App 启动最慢不得大于 20s，否则进程会被系统杀死；（启动时间最好以 App 所支持的最低配置设备为准。）
 
 冷启动的整个过程是指从用户唤起 App 开始到 AppDelegate 中的 `didFinishLaunchingWithOptions` 方法执行完毕为止，并以执行 `main()` 函数的时机为分界点，分为 `pre-main` 和 `main()` 两个阶段。
 
@@ -45,7 +45,7 @@ WWDC 2016 中首次出现了 App 启动优化的话题，其中提到：
 
 这时在 iOS 10 以上系统中运行一个 TestDemo，`pre-main` 阶段的启动时间会在控制台中打印出来。
 
-```
+```bash
 Total pre-main time: 354.21 milliseconds (100.0%)
          dylib loading time:  25.52 milliseconds (7.2%)
         rebase/binding time:  12.70 milliseconds (3.5%)
@@ -61,7 +61,7 @@ Total pre-main time: 354.21 milliseconds (100.0%)
 
 如果要更详细的信息，就设置 `DYLD_PRINT_STATISTICS_DETAILS` 为 1。
 
-```
+```bash
   total time: 1.6 seconds (100.0%)
   total images loaded:  388 (381 from dyld shared cache)
   total segments mapped: 23, into 413 pages
@@ -100,7 +100,7 @@ total images using weak symbols:  105
 
 在 Xcode 的控制台输入以下命令，可以打印出运行时所有加载进应用程序的 Mach-O 文件。
 
-```
+```bash
 image list -o -f
 ```
 
@@ -108,7 +108,7 @@ Mach-O 文件主要由三部分组成：
   - Mach header：描述 Mach-O 的 CPU 架构、文件类型以及加载命令等；
   - Load commands：描述了文件中数据的具体组织结构，不同的数据类型使用不同的加载命令；
   - Data：Data 中的每个段（segment）的数据都保存在这里，每个段都有一个或多个 Section，它们存放了具体的数据与代码，主要包含这三种类型：
-    - `__TEXT` 包含 Mach header，被执行的代码和只读常量（如C 字符串）。只读可执行（r-x）。
+    - `__TEXT` 包含 Mach header，被执行的代码和只读常量（如 C 字符串）。只读可执行（r-x）。
     - `__DATA` 包含全局变量，静态变量等。可读写（rw-）。
     - `__LINKEDIT` 包含了加载程序的**元数据**，比如函数的名称和地址。只读（r–-）。
 
@@ -117,13 +117,14 @@ Mach-O 文件主要由三部分组成：
 dylib 也是一种 Mach-O 格式的文件，后缀名为 `.dylib` 的文件就是动态库（也叫动态链接库）。动态库是运行时加载的，可以被多个 App 的进程共用。
 
 如果想知道 TestDemo 中依赖的所有动态库，可以通过下面的指令实现：
-```
+
+```bash
 otool -L /TestDemo.app/TestDemo
 ```
 
 动态链接库分为**系统 dylib** 和**内嵌 dylib**（embed dylib，即开发者手动引入的动态库）。系统 dylib 有：
   - iOS 中用到的所有系统 framework，比如 UIKit、Foundation；
-  - 系统级别的 libSystem（如 libdispatch(GCD)、libsystem_c(C语言库)、libsystem_blocks(Block)、libCommonCrypto(加密库，比如常用的 md5)）；
+  - 系统级别的 libSystem（如 libdispatch(GCD)、libsystem_c(C 语言库)、libsystem_blocks(Block)、libCommonCrypto(加密库，比如常用的 md5)）；
   - 加载 OC runtime 方法的 libobjc；
   - ……
 
@@ -172,7 +173,7 @@ framework 可以是动态库，也是静态库，是一个包含 dylib、bundle 
 
 一般情况下，iOS App 需要加载 100-400 个 dylibs。这些动态库包括系统的，也包括开发者手动引入的。其中大部分 dylib 都是系统库，系统已经做了优化，因此开发者更应关心自己手动集成的内嵌 dylib，加载它们时性能开销较大。
 
-App 中依赖的 dylib 越少越好，Apple 官方建议尽量将内嵌 dylib 的个数维持在6个以内。
+App 中依赖的 dylib 越少越好，Apple 官方建议尽量将内嵌 dylib 的个数维持在 6 个以内。
 
 **优化方案**：
 
@@ -237,7 +238,7 @@ Rebase 和 Binding 属于静态调整（fix-up），修改的是 `__DATA` 段中
 总结一下 `pre-main` 阶段可行的优化方案：
 
 - 重新梳理架构，减少不必要的内置动态库数量；
-- 进行代码瘦身，合并或删除无效的ObjC类、Category、方法、C++ 静态全局变量等；
+- 进行代码瘦身，合并或删除无效的 ObjC 类、Category、方法、C++ 静态全局变量等；
 - 将不必须在 `+load` 方法中执行的任务延迟到 `+initialize` 中；
 - 减少 C++ 虚函数。
 

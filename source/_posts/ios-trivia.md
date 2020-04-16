@@ -51,7 +51,7 @@ NSLog(@"%ld, %p", CFGetRetainCount(dicRef), dicRef);
 
 打印结果为：
 
-```
+```bash
 2, 0x6000004b9720
 1, 0x6000004b9720
 (lldb) 
@@ -83,7 +83,7 @@ NSLog(@"%p, %p, %ld, %ld", dicRef, dicRef1, CFGetRetainCount(dicRef), CFGetRetai
 
 打印结果为：
 
-```
+```bash
 0x600003bd2040, 2,
 0x600003bd2040, 0x600003bd2040, 3, 3
 ```
@@ -165,7 +165,7 @@ NSLog(@"strongBlock: %@", self.strongBlock);
 ```
 打印结果为：
 
-```
+```bash
 normalBlock: <__NSStackBlock__: 0x7ffeee29b138>
 copyBlock: <__NSMallocBlock__: 0x6000021ac360>
 strongBlock: <__NSMallocBlock__: 0x600002198240>
@@ -207,7 +207,7 @@ retainBlock: <__NSStackBlock__: 0x7ffeed0a90e0>
 
 那么**修饰符**的作用在哪里，为什么会出现不同的结果，我们通过反汇编来探究一下。
 
-把断点打在 `self.copyBlock` 的声明函数这一行（在上述引用代码的第7行，不是 block 内部）。然后开启 `Debug` → `Debug Workflow` → `Always show Disassembly` 查看汇编代码，点击 Step into。
+把断点打在 `self.copyBlock` 的声明函数这一行（在上述引用代码的第 7 行，不是 block 内部）。然后开启 `Debug` → `Debug Workflow` → `Always show Disassembly` 查看汇编代码，点击 Step into。
 
 ![](copy-block-callq.png)
 
@@ -248,7 +248,7 @@ NSLog(@"block: %@", ^{
 
 打印结果为：
 
-```
+```bash
 normalBlock: <__NSMallocBlock__: 0x600001ebe670>
 block: <__NSStackBlock__: 0x7ffee8752110>
 ```

@@ -37,7 +37,7 @@ IP 又双叒叕被墙了？
 于是，只要有了 VPS、域名和 CDN，就能实现这套方案：
 
 - VPS：推荐 [BandwagonHost](https://bandwagonhost.com/)、[Vultr](https://www.vultr.com)、[Hostwinds](https://www.hostwinds.com)、[HostDare](https://manage.hostdare.com/index.php)、[谷歌免费薅一年](teach-you-to-build-a-free-Shadowsocks-service)。
-- 域名：通过阿里云/腾讯云/华为云等购买域名，`.xyz`、`.top` 都是性价比比较高的选择。如果不想花钱也可以在 [freenom](http://www.freenom.com/nl/index.html) 上注册一个免费域名，运气好的话域名免费有效期可以达到12个月。
+- 域名：通过阿里云/腾讯云/华为云等购买域名，`.xyz`、`.top` 都是性价比比较高的选择。如果不想花钱也可以在 [freenom](http://www.freenom.com/nl/index.html) 上注册一个免费域名，运气好的话域名免费有效期可以达到 12 个月。
 - CDN：推荐使用美国的 Cloudflare，优点是免费、无需备案。
 
 ## V2Ray
@@ -56,7 +56,7 @@ V2Ray 的配置其实是比较繁琐的，可以借助这个[一键安装脚本]
 
 通过 SSH 连接到 VPS 主机，以 root 用户输入以下命令来安装或卸载脚本：
 
-```
+```bash
 bash <(curl -s -L https://git.io/v2ray.sh)
 ```
 
@@ -64,7 +64,7 @@ bash <(curl -s -L https://git.io/v2ray.sh)
 
 安装完成后，直接在终端输入 `v2ray` 就可以进行管理。面板上会出现如下选项：
 
-```
+```bash
   1. 查看 V2Ray 配置
   2. 修改 V2Ray 配置
   3. 下载 V2Ray 配置 / 生成配置信息链接 / 生成二维码链接
@@ -78,9 +78,9 @@ bash <(curl -s -L https://git.io/v2ray.sh)
  11. 其他
 ```
 
-输入 `2` 进入修改 V2Ray面板，面板上会出现如下选项：
+输入 `2` 进入修改 V2Ray 面板，面板上会出现如下选项：
 
-```
+```bash
   1. 修改 V2Ray 端口
   2. 修改 V2Ray 传输协议
   3. 修改 V2Ray 动态端口 (如果可以)
@@ -163,8 +163,8 @@ Cloudflare 会自动搜索域名的解析记录，如果有我们需要的 DNS �
 
 关于 **Proxy state**：
 
-- Proxied：解析DNS，同时该记录要经过代理
-- DNS only：只解析DNS，不代理
+- Proxied：解析 DNS，同时该记录要经过代理
+- DNS only：只解析 DNS，不代理
 
 设置完成后，然后点击 Continue。
 
@@ -172,11 +172,11 @@ Cloudflare 会自动搜索域名的解析记录，如果有我们需要的 DNS �
 
 ![替换 DNS](replace-nameservers.png)
 
-我们看到 Cloudflare 提示我们将原来的两台 DNS 服务器换成新分配的服务器。前往自己的域名服务商修改 DNS 之后，等待生效，我10分钟左右就收到了 “Status Active” 的通知邮件，等待时间正常来说不超过 24h。
+我们看到 Cloudflare 提示我们将原来的两台 DNS 服务器换成新分配的服务器。前往自己的域名服务商修改 DNS 之后，等待生效，我 10 分钟左右就收到了 “Status Active” 的通知邮件，等待时间正常来说不超过 24h。
 
 ## 效果
 
-在[IP 地址查询网](https://tool.lu/ip/) 上输入域名，看到解析出的 IP 归属地为 CloudFlare 公司CDN 节点。
+在[IP 地址查询网](https://tool.lu/ip/) 上输入域名，看到解析出的 IP 归属地为 CloudFlare 公司 CDN 节点。
 
 ![域名 IP 查询](ip-query.png)
 

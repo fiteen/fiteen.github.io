@@ -91,19 +91,19 @@ plugins:
 你也可以用这两个 id 来显示访问数：
 
 - `busuanzi_value_site_pv`：异步回填访问数
-- `busuanzi_container_site_pv`：为防止计数服务访问出错或超时（3秒）的情况下，使整个标签自动隐藏显示
+- `busuanzi_container_site_pv`：为防止计数服务访问出错或超时（3 秒）的情况下，使整个标签自动隐藏显示
 
 在 `_config.yml` 文件里找到 `footer` 下的 `custom`，写入相关的 html 代码。比如：
 
 {% codeblock _config.yml lang:yaml %}
-# Custom text.
+# Custom text
 custom: <span id="busuanzi_container_site_uv" style='display:none'>Total <span id="busuanzi_value_site_uv"></span> visitors. </span><span id="busuanzi_container_site_pv" style='display:none'><span id="busuanzi_value_site_pv"></span> Views</span>
 {% endcodeblock %}
 
 或者使用 font-awesome 字体：
 
 {% codeblock _config.yml lang:yaml %}
-# Custom text.
+# Custom text
 custom: <span id="busuanzi_container_site_pv" style='display:none'><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span> ｜ <span id="busuanzi_container_site_uv" style='display:none'><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
 {% endcodeblock %}
 
@@ -143,7 +143,7 @@ custom: <span id="busuanzi_container_site_pv" style='display:none'><i class="fa 
 复制按钮的样式如下：
 {% codeblock clipboard.css lang:css %}
 .highlight {
-    /* 方便copy代码按钮（btn-copy）的定位 */
+    /* 方便 copy 代码按钮（btn-copy）的定位 */
     position: relative;
 }
 .btn-copy {
@@ -189,7 +189,7 @@ plugins:
 
 ## 评论系统 - Valine
 
-主题的内置评论，支持 [Disqus](https://disqus.com) 和 [LiveRe](https://livere.com)。但个人认为这两款评论系统的 UI 风格主题不是很搭配，最后还是决定采用 [Valine](https://valine.js.org)——一款基于LeanCloud的快速、简洁且高效的无后端评论系统。
+主题的内置评论，支持 [Disqus](https://disqus.com) 和 [LiveRe](https://livere.com)。但个人认为这两款评论系统的 UI 风格主题不是很搭配，最后还是决定采用 [Valine](https://valine.js.org)——一款基于 LeanCloud 的快速、简洁且高效的无后端评论系统。
 
 虽然文档中也有提供 Valine 的配置方法，但是我实践后发现样式貌似出现了一些问题，这条 [issue](https://github.com/ikeq/hexo-theme-inside/issues/153) 也证实了这一点（**inside-2.6.1 已修复**）。所以我另找了一个 js 文件，并做了一点小改动。你可以引用我放在 CDN 上的资源 `https://cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/valine.js`，或者直接把 `valine.js` 文件[下载](https://github.com/fiteen/fiteen.github.io/releases)到本地，放在 `inside/source/lib`路径下。然后写入以下代码：
 
@@ -233,7 +233,7 @@ plugins:
 
 目前已经有 Valine 评论系统的拓展和增强版 [Valine+Admin](https://github.com/DesertsP/Valine-Admin.git)，主要实现评论邮件通知、评论管理、垃圾评论过滤等功能，还支持自定义修改邮件通知模板、漏发邮件自动补发等。具体步骤这篇[配置手册](https://deserts.io/valine-admin-document/)已经比较清晰了，照着上面的步骤操作即可，本文就不复制粘贴了。
 
-**注意**：想要在评论区显示自定义头像，先前往[Gravatar官网](http://cn.gravatar.com/)注册账号，注册的邮箱需要和你评论时填写的邮箱一致。如果注册成功后，头像仍没有显示，不要着急， `gravatar.cat.net` 有七天的缓存期，请耐心等待。
+**注意**：想要在评论区显示自定义头像，先前往[Gravatar 官网](http://cn.gravatar.com/)注册账号，注册的邮箱需要和你评论时填写的邮箱一致。如果注册成功后，头像仍没有显示，不要着急， `gravatar.cat.net` 有七天的缓存期，请耐心等待。
 
 
 下面再分享几个**小功能点的配置**：

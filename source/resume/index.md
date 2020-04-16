@@ -4,7 +4,7 @@ title: 面试题
 
 # 自我介绍
 
-你好我是FiTeen，2016 年毕业于XX大学XXXXXXX专业，从事 iOS 开发 4 年时间，上架过近十款 App，其中涉及到 iPad 点单、电商类、母婴社交类、医疗类、金融类的 App，积累了不少实战经验。我的特长就是学习新鲜事物和写文章，离职期间对自己之前一些项目和技术点进行了总结，发表的一些文章也会一些平台收录了。
+你好我是 FiTeen，2016 年毕业于 XX 大学 XXXXXXX 专业，从事 iOS 开发 4 年时间，上架过近十款 App，其中涉及到 iPad 点单、电商类、母婴社交类、医疗类、金融类的 App，积累了不少实战经验。我的特长就是学习新鲜事物和写文章，离职期间对自己之前一些项目和技术点进行了总结，发表的一些文章也会一些平台收录了。
 
 # 前端
 
@@ -27,17 +27,17 @@ title: 面试题
 
 它的特点是配置式组装。 一方面我们将一个大的页面，对视图和数据层层拆解为互相独立的 Component|Adapter，上层负责组装，下层负责实现； 另一方面将 Component|Adapter 拆分为 View，Reducer，Effect 等相互独立的上下文无关函数。
 
-lib//主要编写代码目录
-├── app.dart//主入口
-├── entity_factory.dart//模型工厂辅助类
-├── home//主页面
+lib //主要编写代码目录
+├── app.dart //主入口
+├── entity_factory.dart //模型工厂辅助类
+├── home //主页面
 │   ├── action.dart
 │   ├── effect.dart
-│   ├── home_adapter//适配器
+│   ├── home_adapter //适配器
 │   │   ├── action.dart
 │   │   ├── adapter.dart
 │   │   └── reducer.dart
-│   ├── home_component//组件
+│   ├── home_component //组件
 │   │   ├── action.dart
 │   │   ├── component.dart
 │   │   ├── effect.dart
@@ -47,14 +47,14 @@ lib//主要编写代码目录
 │   ├── page.dart
 │   ├── state.dart
 │   └── view.dart
-├── login//login页面
+├── login //login 页面
 │   ├── action.dart
 │   ├── effect.dart
 │   ├── page.dart
 │   ├── state.dart
 │   └── view.dart
 ├── main.dart
-└── network//网络请求和模型实体类
+└── network //网络请求和模型实体类
     ├── handover_entity.dart
     ├── netuntil.dart
     └── user_info_entity.dart
@@ -62,12 +62,12 @@ lib//主要编写代码目录
 用户进行某个操作 -> 然后调用 context.dispatch 方法发送一个由 ActionCreator 创建的 Action -> effect 接收并处理，然后 dispatch 给 reducer -> reducer 接收并产生新的 state -> state 更新导致界面显示的刷新。
 
 
-- state：进行状态操作的，是数据源，你所定义的page里面的字段都需要写在这。状态类必须实现 Cloneable 接口。
+- state：进行状态操作的，是数据源，你所定义的 page 里面的字段都需要写在这。状态类必须实现 Cloneable 接口。
 - action：定义事件的，比如页面跳转，刷新数据，定义的 action。
 - view：提供实现界面的方法
 - effect：具体的事件实现
 - adapter
-- reducer：用于接收意图，该文件提供了Reducer，声明Reducer监听的action，实现监听到action的动作
+- reducer：用于接收意图，该文件提供了 Reducer，声明 Reducer 监听的 action，实现监听到 action 的动作
 - page：组装
 
 # 计算机网络网络
@@ -116,7 +116,7 @@ HTTPS：安全套接字层上的超文本传输协议。
 - 302 found，临时性重定向，表示资源临时被分配了新的 URL
 - 303 see other，表示资源存在着另一个 URL，应使用 GET 方法丁香获取资源
 - 304 not modified，表示服务器允许访问资源，但因发生请求未满足条件的情况
-- 307 temporary redirect，临时重定向，和302含义相同
+- 307 temporary redirect，临时重定向，和 302 含义相同
 
 #### 4XX 客户端错误
 
@@ -139,11 +139,11 @@ HTTPS：安全套接字层上的超文本传输协议。
 5. 客户端会发起 HTTPS 中的第二个 HTTP 请求，将加密之后的客户端密钥发送给服务器。
 6. 服务器接收到客户端发来的密文之后，会用自己的私钥对其进行非对称解密，解密之后的明文就是客户端密钥，然后用客户端密钥对数据进行对称加密，这样数据就变成了密文。
 7. 然后服务器将加密后的密文发送给客户端。
-8. 客户端收到服务器发送来的密文，用客户端密钥对其进行对称解密，得到服务器发送的数据。这样 HTTPS 中的第二个 HTTP 请求结束，整个HTTPS传输完成。
+8. 客户端收到服务器发送来的密文，用客户端密钥对其进行对称解密，得到服务器发送的数据。这样 HTTPS 中的第二个 HTTP 请求结束，整个 HTTPS 传输完成。
 
 ### SSL
 
-SSL/TLS 是 HTTPS 安全性的核心模块，TLS 的前身是 SSL。SSL/TLS是建立在 TCP 协议之上（因而也是应用层级别的协议）。其包括 TLS Record Protocol（保证数据传输过程中的完整性和私密性）和 TLS Handshaking Protocols（后者负责握手过程中的身份认证）两个模块。
+SSL/TLS 是 HTTPS 安全性的核心模块，TLS 的前身是 SSL。SSL/TLS 是建立在 TCP 协议之上（因而也是应用层级别的协议）。其包括 TLS Record Protocol（保证数据传输过程中的完整性和私密性）和 TLS Handshaking Protocols（后者负责握手过程中的身份认证）两个模块。
 
 SSL 旨在通过 Web 创建安全的 Internet 通信。它是一种标准协议，用于加密浏览器和服务器之间的通信。它允许通过 Internet 安全轻松地传输账号密码、银行卡、手机号等私密信息。
 SSL 证书就是遵守 SSL 协议，由受信任的 CA 机构颁发的数字证书。使用 SSL 证书有许多好处：
@@ -151,7 +151,7 @@ SSL 证书就是遵守 SSL 协议，由受信任的 CA 机构颁发的数字证�
 - 保障服务器和浏览器之间的通信安全
 - 验证网站的真实身份，区别于钓鱼欺诈网站
 - 加密用户的敏感信息以确保安全
-- 提高SEO搜索引擎排名
+- 提高 SEO 搜索引擎排名
 - 提升用户对网站的信任
 - 有助于提高网站的在线销售业绩
 
@@ -165,9 +165,9 @@ SSL 证书就是遵守 SSL 协议，由受信任的 CA 机构颁发的数字证�
 
 **四次挥手**
 
-1. 第一次挥手：Client 的应用进程先向其 TCP 发出连接释放报文段（FIN = 1，序号 seq = u），并停止再发送数据，主动关闭 TCP 连接，进入 FIN-WAIT-1（终止等待1）状态，等待 Server 的确认。
+1. 第一次挥手：Client 的应用进程先向其 TCP 发出连接释放报文段（FIN = 1，序号 seq = u），并停止再发送数据，主动关闭 TCP 连接，进入 FIN-WAIT-1（终止等待 1）状态，等待 Server 的确认。
 2. 第二次挥手：Server 收到连接释放报文段后即发出确认报文段，（ACK = 1，确认号 ack = u + 1，序号 seq = v），Server 进入 CLOSE-WAIT（关闭等待）状态，此时的 TCP 处于半关闭状态，Client 到 Server 的连接释放。
-> 注：Client 收到 Server 的确认后，进入 FIN-WAIT-2（终止等待2）状态，等待 Server 发出的连接释放报文段。
+> 注：Client 收到 Server 的确认后，进入 FIN-WAIT-2（终止等待 2）状态，等待 Server 发出的连接释放报文段。
 3. 第三次挥手：Server 已经没有要向 Client 发出的数据了，Server 发出连接释放报文段（FIN = 1，ACK = 1，序号 seq = w，确认号 ack = u + 1），Server 进入 LAST-ACK（最后确认）状态，等待 Client 的确认。
 4. 第四次挥手：Client 收到 Server 的连接释放报文段后，对此发出确认报文段（ACK = 1，seq = u + 1，ack = w + 1），Client 进入 TIME-WAIT（时间等待）状态。此时 TCP 未释放掉，需要经过时间等待计时器设置的时间 2MSL 后，Client 才进入 CLOSED 状态。
 
@@ -190,12 +190,12 @@ TCP 是基于 IP 层的协议。TCP 是**全双工、面向连接、可靠的、
 Socket 翻译为套接字，是支持 TCP/IP 协议的网络通信的基本操作单元。它是网络通信过程中端点的抽象表示，包含进行网络通信必须的五种信息：
 
 - 连接使用的协议
-- 本地主机的IP地址
+- 本地主机的 IP 地址
 - 本地进程的协议端口
 - 远地主机的 IP 地址
 - 远地进程的协议端口。
 
-socket是在应用层和传输层之间的一个抽象层，它把TCP/IP层复杂的操作抽象为几个简单的接口供应用层调用已实现进程在网络中通信。它不属于 OSI 七层协议，它只是对于TCP，UDP 协议的一套封装，让我们开发人员更加容易编写基于 TCP、UDP 的应用。
+socket 是在应用层和传输层之间的一个抽象层，它把 TCP/IP 层复杂的操作抽象为几个简单的接口供应用层调用已实现进程在网络中通信。它不属于 OSI 七层协议，它只是对于 TCP、UDP 协议的一套封装，让我们开发人员更加容易编写基于 TCP、UDP 的应用。
 
 ## GET 和 POST
 
@@ -214,11 +214,11 @@ POST - 向指定的资源提交要被处理的数据。
 
 ### 长连接在 iOS 开发中的作用
 
-长连接：通过三次握手建立链接之后，该条链路就一直存在，而且该链路是一种双向的通行机制，适合于频繁的网络请求，避免 Http每一次请求都会建立链接和关闭链接的操作，减少浪费，提高效率。苹果提供的 push 服务 apns 就是典型的长连接的应用，IM 应用、订单推送这些也是长连接的典型应用。
+长连接：通过三次握手建立链接之后，该条链路就一直存在，而且该链路是一种双向的通行机制，适合于频繁的网络请求，避免 Http 每一次请求都会建立链接和关闭链接的操作，减少浪费，提高效率。苹果提供的 push 服务 apns 就是典型的长连接的应用，IM 应用、订单推送这些也是长连接的典型应用。
 
 ### 长连接为什么要保持心跳
 
-国内移动无线网络运营商在链路上一段时间内没有数据通讯后, 会淘汰NAT表中的对应项, 造成链路中断。而国内的运营商一般NAT超时的时间为5分钟，所以通常我们心跳设置的时间间隔为3-5分钟。
+国内移动无线网络运营商在链路上一段时间内没有数据通讯后, 会淘汰 NAT 表中的对应项, 造成链路中断。而国内的运营商一般 NAT 超时的时间为 5 分钟，所以通常我们心跳设置的时间间隔为 3-5 分钟。
 
 ### 长连接选择 TCP 协议还是 UDP 协议
 
@@ -230,9 +230,9 @@ POST - 向指定的资源提交要被处理的数据。
 
 ### 服务端单机最大 TCP 连接数是多少
 
-理论上：对 IPV4，不考虑ip地址分类等因素，最大tcp连接数约为2的32次方（ip数）×2的16次方（port数），也就是server端单机最大tcp连接数约为2的48次方。
+理论上：对 IPV4，不考虑 ip 地址分类等因素，最大 tcp 连接数约为 2 的 32 次方（ip 数）×2 的 16 次方（port 数），也就是 server 端单机最大 tcp 连接数约为 2 的 48 次方。
 
-实际最大值：受到**机器资源**、**操作系统**等的限制，单机最大并发TCP连接数超过10万，甚至上百万是没问题的，国外 Urban Airship 公司在产品环境中已做到 50 万并发。
+实际最大值：受到**机器资源**、**操作系统**等的限制，单机最大并发 TCP 连接数超过 10 万，甚至上百万是没问题的，国外 Urban Airship 公司在产品环境中已做到 50 万并发。
 
 ## OSI 七层网络协议
 
@@ -248,9 +248,9 @@ POST - 向指定的资源提交要被处理的数据。
 
 ## iOS 的分区
 
-C语言的内存模型分为5个区：从高到低：栈区、堆区、静态区、常量区、代码区。
+C 语言的内存模型分为 5 个区：从高到低：栈区、堆区、静态区、常量区、代码区。
 
-- **栈区**：存放函数的**参数值**、**局部变量**等，由**编译器**自动分配和释放，通常在函数执行完后就释放了，其操作方式类似于数据结构中的**栈**。栈内存分配运算内置于 CPU 的指令集，效率很高，但是分配的内存量有限，比如 iOS 中栈区的大小是2M。
+- **栈区**：存放函数的**参数值**、**局部变量**等，由**编译器**自动分配和释放，通常在函数执行完后就释放了，其操作方式类似于数据结构中的**栈**。栈内存分配运算内置于 CPU 的指令集，效率很高，但是分配的内存量有限，比如 iOS 中栈区的大小是 2M。
 - **堆区**：就是通过 `new`、`malloc`、`realloc` 分配的内存块，编译器不会负责它们的释放工作，需要用程序员手动释放。分配方式类似于数据结构中的**链表**。在 iOS 开发中所说的“内存泄漏”说的就是堆区的内存。
 - **静态区**：全局变量和静态变量（在 iOS 中就是用 `static` 修饰的局部变量或者是全局变量）的存储是放在一块的，初始化的全局变量和静态变量在一块区域，未初始化的全局变量和静态变量在相邻的另一块区域。程序结束后，由系统释放。
 - **常量区**：常量存储在这里，不允许修改。
@@ -285,7 +285,7 @@ C语言的内存模型分为5个区：从高到低：栈区、堆区、静态区
 - OC 中有很多 C 语言函数、结构体，Java 就是纯面向对象的
 - OC 的异常都继承自 NSException，也是继承自 NSObject。但是 java 有业务异常就必须捕获，不然出现编译错误
 - OC 通过格式化字符串 `%@` 触发 `description` 方法，但是 java 里可以直接调 toString 方法
-- OC 对象的复制需要遵循 `NSCopying` 协议，这个协议中有个复制方法 `–(id)copyWithZone:(*NSZone)zone` 需要我们去实现。就相当于java中的 `clone()`方法，也就是对象的深度复制，所谓深度复制就是重新分配一个存储空间，并将原来对象的内容都复制过来。
+- OC 对象的复制需要遵循 `NSCopying` 协议，这个协议中有个复制方法 `–(id)copyWithZone:(*NSZone)zone` 需要我们去实现。就相当于 java 中的 `clone()`方法，也就是对象的深度复制，所谓深度复制就是重新分配一个存储空间，并将原来对象的内容都复制过来。
 - 使用自动释放池，通过引用计数处理对象的内存管理
 - 拥有 id 这种通用对象类型
 
@@ -298,7 +298,7 @@ Mach-O 文件格式是 OS X 与 iOS 系统上的可执行文件格式，像我�
 - Header: 保存了一些基本信息，包括了该文件运行的平台（CPU 架构）、文件类型、LoadCommands 的个数等。
 - LoadCommands： 可以理解为加载命令，在加载 Mach-O 文件时会使用这里的数据来确定内存的分布以及相关的加载命令。比如我们的 **main 函数的加载地址，程序所需的 dyld 的文件路径，以及相关依赖库的文件路径**。
 - Data：Data 中的每个段（segment）的数据都保存在这里，每个段都有一个或多个 Section，它存放了具体代码和数据，包含：
-  - __TEXT 包含 Mach header，被执行的代码和只读常量（如C 字符串）。只读可执行（r-x）。
+  - __TEXT 包含 Mach header，被执行的代码和只读常量（如 C 字符串）。只读可执行（r-x）。
   - __DATA 包含全局变量，静态变量等。可读写（rw-）。
   - __LINKEDIT 包含了加载程序的元数据，比如函数的名称和地址。只读（r–-）。
 
@@ -309,7 +309,7 @@ Mach-O 文件格式是 OS X 与 iOS 系统上的可执行文件格式，像我�
 分为**系统 dylib** 和**内嵌 dylib**（embed dylib，即开发者手动引入的动态库）。系统 dylib 有：
 
 - iOS 中用到的所有系统 framework，比如 UIKit、Foundation；
-- 系统级别的 libSystem（如 libdispatch(GCD)、libsystem_c(C语言库)、libsystem_blocks(Block)、libCommonCrypto(加密库，比如常用的 md5)）；
+- 系统级别的 libSystem（如 libdispatch(GCD)、libsystem_c(C 语言库)、libsystem_blocks(Block)、libCommonCrypto(加密库，比如常用的 md5)）；
 - 加载 OC runtime 方法的 libobjc；
 ……
 
@@ -319,7 +319,7 @@ Mach-O 文件格式是 OS X 与 iOS 系统上的可执行文件格式，像我�
 
 ### pre-main
 
-1. 系统先**读取 App 的可执行文件**(Mach-O文件)，从里面获得 dyld 的路径，然后**加载 dyld**，dyld 去初始化运行环境。
+1. 系统先**读取 App 的可执行文件**(Mach-O 文件)，从里面获得 dyld 的路径，然后**加载 dyld**，dyld 去初始化运行环境。
 
 2. 开启缓存策略，**加载程序相关依赖库**(其中也包含可执行文件)，并对这些库进行链接，最后**调用每个依赖库的初始化方法**，在这一步，runtime 被初始化。
 
@@ -425,12 +425,12 @@ Mach-O 文件格式是 OS X 与 iOS 系统上的可执行文件格式，像我�
 - 处理内存警告；
 - 缓存（NSCache）；
 - 考虑绘制
-- 处理内存警告（实现在 appdelegate 中的 applicationDidReceiveMemoryWarning：方法。在UIViewController 子类中重写 didReceiveMemoryWarning 方法。）；
+- 处理内存警告（实现在 appdelegate 中的 applicationDidReceiveMemoryWarning：方法。在 UIViewController 子类中重写 didReceiveMemoryWarning 方法。）；
 - 重用花销很大的对象（比如 NSDataFormatter 和 NSCalendar）；
 - 设置阴影路径；
 - 选择正确的数据存储方式（NSUserDefaults、XML、JSON、plist、NSCoding、SQLite、CoreData）；
 - 加速启动时间；
-- 使用Autorelease Pool
+- 使用 Autorelease Pool
 - 缓存图片——或者不缓存（imageNamed 可以缓存已经加载的图片，这个方法会在系统缓存中根据指定的名字寻找图片，如果找到了就返回，如果没有找到就从指定的文件中加载，并缓存起来，然后再将结果返回，适合需要重用的图片；imageWithContentsOfFile 只是简单的加载图片，并不会将图片缓存，适合加载只使用一次的图片）；
 - 尽量避免 Data 格式化（日期 NSDateFormatter，改用时间戳）；
 
@@ -557,8 +557,8 @@ HTTP 是明文传输，首先确保链接都是 HTTPS 的。
 在程序入口处，检测 App 包内的 embedded.mobileprovision 内的**组织名称**或 **teamid** 是否和我发布时签名时的信息相同，不相同就退出。
 
 1. 关键字符串用函数替换，达到在二进制文件中查看不到的效果；
-2. 关键函数名用C语言写，这样用Class-dump等工具查不出函数名;
-3. 闪退的代码用汇编写，这样在编译后的二进制文件中找不到exit的关键字
+2. 关键函数名用 C 语言写，这样用 Class-dump 等工具查不出函数名;
+3. 闪退的代码用汇编写，这样在编译后的二进制文件中找不到 exit 的关键字
 4. 关键函数名用不规则字符串替换，达到混淆效果，别人更难破解（慎用，上架可能被拒）
 
 拓展：
@@ -575,7 +575,7 @@ HTTP 是明文传输，首先确保链接都是 HTTPS 的。
 
 `ptrace` 是用于进程跟踪，它提供了父进程可以观察和控制其子进程执行的能力。
 
-基本原理：当使用了 `ptrace` 跟踪后，所有发送给被跟踪的子进程的信号(除了SIGKILL)，都会被转发给父进程，而子进程则会被阻塞，这时子进程的状态就会被系统标注为 `TASK_TRACED`。而父进程收到信号后，就可以对停止下来的子进程进行检查和修改，然后让子进程继续运行。
+基本原理：当使用了 `ptrace` 跟踪后，所有发送给被跟踪的子进程的信号(除了 SIGKILL)，都会被转发给父进程，而子进程则会被阻塞，这时子进程的状态就会被系统标注为 `TASK_TRACED`。而父进程收到信号后，就可以对停止下来的子进程进行检查和修改，然后让子进程继续运行。
 
 ## 内存泄漏
 
@@ -807,13 +807,13 @@ MLeaksFinder 的只能定位到内存泄漏的对象，FBRetainCycleDetector 可
 下面这些情况/操作会引发离屏渲染：
 
 - 为图层设置遮罩（layer.mask）
-- 将图层的 layer.masksToBounds / view.clipsToBounds 属性设置为true
-- 将图层 layer.allowsGroupOpacity属性设置为YES和layer.opacity小于1.0
+- 将图层的 layer.masksToBounds / view.clipsToBounds 属性设置为 true
+- 将图层 layer.allowsGroupOpacity 属性设置为 YES 和 layer.opacity 小于 1.0
 - 为图层设置阴影（layer.shadow）
 - 为图层设置 layer.shouldRasterize=true
 - 具有 layer.cornerRadius，layer.edgeAntialiasingMask，layer.allowsEdgeAntialiasing 的图层
-- 文本（任何种类，包括UILabel，CATextLayer，Core Text 等）。
-- 使用 CGContext在drawRect :方法中绘制大部分情况下会导致离屏渲染，甚至仅仅是一个空的实现。
+- 文本（任何种类，包括 UILabel，CATextLayer，Core Text 等）。
+- 使用 CGContext 在 `drawRect:`方法中绘制大部分情况下会导致离屏渲染，甚至仅仅是一个空的实现。
 
 ### 圆角
 
@@ -857,7 +857,7 @@ imageView.layer.mask = maskLayer;
 - 使用 ShadowPath 指定 layer 的阴影效果路径，优化性能；
 - 使用异步进行 layer 渲染（Facebook 开源的异步绘制框架 AsyncDisplayKit）；
 - 尽量使用不包含透明（alpha）通道的图片资源；
-- 如果 alhpa不等于1，设置 layer 的 opaque 值为 YES，减少复杂图层合成；
+- 如果 alhpa 不等于 1，设置 layer 的 opaque 值为 YES，减少复杂图层合成；
 - 尽量设置 layer 的大小值为整数值。
 
 ## JSBridge 原理和实现
@@ -903,7 +903,7 @@ imageView.layer.mask = maskLayer;
 - WebViewJavascriptBridgeBase：数据处理工具类
   - 客户端注册的方法以及对应实现：`@property (strong, nonatomic) NSMutableDictionary* messageHandlers;`
   - 客户端通知网页后的回调实现：`@property (strong, nonatomic) NSMutableDictionary* responseCallbacks;`
-  - 网页js环境注入方法：`-(void)injectJavascriptFile;`
+  - 网页 js 环境注入方法：`-(void)injectJavascriptFile;`
   - 处理从 native 到 JS 的消息注入，消息队列处理和分发
   - JSON 数据的序列化和反序列化
   - LOG 输出
@@ -977,7 +977,7 @@ RAC 有一对一的单向数据流 RACSignal 和一对一的双向数据流 RACC
 
 RACChannel 可以被理解为一个双向的连接，这个连接的两端都是 RACSignal 实例，它们可以向彼此发送消息。
 
-### 三个步骤：
+### 三个步骤
 
 1. 创建信号：创建信号对象，然后创建一个可变数组
 2. 订阅信号：创建一个订阅者，将 block 保存到订阅者中，将订阅者保存到上面的数组中
@@ -1009,7 +1009,7 @@ RacSignal 就是冷信号，RacSubject 父子是热信号。
 
 每次发送的数据，都经过 interval 的间隔之后才发出。在 interval 时间内发送的所有信号只有最后一个数据被发送，前面的都会被抛弃。
 
-例如实现搜索框实时搜索的功能，即用户每每输入字符，view 都要求展现搜索结果。这时如果用户搜索的字符串较长，那么由于网络请求的延时可能造成UI显示错误，并且多次不必要的请求还会加大服务器的压力，这显然是不合理的，此时我们就需要用到**节流**。
+例如实现搜索框实时搜索的功能，即用户每每输入字符，view 都要求展现搜索结果。这时如果用户搜索的字符串较长，那么由于网络请求的延时可能造成 UI 显示错误，并且多次不必要的请求还会加大服务器的压力，这显然是不合理的，此时我们就需要用到**节流**。
 
 ```objc
 - (RACSignal*)throttle:(NSTimeInterval)interval;
@@ -1081,7 +1081,7 @@ RunLoop 负责管理自动释放池.
 
 ### 重载 +load 时
 
-重载 +load时不需要手动添加 `@autoreleasepool`吗，在 runtime 调用 `+load` 方法前后是加了 `objc_autoreleasePoolPush()` 和 `objc_autoreleasePoolPop()` 的。
+重载 +load 时不需要手动添加 `@autoreleasepool`吗，在 runtime 调用 `+load` 方法前后是加了 `objc_autoreleasePoolPush()` 和 `objc_autoreleasePoolPop()` 的。
 
 ## load & initialize
 
@@ -1111,7 +1111,7 @@ Runtime 是指将数据类型的确定由**编译时**推迟到了**运行时**�
 
 在 Objective-C 中，所有的消息传递中的“消息”都会被编译器转化为：
 
-```
+```c
 id objc_msgSend ( id self, SEL op, ... );
 ```
 
@@ -1168,7 +1168,7 @@ RunLoop 是 iOS 事件响应与任务处理最核心的机制，它贯穿 iOS �
 
 CFRunLoop 的结构体：
 
-```
+```c
 struct __CFRunLoop {
     CFRuntimeBase _base;
     pthread_mutex_t _lock;			/* locked for accessing mode list */
@@ -1197,7 +1197,7 @@ struct __CFRunLoop {
   - `kCFRunLoopCommonModes`（`NSRunLoopCommonModes`），伪模式，kCFRunLoopDefaultMode 和 UITrackingRunLoopMode 的集合
 4. 每个 mode 可以包含多个事件（source）
   - `CFMutableSetRef _sources0`，处理的是 App 内部的事件、App 自己负责管理，如按钮点击事件等。
-  - `CFMutableSetRef _sources1`，由 RunLoop 和内核管理，Mach Port驱动，如 CFMachPort、CFMessagePort
+  - `CFMutableSetRef _sources1`，由 RunLoop 和内核管理，Mach Port 驱动，如 CFMachPort、CFMessagePort
   - `CFMutableArrayRef _observers`
   - `FMutableArrayRef _timers`
 
@@ -1209,7 +1209,7 @@ struct __CFRunLoop {
 2. 通知观察者即将处理 timer 事件。
 3. 通知观察者即将处理 source0（不基于 port 的输入源）事件。
 4. 处理 source0（不基于 port 的输入源） 事件。
-5. 如果有 source1 (基于 port 的输入源) 处于 ready 状态，直接处理这个 source1。转到步骤9。
+5. 如果有 source1 (基于 port 的输入源) 处于 ready 状态，直接处理这个 source1。转到步骤 9。
 6. 通知观察者线程即将休眠。
 7. 使线程进入睡眠状态，直到发生以下事件之一：
   - source0 事件触发。
@@ -1218,9 +1218,9 @@ struct __CFRunLoop {
   - runloop 被外部手动唤醒。
 8. 通知观察者线程被唤醒。
 9. 处理唤醒时收到的消息。
-  - 如果触发了 timer 事件，请处理 timer 事件并重启 runloop。转到步骤2。
+  - 如果触发了 timer 事件，请处理 timer 事件并重启 runloop。转到步骤 2。
   - 如果触发了 source0/source1，请传递事件。
-  - 如果 runloop 已显式唤醒，但尚未超时，请重启 runloop。转到步骤2。
+  - 如果 runloop 已显式唤醒，但尚未超时，请重启 runloop。转到步骤 2。
 10. 通知观察者 runloop 即将退出。
 
 底层实现函数：
@@ -1276,7 +1276,7 @@ SInt32 CFRunLoopRunSpecific(CFRunLoopRef rl, CFStringRef modeName, CFTimeInterva
 
 ### 线程安全
 
-Core Foundation中：`CFRunLoopRef` 对象，它提供了纯 C 函数的 API，并且这些 API 是**线程安全**的；
+Core Foundation 中：`CFRunLoopRef` 对象，它提供了纯 C 函数的 API，并且这些 API 是**线程安全**的；
 
 Foundation 中：用 `NSRunLoop` 对象来表示，它是基于 CFRunLoopRef 的封装，提供的是面向对象的 API，但这些 API **不是线程安全**的。
 
@@ -1327,11 +1327,11 @@ CFRunLoopObserver 监视到 kCFRunLoopEntry(将要进入 RunLoop/启动 RunLoop)
 
 CFRunLoopObserver 监视到 kCFRunLoopBeforeWaiting(将要进入休眠) 时调用 `_objc_autoreleasePoolPop()` 和 `_objc_autoreleasePoolPush()`释放旧的池并创建新池。
 
-kCFRunLoopExit(即将退出Loop) 时会调用 `_objc_autoreleasePoolPop()` 来（最后一次）释放自动释放池。
+kCFRunLoopExit(即将退出 Loop) 时会调用 `_objc_autoreleasePoolPop()` 来（最后一次）释放自动释放池。
 
 #### 重绘视图
 
-苹果为了保证界面的流畅性，（1）不会重绘属性（frame等）没有改变的视图（2）只发送一次 `drawRect:` 消息。
+苹果为了保证界面的流畅性，（1）不会重绘属性（frame 等）没有改变的视图（2）只发送一次 `drawRect:` 消息。
 
 当相关的视图对象接收到设置属性的消息的时候，就会将自己标记为要重绘。
 
@@ -1343,12 +1343,12 @@ RunLoop 会收集所有等待重绘制的视图，苹果会注册一个 CFRunLoo
 
 1. 指定用于再次唤醒的端口（mach_port）
 
-2. 调用 `mach_msg` 监听唤醒端口。内核调用 `mach_msg_trap` 让 RunLoop 处于 `mach_msg_trap` 状态，RunLoop 就会挂起，等待激活。就像一段代码中有scanf函数，必须要接收一个输入一样，不输入就不会继续往下执行。这里要区别于sleep。或者像是 Notification,当有 post 的时候，才会被唤醒。
+2. 调用 `mach_msg` 监听唤醒端口。内核调用 `mach_msg_trap` 让 RunLoop 处于 `mach_msg_trap` 状态，RunLoop 就会挂起，等待激活。就像一段代码中有 scanf 函数，必须要接收一个输入一样，不输入就不会继续往下执行。这里要区别于 sleep。或者像是 Notification,当有 post 的时候，才会被唤醒。
 3. 由另一线程（或者另一个进程中的某个线程）向内核发送这个端口的 msg 后，trap 状态就会被唤醒，RunLoop 就继续工作
 
 ### GCD 和 RunLoop
 
-在RunLoop的内部实现中，用到了很多 GCD 的东西。比如刚刚开始 run 的时候，通过 DISPATCH_SOURCE_TYPE_TIMER 该类型的 dispatch_source 设置了 RunLoop 的超时时间。还可以在上面 RunLoop 实现的伪代码中看到 `__CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__()`，只要是 dispatch 到 main_queue 的，Core Foundation 都会调用这个函数，之后，libdispatch.dylib 就会执行回调。
+在 RunLoop 的内部实现中，用到了很多 GCD 的东西。比如刚刚开始 run 的时候，通过 DISPATCH_SOURCE_TYPE_TIMER 该类型的 dispatch_source 设置了 RunLoop 的超时时间。还可以在上面 RunLoop 实现的伪代码中看到 `__CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__()`，只要是 dispatch 到 main_queue 的，Core Foundation 都会调用这个函数，之后，libdispatch.dylib 就会执行回调。
 
 ### 应用实践
 
@@ -1382,7 +1382,7 @@ NSTimer 的创建通常有两种方式，尽管都是类方法，一种是 timer
 
 #### 让 crash 的 App 回光返照
 
-App崩溃的发生分两种情况：
+App 崩溃的发生分两种情况：
 
 (1) program received signal:SIGABRT SIGABRT 一般是过度 release 或者发送 unrecogized selector 导致。
 
@@ -1433,10 +1433,10 @@ while (1) {
 - KVO crash
 - NSNotification crash
 - NSTimer crash
-- Container crash（数组越界，插nil等）
-- NSString crash （字符串操作的crash）
+- Container crash（数组越界，插 nil 等）
+- NSString crash （字符串操作的 crash）
 - Bad Access crash （野指针）
-- UI not on Main Thread Crash (非主线程刷UI(机制待改善))
+- UI not on Main Thread Crash (非主线程刷 UI(机制待改善))
 
 ## block
 
@@ -1472,7 +1472,7 @@ block 的类型 NSBlock 最终也是继承自 `NSObject`。
 
 - __NSGlobalBlock__：数据区，没有访问 auto 变量
 - __NSStackBlock__：栈区，访问了 auto 变量
-- __NSMallocBlock__：堆区，`__NSStackBlock__` 调用了copy
+- __NSMallocBlock__：堆区，`__NSStackBlock__` 调用了 copy
 
 1. 程序区域：代码段，用于存放代码
 2. 数据区域：数据段，用于存放全局变量
@@ -1542,7 +1542,7 @@ block 的类型 NSBlock 最终也是继承自 `NSObject`。
 **优点**：
 
 1. 能够提供一种简单的方法实现两个对象间的同步。例如：model 和 view 之间同步；
-2. 能够对非我们创建的对象，即内部对象的状态改变作出响应，而且不需要改变内部对象（SKD对象）的实现；
+2. 能够对非我们创建的对象，即内部对象的状态改变作出响应，而且不需要改变内部对象（SKD 对象）的实现；
 3. 能够提供观察的属性的最新值以及先前值；
 4. 用 keyPath 来观察属性，因此也可以观察嵌套对象；
 5. 完成了对观察对象的抽象，因为不需要额外的代码来允许观察值能够被观察。
@@ -1680,7 +1680,7 @@ dispatch_sync(dispatch_get_main_queue(), ^{
 
 NSOperation 是个抽象类，本身并不具备封装操作的能力，必须使用它的子类。
 
-使用 NSOperation 子类的方式有3种：
+使用 NSOperation 子类的方式有 3 种：
 
 - NSInvocationOperation
 - NSBlockOperation
@@ -1689,7 +1689,7 @@ NSOperation 是个抽象类，本身并不具备封装操作的能力，必须�
 ### GCD 和 NSOperationQueue 和 GCD 的区别
 
 -  GCD 是纯 C 语言的 API 。NSOperationQueue 是基于 GCD 的 OC 的封装。
--  GCD只支持 FIFO 队列，NSOperationQueue可以方便设置执行顺序，设置最大的并发数量。
+-  GCD 只支持 FIFO 队列，NSOperationQueue 可以方便设置执行顺序，设置最大的并发数量。
 -  NSOperationQueue 可是方便的设置 Operation 之间的依赖关系，GCD 则需要很多代码。
 -  NSOperationQueue 支持 KVO，可以检测 Operation 是否正在执行 isExecuted ,是否结束 isFinished。是否取消 isCanceled 
 -  GCD 的执行速度比 NSOperationQueue 快。
@@ -1698,7 +1698,7 @@ NSOperation 是个抽象类，本身并不具备封装操作的能力，必须�
 
 ### 过程
 
-updating constraints（测量阶段，更新约束）->layout（用上一步的信息设置 view 的 center 和 bounds）->display（把view渲染到屏幕上）
+updating constraints（测量阶段，更新约束）->layout（用上一步的信息设置 view 的 center 和 bounds）->display（把 view 渲染到屏幕上）
 
 ### 相关方法
 
@@ -1706,11 +1706,11 @@ updating constraints（测量阶段，更新约束）->layout（用上一步的�
 
 1. setNeedsUpdateConstraints
 
-当一个自定义view的某个属性发生改变，并且可能影响到constraint时，需要调用此方法去标记constraints需要在未来的某个点更新，系统然后调用updateConstraints.
+当一个自定义 view 的某个属性发生改变，并且可能影响到 constraint 时，需要调用此方法去标记 constraints 需要在未来的某个点更新，系统然后调用 updateConstraints.
 
 2. needsUpdateConstraints
 
-constraint-based layout system使用此返回值去决定是否需要调用updateConstraints作为正常布局过程的一部分。
+constraint-based layout system 使用此返回值去决定是否需要调用 updateConstraints 作为正常布局过程的一部分。
 
 3. updateConstraintsIfNeeded
 
@@ -1726,7 +1726,7 @@ layoutSubviews 在以下情况下会被调用：
 2. addSubview 会触发；
 3. 设置 view 的 frame 会触发，前提是 frame 的值设置前后发生了变化；
 4. 滚动一个 UIScrollView 会触发 layoutSubviews；
-5. 旋转 Screen 会触发父 UIView 上的layoutSubViews 事件；
+5. 旋转 Screen 会触发父 UIView 上的 layoutSubViews 事件；
 6. 改变一个 UIView 大小的时候会触发父 UIView 上的 layoutSubviews 事件。
 
 - setNeedsLayout 方法并不会立即刷新，立即刷新需要调用 layoutIfNeeded 方法。
@@ -1750,7 +1750,7 @@ layoutSubviews 在以下情况下会被调用：
 
 1. 首先判断主窗口（keyWindow）自己是否能接受触摸事件
 2. 判断触摸点是否在自己身上
-3. 子控件数组中从后往前遍历子控件，重复前面的两个步骤（所谓从后往前遍历子控件，就是首先查找子控件数组中最后一个元素，然后执行1、2步骤）
+3. 子控件数组中从后往前遍历子控件，重复前面的两个步骤（所谓从后往前遍历子控件，就是首先查找子控件数组中最后一个元素，然后执行 1、2 步骤）
 4. 如果没有符合条件的子控件，那么自己就是最合适的 view。
 
 两个重要的方法：
@@ -1852,7 +1852,7 @@ UIView 不能接收触摸事件的三种情况：
 响应者链的事件传递过程：
 
 1. 如果当前 view 是控制器的 view，那么控制器就是上一个响应者，事件就传递给控制器；
-2. 如果当前 view 不是控制器的view，那么父视图就是当前 view 的上一个响应者，事件就传递给它的父视图；
+2. 如果当前 view 不是控制器的 view，那么父视图就是当前 view 的上一个响应者，事件就传递给它的父视图；
 3. 在视图层次结构的最顶级视图，如果也不能处理收到的事件或消息，则其将事件或消息传递给 window 对象进行处理；
 4. 如果 window 对象也不处理，则其将事件或消息传递给 UIApplication 对象
 5. 如果 UIApplication 也不能处理该事件或消息，则将其丢弃。
@@ -2058,9 +2058,9 @@ semphone 在一定程度也可以当互斥锁用，它适用于编程逻辑更�
 
 ### 哈希冲突的解决方法
 
-1. **开放定址法**：当发生冲突时，使用某种探测技术在Hash表中形成一个探测序列，然后沿着这个探测序列依次查找下去，当碰到一个空的单元时，则插入其中。基本公式为：`hash(key) = （hash(key)+di）mod TableSize`。其中di为增量序列，TableSize 为表长。根据 di 的不同我们又可以分为线性探测，平方（二次）探测、随机探测。 
+1. **开放定址法**：当发生冲突时，使用某种探测技术在 Hash 表中形成一个探测序列，然后沿着这个探测序列依次查找下去，当碰到一个空的单元时，则插入其中。基本公式为：`hash(key) = （hash(key)+di）mod TableSize`。其中 di 为增量序列，TableSize 为表长。根据 di 的不同我们又可以分为线性探测，平方（二次）探测、随机探测。 
 2. **再哈希法**：当发生冲突时，使用第二个、第三个、哈希函数计算地址，直到无冲突时。缺点：计算时间增加。
-3. **链地址法/拉链法**：每个哈希表节点都有一个next指针，多个哈希表节点可以用next指针构成一个单向链表，被分配到同一个索引上的多个节点可以用这个单向 
+3. **链地址法/拉链法**：每个哈希表节点都有一个 next 指针，多个哈希表节点可以用 next 指针构成一个单向链表，被分配到同一个索引上的多个节点可以用这个单向 
 链表连接起来。
 4. **建立公共溢出区**：将哈希表分为基本表和溢出表两部分，凡是和基本表发生冲突的元素，一律填入溢出表。
 
@@ -2087,7 +2087,7 @@ NSDictionary（字典）是使用 Hash 表来实现 key 和 value 之间的映�
 - (void)setObject:(id)anObject forKey:(id <NSCopying>)aKey;
 ```
 
-NSDictionary中的 key 是唯一的，key 可以是遵循 NSCopying 协议和重载方法的任何对象。也就是说在 NSDictionary 内部，会对 aKey 对象 copy 一份新的。而 anObject 对象在其内部是作为强引用（retain或strong)。
+NSDictionary 中的 key 是唯一的，key 可以是遵循 NSCopying 协议和重载方法的任何对象。也就是说在 NSDictionary 内部，会对 aKey 对象 copy 一份新的。而 anObject 对象在其内部是作为强引用（retain 或 strong)。
 
 在调用 `setObject: forKey:` 后，内部会去调用 key 对象的 `- (NSUInteger)hash;` 方法确定 object 在 hash 表内的入口位置，然后会调用 `- (BOOL)isEqual:(id)object;` 来确定该值是否已经存在于 NSDictionary 中。
 
@@ -2107,9 +2107,11 @@ https://juejin.im/post/5c6abfc86fb9a049c04396a7
 }
 ```
 
-从上面的结构真的能看出NSMapTable是一个 哈希表 + 链表 的数据结构吗？在NSMapTbale中插入或者删除一个对象的寻找时间 = O(1) + O(m) ，m为最坏时可能为n。
-O(1) ：对key进行hash得到bucket的位置
-O(m) ：不同的key得到相同的hash值的value存放到链表中，遍历链表的时间
+从上面的结构真的能看出 NSMapTable 是一个 哈希表 + 链表 的数据结构吗？在 NSMapTbale 中插入或者删除一个对象的寻找时间 = O(1) + O(m) ，m 为最坏时可能为 n。
+
+O(1) ：对 key 进行 hash 得到 bucket 的位置；
+
+O(m) ：不同的 key 得到相同的 hash 值的 value 存放到链表中，遍历链表的时间。
 
 
 说法二：是对 `_CFDictionary` 的封装，解决哈希冲突使用的是开放定址线性探测法。
@@ -2144,15 +2146,15 @@ GCC 的替代品，Clang 的编译速度比 GCC 快。
 
 3. SemanticAnalysis：对输入的 AST 进行语法检查
 
-4. Code Generation：代码生成，将 AST 转换成低层次的IR指令
+4. Code Generation：代码生成，将 AST 转换成低层次的 IR 指令
 
 ### LLVM（编译器后端）
 
 底层虚拟机（Low Level Virtual Machine）
 
-1. Optimization：分析IR指令，将其中潜在会拖慢运行速度的指令干掉
+1. Optimization：分析 IR 指令，将其中潜在会拖慢运行速度的指令干掉
 
-2. AsmPrinter：通过IR（中间码）生成特定CPU架构的汇编代码
+2. AsmPrinter：通过 IR（中间码）生成特定 CPU 架构的汇编代码
 
 3. Assemble ：将汇编代码转化成机器码
 
@@ -2160,41 +2162,41 @@ GCC 的替代品，Clang 的编译速度比 GCC 快。
 
 ### BitCode
 
-当我们提交程序到 App Store 上时，Xcode会将程序编译为一个中间表现形式( bitcode )。然后 App store 会再将这个 bitcode 编译为可执行的64位或32位程序
+当我们提交程序到 App Store 上时，Xcode 会将程序编译为一个中间表现形式(bitcode)。然后 App store 会再将这个 bitcode 编译为可执行的 64 位或 32 位程序
 
-BitCode 类似于一个中间码，被上传到appStore之后，苹果会根据下载应用的用户的手机指令集类型生成只有该指令集的二进制进行下发，从而达到精简安装包体积的目的
+BitCode 类似于一个中间码，被上传到 AppStore 之后，苹果会根据下载应用的用户的手机指令集类型生成只有该指令集的二进制进行下发，从而达到精简安装包体积的目的
 
-bitcode 优化汇编指令
+bitcode 优化汇编指令：
 
 ### 指令集
 
 - 模拟器的指令集：
   - 4S：-5i386
-  - 5S以上：X64_86
+  - 5S 以上：X64_86
 
-- 真机（iOS设备)的默认指令集：
-  - armv6设备：iPhone,iPhone2,iPhone3G
-  - armv7设备：iPhone3GS,iPhone4,iPhone4S
-  - armv7s设备：iPhone5,iPhone5C
-  - arm64设备：iPhone5S以上
+- 真机（iOS 设备)的默认指令集：
+  - armv6 设备：iPhone,iPhone2,iPhone3G
+  - armv7 设备：iPhone3GS,iPhone4,iPhone4S
+  - armv7s 设备：iPhone5,iPhone5C
+  - arm64 设备：iPhone5S 以上
 
-### 编译时报出 i386，x86_64的错误
+### 编译时报出 i386，x86_64 的错误
 
 解决办法：
 
-查看静态库是否支持i386/x86_64的方法：
+查看静态库是否支持 i386/x86_64 的方法：
 
-1.如果是.a文件：
+1.如果是 .a 文件：
 
-打开终端，使用lipo -info 静态包地址.a查看
+打开终端，使用 lipo -info 静态包地址 .a 查看
 
-2.如果是framework文件：
+2.如果是 framework 文件：
 
-cd到 framework 内部，之后在使用 `lipo -info xxxFramework` 查看
+cd 到 framework 内部，之后在使用 `lipo -info xxxFramework` 查看
 
 ## 讲一讲 NSURLProtocol
 
-### 使用场合：
+### 使用场合
 
 任务之间不太相互依赖：GCD
 任务之间有依赖或要监听任务的执行情况：NSOperationQueue
@@ -2219,7 +2221,7 @@ cd到 framework 内部，之后在使用 `lipo -info xxxFramework` 查看
 
 FMDatabaseQueue 底层原理：创建一个自定义串行队列（这里不能使用主队列，因为使用主队列会导致阻塞），然后将放入队列的 block 同步执行，这样避免了多线程同时访问数据库。 为了保证读写安全，我们只使用一个自定义串行队列（保证只有一个 FMDatabaseQueue 对象）
 
-```
+```objc
 [dbQueue inDatabase:^(FMDatabase *db) {  
     NSString *sql = [NSString stringWithFormat:@"INSERT INTO %@(%@) VALUES (%@);", tableName, keyString, valueString];  
     res = [db executeUpdate:sql withArgumentsInArray:insertValues];  
@@ -2233,7 +2235,7 @@ WebSocket 是 HTML5 一种新的协议。它实现了浏览器与服务器全双
 
 由于项目需要创建一个聊天室，需要通过长链接，和后台保持通讯，进行聊天,并且实时进行热点消息的推送。
 
-目前 Facebook 的 SocketRocket 应该是目前最好的 关于WebSocket使用的框架了.而且简单易用.
+目前 Facebook 的 SocketRocket 应该是目前最好的 关于 WebSocket 使用的框架了.而且简单易用.
 
 ## 反射机制
 
@@ -2278,7 +2280,7 @@ NSLog(@"Person.Class = %@", [Person class]);
 [self performSelector:@selector(move:) withObject:@2];
 [self performSelector:NSSelectorFromString(@"move:") withObject:@10];
 ```
-2. 使用 `objc_msgSend` 进行实现方法（为某个类对象发送消息，并返回一个值。参数 1,2分别是接收消息的实例对象，要执行的方法）
+2. 使用 `objc_msgSend` 进行实现方法（为某个类对象发送消息，并返回一个值。参数 1、2 分别是接收消息的实例对象，要执行的方法）
 ```c
 objc_msgSend(self, @selector(move:), @4);
 objc_msgSend(self, @selector(test:andNum:), @1, @2);
@@ -2297,7 +2299,7 @@ objc_msgSend(self, @selector(test:andNum:), @1, @2);
 
 ## intrinsicContentSize
 
-intrinsicContentSize，也就是控件的内置大小。比如 UILabel、UIButton 等控件，他们都有自己的内置大小。控件的内置大小往往是由控件本身的内容所决定的，比如一个UILabel的文字很长，那么该 UILabel 的内置大小自然会很长。控件的内置大小可以通过 UIView 的 intrinsicContentSize 属性来获取，也可以通过 invalidateIntrinsicContentSize 方法来在下次 UI 规划事件中重新计算 intrinsicContentSize。如果直接创建一个原始的 UIView 对象，显然它的内置大小为0。
+intrinsicContentSize，也就是控件的内置大小。比如 UILabel、UIButton 等控件，他们都有自己的内置大小。控件的内置大小往往是由控件本身的内容所决定的，比如一个 UILabel 的文字很长，那么该 UILabel 的内置大小自然会很长。控件的内置大小可以通过 UIView 的 intrinsicContentSize 属性来获取，也可以通过 invalidateIntrinsicContentSize 方法来在下次 UI 规划事件中重新计算 intrinsicContentSize。如果直接创建一个原始的 UIView 对象，显然它的内置大小为 0。
 
 ## assign 和 weak
 
@@ -2361,7 +2363,7 @@ vc 已经强引用了 view，当控件的父 view 销毁时，如果你还想继
 
 ### 对象的内存大小
 
-首先，对象初始化需要的内存（`class_getInstanceSize`）为4/8字节（isa 指针在 32 位系统下占 4 字节，在 64 位系统下占 8 字节），实际分配的内存（`malloc_size`）为16字节，因为 `alloc` 源码实现中有：
+首先，对象初始化需要的内存（`class_getInstanceSize`）为 4/8 字节（isa 指针在 32 位系统下占 4 字节，在 64 位系统下占 8 字节），实际分配的内存（`malloc_size`）为 16 字节，因为 `alloc` 源码实现中有：
 
 ```c
 size_t instanceSize(size_t extraBytes) {
@@ -2400,7 +2402,7 @@ size_t instanceSize(size_t extraBytes) {
 
 ## dealloc 的调用时机
 
-1. 当前类的 `dealloc` 的调用是在最后一次 release 执行后（引用计数为0），但此时实例变量(ivars)并未释放。
+1. 当前类的 `dealloc` 的调用是在最后一次 release 执行后（引用计数为 0），但此时实例变量(ivars)并未释放。
 2. 父类的 `dealloc` 方法会在子类 `dealloc` 方法返回后自动执行。
 3. ARC 子类的实例变量(ivars)在根类 `[NSObject dealloc]` 中释放。
 
@@ -2420,11 +2422,11 @@ size_t instanceSize(size_t extraBytes) {
 
 SOLID 原则：
 
-Single responsibility principle ： 单一职责原则
-Open/closed principle ：开闭原则
-Liskov substitution principle ：Liskov替换原则
-Interface segregation principle ：接口隔离原则
-Dependency inversion principle ： 依赖反转原则
+- Single responsibility principle：单一职责原则
+- Open/closed principle：开闭原则
+- Liskov substitution principle ：Liskov 替换原则
+- Interface segregation principle ：接口隔离原则
+- Dependency inversion principle ： 依赖反转原则
 
 ## 函数式/响应式/链式编程
 
@@ -2545,13 +2547,6 @@ Test.create().value1(@"value").value2(true).value3(1);
 
 此外, 在某个 view 的 tintColor 发生改变或 tintAdjustmentMode 属性改变时, 这个 view 以及它所有受影响的 subview 都会调用 `tintColorDidChange` 方法, 所以有什么自定义操作, 都可以在这个方法中进行。
 
-
-UILabel 在 autolayout 的时候会自动延伸
-text你觉得是怎么实现的
-有三个view平行放置在superview中怎么用
-optional是怎么实现的
-weak 的实现方法
-
 ## UIView 的父类、UIButton 的父类，他们共同的父类
 
 UIView 的父类 是 UIResponder；
@@ -2570,7 +2565,7 @@ UIButton 的父类是 UIControl，UIControl 的父类是 UIView，根类都是 N
 
 1. 首先显示占位图
 2. 在 webimagecache 中寻找图片对应的缓存，它是以 url 为数据索引先在内存中查找是否有缓存；
-3. 如果没有缓存，就通过md5处理过的key来在磁盘中查找对应的数据，如果找到就会把磁盘中的数据加到内存中，并显示出来；
+3. 如果没有缓存，就通过 md5 处理过的 key 来在磁盘中查找对应的数据，如果找到就会把磁盘中的数据加到内存中，并显示出来；
 4. 如果内存和磁盘中都没有找到，就会向远程服务器发送请求，开始下载图片；
 5. 下载完的图片加入缓存中，并写入到磁盘中；
 5. 整个获取图片的过程是在子线程中进行，在主线程中显示。
@@ -2581,23 +2576,23 @@ UIButton 的父类是 UIControl，UIControl 的父类是 UIView，根类都是 N
 
 AFNetworking 是封装的 NSURLSession 的网络请求，由五个模块组成：分别由 NSURLSession, Security, Reachability,Serialization, UIKit 五部分组成。
 
-1. NSURLSession：网络通信模块（核心模块） 对应 AFNetworking中的 AFURLSessionManager和对HTTP协议进行特化处理的AFHTTPSessionManager，AFHTTPSessionManager 是继承于 AFURLSessionmanager 的。
+1. NSURLSession：网络通信模块（核心模块） 对应 AFNetworking 中的 AFURLSessionManager 和对 HTTP 协议进行特化处理的 AFHTTPSessionManager，AFHTTPSessionManager 是继承于 AFURLSessionmanager 的。
 2. Security：网络通讯安全策略模块，对应 AFSecurityPolicy
 3. Reachability：网络状态监听模块，对应 AFNetworkReachabilityManager
 4. Serialization：网络通信信息序列化、反序列化模块对应 AFURLResponseSerialization
-5. UIKit：对于 iOS UIKit的扩展库
+5. UIKit：对于 iOS UIKit 的扩展库
 
 ### AFN2.0 为什么添加一条常驻线程
 
-AFN2.0里面把每一个网络请求的发起和解析都放在了一个线程里执行。正常来说，一个线程执行完任务后就退出了。开启 runloop 是为了防止线程退出。一方面避免每次请求都要创建新的线程；另一方面，因为 connection 的请求是异步的，如果不开启 runloop，线程执行完代码后不会等待网络请求完的回调就退出了，这会导致网络回调的代理方法不执行。
+AFN2.0 里面把每一个网络请求的发起和解析都放在了一个线程里执行。正常来说，一个线程执行完任务后就退出了。开启 runloop 是为了防止线程退出。一方面避免每次请求都要创建新的线程；另一方面，因为 connection 的请求是异步的，如果不开启 runloop，线程执行完代码后不会等待网络请求完的回调就退出了，这会导致网络回调的代理方法不执行。
 
-这是一个单例，用NSThread创建了一个线程，并且为这个线程添加了一个 runloop，并且加了一个 NSMachPort，来防止 runloop 直接退出。
+这是一个单例，用 NSThread 创建了一个线程，并且为这个线程添加了一个 runloop，并且加了一个 NSMachPort，来防止 runloop 直接退出。
 
 ### AFN3.0 为什么不再需要常驻线程
 
 NSURLConnection 的一大痛点就是：发起请求后，这条线程并不能随风而去，而需要一直处于等待回调的状态。
 
-苹果也是明白了这一痛点，从iOS9.0开始 deprecated 了 NSURLConnection。替代方案就是NSURLSession。
+苹果也是明白了这一痛点，从 iOS9.0 开始 deprecated 了 NSURLConnection。替代方案就是 NSURLSession。
 
 ```objc
 self.operationQueue = [[NSOperationQueue alloc] init];
@@ -2607,13 +2602,13 @@ self.session = [NSURLSession sessionWithConfiguration:self.sessionConfiguration 
 
 从上面的代码可以看出，NSURLSession 发起的请求，不再需要在当前线程进行代理方法的回调，而是可以指定回调的 delegateQueue，这样我们就不用为了等待代理回调方法而苦苦保活线程了。
 
-同时还要注意一下，指定的用于接收回调的 Queue 的 `maxConcurrentOperationCount` 设为了1，这里目的是想要让并发的请求串行地进行回调。
+同时还要注意一下，指定的用于接收回调的 Queue 的 `maxConcurrentOperationCount` 设为了 1，这里目的是想要让并发的请求串行地进行回调。
  
 ### 为什么 AFN3.0 中需要设置 self.operationQueue.maxConcurrentOperationCount = 1; 而 AFN2.0 却不需要
 
-功能不一样：AFN 3.0的 operationQueue 是用来接收 NSURLSessionDelegate 回调的，鉴于一些多线程数据访问的安全性考虑，设置了 `maxConcurrentOperationCount = 1`来达到串行回调的效果。
+功能不一样：AFN 3.0 的 operationQueue 是用来接收 NSURLSessionDelegate 回调的，鉴于一些多线程数据访问的安全性考虑，设置了 `maxConcurrentOperationCount = 1`来达到串行回调的效果。
 
-而 AFN 2.0 的 operationQueue 是用来添加 operation 并进行并发请求的，所以不要设置为1。
+而 AFN 2.0 的 operationQueue 是用来添加 operation 并进行并发请求的，所以不要设置为 1。
 
 # 算法
 
@@ -2772,7 +2767,7 @@ void bubble_sort_quicker(int arr[], int n) {
 
 1. 设两个指针 i 和 j，分别指向序列的头部和尾部；
 2. 先从 j 所指的位置向前搜索，找到第一个比基准小的数值后停下来，再从 i 所指的位置向后搜索，找到第一个比基准大的数值后停下来，把 i 和 j 指向的两个值交换位置；
-3. 重复步骤2，直到 i = j，最后将相遇点指向的值与基准交换位置。
+3. 重复步骤 2，直到 i = j，最后将相遇点指向的值与基准交换位置。
 
 ![](https://blog.fiteen.top/2019/sorting-algorithm/selection-sort.gif)
 
@@ -2854,7 +2849,7 @@ void insertion_sort(int arr[], int n) {
 
 ![](https://blog.fiteen.top/2019/sorting-algorithm/shell-sort.gif)
 
-如果增量序列满足 [n / 2, n / 2 / 2, …, 1]，可以这样实现：
+如果增量序列满足 [n / 2, n / 2 / 2, ..., 1]，可以这样实现：
 
 ```c
 void shell_sort_split_half(int arr[], int n) {
@@ -2895,11 +2890,11 @@ void shell_sort(int arr[], int n, int dlta[], int t) {
 }
 ```
 
-希尔排序是不稳定排序，它的分析是一个复杂的问题，因为它的运行时间依赖于增量序列的选择，它的平均时间复杂度为O(n^1.3)，最好情况是 O(n)，最差情况是 O(n²)。空间复杂度为 O(1)。
+希尔排序是不稳定排序，它的分析是一个复杂的问题，因为它的运行时间依赖于增量序列的选择，它的平均时间复杂度为 O(n^1.3)，最好情况是 O(n)，最差情况是 O(n²)。空间复杂度为 O(1)。
 
 ### 选择排序
 
-选择排序的基本思想就是：每一趟 n-i+1(i=1,2,…,n-1) 个记录中选取关键字最小的记录作为有序序列的第 i 个记录。
+选择排序的基本思想就是：每一趟 n-i+1(i=1,2, ...,n-1) 个记录中选取关键字最小的记录作为有序序列的第 i 个记录。
 
 ![](https://blog.fiteen.top/2019/sorting-algorithm/selection-sort.gif)
 
@@ -2907,7 +2902,7 @@ void shell_sort(int arr[], int n, int dlta[], int t) {
 
 1. 在未排序序列中找到最小（大）元素，存放到排序序列的起始位置;
 2. 在剩余未排序元素中继续寻找最小（大）元素，放到已排序序列的末尾;
-3. 重复步骤2，直到所有元素排序完毕。
+3. 重复步骤 2，直到所有元素排序完毕。
 
 ```c
 void selection_sort(int arr[], int n) {
@@ -2990,7 +2985,7 @@ void heap_sort(int tree[], int n) {
 
 **基本思想**：
 
-假如初始序列含有 n 个记录，则可以看成是 n 个有序的子序列，每个子序列的长度为 1。然后两两归并，得到 n/2 个长度为2或1的有序子序列；再两两归并，……，如此重复，直到得到一个长度为 n 的有序序列为止，这种排序方法称为 **二路归并排序**。
+假如初始序列含有 n 个记录，则可以看成是 n 个有序的子序列，每个子序列的长度为 1。然后两两归并，得到 n/2 个长度为 2 或 1 的有序子序列；再两两归并，……，如此重复，直到得到一个长度为 n 的有序序列为止，这种排序方法称为 **二路归并排序**。
 
 ![](https://blog.fiteen.top/2019/sorting-algorithm/merge-sort.gif)
 
@@ -3029,9 +3024,9 @@ void merge_sort(int arr[], int L, int R) {
 
 ### 基数排序
 
-基数排序（Radix Sort）是**非比较型**排序算法，利用了“**桶**”的概念。基数排序不需要进行记录关键字间的比较，是一种**借助多关键字排序的思想对单逻辑关键字进行排序**的方法。比如数字100，它的个位、十位、百位就是不同的关键字。
+基数排序（Radix Sort）是**非比较型**排序算法，利用了“**桶**”的概念。基数排序不需要进行记录关键字间的比较，是一种**借助多关键字排序的思想对单逻辑关键字进行排序**的方法。比如数字 100，它的个位、十位、百位就是不同的关键字。
 
-那么，对于一组乱序的数字，基数排序的实现原理就是将整数按位数（关键字）切割成不同的数字，然后按每个位数分别比较。对于关键字的选择，有最高位优先法（MSD法）和最低位优先法（LSD法）两种方式。MSD 必须将序列先逐层分割成若干子序列，然后再对各子序列进行排序；而 LSD 进行排序时，不必分成子序列，对每个关键字都是整个序列参加排序。
+那么，对于一组乱序的数字，基数排序的实现原理就是将整数按位数（关键字）切割成不同的数字，然后按每个位数分别比较。对于关键字的选择，有最高位优先法（MSD 法）和最低位优先法（LSD 法）两种方式。MSD 必须将序列先逐层分割成若干子序列，然后再对各子序列进行排序；而 LSD 进行排序时，不必分成子序列，对每个关键字都是整个序列参加排序。
 
 **算法步骤**：
 

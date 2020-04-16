@@ -74,8 +74,6 @@ thumbnail: flutter.png
 
 - control+option+O：一键清除多余的 imports
 
-- ......
-
 ## 常用插件
 
 常用的插件基本上都可以在[Dart 开源包的网站](https://pub.dartlang.org)里找到，选用合适的 package 可以帮你节省不少重复实现的时间。网上的 Coder 朋友们也总结了很多不错的插件，本文里就不一一记录了。

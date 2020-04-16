@@ -87,9 +87,9 @@ iOS 代码签名的复杂度需要相应增加，于是双层代码签名（双�
 
 3. 把 Mac 公钥上传到 Apple 后台，用 Apple 私钥签名 Mac 公钥，可以得到一份 Mac 公钥和签名的组合数据，我们把这份数据称为**证书**。
 
-4. 在 Apple 后台申请 App ID，配置好的 UDID（注册设备） 列表以及 App 申请的权限（Entitlements），再加上步骤3中的证书，组合起来的数据用 Apple 私钥进行签名，把数据和签名一起组成 PP 文件，下载到本地的开发设备 Mac 上。
+4. 在 Apple 后台申请 App ID，配置好的 UDID（注册设备） 列表以及 App 申请的权限（Entitlements），再加上步骤 3 中的证书，组合起来的数据用 Apple 私钥进行签名，把数据和签名一起组成 PP 文件，下载到本地的开发设备 Mac 上。
 
-5. 当我们编译工程时，Mac 私钥会对 App 进行签名，同时把步骤4得到的 PP 文件打包进去，文件名为 `embedded.mobileprovision`，准备将 App 安装到手机上。
+5. 当我们编译工程时，Mac 私钥会对 App 进行签名，同时把步骤 4 得到的 PP 文件打包进去，文件名为 `embedded.mobileprovision`，准备将 App 安装到手机上。
 
 6. 安装时，iOS 系统取得证书，通过系统内置的 Apple 公钥，去验证证书里的签名是否正确。
 

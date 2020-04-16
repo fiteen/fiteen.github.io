@@ -20,7 +20,7 @@ Runtime 是指将数据类型的确定由**编译时**推迟到了**运行时**�
 
 在 Objective-C 中，所有的消息传递中的“消息”都会被编译器转化为：
 
-```
+```c
 id objc_msgSend ( id self, SEL op, ... );
 ```
 
@@ -81,7 +81,7 @@ struct objc_class : objc_object {
     cache_t cache;             // formerly cache pointer and vtable
     // 存储类的方法、属性、遵循的协议等信息的地方
     class_data_bits_t bits;    // class_rw_t * plus custom rr/alloc flags
-    // class_data_bits_t 结构体的方法，用于返回class_rw_t 指针（）
+    // class_data_bits_t 结构体的方法，用于返回 class_rw_t 指针（）
     class_rw_t *data() { 
         return bits.data();
     }
@@ -123,7 +123,7 @@ struct class_rw_t {
 
 为了更方便理解，举个例子：
 
-```
+```objc
 - (void)eat;    // 一个实例方法
 + (void)sleep;  // 一个类方法
 
@@ -230,7 +230,7 @@ struct cache_t {
 struct category_t {
     // 是指类名，而不是分类名
     const char *name;
-    // 要扩展的类对象，编译期间是不会定义的，而是在运行时阶段通过name对应到相应的类对象
+    // 要扩展的类对象，编译期间是不会定义的，而是在运行时阶段通过 name 对应到相应的类对象
     classref_t cls;
     // 实例方法列表
     struct method_list_t *instanceMethods;
@@ -247,7 +247,6 @@ struct category_t {
         if (isMeta) return classMethods;
         else return instanceMethods;
     }
-
     property_list_t *propertiesForMeta(bool isMeta, struct header_info *hi);
 };
 {% endcodeblock %}
@@ -358,7 +357,7 @@ void fooMethod(id obj, SEL _cmd) {
 }
 ```
 
-可以看到虽然没有实现 `foo` 这个函数，但是我们通过 `class_addMethod` 动态添加 `fooMethod` 函数，并执行 `fooMethod` 这个函数的IMP。
+可以看到虽然没有实现 `foo` 这个函数，但是我们通过 `class_addMethod` 动态添加 `fooMethod` 函数，并执行 `fooMethod` 这个函数的 IMP。
 
 如果 `resolveInstanceMethod:` 方法返回 NO ，运行时就会移到下一步：`forwardingTargetForSelector:`。
 
@@ -494,9 +493,9 @@ void fooMethod(id obj, SEL _cmd) {
 
 关联对象(Associated Objects) 是 Objective-C 运行时的特性，允许开发者向已经存在的类在扩展中添加自定义属性。
 
-关联对象 runtime 提供了3个 API 接口：
+关联对象 runtime 提供了 3 个 API 接口：
 
-```
+```c
 // 获取关联的对象
 id objc_getAssociatedObject(id object, const void *key);
 // 设置关联对象
@@ -593,7 +592,7 @@ static NSString *propKey = @"propKey";
 
 在动态方法解析中已经提到了“方法添加”。
 
-```
+```bash
 //class_addMethod(Class  _Nullable __unsafe_unretained cls, SEL  _Nonnull name, IMP  _Nonnull imp, const char * _Nullable types)
 class_addMethod([self class], sel, (IMP)fooMethod, "v@:");
 ```
@@ -695,7 +694,7 @@ KVO 的实现也是依赖于 runtime 中的 `isa-swizzling`。
 
 程序运行的结果为：
 
-```
+```bash
 Before KVO: [a class] = A, a -> isa = A
 After KVO: [a class] = A, a -> isa = NSKVONotifying_A
 ```

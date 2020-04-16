@@ -67,7 +67,7 @@ git update-index –no-assume-unchanged /path/to/file
 
 ## 删除 .DS_Store
 
-`.DS_Store` 是Mac OS 保存文件夹的自定义属性的隐藏文件。如果项目中还没有自动生成 `.DS_Store`，把它加入到 `.gitignore` 中即可；但如果项目中已经有了，先从项目中将其删除，再把它加入到 `.gitignore` 里。步骤如下：
+`.DS_Store` 是 Mac OS 保存文件夹的自定义属性的隐藏文件。如果项目中还没有自动生成 `.DS_Store`，把它加入到 `.gitignore` 中即可；但如果项目中已经有了，先从项目中将其删除，再把它加入到 `.gitignore` 里。步骤如下：
 
 步骤一：删除项目中的所有 `.DS_Store`
 
@@ -95,7 +95,7 @@ git push
 find . -name '*.DS_Store' -type f -delete
 ```
 
-你也可以通过输入这串命令直接禁止生成 `.DS_store`，重启Mac即可生效：
+你也可以通过输入这串命令直接禁止生成 `.DS_store`，重启 Mac 即可生效：
 
 ```bash
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE

@@ -5,7 +5,7 @@ tags: 自动布局
 categories: iOS
 ---
 
-交互设计和 UI 设计水准很大程度影响着用户对应用的评价，iOS 开发发展至今已逾10年，开发者对于界面 UI 编码的习惯逐渐分化成三大流派：
+交互设计和 UI 设计水准很大程度影响着用户对应用的评价，iOS 开发发展至今已逾 10 年，开发者对于界面 UI 编码的习惯逐渐分化成三大流派：
 
 <!--more-->
 
@@ -19,7 +19,7 @@ xib 和 storyboard 均采用了 Interface Builder（IB）来生成 GUI，通过�
 
 >【场景】设置按钮：圆角`cornerRadius`：8pt、边框颜色`borderWidth`：1pt、边框宽度`borderColor`：系统蓝色
 
-## **巧用 `IBInspectable`**
+## **巧用 IBInspectable**
 
 `【IBInspectable】` 这一属性提供了访问功能的新方式：用户自定义的运行时属性，让支持 KVC 的属性能够在身份检查器（Identity Inspector）的 User Defined Runtime Attributes 中配置。
 
@@ -51,7 +51,7 @@ Identity Inspector 下的 User Defined Runtime Attributes 也会出现相应的 
 
 设置好后 run 一下工程就能看到场景中要求的效果，但通常开发者不需要所有的按钮都设置圆角、边框，更多的是采用自定义视图的形式统一处理相似风格的 control。为了更高效地开发，接下来介绍宏定义 `IB_DESIGNABLE`。
 
-## **巧用 `IB_DESIGNABLE`**
+## **巧用 IB_DESIGNABLE**
 
 `【IB_DESIGNABLE】` 在类名前加上此宏定义，初始化、布置和绘制方法将被用来在画布上渲染该类的自定义视图。
 
@@ -61,7 +61,7 @@ Identity Inspector 下的 User Defined Runtime Attributes 也会出现相应的 
 
 2、创建父类是 UIButton 的 HTCustomButton 类文件，并在 .h 的 `interface` 前定义 `IB_DESIGNABLE`；
 
-3、给步骤1按钮的 Custom Class 关联上 HTCustomButton。
+3、给步骤 1 按钮的 Custom Class 关联上 HTCustomButton。
 
 这时我们就可以直接在 User Defined Runtime Attributes 中加入想要的属性，例如圆角、边框宽度等。边框颜色由于 UIColor 类型的特殊性，需要重新定义。
 
@@ -83,11 +83,8 @@ IB_DESIGNABLE
 
 @implementation HTCustomButton
 
-/**
- *  设置边框颜色
- *
- *  @param customBorderColor 可视化视图传入的值
- */
+// 设置边框颜色
+
 - (void)setCustomBorderColor:(UIColor *)customBorderColor {
     self.layer.borderColor = customBorderColor.CGColor;
 }
@@ -149,11 +146,10 @@ IB_DESIGNABLE
 }
 
 - (void)layout {
-    __weak __typeof(self) weakSelf = self;
     [_masonryButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(30);
         make.right.mas_equalTo(-30);
-        make.top.bottom.mas_equalTo(weakSelf);
+        make.top.bottom.mas_equalTo(self);
     }];
 }
 
@@ -170,4 +166,4 @@ ps：如果渲染失败，查看 Editor -> Automatically Refresh Views 是否勾
 
 ---
 
-欢迎评论，最后-> [Demo传送门](https://github.com/fiteen/HTIBInspectableDemo)
+欢迎评论，最后-> [Demo 传送门](https://github.com/fiteen/HTIBInspectableDemo)

@@ -369,7 +369,7 @@ self.timer = [NSTimer ht_scheduledTimerWithTimeInterval:1.0f repeats:YES block:^
     AFHTTPSessionManager *manager = [self getSessionManager];
     __weak typeof(manager)weakManager = manager;
     [manager GET:@"https://blog.fiteen.top" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-         __strong typeof (weakManager)strongManager = weakManager;
+        __strong typeof (weakManager)strongManager = weakManager;
         NSLog(@"success 回调");
         [strongManager invalidateSessionCancelingTasks:YES];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

@@ -25,7 +25,7 @@ thumbnail: swift-ui.png
 
 **是否有必要现在就学 SwiftUI？**
 
-看情况，因为 SwiftUI 目前只能在 iOS 13、macOS 10.15、tvOS 13和 watchOS 6 上运行。如果您要开发的新应用计划仅针对前面提到的 OS 系统，我会说是。 但是，如果您打算找工作或是无法确保会在此 OS 版本的客户端项目上工作，则可能要等一两年，再考虑迁移成 SwiftUI，毕竟大多数客户端工作都希望支持尽可能多的用户，这意味着您的应用必须兼容多个 OS 系统。 因此，一年后再去体验优雅的 SwiftUI 也许是最好的时机。
+看情况，因为 SwiftUI 目前只能在 iOS 13、macOS 10.15、tvOS 13 和 watchOS 6 上运行。如果您要开发的新应用计划仅针对前面提到的 OS 系统，我会说是。 但是，如果您打算找工作或是无法确保会在此 OS 版本的客户端项目上工作，则可能要等一两年，再考虑迁移成 SwiftUI，毕竟大多数客户端工作都希望支持尽可能多的用户，这意味着您的应用必须兼容多个 OS 系统。 因此，一年后再去体验优雅的 SwiftUI 也许是最好的时机。
 
 **是否需要学 UIKit/AppKit/WatchKit？**
 
@@ -61,7 +61,7 @@ UIKit。 您始终可以依赖 UIKit，它用起来一直不错，且未来一�
 | UIViewController           |               View                |                              -                               |
 | UITableViewController      |           [List](#list)           |                              -                               |
 | UICollectionViewController |                 -                 | 目前，还没有 SwiftUI 的替代品，但是您可以像[Composing Complex Interfaces's tutorial](https://developer.apple.com/tutorials/swiftui/composing-complex-interfaces)里那样，使用 List 的组成来模拟布局 |
-| UISplitViewController      | [NavigationView](#navigationview) |             Beta 5中有部分支持，但仍然无法使用。             |
+| UISplitViewController      | [NavigationView](#navigationview) |             Beta 5 中有部分支持，但仍然无法使用。             |
 | UINavigationController     | [NavigationView](#navigationview) |                              -                               |
 | UIPageViewController       |                 -                 |                              -                               |
 | UITabBarController         |        [TabView](#tabview)        |                              -                               |
@@ -77,8 +77,8 @@ UIKit。 您始终可以依赖 UIKit，它用起来一直不错，且未来一�
 | :---------------------- | :-------------------------------: | :----------------------------------------------------------: |
 | UILabel                 |           [Text](#text)           |                              -                               |
 | UITabBar                |        [TabView](#tabview)        |                              -                               |
-| UITabBarItem            |        [TabView](#tabview)        |             [TabView ](#tabview) 里的 `.tabItem`             |
-| UITextField             |      [TextField](#textfield)      |             Beta 5中有部分支持，但仍然无法使用。             |
+| UITabBarItem            |        [TabView](#tabview)        |             [TabView](#tabview) 里的 `.tabItem`             |
+| UITextField             |      [TextField](#textfield)      |             Beta 5 中有部分支持，但仍然无法使用。             |
 | UITableView             |           [List](#list)           |          [VStack](#vstack) 和 [Form](#form) 也可以           |
 | UINavigationBar         | [NavigationView](#navigationview) |          [NavigationView](#navigationview) 的一部分          |
 | UIBarButtonItem         | [NavigationView](#navigationview) | [NavigationView](#navigationview) 里的 `.navigationBarItems` |
@@ -142,7 +142,7 @@ Text("Hello World")
 Text("This text used as localized key")
 ```
 
-直接在文本视图里格式化文本。 实际上，这不是 SwiftUI 的功能，而是 Swift 5的字符串插入特性。
+直接在文本视图里格式化文本。 实际上，这不是 SwiftUI 的功能，而是 Swift 5 的字符串插入特性。
 
 ```swift
 static let dateFormatter: DateFormatter = {
@@ -379,7 +379,7 @@ Picker("Options", selection: $mapChoioce) {
 }.pickerStyle(SegmentedPickerStyle())
 ```
 
-> 分段控制器在iOS 13中也焕然一新了。
+> 分段控制器在 iOS 13 中也焕然一新了。
 
 [文档](https://developer.apple.com/documentation/swiftui/picker)
 
@@ -542,7 +542,7 @@ VStack (alignment: .center, spacing: 20){
 
 ### <span id="zstack">ZStack</span>
 
-子元素会在 z轴方向上叠加，同时在垂直/水平轴上对齐的视图。
+子元素会在 z 轴方向上叠加，同时在垂直/水平轴上对齐的视图。
 
 ```swift
 ZStack {
@@ -760,7 +760,7 @@ NavigationView {
 .navigationViewStyle(StackNavigationViewStyle())
 ```
 
-在 beta 3中，`NavigationView` 支持拆分视图，但它仅支持非常基本的结构，其中主视图为列表，详细视图为叶视图，我期待在下一个 release 版本中能有优化补充。
+在 beta 3 中，`NavigationView` 支持拆分视图，但它仅支持非常基本的结构，其中主视图为列表，详细视图为叶视图，我期待在下一个 release 版本中能有优化补充。
 
 [文档](https://developer.apple.com/documentation/swiftui/navigationview)
 
