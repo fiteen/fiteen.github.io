@@ -22,7 +22,7 @@ appearance:
   # 'url(//www.toptal.com/designers/subtlepatterns/patterns/confectionary.png) #f5f7fa'
 
   # Maximum width of content
-  # content_width: 640
+  content_width: 75%
 
   # Fonts
   font:
@@ -485,3 +485,26 @@ plugins:
   - position: sidebar
     template: |
       <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+  - tag: style
+    code: |
+      @media screen and (min-width:500px) {
+        .φcu {
+          max-height: 300px!important;
+        }
+      }
+      @media screen and (min-width:800px) {
+        .φcu {
+          max-height: 400px!important;
+        }
+      }
+      @media screen and (min-width:1100px) {
+        .φcu {
+          max-height: 500px!important;
+        }
+      }
+      @media screen and (min-width:1400px) {
+        .φcu {
+          max-height: 600px!important;
+        }
+      }
