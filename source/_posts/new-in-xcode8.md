@@ -31,9 +31,9 @@ Xcode 8 支持 Swift 3、iOS 10、watchOS 3、tvOS 10 以及 macOS Sierra。
 
 - 文档查看采用模糊匹配方法，在一个统一的参考库内搜索，即使在脱机时也可以使用；
 
-- Interface  Builder和整个 IDE的优化提升；
+- Interface  Builder 和整个 IDE 的优化提升；
 
-- 对Siri功能进行拓展，iMessage也加入新玩法，表情包和贴纸包更多了；
+- 对 Siri 功能进行拓展，iMessage 也加入新玩法，表情包和贴纸包更多了；
 
 
 **Swift 3 的新特性**：
@@ -46,7 +46,7 @@ Xcode 8 支持 Swift 3、iOS 10、watchOS 3、tvOS 10 以及 macOS Sierra。
 
 - Xcode 会帮助你将原来既有的 Swift 代码移植成 Swift 3 语法；
 
-- Swift 2.3 可以直接过渡到 3.0，并提供相应最新的SDK。
+- Swift 2.3 可以直接过渡到 3.0，并提供相应最新的 SDK。
 
 
 以上为翻译内容，如有不到欢迎指出。

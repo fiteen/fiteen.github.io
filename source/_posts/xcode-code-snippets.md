@@ -27,7 +27,7 @@ Xcode 10 之后，代码块管理模块就从 Xcode 的右下角移到了右上�
 | ------------------- | --------------------------------------------------------- |
 | Title               | 标题（代码联想时会显示）                                      |
 | Summary             | 描述文字（代码联想时会显示）                                   |
-| Platform：          | 可以使用的平台（如iOS）                                       |
+| Platform：          | 可以使用的平台（如 iOS）                                       |
 | Language            | 可以在哪些语言中使用（如 Objective-C）                         |
 | Completion Shortcut | 快捷方式，以字母或符号开头（支持少数符号，如@）                   |
 | Completion Scopes   | 作用范围，一般写在正确的位置拖动即可，Xcode 会自行选择            |
@@ -37,10 +37,6 @@ Xcode 10 之后，代码块管理模块就从 Xcode 的右下角移到了右上�
 
 ## 移植代码块
 
-配置好的代码块默认存储在这个的目录下：
-
-```
-~/Library/Developer/Xcode/UserData/CodeSnippets 
-```
+配置好的代码块默认存储在 `~/Library/Developer/Xcode/UserData/CodeSnippets` 目录下。
 
 如果你更换了开发使用的 Mac 电脑，只需要把这个目录下的所有 `.codesnippet` 文件粘贴到新的设备目录下即可。

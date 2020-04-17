@@ -14,7 +14,7 @@ Xcode 使用久了经常会遇到系统内存不足的情况，我们来看看�
 
 **路径**：`~/Library/Developer/Xcode/iOS DeviceSupport`。
 
-存放的是所有真机调试过的设备版本支持文件，每个版本文件夹有几个G的大小，删除后可恢复，重新连接设备时可以重新生成相应版本的文件。
+存放的是所有真机调试过的设备版本支持文件，每个版本文件夹有几个 G 的大小，删除后可恢复，重新连接设备时可以重新生成相应版本的文件。
 
 **结论**：文件较大，建议**删除不需要的版本文件夹**，比如一些旧版。
 
@@ -38,7 +38,7 @@ Xcode 使用久了经常会遇到系统内存不足的情况，我们来看看�
 
 **路径**：`~/Library/Developer/Xcode/Archives`。
 
-存放的是按日期分类的 `.xcarchive` 文件。`.xcarchive` 是通过 Xcode 或者 xcodebuild archive 打包生成的文件，里面包括了.app文件、dSYM 符号文件等。它也对应的 Xcode-organizer 下的 Archives 列表，删除后**不可恢复**。
+存放的是按日期分类的 `.xcarchive` 文件。`.xcarchive` 是通过 Xcode 或者 xcodebuild archive 打包生成的文件，里面包括了.app 文件、dSYM 符号文件等。它也对应的 Xcode-organizer 下的 Archives 列表，删除后**不可恢复**。
 
 **结论**：文件大小看包体积，建议**删除多余的打包记录**。
 

@@ -49,7 +49,7 @@ NSString *channel = channelDic[@"Channel"];
 ```
 **第二步**：把这个项目用可用的证书正常打一个母包，解压这个 ipa 包可以获得一个名为 `Payload` 的文件夹，里面是一个 .app 文件，右键显示其包内容，内容如下：
 
-```
+```bash
 ├── Base.lproj
 ├── Channel.plist
 ├── Info.plist
@@ -75,7 +75,7 @@ NSString *channel = channelDic[@"Channel"];
 
 name="MultiChannelDemo"
 
-echo "------SDK渠道包----------"
+echo "----------SDK 渠道包----------"
 
 appName="${name}.app"
 
@@ -89,7 +89,7 @@ ipa="${name}.ipa"
 
 outUpdateAppDir="ChannelPackages"
 
-# entitlements.plist路径
+# entitlements.plist 路径
 
 entitlementsDir="entitlements.plist"
 
@@ -149,14 +149,14 @@ codesign -f -s "iPhone Distribution: XXXXXX." Payload/${appName}  --entitlements
 
 zip -rq "${outUpdateAppDir}/$line.ipa" Payload
 
-echo "........渠道${line}打包已完成"
+echo "----------渠道${line}打包已完成----------"
 
 done
 {% endcodeblock %}
 
 脚本里的信息请根据你实际情况修改。到这里准备工作都完成了，需要的文件如下：
 
-```
+```bash
 ├── ChannelList.txt
 ├── ChannelPackage.sh
 ├── MultiChannelDemo.ipa
@@ -171,7 +171,7 @@ sh ChannelPackage.sh
 
 打包完成后生成的 `ChannelPackages` 文件夹下，就是我们需要的渠道包：
 
-```
+```bash
 ├── ChannelList.txt
 ├── ChannelPackage.sh
 ├── ChannelPackages

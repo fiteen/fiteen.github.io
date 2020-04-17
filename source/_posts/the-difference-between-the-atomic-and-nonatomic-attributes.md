@@ -69,7 +69,7 @@ categories: iOS
 
 答案是并不能，当几个线程同时调用 setter/getter 时，能得到一个完整的值，但这个值无法确定，举个例子：
 
-> 线程 A 调了 getter，**与此同时**线程 B、C 调了 setter，那么 A 最后 getter到的值，可能是
+> 线程 A 调了 getter，**与此同时**线程 B、C 调了 setter，那么 A 最后 getter 到的值，可能是
 >
 > 1. B、C 未 setter 之前的原始值
 > 2. B setter 后的值
