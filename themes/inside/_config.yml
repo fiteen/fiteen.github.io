@@ -463,7 +463,7 @@ plugins:
       <link href="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.1/clipboard.css" rel="stylesheet">
 
   # Valine 评论
-  - //cdn1.lncld.net/static/js/3.0.4/av-min.js
+  - //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.6/av-min.js
   - //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/valine.js
   - position: comments
     template: |
