@@ -197,7 +197,7 @@ plugins:
 plugins:
   # inside 主题没有引入 jQuery 框架，需要手动引入
   - //cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js
-  - //cdn1.lncld.net/static/js/3.0.4/av-min.js
+  - //cdn1.lncld.net/static/js/3.4.1/av-min.js
   # 引用本地 source/lib 路径下的 valine.js 文件
   # - lib/valine.js
   # 引用 CDN 上的 valine.js 文件
