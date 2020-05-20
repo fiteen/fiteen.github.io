@@ -115,6 +115,7 @@ MrWriter -->
 
 ### 笔记
 
+- [Notion](https://www.notion.so/desktop) - 一个统一的笔记、知识、任务管理，并且能够多人协作的工作空间。目前 Personal Plan 已免费。
 - [Evernote](https://www.yinxiang.com/download/) - 支持数据同步的的笔记本应用程序，支持 MarkDown。🆓
 
 ### RSS
