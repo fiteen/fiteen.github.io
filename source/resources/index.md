@@ -137,7 +137,7 @@ MrWriter -->
 
 ## 浏览器
 
-- [Google Chrome](https://www.google.com/chrome) - 谷歌浏览器，它的拓展插件功能非常出色，是提升工作效率利器。🆓[🔗](https://chrome.google.com/webstore/category/extensions?h1=zh)
+- [Google Chrome](https://www.google.com/chrome) - 谷歌浏览器，它的拓展插件功能非常出色，是提升工作效率利器。🆓[🔗](https://chrome.google.com/webstore/category/extensions?h1=zh)（如果不能访问谷歌商店，可以通过 [crx4chrome](https://www.crx4chrome.com/) 来下载所需的插件。）
 - [Chromium](https://www.chromium.org/Home) - 开源免费，相当于 Google Chrome 的实验版，在 Chromium 上线稳定后的功能，会在 Google Chrome 中正式推出。[📖](https://chromium.googlesource.com/chromium/src/)🆓
 
 ## 办公
@@ -145,12 +145,18 @@ MrWriter -->
 - [The Unarchiver](https://theunarchiver.com) － 解压不同类型的存档文件。[📖](https://bitbucket.org/kosovan/theunarchiver/src/default/)🆓
 - [TeamViewer](https://www.teamviewer.com) - 远程协助及在线协作和会议功能的软件，商业软件个人使用免费。🆓
 
-## 精选网站
+## 工具网站
 
-- [MacWk](https://macwk.com) - 精品 Mac 应用集合，支持部分破解版。
-- [在线工具 VIP](https://atool.vip) - 非常全的小工具功能集合。
-- [Pixabay](https://pixabay.com/zh/) - 免费正版高清图片素材库。
-- [unDraw](https://undraw.co/search) - 免费的人物主题插画素材网站，支持自定义色系。
+- [MacWk](https://macwk.com) - 精品 Mac 应用集合，支持部分破解版。🆓
+- [在线工具 VIP](https://atool.vip) - 非常全的小工具功能集合。🆓
+- [docsmall](https://docsmall.com/) - 免费支持在线图片压缩、GIF 压缩、PDF 压缩、PDF 合并、PDF 分割的网站。🆓
+
+##  图片素材
+
+- [Pixabay](https://pixabay.com/zh/) - 免费正版高清图片素材库。🆓
+- [unDraw](https://undraw.co/search) - 免费的人物主题插画素材网站，支持自定义色系。🆓
+- [创客贴](https://www.chuangkit.com/) - 平面设计作图神器、适用于制作博客/公众号文章封面图、还有免费好看的 PPT 插件。🆓
+- [Dimmy.club](https://dimmy.club/) - 电脑、手机、iPad 等设备的展示模型，可以提升图片档次。🆓
 
 ---
 
