@@ -25,6 +25,9 @@ date: 2016-08-13 00:00:00
 - [IntelliJ IDEA](https://www.jetbrains.com/idea) - Java 编程语言开发的集成环境。在业界被公认为最好的 Java 开发工具之一。（**后端开发必备**）[🔨](resources/jetbrains-series)[🔗](https://plugins.jetbrains.com/idea)
 - [Eclipse](https://www.eclipse.org) - 开源、基于 Java 的可扩展开发平台。[📖](http://git.eclipse.org/c/)🆓[🔗](https://marketplace.eclipse.org/)
 
+### 效率
+
+- [Alfred](https://www.alfredapp.com/) - 不多说，极其优秀的 Mac 效率工具。
 
 ### 终端
 
