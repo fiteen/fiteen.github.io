@@ -88,5 +88,4 @@ copyright: false
 - [x] [涂鸦智能](https://www.tuya.com/cn/) - HC 丰富，客户端团队直招效率高反馈快，IoT 方向
 - [x] [同盾科技](https://www.tongdun.cn/) - 反欺诈部门直招，应用安全方向
 - [x] [有赞](https://www.youzan.com) - 微商城、小视频、直播方向，客户端 HC 丰富
-- [x] [挖财](https://www.wacai.com) - 互金行业，客户端 HC 暂时比较少，可以推荐其它岗位
 - [x] [酷家乐](https://www.kujiale.com) - 家居全案设计平台，前后端、测试岗位常年招人
