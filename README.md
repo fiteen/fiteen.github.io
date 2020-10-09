@@ -2,7 +2,7 @@
 
 ![Build Status](https://travis-ci.com/fiteen/fiteen.github.io.svg?branch=resource) ![GitHub All Releases](https://img.shields.io/github/downloads/fiteen/fiteen.github.io/total)
 
-🎉🎉🎉 欢迎您访问我的博客：[https://blog.fiteen.top](https://blog.fiteen.top)（[备用地址](https://fiteen.github.io)）。
+🎉🎉🎉 欢迎您访问我的博客：[https://blog.fiteen.top](https://blog.fiteen.top)（如果无法访问，可能是 HTTPS 证书过期，请给我留言提醒续期）。
 
 ### 本站信息
 
