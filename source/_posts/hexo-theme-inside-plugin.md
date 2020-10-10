@@ -1,6 +1,7 @@
 ---
 title: 【持续更新】Hexo + inside 博客个性化定制
 date: 2020-01-17 01:20:03
+updated: 2020-10-10 08:00:00
 tags: 
 	- Hexo
 	- Valine
@@ -235,6 +236,18 @@ plugins:
 
 **注意**：想要在评论区显示自定义头像，先前往[Gravatar 官网](http://cn.gravatar.com/)注册账号，注册的邮箱需要和你评论时填写的邮箱一致。如果注册成功后，头像仍没有显示，不要着急， `gravatar.cat.net` 有七天的缓存期，请耐心等待。
 
+
+## 颜色盘
+
+同样是在 `_config.yml` 的中插入配置代码。
+
+{% codeblock _config.yml lang:yaml %}
+plugins:
+  - //blog.oniuo.com/theme.js
+  - //blog.oniuo.com/wc.cc9a2092fece1d80bf3b.js
+  - position: sidebar
+    template: <is-palette2></is-palette2>
+{% endcodeblock %}
 
 下面再分享几个**小功能点的配置**：
 

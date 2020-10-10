@@ -46,6 +46,7 @@
   - [manifest.json]
   - Offline support ([workbox])
 - SEO
+  - SSR (Server-side rendering)
   - Built-in `sitemap.xml`
   - [Structured Data]
 - Print friendly

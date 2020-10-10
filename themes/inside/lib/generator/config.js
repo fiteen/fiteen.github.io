@@ -1,6 +1,7 @@
 const { pick, md5, parseBackground } = require('../utils');
 
 module.exports = function (locals) {
+  const js = this.extend.helper.get('js').bind(this);
   const site = this.config,
     theme = this.theme.config,
     config = Object.assign(
@@ -13,8 +14,9 @@ module.exports = function (locals) {
           tags: countOverflow(locals.tags.length)
         },
         hash: theme.runtime.hash,
-        locale: this.theme.i18n.get(site.language)
-      }
+        locale: this.theme.i18n.get(site.language),
+        theme: theme.appearance
+      },
     );
 
   // extra color from background setting
@@ -64,15 +66,19 @@ module.exports = function (locals) {
     if (theme.search.page) config.search.page = true;
   }
 
+  // Cache config for ssr
+  if (theme.seo.ssr) theme.runtime.generatedConfig = config;
+
   let data = 'window.__inside__=' + JSON.stringify(config);
 
   if (theme.pwa.workbox)
     data += `\n;navigator.serviceWorker && location.protocol === 'https:' && window.addEventListener('load', function() { navigator.serviceWorker.register('${theme.pwa.workbox.name}') })`
 
-  theme.runtime.configHash = md5(data);
+  const path = `config.${md5(data)}.js`;
+  this.extend.injector.register('head_end', js(path));
 
   return [{
-    path: `config.${theme.runtime.configHash}.js`,
+    path,
     data
   }];
 };

@@ -686,6 +686,10 @@ exports.parseBackground = function (value) {
   }
 }
 
+/**
+ * @param {string} link
+ * @returns {boolean}
+ */
 exports.isExternal = function (link) {
   return /^(\w+:)?\/\//.test(link);
 }
@@ -730,4 +734,90 @@ exports.htmlTag = function (tag, attrs = {}, text) {
   return exports.minifyHtml(selfClosingTags.includes(tag)
     ? `<${tag + temp}>`
     : `<${tag + temp}>${text || ''}</${tag}>`);
+}
+
+/**
+ * "A picture | block | key: value"
+ *   => { value: "A picture", options: { block: true, key: value } }
+ * "| block"
+ *   => { options: { block: true } }
+ *
+ * @param {string} value
+ * @returns {{ value: string, options: any }}
+ */
+exports.parsePipe = function (value) {
+  const ret = { options: {} };
+
+  if (!value) return ret;
+
+  const partial = value.split('|').map((i) => i.trim());
+
+  if (partial[0]) ret.value = partial[0];
+
+  partial.slice(1).forEach((p) => {
+    const [k, v] = p.split(':').map((i) => i.trim());
+    if (k) {
+      ret.options[k] = v || true;
+    }
+  });
+
+  return ret;
+}
+
+/**
+ * @param {ArrayLike} list
+ * @param {(arg: any) => Promise<any>} fn
+ * @returns {Promise[]}
+ */
+exports.asyncMap = function(list, fn) {
+  if (!list.length) return Promise.resolve([]);
+
+  const ret = [];
+
+  return run();
+
+  function run() {
+    return fn(list.shift()).then(result => {
+      ret.push(result);
+      if (list.length) return run();
+      return ret;
+    })
+  }
+}
+
+const cjk_regex = /[a-zA-Z0-9_\u0392-\u03c9\u00c0-\u00ff\u0600-\u06ff\u0400-\u04ff]+|[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff\u3040-\u309f\uac00-\ud7af]+/g;
+/**
+ * https://github.com/yuehu/word-count/blob/master/index.js
+ *
+ * @param {string} text
+ * @returns {number}
+ */
+exports.countWord = function(text) {
+  const m = text.match(cjk_regex);
+  let count = 0;
+  if (!m) return 0;
+  for (let i = 0, mLen = m.length; i < mLen; i++) {
+    count += m[i].charCodeAt(0) >= 0x4e00 ? m[i].length : 1;
+  }
+  return count;
+}
+
+/**
+ * @param {string} template
+ * @param {(string | number)[] | { [key: string]: string | number } | number | string} payload
+ * @returns {string}
+ */
+exports.sprintf = function(template, payload) {
+  if (!payload) return template;
+  else if (Array.isArray(payload)) {
+    let i = 0;
+    return template.replace(/%(s|d)/g, () => payload[i++]);
+  } else if (typeof payload === 'string' || typeof payload === 'number') {
+    return sprintf(template, [payload]);
+  } else {
+    for (const key in payload) {
+      template = template.replace(new RegExp(':' + key, 'g'), payload[key]);
+    }
+    return template;
+  }
 }

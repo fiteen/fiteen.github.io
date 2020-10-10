@@ -6,7 +6,7 @@ copyright: false
 
 ## 关于我
 
-90 后典型水瓶座♒️猫科~~（少女，不是）~~宅女👧，坐标杭州。
+90 后典型水瓶座猫科 ~~（少女，不是）~~ 宅女👧，坐标杭州。
 
 主攻 iOS 开发，~~面向谷歌/Stack OverFlow/技术文档~~能编写 Android、Web、小程序、Flutter 项目，我的技术博文曾经发布在[掘金](https://juejin.im/user/5ab4b9746fb9a028c812cad9)、[CSDN](https://blog.csdn.net/Code_Martell)、[知乎](https://www.zhihu.com/people/miao-miao-82-17-64)、[简书](https://www.jianshu.com/u/015e1c9d5d06)、[思否](https://segmentfault.com/u/fiteen)。
 
@@ -20,7 +20,7 @@ copyright: false
 
 **我是...**
 
-（👇记得点开下方小三角形哦...）
+（👇记得点开小箭头哦...）
 
 <details style="padding-left:12px;padding-bottom:10px">
   <summary>运动小天才</summary>
@@ -73,19 +73,8 @@ copyright: false
 
 感谢以下项目为本博客提供服务支持：
 
-- [x] 框架主题：[Hexo](https://hexo.io/) + [inside](https://github.com/ikeq/hexo-theme-inside)
+- [x] 框架主题：[Hexo 5.1.1](https://hexo.io/) + [inside 2.7.0-beta.6](https://github.com/ikeq/hexo-theme-inside)
 - [x] 托管服务：[GitHub Pages](https://pages.github.com)、[Coding Pages](https://coding.net/help/doc/pages/creating-pages.html)
 - [x] 评论系统：[Valine](https://valine.js.org)
 - [x] 持续集成：[Travis CI](https://travis-ci.org)
 - [x] 统计服务：[LeanCloud](https://www.leancloud.cn)、[不蒜子](http://busuanzi.ibruce.info)
-
-## 关于内推
-
-如果你有跳槽的打算，或者想在跻身大厂之前多练练手，可以联系我内推杭州部分独角兽企业，如有需要也可以免费改看简历。岗位需求变化快，具体加微信（664128042）细聊。
-
-目前我可以帮忙推荐的企业有：
-
-- [x] [涂鸦智能](https://www.tuya.com/cn/) - HC 丰富，客户端团队直招效率高反馈快，IoT 方向
-- [x] [同盾科技](https://www.tongdun.cn/) - 反欺诈部门直招，应用安全方向
-- [x] [有赞](https://www.youzan.com) - 微商城、小视频、直播方向，客户端 HC 丰富
-- [x] [酷家乐](https://www.kujiale.com) - 家居全案设计平台，前后端、测试岗位常年招人

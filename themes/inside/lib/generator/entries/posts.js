@@ -1,4 +1,3 @@
-const { flattenDeep } = require('lodash');
 const { pick } = require('../../utils');
 const { post: postProps, postList: postListProps } = require('./properties');
 
@@ -6,7 +5,7 @@ module.exports = function ({ theme, locals: { posts }, helpers }) {
   const len = posts.length;
   const config = theme.post;
 
-  return flattenDeep([
+  return [
     posts.map((post, i) => {
       if (i) post.prev = posts[i - 1];
       if (i < len - 1) post.next = posts[i + 1];
@@ -24,8 +23,8 @@ module.exports = function ({ theme, locals: { posts }, helpers }) {
     }),
 
     helpers.pagination.apply(posts.sort((a, b) => {
-      const ai = typeof a.top === 'number' ? a.top : 0;
-      const bi = typeof b.top === 'number' ? b.top : 0;
+      const ai = typeof a.sticky === 'number' ? a.sticky : 0;
+      const bi = typeof b.sticky === 'number' ? b.sticky : 0;
 
       if (ai !== bi) return bi - ai;
       if (a.date === b.date) return 0;
@@ -34,5 +33,5 @@ module.exports = function ({ theme, locals: { posts }, helpers }) {
         { type: 'json', id: 'page' },
         { type: 'html', id: index => index === 1 ? '' : `page/${index}`, extend: { type: 'posts' } },
       ])
-  ]);
+  ].flat(Infinity);
 }

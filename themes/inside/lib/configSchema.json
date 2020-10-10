@@ -217,9 +217,23 @@
         "per_page": { "$ref": "#/definitions/per_page" },
         "toc": { "type": "boolean", "default": true },
         "reward": { "type": "boolean" },
-        "copyright": { "type": "boolean" }
+        "copyright": { "type": "boolean" },
+        "reading_time": {
+          "oneOf": [
+            { "type": "boolean" },
+            {
+              "type": "object",
+              "properties": {
+                "wpm": { "type": "number", "default": 150 },
+                "text": { "type": "string" }
+              },
+              "additionalProperties": false
+            }
+          ],
+          "default": true
+        }
       },
-      "required": ["per_page", "toc"],
+      "required": ["per_page", "toc", "reading_time"],
       "additionalProperties": false
     },
     "archive": {
@@ -302,7 +316,8 @@
     "seo": {
       "type": "object",
       "properties": {
-        "structured_data": { "type": "boolean" }
+        "structured_data": { "type": "boolean" },
+        "ssr": { "type": "boolean" }
       },
       "additionalProperties": false,
       "default": {}
@@ -335,6 +350,10 @@
               "tag": { "enum": ["script", "style", "link"] }
             },
             "required": ["tag"]
+          },
+          {
+            "type": "object",
+            "additionalProperties": true
           }
         ]
       }
@@ -386,7 +405,8 @@
                 "properties": {
                   "src": { "type": "string" },
                   "sizes": { "type": "string" },
-                  "type": { "type": "string" }
+                  "type": { "type": "string" },
+                  "purpose": { "type": "string" }
                 },
                 "required": ["src", "sizes", "type"],
                 "additionalProperties": false
@@ -400,8 +420,30 @@
       },
       "additionalProperties": false,
       "default": {}
+    },
+    "markdown": {
+      "type": "object",
+      "properties": {
+        "html": { "type": "boolean" },
+        "xhtmlOut": { "type": "boolean" },
+        "breaks": { "type": "boolean" },
+        "linkify": { "type": "boolean" },
+        "typographer": { "type": "boolean" },
+        "quotes": { "type": "string" },
+        "plugins": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "type": "string" },
+              { "type": "object" }
+            ]
+          }
+        }
+      },
+      "additionalProperties": false,
+      "default": {}
     }
   },
-  "required": ["appearance", "profile", "footer", "toc", "page", "post", "archive", "tag", "category", "data_dir", "favicon", "pwa", "seo"],
+  "required": ["appearance", "profile", "footer", "toc", "page", "post", "archive", "tag", "category", "data_dir", "favicon", "pwa", "seo", "markdown"],
   "additionalProperties": false
 }

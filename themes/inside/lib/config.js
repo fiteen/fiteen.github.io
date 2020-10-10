@@ -6,7 +6,8 @@ const urlFor = require('hexo/lib/plugins/helper/url_for');
 const utils = require('./utils');
 const pkg = require('../package.json');
 const configSchema = require('./configSchema.json');
-const resources = require('../source/_resources.json');
+const feManifest = require('../source/_manifest.json');
+const pluginManifest = require('./plugins/manifest.json');
 
 module.exports = function (hexo) {
   hexo.on('generateBefore', function () {
@@ -63,8 +64,8 @@ module.exports = function (hexo) {
     result.plugins = [
       // plugins comes first to ensure that their libs is ready when executing dynamic code.
       ...(result.plugins || []),
-      ...resources.styles,
-      ...resources.scripts
+      ...feManifest.styles,
+      ...feManifest.scripts
     ];
 
     if (result.appearance.font && result.appearance.font.url)
@@ -72,23 +73,38 @@ module.exports = function (hexo) {
 
     {
       const plugins = { $t: [] };
-      const scripts = [];
-      const styles = [];
-
-      result.plugins.forEach(plugin => {
-        // Tags
-        if (typeof plugin === 'string' || plugin.tag) {
-          // Direct with url
-          if (!plugin.tag) {
-            const tag = plugin.split('?')[0].endsWith('.css') ? 'link' : 'script';
-            plugin = tag === 'link' ? { tag, href: plugin } : { tag, src: plugin }
+      result.plugins.forEach(item => {
+        if (typeof item === 'string' || item.tag) {
+          if (!item.tag) {
+            // Built in plugins
+            if (pluginManifest[item]) {
+              const plugin = require(`./plugins/${pluginManifest[item]}`);
+              plugin.exec(hexo, utils.parseConfig(plugin.schema, {}));
+              return;
+            }
+            // Direct with url
+            const tag = item.split('?')[0].endsWith('.css') ? 'link' : 'script';
+            item = tag === 'link' ? { tag, href: item } : { tag, src: item };
           }
-          if (plugin.src) plugin.src = urlFn(plugin.src);
-          if (plugin.href) plugin.href = urlFn(plugin.href);
-          if (plugin.code) plugin.code = loadSnippet(plugin.code);
 
-          const { tag, code, ...attrs } = plugin;
-          (tag === 'script' ? scripts : styles).push(utils.htmlTag(tag, attrs, code));
+          if (item.src) item.src = urlFn(item.src);
+          if (item.href) item.href = urlFn(item.href);
+          if (item.code) item.code = loadSnippet(item.code);
+
+          const { tag, code, ...attrs } = item;
+          this.extend.injector.register(
+            tag === 'script' ? 'body_end' : 'head_end',
+            utils.htmlTag(tag, attrs, code)
+          );
+          return;
+        }
+
+        // Built in plugins
+        const pluginName = Object.keys(item)[0];
+        if (pluginManifest[pluginName]) {
+          const plugin = require(`./plugins/${pluginManifest[pluginName]}`);
+          plugin.exec(hexo, utils.parseConfig(plugin.schema, item[pluginName]));
+          return;
         }
 
         /**
@@ -102,29 +118,25 @@ module.exports = function (hexo) {
          *   comments: [indexes]
          * }
          */
-        else {
-          const index = plugins.$t.length;
+        const index = plugins.$t.length;
+        plugins.$t.push(utils.minifyHtml(loadSnippet(item.template)));
 
-          plugins.$t.push(utils.minifyHtml(loadSnippet(plugin.template)));
-
-          (Array.isArray(plugin.position) ? plugin.position : [plugin.position])
-            .forEach(p => (plugins[p] || (plugins[p] = [])).push(index));
-        }
+        (Array.isArray(item.position) ? item.position : [item.position])
+          .forEach(p => (plugins[p] || (plugins[p] = [])).push(index));
       });
 
       result.plugins = plugins;
-      result.styles = styles.join('\n');
-      result.scripts = scripts.join('\n');
     }
 
     // override boolean value to html string
     if (result.footer.powered) result.footer.powered = __('footer.powered', '<a href="https://hexo.io" target="_blank" rel="external nofollow noopener">Hexo</a>')
     if (result.footer.theme) result.footer.theme = __('footer.theme') + ' - <a href="https://github.com/ikeq/hexo-theme-inside" target="_blank" rel="external nofollow noopener">Inside</a>'
 
+    // root selector
+    this.extend.injector.register('body_begin', `<${feManifest.root}></${feManifest.root}>`);
+
     result.runtime = {
-      // root selector
-      selector: resources.root,
-      styles: resources.class,
+      styles: feManifest.class,
       hash: utils.md5([
         ...hexo.locals.getters.pages().sort('-date').toArray(),
         ...hexo.locals.getters.posts().sort('-date').toArray()
@@ -137,12 +149,37 @@ module.exports = function (hexo) {
       hasComments: !!(result.comments || result.plugins && result.plugins.comments),
       hasReward: !!result.reward,
       hasToc: !!result.toc,
+      renderReadingTime: (() => {
+        const { reading_time } = result.post;
+        if (!reading_time) return false;
+
+        let htmlToText = null;
+        try {
+          htmlToText = require('html-to-text');
+        } catch {
+          return false;
+        }
+
+        const wpm = reading_time.wpm || 150;
+        const compile = reading_time.text
+          ? o => utils.sprintf(reading_time.text, o)
+          : o => __('post.reading_time', o);
+
+        return (content) => {
+          const words = utils.countWord(htmlToText.fromString(content, {
+            ignoreImage: false,
+            ignoreHref: true,
+            wordwrap: false
+          }));
+          return compile({ words, minutes: Math.round(words / wpm) || 1 });
+        }
+      })(),
       copyright: result.copyright,
       dateHelper: date.bind({
         page: { lang: utils.localeId(site.language, true) },
         config: site
       }),
-      uriReplacer: new function () {
+      uriReplacer: (() => {
         let assetsFn = src => src;
         if (result.assets) {
           const prefix = result.assets.prefix ? result.assets.prefix + '/' : ''
@@ -156,7 +193,7 @@ module.exports = function (hexo) {
           // skip both external and absolute path
           return /^(\/\/?|http|data\:image)/.test(src) ? src : assetsFn(`${assetPath}${src}`);
         }
-      }
+      })()
     };
 
     hexo.theme.config = result;
