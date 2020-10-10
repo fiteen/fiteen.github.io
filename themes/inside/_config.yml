@@ -481,11 +481,16 @@ plugins:
         })
       </script>
   
+  - //blog.oniuo.com/theme.js
+  - //blog.oniuo.com/wc.cc9a2092fece1d80bf3b.js
+  - position: sidebar
+    template: <is-palette2></is-palette2>
+
   # 不蒜子站点统计
   - position: sidebar
     template: |
       <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  
+
   - tag: style
     code: |
       @media screen and (min-width:500px) {
