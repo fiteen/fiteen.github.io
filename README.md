@@ -2,11 +2,11 @@
 
 ![Build Status](https://travis-ci.com/fiteen/fiteen.github.io.svg?branch=resource) ![GitHub All Releases](https://img.shields.io/github/downloads/fiteen/fiteen.github.io/total)
 
-🎉🎉🎉 欢迎您访问我的博客：[https://blog.fiteen.top](https://blog.fiteen.top)（如果无法访问，可能是 HTTPS 证书过期，请给我留言提醒续期）。
+🎉🎉🎉  欢迎您访问我的博客：[https://blog.fiteen.top](https://blog.fiteen.top)（如果无法访问，可能是 HTTPS 证书过期，请给我留言提醒续期）。
 
 ### 本站信息
 
-- 框架主题：[Hexo](https://hexo.io/) + [inside](https://github.com/ikeq/hexo-theme-inside)
+- 框架主题：[Hexo 5.1.1](https://hexo.io/) + [inside 2.7.0-beta.6](https://github.com/ikeq/hexo-theme-inside)
 - 托管服务：[GitHub Pages](https://pages.github.com)、[Coding Pages](https://coding.net/help/doc/pages/creating-pages.html)
 - 评论系统：[Valine](https://valine.js.org)
 - 持续集成：[Travis CI](https://travis-ci.org)
@@ -41,8 +41,8 @@
 
 ### 主题拓展
 
-💡不定期更新博文：[Hexo + inside 博客个性化定制](https://blog.fiteen.top/2020/hexo-theme-inside-plugin)。
+💡 不定期更新博文：[Hexo + inside 博客个性化定制](https://blog.fiteen.top/2020/hexo-theme-inside-plugin)。
 
 如果你需要我帮忙拓展实现某些自定义的功能，也可以在博客评论区或者 issue 中提出。
 
-这篇总结要是对你有帮助，请给个 Star✨ 鼓励一下我吧～
+这篇总结要是对你有帮助，请给个 Star✨ 鼓励一下～
