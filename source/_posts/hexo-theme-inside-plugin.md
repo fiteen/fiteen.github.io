@@ -299,12 +299,49 @@ appearance:
 npm install hexo-generator-feed --save
 ```
 
+## 数学公式
+
+主题作者为数学公式提供了一套 [hexo-filter-mathjax-ssr 插件](https://github.com/ikeq/hexo-filter-mathjax-ssr)。
+
+第一步：安装插件
+
+```bash
+npm install hexo-filter-mathjax-ssr --save
+```
+
+第二步：
+
+自定义行表达式和块表达式的标志符号，例如：
+
+{% codeblock _config.yml lang:yaml %}
+mathjax:
+  inlineQuote: [$, $]
+  blockQuote: [$$, $$]
+{% endcodeblock %}
+
+**效果**：
+
+行表达式，嵌入在文章段落中显示；块表达式，会独立一行，居中显示，例如：
+
+当 \(a \ne 0\) 时，方程  \(ax^2 + bx + c = 0\) 的解为
+
+\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+
+对应的 Markdown：
+
+{% codeblock post.md %}
+当 $a \ne 0$ 时，方程  $ax^2 + bx + c = 0$ 的解为
+
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+{% endcodeblock %}
+
 ## Q & A
 
 **问题 1：为什么我按照文档设置了，加了插件设置后，不但没有生效，其它功能还出了问题或者工程都跑不起来了？**
 
 1. 检查一下配置代码的空格，yml 文件对代码格式的要求比较严格。
 2. 检查是否重复添加了 `plugins:`，添加多个插件也只需要声明一次。
+3. 博客目录下和主题目录下的 `_config.yaml` 配置内容是有区别的，注意区分。
 
 **问题 2：能否出一个小白教程？**
 
