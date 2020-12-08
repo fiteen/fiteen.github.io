@@ -315,8 +315,8 @@ npm install hexo-filter-mathjax-ssr --save
 
 {% codeblock _config.yml lang:yaml %}
 mathjax:
-  inlineQuote: [$, $]
-  blockQuote: [$$, $$]
+  inlineQuote: ['$', '$']
+  blockQuote: ['$$', '$$']
 {% endcodeblock %}
 
 **效果**：
