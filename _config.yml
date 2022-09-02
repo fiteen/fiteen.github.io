@@ -13,8 +13,8 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://blog.fiteen.top
-root: /
+url: https://ju-ch.github.io/inside
+root: /inside
 permalink: :year/:title/
 permalink_defaults:
 pretty_urls:
@@ -114,9 +114,5 @@ theme: inside
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   - type: git
-    repository: git@github.com:fiteen/fiteen.github.io.git
+    repository: git@github.com:ju-ch/inside.git
     branch: master
-  - type: git
-    repository: git@e.coding.net:fiteen/fiteen.coding.me.git
-    branch: master
-  # - type: baidu_url_submitter 
