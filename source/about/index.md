@@ -74,7 +74,7 @@ copyright: false
 感谢以下项目为本博客提供服务支持：
 
 - [x] 框架主题：[Hexo 5.1.1](https://hexo.io/) + [inside 2.7.0-beta.6](https://github.com/ikeq/hexo-theme-inside)
-- [x] 托管服务：[GitHub Pages](https://pages.github.com)、[Coding Pages](https://coding.net/help/doc/pages/creating-pages.html)
+- [x] 托管服务：[GitHub Pages](https://pages.github.com)
 - [x] 评论系统：[Valine](https://valine.js.org)
 - [x] 持续集成：[Travis CI](https://travis-ci.org)
 - [x] 统计服务：[LeanCloud](https://www.leancloud.cn)、[不蒜子](http://busuanzi.ibruce.info)
