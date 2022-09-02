@@ -116,7 +116,4 @@ deploy:
   - type: git
     repository: git@github.com:fiteen/fiteen.github.io.git
     branch: master
-  - type: git
-    repository: git@e.coding.net:fiteen/fiteen.coding.me.git
-    branch: master
   # - type: baidu_url_submitter 
