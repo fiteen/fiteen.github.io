@@ -29,7 +29,7 @@ appearance:
     # Url of font css file
     # Below is a font set containing Baloo Bhaijaan, Josefin Sans, Montserrat and Inconsolata from Google Fonts.
     # url: //fonts.googleapis.com/css?family=Baloo+Bhaijaan|Inconsolata|Josefin+Sans|Montserrat
-    url: //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/font.css
+    url: //vkceyugu.cdn.bspapp.com/VKCEYUGU-5a7313a3-81df-49ad-941e-33cab30695e9/5a5267bb-9936-4a71-ab24-6ee2da219dbd.css
 
     # Base font which applied to body
     base: "'Josefin Sans', 'PingFang SC'"
@@ -459,12 +459,12 @@ plugins:
   - position: [post, page]
     template: |
       <script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
-      <script type="text/javascript" src="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/clipboard-use.js"></script>
-      <link href="//cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.1/clipboard.css" rel="stylesheet">
+      <script type="text/javascript" src="//vkceyugu.cdn.bspapp.com/VKCEYUGU-5a7313a3-81df-49ad-941e-33cab30695e9/2cc5a7b6-2f2f-49aa-9f0e-92e17c117f2f.js"></script>
+      <link href="//vkceyugu.cdn.bspapp.com/VKCEYUGU-5a7313a3-81df-49ad-941e-33cab30695e9/f637376e-b7a4-4b96-9f5f-fe7873b2f8d2.css" rel="stylesheet">
 
   # Valine 评论
-  - //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.7/av-min.js
-  - //cdn.jsdelivr.net/gh/fiteen/fiteen.github.io@v0.1.0/valine.js
+  - //vkceyugu.cdn.bspapp.com/VKCEYUGU-5a7313a3-81df-49ad-941e-33cab30695e9/e64f19ed-9d0a-4f9f-a45d-68f5cbb48776.js
+  - //vkceyugu.cdn.bspapp.com/VKCEYUGU-5a7313a3-81df-49ad-941e-33cab30695e9/8851b28c-a68e-48b4-8043-65bf00db08f7.js
   - position: comments
     template: |
       <div id="vcomment"></div>
